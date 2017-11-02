@@ -1,1 +1,69 @@
-" keybindings
+let mapleader=' '
+let maplocalleader=','
+
+" expirimental
+nmap <LEADER>, :!echo ,<CR>
+nmap <LEADER>. @@
+nmap <LEADER>c :ToggleColor<CR>
+nmap <LEADER>d "_d
+nmap <LEADER>h <<
+nmap <LEADER>j ]e
+nmap <LEADER>k [e
+nmap <LEADER>l :!echo l<CR>
+nmap <LEADER>n }jzt
+nmap <LEADER>N 2{jzt
+nmap <LEADER>m }jzz
+nmap <LEADER>M 2{jzz
+nmap <LEADER>o :Goyo<CR>
+nmap <LEADER>p "0p
+nmap <LEADER>q :!echo q<CR>
+nmap <LEADER>r =or
+nmap <LEADER>u :!echo u<CR>
+nmap <LEADER>w  <C-w>
+nmap <LEADER>y :!echo y<CR>
+nmap <LEADER>z ZZ<CR>
+
+" Ctrl-K deletes to end of line
+inoremap <C-K> <C-O>d$
+
+" navigation
+nmap <LEADER>/ :History/<CR>
+nmap <LEADER>; :History:<CR>
+nmap <LEADER>a :Lines<CR>
+nmap <LEADER>b :Buffer<CR>
+nmap <LEADER>e :Lex<CR>
+nmap <LEADER>i :BLines<CR>
+nmap <LEADER>t :Files<CR>
+nmap <LEADER>v :Vex<CR>
+nmap <LEADER>x :bd<CR>
+nmap <LEADER><TAB> :b#<CR>
+
+" specs
+nmap <LEADER>ss :Runspecfile<CR>
+nmap <LEADER>sc :Rspeccb<CR>
+nmap <LEADER>sl :Runspecline<CR>
+nmap <LEADER>sv :Rspeclinecb<CR>
+
+" search
+nmap <LEADER>ff :FzfVimGrep<SPACE>
+nmap <LEADER>fg :grep<SPACE>
+nmap <LEADER>fr :History<CR>
+nmap <LEADER>fw :FzfVimGrep<SPACE><C-R>=expand("<cword>")<CR><CR>
+nmap <LEADER>gb :Gblame<CR>
+nmap <LEADER>gg :Ggrep<SPACE>
+nmap <LEADER>gt :GFiles<CR>
+nmap <LEADER>gw :grep<SPACE><C-R>=expand("<cword>")<CR><CR>
+
+" Clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+endif
+
+" Store ctrl u and w store in the undo register
+inoremap <C-U> <C-G>u<C-U>
+inoremap <C-W> <C-G>u<C-W>
+
+nmap Y y$
+
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
