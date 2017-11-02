@@ -8,7 +8,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'julian/vim-textobj-variable-segment'
   Plug 'kana/vim-textobj-indent'
   Plug 'kana/vim-textobj-user'
-  Plug 'nelstrom/vim-textobj-rubyblock'
 
 "plugins
   Plug 'andrewradev/splitjoin.vim'
