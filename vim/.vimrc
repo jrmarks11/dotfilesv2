@@ -1,0 +1,1 @@
+:source ~/vimrc/plugins.vim
