@@ -23,9 +23,6 @@ nmap <LEADER>w  <C-w>
 nmap <LEADER>y :!echo y<CR>
 nmap <LEADER>z ZZ<CR>
 
-" Ctrl-K deletes to end of line
-inoremap <C-K> <C-O>d$
-
 " navigation
 nmap <LEADER>/ :History/<CR>
 nmap <LEADER>; :History:<CR>
@@ -64,6 +61,9 @@ inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
 
 nmap Y y$
+
+" Ctrl-K deletes to end of line
+inoremap <C-K> <C-O>d$
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
