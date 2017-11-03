@@ -11,10 +11,10 @@ call plug#begin('~/.vim/plugged')
 
 "plugins
   Plug 'andrewradev/splitjoin.vim'
+  Plug 'https://github.com/ludovicchabant/vim-gutentags.git'
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/vim-easy-align'
-  Plug 'https://github.com/ludovicchabant/vim-gutentags.git'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
@@ -24,6 +24,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-unimpaired'
 
 " language
-  Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
-  Plug 'tpope/vim-rails', { 'for': 'ruby' }
+  Plug 'elixir-lang/vim-elixir'
+  Plug 'tpope/vim-rails'
 call plug#end()
