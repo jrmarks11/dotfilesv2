@@ -17,8 +17,8 @@ nmap <LEADER>o :Goyo<CR>
 nmap <LEADER>p "0p
 nmap <LEADER>q :!echo q<CR>
 nmap <LEADER>r =or
-nmap <LEADER>u :!echo u<CR>
-nmap <LEADER>w  <C-w>
+nmap <LEADER>u :PlugUpdate<CR>
+nmap <LEADER>w :!echo w<CR>
 nmap <LEADER>y :!echo y<CR>
 nmap <LEADER>z ZZ<CR>
 nnoremap s <C-W>
