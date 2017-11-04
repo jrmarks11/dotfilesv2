@@ -50,6 +50,7 @@ nmap <LEADER>ga :Gwrite<CR>
 nmap <LEADER>gc :Gcommit<CR>
 nmap <LEADER>gb :Gblame<CR>
 nmap <LEADER>gg :Ggrep<SPACE>
+nmap <LEADER>gp :Gpush<CR>
 nmap <LEADER>gs :GFiles?<CR>
 nmap <LEADER>gt :GFiles<CR>
 nmap <LEADER>gw :grep<SPACE><C-R>=expand("<cword>")<CR><CR>
