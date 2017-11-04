@@ -14,7 +14,7 @@ command -v brew >/dev/null 2>&1 &&
   { . $(brew --prefix)/etc/bash_completion; }
 
 [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ] && . /usr/local/opt/chruby/share/chruby/chruby.sh
-command -v chruby >/dev/null 2>&1 && [[ "$MY_HOST" =~ 'CMM'$ ]] && { chruby 2.2.2; }
+command -v chruby >/dev/null 2>&1 && [[ "$MY_HOST" =~ '💊'$ ]] && { chruby 2.2.2; }
 
 if [[ $(command -v fasd) ]]; then
   fasd_cache="$HOME/.fasd-init-bash"
@@ -96,22 +96,22 @@ cl() { history -p '!!'|tr -d \\n|pbcopy; }
 tssh() { tmate display -p '#{tmate_ssh}' | pbcopy; }
 rgv() { vim $(rg -l "$@"); }
 
+alias bake='bundle exec rake'
 alias be='bundle exec'
 alias bec='bundle exec rails c'
 alias ber='bundle exec rspec'
-alias bake='bundle exec rake'
 alias berfd='bundle exec rspec --format d'
 alias berof='bundle exec rspec --only-failures'
-alias d='git diff'
-alias dc='git diff --cached'
-alias dm='git diff master'
-alias gs='git status -s'
 alias ga='git add .'
 alias gc='git commit -m'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gdm='git diff master'
 alias gh='git hs'
 alias gl='git pull'
 alias gn='git newb'
 alias gp='git push'
 alias gpu='git push -u'
+alias gs='git status -s'
 alias gu='git up'
 alias rf='rg --files --glob'
