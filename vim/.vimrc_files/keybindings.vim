@@ -1,5 +1,4 @@
 let mapleader=' '
-let maplocalleader=','
 
 " expirimental
 nmap <LEADER>, :!echo ,<CR>
@@ -22,6 +21,7 @@ nmap <LEADER>u :!echo u<CR>
 nmap <LEADER>w  <C-w>
 nmap <LEADER>y :!echo y<CR>
 nmap <LEADER>z ZZ<CR>
+nnoremap s <C-W>
 
 " navigation
 nmap <LEADER>/ :History/<CR>
