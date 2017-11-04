@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
 
 "plugins
   Plug 'andrewradev/splitjoin.vim'
+  Plug 'https://github.com/airblade/vim-gitgutter.git'
   Plug 'https://github.com/ludovicchabant/vim-gutentags.git'
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
