@@ -2,7 +2,6 @@ call plug#begin('~/.vim/plugged')
 " colors
   Plug 'crusoexia/vim-dracula'
   Plug 'NLKNguyen/papercolor-theme'
-  Plug 'https://github.com/junegunn/seoul256.vim.git'
 
 " text-objects
   Plug 'b4winckler/vim-angry'
