@@ -37,6 +37,7 @@ set smartcase
 set smarttab
 set splitbelow
 set splitright
+set statusline=%f%=%{fugitive#statusline()}
 set tabstop=2
 set ttimeout
 set ttimeoutlen=100
