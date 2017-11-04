@@ -3,7 +3,7 @@ let mapleader=' '
 " expirimental
 nmap <LEADER>, :!echo ,<CR>
 nmap <LEADER>. @@
-nmap <LEADER>c :ToggleColor<CR>
+nmap <LEADER>c :Colors<CR>
 nmap <LEADER>d "_d
 nmap <LEADER>h <<
 nmap <LEADER>j ]e
