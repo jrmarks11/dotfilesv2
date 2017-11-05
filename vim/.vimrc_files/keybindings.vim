@@ -71,3 +71,4 @@ inoremap <C-K> <C-O>d$
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+cnoremap <expr> %%  getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'

@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 " colors
   Plug 'crusoexia/vim-dracula'
+  Plug 'https://github.com/tomasr/molokai.git'
   Plug 'NLKNguyen/papercolor-theme'
 
 " text-objects
