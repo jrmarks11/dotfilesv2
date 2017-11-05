@@ -36,10 +36,8 @@ nmap <LEADER>x :bd<CR>
 nmap <LEADER><TAB> :b#<CR>
 
 " specs
-nmap <LEADER>ss :Runspecfile<CR>
-nmap <LEADER>sc :Rspeccb<CR>
-nmap <LEADER>sl :Runspecline<CR>
-nmap <LEADER>sv :Rspeclinecb<CR>
+nmap <LEADER>ss :RspecFile<CR>
+nmap <LEADER>sl :RspecLine<CR>
 
 " search
 nmap <LEADER>ff :FzfVimGrep<SPACE>

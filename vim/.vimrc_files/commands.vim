@@ -1,29 +1,25 @@
-function Rspec_line_cb()
-  execute ":wa"
-  execute ":let @* = \"" . "bundle exec rspec " . bufname("%") . ':'
-        \ . line(".") . " --format d\""
-endfunction
-command Rspeclinecb call Rspec_line_cb()
-
 function Rspec_line()
   execute ":wa"
-  execute "!" . "bundle exec rspec " . bufname("%") . ':' . line(".")
-        \ . " --format d"
+  if exists('$TMUX')
+    execute ":Tmux " . "bundle exec rspec " . bufname("%") . ':'
+          \ . line(".") . " --format d"
+  else
+    execute "!" . "bundle exec rspec " . bufname("%") . ':' . line(".")
+          \ . " --format d"
+  endif
 endfunction
-command Runspecline call Rspec_line()
+command RspecLine call Rspec_line()
 
 function Rspec_file()
   execute ":wa"
-  execute "!" . "bundle exec rspec " . bufname("%") . " --format d"
+  if exists('$TMUX')
+    execute ":Tmux " . "bundle exec rspec " . bufname("%")
+          \ . " --format d"
+  else
+    execute "!" . "bundle exec rspec " . bufname("%") . " --format d"
+  endif
 endfunction
-command Runspecfile call Rspec_file()
-
-function Rspec_cb()
-  execute ":wa"
-  execute ":let @* = \"" . "bundle exec rspec " . bufname("%")
-        \ . " --format d\""
-endfunction
-command Rspeccb call Rspec_cb()
+command RspecFile call Rspec_file()
 
 command -bang -nargs=* FzfVimGrep call
       \ fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings
