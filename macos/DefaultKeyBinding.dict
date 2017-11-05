@@ -1,0 +1,8 @@
+/* Place this file in ~/Library/KeyBindings */
+{
+    "~f"      = "moveWordForward:";              /* M-f */
+    "~b"      = "moveWordBackward:";             /* M-b */
+    "~d"      = "deleteWordForward:";            /* M-d */
+    "~\177"   = "deleteWordBackward:";           /* M-delete */
+    "^/"      = "undo:";                         /* C-/ */
+}
