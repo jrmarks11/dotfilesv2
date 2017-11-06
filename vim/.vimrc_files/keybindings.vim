@@ -22,6 +22,11 @@ nmap <LEADER>w :!echo w<CR>
 nmap <LEADER>y :!echo y<CR>
 nmap <LEADER>z ZZ<CR>
 nnoremap s <C-W>
+nnoremap <silent> sh :TmuxNavigateLeft<CR>
+nnoremap <silent> sj :TmuxNavigateDown<CR>
+nnoremap <silent> sk :TmuxNavigateUp<CR>
+nnoremap <silent> sl :TmuxNavigateRight<CR>
+nnoremap <silent> sp :TmuxNavigatePrevious<CR>
 
 " navigation
 nmap <LEADER>/ :History/<CR>
