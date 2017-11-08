@@ -42,7 +42,9 @@ nmap <LEADER><TAB> :b#<CR>
 
 " specs
 nmap <LEADER>rs :RspecFile<CR>
+nmap <LEADER>rc :RspecFileCopy<CR>
 nmap <LEADER>rl :RspecLine<CR>
+nmap <LEADER>ry :RspecLineCopy<CR>
 
 " search
 nmap <LEADER>ff :FzfVimGrep<SPACE>
