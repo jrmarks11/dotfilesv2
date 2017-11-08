@@ -16,7 +16,7 @@ nmap <LEADER>M 2{jzz
 nmap <LEADER>o :Goyo<CR>
 nmap <LEADER>p "0p
 nmap <LEADER>q :!echo q<CR>
-nmap <LEADER>r =or
+nmap <LEADER>s :!echo s<CR>
 nmap <LEADER>u :PlugUpdate<CR>
 nmap <LEADER>w :!echo w<CR>
 nmap <LEADER>y :!echo y<CR>
@@ -41,8 +41,8 @@ nmap <LEADER>x :bd<CR>
 nmap <LEADER><TAB> :b#<CR>
 
 " specs
-nmap <LEADER>ss :RspecFile<CR>
-nmap <LEADER>sl :RspecLine<CR>
+nmap <LEADER>rs :RspecFile<CR>
+nmap <LEADER>rl :RspecLine<CR>
 
 " search
 nmap <LEADER>ff :FzfVimGrep<SPACE>

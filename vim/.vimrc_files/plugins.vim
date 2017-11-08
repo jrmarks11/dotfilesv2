@@ -31,3 +31,5 @@ call plug#begin('~/.vim/plugged')
   Plug 'elixir-lang/vim-elixir'
   Plug 'tpope/vim-rails'
 call plug#end()
+
+runtime macros/matchit.vim
