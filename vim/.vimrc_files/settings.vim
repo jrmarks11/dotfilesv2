@@ -24,6 +24,7 @@ set list
 set listchars=tab:▸\ ,trail:·,nbsp:␣
 set nocompatible
 set noerrorbells
+set noshowmode
 set nrformats-=octal
 set number
 set ruler
@@ -37,7 +38,6 @@ set smartcase
 set smarttab
 set splitbelow
 set splitright
-set statusline=%f%=%{fugitive#statusline()}
 set tabstop=2
 set ttimeout
 set ttimeoutlen=100
@@ -72,7 +72,16 @@ if !empty(&viminfo)
   set viminfo^=!
 endif
 
-" Netrw settings no banner, tree view, open new file in old tab
+let g:airline_mode_map = { 'n':'N', 'i':'I', 'v':'V' }
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline_section_x = ""
+let g:airline_section_y = ""
+let g:airline_section_z = "%c"
+let g:airline_section_error = ""
+let g:airline_section_warning = ""
+let g:airline_skip_empty_sections = 1
+let g:airline_theme='tomorrow'
+let g:airline_powerline_fonts = 1
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4

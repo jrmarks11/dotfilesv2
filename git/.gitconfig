@@ -1,13 +1,13 @@
 [user]
-	name = John Marks
-	email = jmarks@covermymeds.com
-	username = jrmarks11
+  name = John Marks
+  email = jmarks@covermymeds.com
+  username = jrmarks11
 [core]
-	excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
 [push]
-	default = current
+  default = current
 [hub]
-	host = git.innova-partners.com
+  host = git.innova-partners.com
 [alias]
   br = branch
   co = checkout

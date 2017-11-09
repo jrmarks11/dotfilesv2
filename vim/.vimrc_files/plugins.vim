@@ -26,6 +26,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-rsi'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 
 " language
   Plug 'elixir-lang/vim-elixir'
