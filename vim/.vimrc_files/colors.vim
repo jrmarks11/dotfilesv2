@@ -1,5 +1,5 @@
 function s:update_fzf_colors()
-  let rules =
+  let l:rules =
   \ { 'fg':      [['Normal',       'fg']],
     \ 'bg':      [['Normal',       'bg']],
     \ 'hl':      [['Comment',      'fg']],
@@ -12,19 +12,19 @@ function s:update_fzf_colors()
     \ 'marker':  [['Keyword',      'fg']],
     \ 'spinner': [['Label',        'fg']],
     \ 'header':  [['Comment',      'fg']] }
-  let cols = []
-  for [name, pairs] in items(rules)
-    for pair in pairs
-      let code = synIDattr(synIDtrans(hlID(pair[0])), pair[1])
-      if !empty(name) && code > 0
-        call add(cols, name.':'.code)
+  let l:cols = []
+  for [l:name, l:pairs] in items(l:rules)
+    for l:pair in l:pairs
+      let l:code = synIDattr(synIDtrans(hlID(l:pair[0])), l:pair[1])
+      if !empty(l:name) && l:code > 0
+        call add(l:cols, l:name.':'.l:code)
         break
       endif
     endfor
   endfor
   let s:orig_fzf_default_opts = get(s:, 'orig_fzf_default_opts', $FZF_DEFAULT_OPTS)
   let $FZF_DEFAULT_OPTS = s:orig_fzf_default_opts .
-        \ empty(cols) ? '' : (' --color='.join(cols, ','))
+        \ empty(l:cols) ? '' : (' --color='.join(l:cols, ','))
 endfunction
 
 augroup _fzf

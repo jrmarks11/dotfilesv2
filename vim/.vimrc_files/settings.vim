@@ -1,4 +1,6 @@
-if exists('g:loaded_jm_settings') || &compatible
+scriptencoding utf-8
+
+if exists('g:loaded_jm_settings')
   finish
 else
   let g:loaded_jm_settings = 1
@@ -22,7 +24,6 @@ set incsearch
 set laststatus=2
 set list
 set listchars=tab:▸\ ,trail:·,nbsp:␣
-set nocompatible
 set noerrorbells
 set noshowmode
 set nrformats-=octal
@@ -74,11 +75,11 @@ endif
 
 let g:airline_mode_map = { 'n':'N', 'i':'I', 'v':'V' }
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline_section_x = ""
-let g:airline_section_y = ""
-let g:airline_section_z = "%c"
-let g:airline_section_error = ""
-let g:airline_section_warning = ""
+let g:airline_section_x = ''
+let g:airline_section_y = ''
+let g:airline_section_z = '%c'
+let g:airline_section_error = ''
+let g:airline_section_warning = ''
 let g:airline_skip_empty_sections = 1
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1

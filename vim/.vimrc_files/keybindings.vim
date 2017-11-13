@@ -1,4 +1,4 @@
-let mapleader=' '
+let g:mapleader=' '
 
 " expirimental
 nmap <LEADER>, :!echo ,<CR>

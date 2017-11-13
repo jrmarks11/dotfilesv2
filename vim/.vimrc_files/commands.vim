@@ -1,37 +1,37 @@
 function Rspec_line()
-  execute ":wa"
+  execute ':wa'
   if exists('$TMUX')
-    execute ":Tmux " . "bundle exec rspec " . bufname("%") . ':'
-          \ . line(".") . " --format d"
+    execute ':Tmux ' . 'bundle exec rspec ' . bufname('%') . ':'
+          \ . line('.') . ' --format d'
   else
-    execute "!" . "bundle exec rspec " . bufname("%") . ':' . line(".")
-          \ . " --format d"
+    execute '!' . 'bundle exec rspec ' . bufname('%') . ':' . line('.')
+          \ . ' --format d'
   endif
 endfunction
 command RspecLine call Rspec_line()
 
 function Rspec_line_copy()
-  execute ":wa"
-  execute ":let @* = \"" . "bundle exec rspec " . bufname("%") . ':'
-        \ . line(".") . " --format d\""
+  execute ':wa'
+  execute ':let @* = "' . 'bundle exec rspec ' . bufname('%') . ':'
+        \ . line('.') . ' --format d"'
 endfunction
 command RspecLineCopy call Rspec_line_copy()
 
 function Rspec_file()
-  execute ":wa"
+  execute ':wa'
   if exists('$TMUX')
-    execute ":Tmux " . "bundle exec rspec " . bufname("%")
-          \ . " --format d"
+    execute ':Tmux ' . 'bundle exec rspec ' . bufname('%')
+          \ . ' --format d'
   else
-    execute "!" . "bundle exec rspec " . bufname("%") . " --format d"
+    execute '!' . 'bundle exec rspec ' . bufname('%') . ' --format d'
   endif
 endfunction
 command RspecFile call Rspec_file()
 
 function Rspec_file_copy()
-  execute ":wa"
-  execute ":let @* = \"" . "bundle exec rspec " . bufname("%")
-        \ . " --format d\""
+  execute ':wa'
+  execute ':let @* = "' . 'bundle exec rspec ' . bufname('%')
+        \ . ' --format d"'
 endfunction
 command RspecFileCopy call Rspec_file_copy()
 
