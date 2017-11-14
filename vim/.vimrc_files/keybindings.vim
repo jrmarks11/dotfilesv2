@@ -1,4 +1,5 @@
 let g:mapleader=' '
+let g:maplocalleader=','
 
 " expirimental
 nmap <LEADER>, :!echo ,<CR>

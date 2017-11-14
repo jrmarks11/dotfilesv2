@@ -33,6 +33,10 @@ call plug#begin('~/.vim/plugged')
 " language
   Plug 'elixir-lang/vim-elixir'
   Plug 'tpope/vim-rails'
+
+" org
+  Plug 'https://github.com/jceb/vim-orgmode.git', { 'for': 'org' }
+  Plug 'https://github.com/tpope/vim-speeddating.git', { 'for': 'org' }
 call plug#end()
 
 runtime macros/matchit.vim
