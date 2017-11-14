@@ -1,24 +1,20 @@
 call plug#begin('~/.vim/plugged')
-" colors
-  Plug 'crusoexia/vim-dracula'
-  Plug 'https://github.com/tomasr/molokai.git'
-  Plug 'NLKNguyen/papercolor-theme'
+" language
+  Plug 'elixir-lang/vim-elixir'
+  Plug 'jceb/vim-orgmode', { 'for': 'org' }
+  Plug 'tpope/vim-rails'
+  Plug 'tpope/vim-speeddating', { 'for': 'org' }
 
-" text-objects
-  Plug 'b4winckler/vim-angry'
-  Plug 'julian/vim-textobj-variable-segment'
-  Plug 'kana/vim-textobj-indent'
-  Plug 'kana/vim-textobj-user'
-
-"plugins
+" plugins
+  Plug 'airblade/vim-gitgutter'
   Plug 'andrewradev/splitjoin.vim'
-  Plug 'https://github.com/airblade/vim-gitgutter.git'
-  Plug 'https://github.com/christoomey/vim-tmux-navigator.git'
-  Plug 'https://github.com/jgdavey/tslime.vim.git'
-  Plug 'https://github.com/ludovicchabant/vim-gutentags.git'
+  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'jgdavey/tslime.vim'
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/vim-easy-align'
+  Plug 'ludovicchabant/vim-gutentags'
+  Plug 'NLKNguyen/papercolor-theme'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
@@ -30,13 +26,13 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline-themes'
   Plug 'w0rp/ale'
 
-" language
-  Plug 'elixir-lang/vim-elixir'
-  Plug 'tpope/vim-rails'
-
-" org
-  Plug 'https://github.com/jceb/vim-orgmode.git', { 'for': 'org' }
-  Plug 'https://github.com/tpope/vim-speeddating.git', { 'for': 'org' }
+" text-objects
+  Plug 'adriaanzon/vim-textobj-matchit'
+  Plug 'b4winckler/vim-angry'
+  Plug 'julian/vim-textobj-variable-segment'
+  Plug 'kana/vim-textobj-entire'
+  Plug 'kana/vim-textobj-indent'
+  Plug 'kana/vim-textobj-user'
 call plug#end()
 
 runtime macros/matchit.vim
