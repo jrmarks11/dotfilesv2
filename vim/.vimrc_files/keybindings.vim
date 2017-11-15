@@ -1,7 +1,7 @@
 let g:mapleader=' '
 let g:maplocalleader=','
 
-" expirimental
+" experimental
 nmap <LEADER>, :!echo ,<CR>
 nmap <LEADER>. @@
 nmap <LEADER>c :GitGutterLineHighlightsToggle<CR>
@@ -23,11 +23,6 @@ nmap <LEADER>w :!echo w<CR>
 nmap <LEADER>y :!echo y<CR>
 nmap <LEADER>z ZZ<CR>
 nnoremap s <C-W>
-nnoremap <silent> sh :TmuxNavigateLeft<CR>
-nnoremap <silent> sj :TmuxNavigateDown<CR>
-nnoremap <silent> sk :TmuxNavigateUp<CR>
-nnoremap <silent> sl :TmuxNavigateRight<CR>
-nnoremap <silent> sp :TmuxNavigatePrevious<CR>
 
 " navigation
 nmap <LEADER>/ :History/<CR>
@@ -77,4 +72,5 @@ inoremap <C-K> <C-O>d$
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
 cnoremap <expr> %%  getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
