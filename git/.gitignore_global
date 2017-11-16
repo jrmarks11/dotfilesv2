@@ -23,3 +23,6 @@ Thumbs.db
 
 #Tags
 tags*
+
+#Rubocop
+.rubocop.yml
