@@ -23,6 +23,8 @@ nmap <LEADER>w :!echo w<CR>
 nmap <LEADER>y :!echo y<CR>
 nmap <LEADER>z ZZ<CR>
 nnoremap s <C-W>
+nnoremap <LEADER><LEADER> :'{,'}s/\<<C-R><C-W>\>/
+nnoremap <LEADER>%       :%s/\<<C-R><C-W>\>/
 
 " navigation
 nmap <LEADER>/ :History/<CR>
@@ -46,7 +48,8 @@ nmap <LEADER>ry :RspecLineCopy<CR>
 nmap <LEADER>ff :FzfVimGrep<SPACE>
 nmap <LEADER>fg :grep<SPACE>
 nmap <LEADER>fr :History<CR>
-nmap <LEADER>fw :FzfVimGrep<SPACE><C-R>=expand("<cword>")<CR><CR>
+nmap <LEADER>fw :FzfVimGrep<SPACE><C-R><C-W><CR>
+nmap <LEADER>fW :FzfVimGrep<SPACE><C-R><C-A><CR>
 nmap <LEADER>ga :Gwrite<CR>
 nmap <LEADER>gc :Gcommit<CR>
 nmap <LEADER>gb :Gblame<CR>
@@ -54,7 +57,7 @@ nmap <LEADER>gg :Ggrep<SPACE>
 nmap <LEADER>gp :Gpush<CR>
 nmap <LEADER>gs :GFiles?<CR>
 nmap <LEADER>gt :GFiles<CR>
-nmap <LEADER>gw :grep<SPACE><C-R>=expand("<cword>")<CR><CR>
+nmap <LEADER>gw :grep<SPACE><C-R><C-W><CR>
 
 " Clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''

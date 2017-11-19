@@ -83,6 +83,7 @@ let g:airline_section_z = '%c'
 let g:airline_skip_empty_sections = 1
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
+let g:gutentags_ctags_tagfile = '.tags'
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
