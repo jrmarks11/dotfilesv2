@@ -25,7 +25,6 @@ set laststatus=2
 set list
 set listchars=tab:▸\ ,trail:·,nbsp:␣
 set noerrorbells
-set noshowmode
 set nrformats-=octal
 set number
 set ruler
@@ -48,6 +47,7 @@ set undolevels=1000
 set undoreload=10000
 set visualbell
 set wildmenu
+set wildmode=full
 
 if isdirectory($HOME . '/.vim-swap') == 0
   :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
@@ -78,8 +78,6 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline_section_x = ''
 let g:airline_section_y = ''
 let g:airline_section_z = '%c'
-" let g:airline_section_error = ''
-" let g:airline_section_warning = ''
 let g:airline_skip_empty_sections = 1
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1

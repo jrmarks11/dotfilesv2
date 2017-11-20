@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'jgdavey/tslime.vim'
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
+  Plug 'junegunn/rainbow_parentheses.vim'
   Plug 'junegunn/vim-easy-align'
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'NLKNguyen/papercolor-theme'

@@ -24,7 +24,7 @@ nmap <LEADER>y :!echo y<CR>
 nmap <LEADER>z ZZ<CR>
 nnoremap s <C-W>
 nnoremap <LEADER><LEADER> :'{,'}s/\<<C-R><C-W>\>/
-nnoremap <LEADER>%       :%s/\<<C-R><C-W>\>/
+nnoremap <LEADER>% :%s/\<<C-R><C-W>\>/
 
 " navigation
 nmap <LEADER>/ :History/<CR>
