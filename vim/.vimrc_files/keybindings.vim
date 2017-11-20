@@ -29,10 +29,11 @@ nnoremap <LEADER>% :%s/\<<C-R><C-W>\>/
 " navigation
 nmap <LEADER>/ :History/<CR>
 nmap <LEADER>; :History:<CR>
-nmap <LEADER>a :Lines<CR>
+nmap <LEADER>a :A<CR>
 nmap <LEADER>b :Buffer<CR>
 nmap <LEADER>e :Lex<CR>
 nmap <LEADER>i :BLines<CR>
+nmap <LEADER>I :Lines<CR>
 nmap <LEADER>t :Files<CR>
 nmap <LEADER>v :Vex<CR>
 nmap <LEADER>x :bd<CR>
