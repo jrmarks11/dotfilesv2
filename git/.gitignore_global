@@ -22,8 +22,8 @@ Thumbs.db
 /vendor
 
 #Tags
-tags
-.tags
+tags*
+.tags*
 
 #Rubocop
 .rubocop.yml
