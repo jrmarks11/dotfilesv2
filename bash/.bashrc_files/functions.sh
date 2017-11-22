@@ -20,7 +20,7 @@ gb() {
       fzf_down --ansi --multi --tac --preview-window right:70% \
       --preview 'git log --oneline --graph --date=short --pretty="format:%C(auto)%cd %h%d %s" $(sed s/^..// <<< {} | cut -d" " -f1) | head -200' |
       sed 's/^..//' | cut -d' ' -f1 |
-      sed 's#^remotes/##'
+      sed 's#^remotes/##' | xargs git checkout
   else
     git branch $@
   fi
