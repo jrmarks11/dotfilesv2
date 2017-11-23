@@ -66,10 +66,6 @@ elseif executable('ag')
 endif
 set grepformat=%f:%l:%c:%m
 
-if has('path_extra')
-  setglobal tags-=./tags tags-=./tags; tags^=./tags;
-endif
-
 if !empty(&viminfo)
   set viminfo^=!
 endif
@@ -84,7 +80,9 @@ let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
 let g:clever_f_across_no_line = 1
 let g:clever_f_timeout_ms = 3000
-let g:clever_f_mark_cursor_color = "IncSearch"
+let g:clever_f_mark_cursor_color = 'IncSearch'
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
 let g:gutentags_ctags_tagfile = '.tags'
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
