@@ -25,6 +25,10 @@ nmap <LEADER>z ZZ<CR>
 nnoremap s <C-W>
 nnoremap <LEADER><LEADER> :'{,'}s/\<<C-R><C-W>\>/
 nnoremap <LEADER>% :%s/\<<C-R><C-W>\>/
+nnoremap Q @q
+xnoremap Q :'<,'> :normal @q<CR>
+xnoremap . :norm.<CR>
+nmap ; :
 
 " navigation
 nmap <LEADER>/ :History/<CR>
