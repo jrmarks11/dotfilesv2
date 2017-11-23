@@ -1,3 +1,9 @@
+if exists('g:loaded_jm_commands')
+  finish
+else
+  let g:loaded_jm_commands = 1
+endif
+
 function Rspec_line()
   execute ':wa'
   if exists('$TMUX')

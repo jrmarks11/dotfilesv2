@@ -1,3 +1,9 @@
+if exists('g:loaded_jm_colors')
+  finish
+else
+  let g:loaded_jm_colors = 1
+endif
+
 function s:update_fzf_colors()
   let l:rules =
   \ { 'fg':      [['Normal',       'fg']],

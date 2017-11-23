@@ -16,11 +16,13 @@ nmap <LEADER>m }jzz
 nmap <LEADER>M 2{jzz
 nmap <LEADER>o :Goyo<CR>
 nmap <LEADER>p "0p
-nmap <LEADER>q :!echo q<CR>
+nmap <LEADER>q :!echo ragggee<CR>
 nmap <LEADER>s :!echo s<CR>
 nmap <LEADER>u :PlugUpdate<CR>
+nmap <LEADER>U :PlugClean<CR>
 nmap <LEADER>w :!echo w<CR>
-nmap <LEADER>y :!echo y<CR>
+nmap <LEADER>y :Helptags<CR>
+nmap <LEADER>v :source $MYVIMRC<CR>
 nmap <LEADER>z ZZ<CR>
 nnoremap s <C-W>
 nnoremap <LEADER><LEADER> :'{,'}s/\<<C-R><C-W>\>/
@@ -36,10 +38,10 @@ nmap <LEADER>; :History:<CR>
 nmap <LEADER>a :A<CR>
 nmap <LEADER>b :Buffer<CR>
 nmap <LEADER>e :Lex<CR>
+nmap <LEADER>E :Vex<CR>
 nmap <LEADER>i :BLines<CR>
 nmap <LEADER>I :Lines<CR>
 nmap <LEADER>t :Files<CR>
-nmap <LEADER>v :Vex<CR>
 nmap <LEADER>x :bd<CR>
 nmap <LEADER><TAB> :b#<CR>
 
@@ -56,8 +58,9 @@ nmap <LEADER>fr :History<CR>
 nmap <LEADER>fw :FzfVimGrep<SPACE><C-R><C-W><CR>
 nmap <LEADER>fW :FzfVimGrep<SPACE><C-R><C-A><CR>
 nmap <LEADER>ga :Gwrite<CR>
-nmap <LEADER>gc :Gcommit<CR>
 nmap <LEADER>gb :Gblame<CR>
+nmap <LEADER>gc :Gcommit<CR>
+nmap <LEADER>gd :Gdiff<CR>
 nmap <LEADER>gg :Ggrep<SPACE>
 nmap <LEADER>gp :Gpush<CR>
 nmap <LEADER>gs :GFiles?<CR>
