@@ -30,6 +30,8 @@ nnoremap <LEADER>% :%s/\<<C-R><C-W>\>/
 nnoremap Q @q
 xnoremap Q :'<,'> :normal @q<CR>
 xnoremap . :norm.<CR>
+nnoremap c* *Ncgn
+nnoremap c# #NcgN
 nmap ; :
 
 " navigation
