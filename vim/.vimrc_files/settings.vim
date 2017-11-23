@@ -8,6 +8,7 @@ endif
 
 set autoindent
 set autoread
+set autowrite
 set backspace=indent,eol,start
 set clipboard=unnamed
 set colorcolumn=80
