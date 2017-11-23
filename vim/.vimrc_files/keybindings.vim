@@ -9,7 +9,7 @@ nmap <LEADER>d "_d
 nmap <LEADER>h <<
 nmap <LEADER>j ]e
 nmap <LEADER>k [e
-nmap <LEADER>l :!echo l<CR>
+nmap <LEADER>l >>
 nmap <LEADER>n }jzt
 nmap <LEADER>N 2{jzt
 nmap <LEADER>m }jzz
