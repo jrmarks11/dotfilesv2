@@ -28,3 +28,8 @@ augroup autoSaveAndRead
   autocmd TextChanged,InsertLeave,FocusLost * silent! wall | GitGutter
   autocmd CursorHold *                        silent! checktime
 augroup END
+
+augroup autoResize
+  au!
+  au VimResized * wincmd =
+augroup END
