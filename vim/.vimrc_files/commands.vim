@@ -5,7 +5,6 @@ else
 endif
 
 function Rspec_line()
-  execute ':wa'
   if exists('$TMUX')
     execute ':Tmux ' . 'bundle exec rspec ' . bufname('%') . ':'
           \ . line('.') . ' --format d'
@@ -17,14 +16,12 @@ endfunction
 command RspecLine call Rspec_line()
 
 function Rspec_line_copy()
-  execute ':wa'
   execute ':let @* = "' . 'bundle exec rspec ' . bufname('%') . ':'
         \ . line('.') . ' --format d"'
 endfunction
 command RspecLineCopy call Rspec_line_copy()
 
 function Rspec_file()
-  execute ':wa'
   if exists('$TMUX')
     execute ':Tmux ' . 'bundle exec rspec ' . bufname('%')
           \ . ' --format d'
@@ -35,7 +32,6 @@ endfunction
 command RspecFile call Rspec_file()
 
 function Rspec_file_copy()
-  execute ':wa'
   execute ':let @* = "' . 'bundle exec rspec ' . bufname('%')
         \ . ' --format d"'
 endfunction
