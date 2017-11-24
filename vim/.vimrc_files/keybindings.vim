@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 let g:mapleader=' '
 let g:maplocalleader=','
 
@@ -27,6 +29,7 @@ nmap <LEADER>z ZZ<CR>
 nnoremap s <C-W>
 nnoremap <LEADER><LEADER> :'{,'}s/\<<C-R><C-W>\>/
 nnoremap <LEADER>% :%s/\<<C-R><C-W>\>/
+nnoremap K i
 nnoremap Q @q
 xnoremap Q :'<,'> :normal @q<CR>
 xnoremap . :norm.<CR>

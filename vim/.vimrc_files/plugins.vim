@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 call plug#begin('~/.vim/plugged')
 " language
   Plug 'elixir-lang/vim-elixir'
