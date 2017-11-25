@@ -28,7 +28,6 @@ set noerrorbells
 set nrformats-=octal
 set number
 set scrolloff=1
-set sessionoptions-=options
 set shiftround
 set shiftwidth=2
 set showmatch
