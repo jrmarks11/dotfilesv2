@@ -23,7 +23,6 @@ nmap <LEADER>s :!echo s<CR>
 nmap <LEADER>u :PlugUpdate<CR>
 nmap <LEADER>U :PlugClean<CR>
 nmap <LEADER>w :!echo w<CR>
-nmap <LEADER>y :Helptags<CR>
 nmap <LEADER>v :source $MYVIMRC<CR>
 nmap <LEADER>z ZZ<CR>
 nnoremap s <C-W>
@@ -48,6 +47,7 @@ nmap <LEADER>i :BLines<CR>
 nmap <LEADER>I :Lines<CR>
 nmap <LEADER>t :Files<CR>
 nmap <LEADER>x :bd<CR>
+nmap <LEADER>y :Helptags<CR>
 nmap <LEADER><TAB> :b#<CR>
 
 " specs
