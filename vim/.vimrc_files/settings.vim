@@ -22,7 +22,6 @@ set history=1000
 set hlsearch
 set ignorecase
 set incsearch
-set laststatus=2
 set list
 set listchars=tab:▸\ ,trail:·,nbsp:␣
 set noerrorbells
@@ -48,7 +47,7 @@ set undolevels=1000
 set undoreload=10000
 set visualbell
 set wildmenu
-set wildmode=full
+set wildmode=longest,list
 
 if isdirectory($HOME . '/.vim-swap') == 0
   :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
