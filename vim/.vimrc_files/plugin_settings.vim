@@ -13,13 +13,6 @@ let g:airline_section_z = '%c'
 let g:airline_skip_empty_sections = 1
 let g:airline_theme='tomorrow'
 
-" clever_f defaults f and to to go to next lines turn that off
-let g:clever_f_across_no_line = 1
-" sets the color for the highlighting of inline f and t matches
-let g:clever_f_mark_cursor_color = 'IncSearch'
-" f and t reset after 3 seconds
-let g:clever_f_timeout_ms = 3000
-
 " I always reload gitgutter on any edit so n need for these to be on
 let g:gitgutter_eager = 0
 let g:gitgutter_realtime = 0

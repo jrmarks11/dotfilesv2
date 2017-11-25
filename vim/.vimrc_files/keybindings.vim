@@ -1,7 +1,7 @@
 scriptencoding utf-8
 
 let g:mapleader=' '
-let g:maplocalleader=','
+let g:maplocalleader=' '
 
 " experimental
 nmap <LEADER>, :!echo ,<CR>
@@ -34,7 +34,6 @@ xnoremap Q :'<,'> :normal @q<CR>
 xnoremap . :norm.<CR>
 nnoremap c* *Ncgn
 nnoremap c# #NcgN
-nmap ; :
 
 " navigation
 nmap <LEADER>/ :History/<CR>

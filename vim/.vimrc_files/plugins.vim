@@ -16,7 +16,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/vim-easy-align'
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'NLKNguyen/papercolor-theme'
-  Plug 'rhysd/clever-f.vim'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
