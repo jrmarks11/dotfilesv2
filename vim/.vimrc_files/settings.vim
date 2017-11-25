@@ -27,7 +27,6 @@ set listchars=tab:▸\ ,trail:·,nbsp:␣
 set noerrorbells
 set nrformats-=octal
 set number
-set ruler
 set scrolloff=1
 set sessionoptions-=options
 set shiftround
