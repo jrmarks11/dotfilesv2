@@ -62,6 +62,8 @@ nmap <LEADER>fg :grep<SPACE>
 nmap <LEADER>fr :History<CR>
 nmap <LEADER>fw :FzfVimGrep<SPACE><C-R><C-W><CR>
 nmap <LEADER>fW :FzfVimGrep<SPACE><C-R><C-A><CR>
+nmap <LEADER>fy :help<SPACE><C-R><C-W><CR>
+nmap <LEADER>fY :helpg<SPACE><C-R><C-W><CR>
 nmap <LEADER>ga :Gwrite<CR>
 nmap <LEADER>gb :Gblame<CR>
 nmap <LEADER>gc :Gcommit<CR>
