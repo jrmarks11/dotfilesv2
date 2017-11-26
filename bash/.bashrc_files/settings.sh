@@ -4,6 +4,10 @@ if [ -d "$HOME/bin" ] ; then
   PATH="$PATH:$HOME/bin"
 fi
 
+if [ -d "/usr/local/bin" ] ; then
+  PATH="$PATH:/usr/local/bin"
+fi
+
 if [ -d "$HOME/dbrady-bin" ] ; then
   PATH="$PATH:$HOME/dbrady-bin"
 fi
