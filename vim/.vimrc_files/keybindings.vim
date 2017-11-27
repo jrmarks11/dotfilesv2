@@ -34,11 +34,13 @@ xnoremap . :norm.<CR>
 nnoremap c* *Ncgn
 nnoremap c# #NcgN
 
-nnoremap <silent> <C-J>h :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-J>j :TmuxNavigateDown<cr>
-nnoremap <silent> <C-J>k :TmuxNavigateUp<cr>
-nnoremap <silent> <C-J>l :TmuxNavigateRight<cr>
-nnoremap <silent> <C-J>b :TmuxNavigatePrevious<cr>
+nnoremap <C-J> <C-W>
+nnoremap <C-J>x <C-W>q
+nnoremap <SILENT> <C-J>h :TmuxNavigateLeft<CR>
+nnoremap <SILENT> <C-J>j :TmuxNavigateDown<CR>
+nnoremap <SILENT> <C-J>k :TmuxNavigateUp<CR>
+nnoremap <SILENT> <C-J>l :TmuxNavigateRight<CR>
+nnoremap <SILENT> <C-J>b :TmuxNavigatePrevious<CR>
 
 " navigation
 nmap <LEADER>/ :History/<CR>
