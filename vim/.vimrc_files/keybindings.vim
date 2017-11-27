@@ -36,11 +36,11 @@ nnoremap c# #NcgN
 
 nnoremap <C-J> <C-W>
 nnoremap <C-J>x <C-W>q
-nnoremap <SILENT> <C-J>h :TmuxNavigateLeft<CR>
-nnoremap <SILENT> <C-J>j :TmuxNavigateDown<CR>
-nnoremap <SILENT> <C-J>k :TmuxNavigateUp<CR>
-nnoremap <SILENT> <C-J>l :TmuxNavigateRight<CR>
-nnoremap <SILENT> <C-J>b :TmuxNavigatePrevious<CR>
+nnoremap <silent> <C-J>h :TmuxNavigateLeft<CR>
+nnoremap <silent> <C-J>j :TmuxNavigateDown<CR>
+nnoremap <silent> <C-J>k :TmuxNavigateUp<CR>
+nnoremap <silent> <C-J>l :TmuxNavigateRight<CR>
+nnoremap <silent> <C-J>b :TmuxNavigatePrevious<CR>
 
 " navigation
 nmap <LEADER>/ :History/<CR>
