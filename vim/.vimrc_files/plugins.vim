@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 " plugins
   Plug 'airblade/vim-gitgutter'
   Plug 'andrewradev/splitjoin.vim'
+  Plug 'christoomey/vim-tmux-navigator'
   Plug 'jgdavey/tslime.vim'
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'

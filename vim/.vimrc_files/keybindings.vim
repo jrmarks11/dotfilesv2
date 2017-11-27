@@ -25,7 +25,6 @@ nmap <LEADER>U :PlugClean<CR>
 nmap <LEADER>w :!echo w<CR>
 nmap <LEADER>v :source $MYVIMRC<CR>
 nmap <LEADER>z ZZ<CR>
-nnoremap s <C-W>
 nnoremap <LEADER><LEADER> :'{,'}s/\<<C-R><C-W>\>/
 nnoremap <LEADER>% :%s/\<<C-R><C-W>\>/
 nnoremap K i
@@ -34,6 +33,12 @@ xnoremap Q :'<,'> :normal @q<CR>
 xnoremap . :norm.<CR>
 nnoremap c* *Ncgn
 nnoremap c# #NcgN
+
+nnoremap <silent> <C-J>h :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-J>j :TmuxNavigateDown<cr>
+nnoremap <silent> <C-J>k :TmuxNavigateUp<cr>
+nnoremap <silent> <C-J>l :TmuxNavigateRight<cr>
+nnoremap <silent> <C-J>b :TmuxNavigatePrevious<cr>
 
 " navigation
 nmap <LEADER>/ :History/<CR>
