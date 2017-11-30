@@ -75,8 +75,8 @@ nmap <LEADER>gb :Gblame<CR>
 nmap <LEADER>gc :Gcommit<CR>
 nmap <LEADER>gd :Gdiff<CR>
 nmap <LEADER>gg :Ggrep<SPACE>
-nmap <LEADER>gh :Gbrowse<CR>
-vmap <LEADER>gh :Gbrowse<CR>
+nmap <LEADER>gh :Gbrowse!<CR>
+vmap <LEADER>gh :Gbrowse!<CR>
 nmap <LEADER>gp :Gpush<CR>
 nmap <LEADER>gs :GFiles?<CR>
 nmap <LEADER>gt :GFiles<CR>
