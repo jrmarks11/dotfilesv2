@@ -32,4 +32,3 @@ let g:netrw_winsize = 15
 
 " I want my own tmux navigator maps
 let g:tmux_navigator_no_mappings = 1
-
