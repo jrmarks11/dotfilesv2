@@ -25,3 +25,10 @@ gb() {
     git branch $@
   fi
 }
+
+fs() {
+  local session
+  session=$(tmux list-sessions -F "#{session_name}" | \
+    fzf --height 40% --reverse --query="$1" --select-1 --exit-0) &&
+    tmux switch-client -t "$session"
+}
