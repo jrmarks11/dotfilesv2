@@ -11,11 +11,6 @@ augroup RestoreCursorPositionGroup
   au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 augroup END
 
-augroup FiletypeGroup
-  au!
-  au BufNewFile,BufRead *.org set filetype=org
-augroup END
-
 augroup QF
   au!
   au QuickFixCmdPost [^l]* cwindow

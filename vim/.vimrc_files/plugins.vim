@@ -1,13 +1,6 @@
 scriptencoding utf-8
 
 call plug#begin('~/.vim/plugged')
-" language
-  Plug 'elixir-lang/vim-elixir'
-  Plug 'jceb/vim-orgmode', { 'for': 'org' }
-  Plug 'tpope/vim-rails'
-  Plug 'tpope/vim-speeddating', { 'for': 'org' }
-
-" plugins
   Plug 'airblade/vim-gitgutter'
   Plug 'andrewradev/splitjoin.vim'
   Plug 'christoomey/vim-tmux-navigator'
@@ -20,6 +13,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-rails'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-rsi'
   Plug 'tpope/vim-rhubarb'
