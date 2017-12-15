@@ -5,8 +5,6 @@ inoremap ,, <C-p><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" :
 inoremap ,/ <C-x><C-f><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
 inoremap ,. <C-x><C-l><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
 nmap <SPACE>, :!echo ,<CR>
-nmap <SPACE>. @@
-nmap <SPACE>d "_d
 nmap <SPACE>h <<
 nmap <SPACE>j ]e
 nmap <SPACE>k [e
@@ -16,10 +14,14 @@ nmap <SPACE>N 2{jzt
 nmap <SPACE>m }jzz
 nmap <SPACE>M 2{jzz
 nmap <SPACE>o :!echo o<CR>
-nmap <SPACE>p "0p
 nmap <SPACE>q :!echo q<CR>
 nmap <SPACE>s :!echo s<CR>
 nmap <SPACE>w :!echo w<CR>
+
+" almost ok
+nmap <SPACE>. @@
+nmap <SPACE>d "_d
+nmap <SPACE>p "0p
 nmap <SPACE>z ZZ<CR>
 nnoremap K i
 nnoremap Q @q
