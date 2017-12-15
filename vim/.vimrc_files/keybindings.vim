@@ -28,7 +28,7 @@ xnoremap . :norm.<CR>
 nnoremap c* *Ncgn
 nnoremap c# #NcgN
 
-" Git
+" git
 nmap <SPACE>c :GitGutterLineHighlightsToggle<CR>
 nmap <SPACE>ga :Gwrite<CR>
 nmap <SPACE>gb :Gblame<CR>
@@ -96,11 +96,9 @@ endif
 inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
 
+inoremap <C-K> <C-O>d$
 nmap Y y$
 nmap <SPACE>v :source $MYVIMRC<CR>
-
-" Ctrl-K deletes to end of line
-inoremap <C-K> <C-O>d$
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
