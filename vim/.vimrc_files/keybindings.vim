@@ -100,10 +100,8 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 cnoremap <expr> %%  getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
+
 " better completion menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-N>" : "\<TAB>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<S-TAB>"
-inoremap <expr> <ESC> pumvisible() ? "\<C-Y>" : "\<ESC>"
 inoremap ,, <C-p><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
 inoremap ,/ <C-x><C-f><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
 inoremap ,. <C-x><C-l><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
