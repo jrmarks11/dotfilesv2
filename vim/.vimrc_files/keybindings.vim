@@ -5,10 +5,12 @@ inoremap ,, <C-p><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" :
 inoremap ,/ <C-x><C-f><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
 inoremap ,. <C-x><C-l><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
 nmap <SPACE>, :!echo ,<CR>
-nmap <SPACE>h <<
+nmap <SPACE>h :DemoteFromLet<CR>
+vmap <SPACE>h :call DemoteFromLet()<CR>
 nmap <SPACE>j ]e
 nmap <SPACE>k [e
-nmap <SPACE>l >>
+nmap <SPACE>l :PromoteToLet<CR>
+vmap <SPACE>l :call PromoteToLet()<CR>
 nmap <SPACE>n }jzt
 nmap <SPACE>N 2{jzt
 nmap <SPACE>m }jzz

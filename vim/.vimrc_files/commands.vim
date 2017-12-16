@@ -4,6 +4,22 @@ else
   let g:loaded_jm_commands = 1
 endif
 
+function! PromoteToLet()
+  :normal! dd
+  :normal! P
+  :s/\(\S\+\)\s*=\s*\(\S*\)$/let(:\1) { \2 }/
+  :normal! ==
+endfunction
+:command! PromoteToLet :call PromoteToLet()
+
+function! DemoteFromLet()
+  :normal! dd
+  :normal! P
+  :s/let(:\(\S*\))\s*{\s*\(\S\+\)\s*}/\1 = \2/
+  :normal! ==
+endfunction
+:command! DemoteFromLet :call DemoteFromLet()
+
 function Rspec_line()
   if exists('$TMUX')
     execute ':Tmux ' . 'bundle exec rspec ' . bufname('%') . ':'
