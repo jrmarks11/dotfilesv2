@@ -71,8 +71,8 @@ nmap <SPACE>rl :RspecLine<CR>
 nmap <SPACE>ry :RspecLineCopy<CR>
 
 " search
-nnoremap <SPACE><SPACE> :'{,'}s/\<<C-R><C-W>\>/
-nnoremap <SPACE>% :%s/\<<C-R><C-W>\>/
+nnoremap <SPACE><SPACE> :'{,'}s/\<<C-R><C-W>\>//g<LEFT><LEFT>
+nnoremap <SPACE>% :%s/\<<C-R><C-W>\>//g<LEFT><LEFT>
 nmap <SPACE>ff :FzfVimGrep<SPACE>
 nmap <SPACE>fg :grep<SPACE>
 nmap <SPACE>fr :History<CR>
