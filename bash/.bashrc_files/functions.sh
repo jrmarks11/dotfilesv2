@@ -31,5 +31,10 @@ tm() {
   if [ $1 ]; then
      tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s $1 && tmux $change -t "$1"); return
   fi
-  session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
+  if (( $(tmux list-sessions | wc -l) == 1 )); then
+    session=$(tmux list-sessions -F "#{session_name}")
+  else
+    session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0)
+  fi
+  tmux $change -t "$session" || tm $(whoami)
 }
