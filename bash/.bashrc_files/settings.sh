@@ -5,7 +5,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 if [ -d "/usr/local/bin" ] ; then
-  PATH="$PATH:/usr/local/bin"
+  PATH="/usr/local/bin:$PATH"
 fi
 
 if [ -d "$HOME/dbrady-bin" ] ; then
