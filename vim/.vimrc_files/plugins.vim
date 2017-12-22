@@ -3,6 +3,7 @@ scriptencoding utf-8
 call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'andrewradev/splitjoin.vim'
+  Plug 'andrewradev/switch.vim'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'jgdavey/tslime.vim'
   Plug 'junegunn/fzf'
