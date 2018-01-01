@@ -12,6 +12,10 @@ if [ -d "$HOME/dbrady-bin" ] ; then
   PATH="$PATH:$HOME/dbrady-bin"
 fi
 
+if [ -d "$HOME/.cargo/bin" ] ; then
+  PATH="$PATH:$HOME/.cargo/bin"
+fi
+
 export PATH="/usr/local/sbin:$PATH"
 
 if [ -z "$SSH_AUTH_SOCK" ] ; then
