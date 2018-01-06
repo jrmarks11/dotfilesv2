@@ -13,22 +13,11 @@ let g:airline_section_z = '%c'
 let g:airline_skip_empty_sections = 1
 let g:airline_theme='tomorrow'
 
-let g:fugitive_github_domains = ['git.innova-partners.com']
-
 " I always reload gitgutter on any edit so n need for these to be on
 let g:gitgutter_eager = 0
 let g:gitgutter_realtime = 0
 
 let g:gutentags_ctags_tagfile = '.tags'
-
-" Dont show the netrw banner
-let g:netrw_banner = 0
-" Open netrw files in the previous window
-let g:netrw_browse_split = 4
-" tree style listing in netrw
-let g:netrw_liststyle = 3
-" netrw is 15% of the screen
-let g:netrw_winsize = 15
 
 " I want my own tmux navigator maps
 let g:tmux_navigator_no_mappings = 1

@@ -15,15 +15,8 @@ augroup Formatting
   au BufWritePre * : %s/\n\n\n\+//e | %s/\s\+$//e
 augroup END
 
-augroup QuickFix
-  au!
-  au QuickFixCmdPost [^l]* cwindow
-  au QuickFixCmdPost    l* lwindow
-  au VimEnter            * cwindow
-augroup END
-
   " Save window position when leaving buffers
-augroup RestoreCursorPositionGroup
+augroup RestoreCursorPosition
   au!
   au BufLeave * let b:winview = winsaveview()
   au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
