@@ -1,4 +1,5 @@
 scriptencoding utf-8
+let g:mapleader=','
 
 " expirimental
 nmap <SPACE>d "_d

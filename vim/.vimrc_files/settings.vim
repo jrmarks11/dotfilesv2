@@ -36,6 +36,7 @@ set smarttab
 set splitbelow
 set splitright
 set tabstop=2
+set timeoutlen=300
 set undodir=$HOME/.vim-undo
 set undofile
 set undolevels=1000
