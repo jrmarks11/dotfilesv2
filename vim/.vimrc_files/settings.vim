@@ -17,6 +17,7 @@ set cursorline
 set display+=lastline
 set expandtab
 set formatoptions+=j " Delete comment character when joining commented lines
+set hidden
 set history=1000
 set hlsearch
 set ignorecase
