@@ -3,13 +3,7 @@ augroup AutoResize
   au VimResized * wincmd =
 augroup END
 
-augroup AutoSaveAndRead
-  au!
-  au TextChanged,InsertLeave,FocusLost * silent! wall | GitGutter
-  au CursorHold *                        silent! checktime
-augroup END
-
-  " Remove extra newlines and trailng whitspace when saving
+" Remove extra newlines and trailng whitspace when saving
 augroup Formatting
   au!
   au BufWritePre * : %s/\n\n\n\+//e | %s/\s\+$//e

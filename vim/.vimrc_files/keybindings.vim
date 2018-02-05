@@ -22,6 +22,7 @@ nmap     <SPACE>gb      :Gblame<CR>
 nmap     <SPACE>gd      :Gdiff<CR>
 nmap     <SPACE>i       :BLines<CR>
 nmap     <SPACE>I       :Lines<CR>
+nmap     <SPACE>l       :ALEToggle<CR>
 nmap     <SPACE>rl      :RspecLine<CR>
 nmap     <SPACE>rs      :RspecFile<CR>
 nmap     <SPACE>t       :Files<CR>
