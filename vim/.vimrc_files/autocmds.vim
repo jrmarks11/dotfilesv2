@@ -9,7 +9,7 @@ augroup Formatting
   au BufWritePre * : %s/\n\n\n\+//e | %s/\s\+$//e
 augroup END
 
-  " Save window position when leaving buffers
+" Save window position when leaving buffers
 augroup RestoreCursorPosition
   au!
   au BufLeave * let b:winview = winsaveview()
