@@ -15,6 +15,7 @@ nmap     <SPACE><TAB>   :b#<CR>
 nmap     <SPACE>a       :A<CR>
 nmap     <SPACE>b       :Buffer<CR>
 nmap     <SPACE>c       :GitGutterLineHighlightsToggle<CR>
+vmap     <SPACE>f       y:FzfVimGrep<SPACE><C-R>0<CR>
 nmap     <SPACE>ff      :FzfVimGrep<SPACE>
 nmap     <SPACE>fr      :History<CR>
 nmap     <SPACE>fw      :FzfVimGrep<SPACE><C-R><C-W><CR>
