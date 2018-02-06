@@ -22,7 +22,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-unimpaired'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  Plug "w0rp/ale"
+  Plug 'w0rp/ale'
 
 " text-objects
   Plug 'adriaanzon/vim-textobj-matchit'
