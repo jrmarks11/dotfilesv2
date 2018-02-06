@@ -7,6 +7,8 @@ nmap <SPACE>p "0p
 nnoremap Q @q
 xnoremap Q :'<,'> :normal @q<CR>
 xnoremap . :norm.<CR>
+nmap s <Nop>
+xmap s <Nop>
 
 " command
 nnoremap <SPACE>%       :%s/\<<C-R><C-W>\>//g<LEFT><LEFT>
