@@ -19,5 +19,20 @@ let g:gitgutter_realtime = 0
 
 let g:gutentags_ctags_tagfile = '.tags'
 
+let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
+
+let g:sandwich#recipes += [
+      \   {'buns': ['{ ', ' }'], 'nesting': 1, 'match_syntax': 1,
+      \    'kind': ['add', 'replace'], 'action': ['add'], 'input': ['{']},
+      \   {'buns': ['{\s*', '\s*}'],   'nesting': 1, 'regex': 1,
+      \    'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'],
+      \    'action': ['delete'], 'input': ['{']},
+      \   {'buns': ['( ', ' )'], 'nesting': 1, 'match_syntax': 1,
+      \    'kind': ['add', 'replace'], 'action': ['add'], 'input': [')']},
+      \   {'buns': ['(\s*', '\s*)'],   'nesting': 1, 'regex': 1,
+      \    'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'],
+      \    'action': ['delete'], 'input': [')']}
+      \ ]
+
 " I want my own tmux navigator maps
 let g:tmux_navigator_no_mappings = 1

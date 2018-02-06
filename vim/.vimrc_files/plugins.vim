@@ -11,19 +11,18 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/vim-easy-align'
   Plug 'ludovicchabant/vim-gutentags'
+  Plug 'machakann/vim-sandwich'
   Plug 'nelstrom/vim-visual-star-search'
   Plug 'NLKNguyen/papercolor-theme'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rails'
-  Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-rsi'
-  Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'w0rp/ale'
+  Plug "w0rp/ale"
 
 " text-objects
   Plug 'adriaanzon/vim-textobj-matchit'
@@ -31,6 +30,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'julian/vim-textobj-variable-segment'
   Plug 'kana/vim-textobj-entire'
   Plug 'kana/vim-textobj-indent'
+  Plug 'kana/vim-textobj-line'
   Plug 'kana/vim-textobj-user'
 call plug#end()
 

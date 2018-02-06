@@ -8,7 +8,6 @@ endif
 
 set autoindent
 set autoread
-set autowrite
 set backspace=indent,eol,start
 set clipboard=unnamed
 set colorcolumn=80
@@ -17,7 +16,6 @@ set cursorline
 set display+=lastline
 set expandtab
 set formatoptions+=j " Delete comment character when joining commented lines
-set hidden
 set history=1000
 set hlsearch
 set ignorecase
@@ -38,7 +36,6 @@ set smarttab
 set splitbelow
 set splitright
 set tabstop=2
-set timeoutlen=300
 set undodir=$HOME/.vim-undo
 set undofile
 set undolevels=1000
