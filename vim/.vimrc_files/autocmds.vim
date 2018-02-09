@@ -5,19 +5,23 @@ augroup END
 
 augroup AutoSaveAndRead
   au!
-  au InsertLeave,TextChanged * silent! w | silent! GitGutter
+  au InsertLeave,TextChanged * silent! wall | silent! GitGutter
   au CursorHold              * silent!checktime
 augroup END
 
-" Remove extra newlines and trailng whitspace when saving
 augroup Formatting
   au!
+  " Remove extra newlines and trailng whitspace when saving
   au BufWritePre * : %s/\n\n\n\+//e | %s/\s\+$//e
 augroup END
 
-" Save window position when leaving buffers
-augroup RestoreCursorPosition
-  au!
-  au BufLeave * let b:winview = winsaveview()
-  au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
+augroup vimrcEx
+  autocmd!
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it for commit messages, when the position is invalid, or when
+  " inside an event handler.
+  autocmd BufReadPost *
+    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
 augroup END
