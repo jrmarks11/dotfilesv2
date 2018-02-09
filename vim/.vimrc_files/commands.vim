@@ -5,7 +5,6 @@ else
 endif
 
 function Rspec_line()
-  execute ':wall'
   if exists('$TMUX')
     execute ':Tmux ' . 'bundle exec rspec ' . bufname('%') . ':'
           \ . line('.') . ' --format d'
@@ -17,7 +16,6 @@ endfunction
 command RspecLine call Rspec_line()
 
 function Rspec_file()
-  execute ':wall'
   if exists('$TMUX')
     execute ':Tmux ' . 'bundle exec rspec ' . bufname('%')
           \ . ' --format d'
