@@ -50,6 +50,6 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 
 " need to move this stuff
-nmap <Leader>j :SplitjoinJoin<cr>
-nmap <Leader>s :SplitjoinSplit<cr>
+nmap <LEADER>j :SplitjoinJoin<cr>
+nmap <LEADER>s :SplitjoinSplit<cr>
 nmap <LEADER>t :Switch<cr>
