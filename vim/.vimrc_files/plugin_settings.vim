@@ -13,7 +13,6 @@ let g:airline_section_z = '%c'
 let g:airline_skip_empty_sections = 1
 let g:airline_theme='tomorrow'
 
-" I always reload gitgutter on any edit so n need for these to be on
 let g:gitgutter_eager = 0
 let g:gitgutter_realtime = 0
 
@@ -34,5 +33,9 @@ let g:sandwich#recipes += [
       \    'action': ['delete'], 'input': [')']}
       \ ]
 
-" I want my own tmux navigator maps
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+let g:switch_mapping = ""
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
 let g:tmux_navigator_no_mappings = 1
