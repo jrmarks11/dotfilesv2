@@ -2,44 +2,52 @@ scriptencoding utf-8
 let g:mapleader='s'
 
 nnoremap <SPACE><SPACE> :'{,'}s/\<<C-R><C-W>\>//g<LEFT><LEFT>
-nmap     <SPACE><TAB>   :b#<CR>
-nmap     <SPACE>a       :A<CR>
-nmap     <SPACE>b       :Buffer<CR>
-nmap     <SPACE>c       :GitGutterLineHighlightsToggle<CR>
-vmap     <SPACE>f       y:FzfVimGrep<SPACE><C-R>0<CR>
-nmap     <SPACE>ff      :FzfVimGrep<SPACE>
-nmap     <SPACE>fr      :History<CR>
-nmap     <SPACE>fw      :FzfVimGrep<SPACE><C-R><C-W><CR>
-nmap     <SPACE>gb      :Gblame<CR>
-nmap     <SPACE>gd      :Gdiff<CR>
-nmap     <SPACE>i       :BLines<CR>
-nmap     <SPACE>l       :ALEToggle<CR>
-nmap     <SPACE>rl      :RspecLine<CR>
-nmap     <SPACE>rs      :RspecFile<CR>
+nnoremap <SPACE><TAB>   :b#<CR>
+nnoremap <SPACE>a       :A<CR>
+nnoremap <SPACE>b       :Buffer<CR>
+nnoremap <SPACE>c       :GitGutterLineHighlightsToggle<CR>
+vnoremap <SPACE>f       y:FzfVimGrep<SPACE><C-R>0<CR>
+nnoremap <SPACE>ff      :FzfVimGrep<SPACE>
+nnoremap <SPACE>fr      :History<CR>
+nnoremap <SPACE>fw      :FzfVimGrep<SPACE><C-R><C-W><CR>
+nnoremap <SPACE>gb      :Gblame<CR>
+nnoremap <SPACE>gd      :Gdiff<CR>
+nnoremap <SPACE>i       :BLines<CR>
+nnoremap <SPACE>l       :ALEToggle<CR>
+nnoremap <SPACE>rl      :RspecLine<CR>
+nnoremap <SPACE>rs      :RspecFile<CR>
 nnoremap <SPACE>s       :%s/\<<C-R><C-W>\>//g<LEFT><LEFT>
-nmap     <SPACE>t       :Files<CR>
-nmap     <SPACE>u       :PlugUpdate<CR>
-nmap     <SPACE>x       :PlugClean<CR>
-nmap     <SPACE>v       :source $MYVIMRC<CR>
+nnoremap <SPACE>t       :Files<CR>
+nnoremap <SPACE>u       :PlugUpdate<CR>
+nnoremap <SPACE>x       :PlugClean<CR>
+nnoremap <SPACE>v       :source $MYVIMRC<CR>
 
-nnoremap <silent> <C-J>h :TmuxNavigateLeft<CR>
-nnoremap <silent> <C-J>j :TmuxNavigateDown<CR>
-nnoremap <silent> <C-J>k :TmuxNavigateUp<CR>
-nnoremap <silent> <C-J>l :TmuxNavigateRight<CR>
-nnoremap <silent> <C-J>b :TmuxNavigatePrevious<CR>
+nnoremap <SILENT><C-J>h :TmuxNavigateLeft<CR>
+nnoremap <SILENT><C-J>j :TmuxNavigateDown<CR>
+nnoremap <SILENT><C-J>k :TmuxNavigateUp<CR>
+nnoremap <SILENT><C-J>l :TmuxNavigateRight<CR>
+nnoremap <SILENT><C-J>b :TmuxNavigatePrevious<CR>
 
-nnoremap '      `
-nnoremap `      '
-xmap     ga     <Plug>(EasyAlign)
-nmap     ga     <Plug>(EasyAlign)
-nmap     Y      y$
-nnoremap <C-J>  <C-W>
-nnoremap <C-J>x <C-W>q
-nnoremap Q      @q
-xnoremap Q      :'<,'> :normal @q<CR>
-xnoremap .      :norm.<CR>
-nmap     s      <Nop>
-xmap     s      <Nop>
+nnoremap <C-J>          <C-W>
+nnoremap <C-J>x         <C-W>q
+nnoremap Q              @q
+xnoremap Q              :'<,'>  :normal @q<CR>
+xnoremap .              :norm.<CR>
+nnoremap     '              `
+nnoremap     `              '
+nmap     s              <NOP>
+xmap     s              <NOP>
+nmap     Y              y$
+
+nnoremap <LEADER>j      :SplitjoinJoin<cr>
+nnoremap <LEADER>s      :SplitjoinSplit<cr>
+nnoremap <LEADER>t      :Switch<cr>
+xnoremap <CR>           <Plug>(EasyAlign)
+nnoremap <LEADER>l      <Plug>(EasyAlign)
+
+inoremap ,.             <C-X><C-L>
+inoremap ,<TAB>         <C-X><C-O>
+inoremap ,,             <C-X><C-P>
 
 " %% expands to current path in command mode
 cnoremap <expr> %%  getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
@@ -48,8 +56,3 @@ cnoremap <expr> %%  getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 endif
-
-" need to move this stuff
-nmap <LEADER>j :SplitjoinJoin<cr>
-nmap <LEADER>s :SplitjoinSplit<cr>
-nmap <LEADER>t :Switch<cr>

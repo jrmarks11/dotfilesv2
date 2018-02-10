@@ -25,6 +25,7 @@ set listchars=tab:▸\ ,trail:·,nbsp:␣
 set noerrorbells
 set nrformats-=octal
 set number
+set omnifunc=syntaxcomplete#Complete
 set scrolljump=8
 set scrolloff=1
 set shiftround
