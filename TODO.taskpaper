@@ -1,15 +1,16 @@
--  Go to the 3rd last file @done(2018-02-10)
--  Write a function for git blame method @done(2018-02-10)
--  Clean up the spec methods to use a function @done(2018-02-10)
--  Build my own paste plugin instead of impaired @done(2018-02-10)
--  Remove vim impaired and keybind the stuff i want
+-  Write my own alternate file plugin
+-  Remove vim-rails
 -  Build my own taskpaper replacement that is minimal and remove taskpaper
 -  Build my own tslime replacement that is minimal
 -  Maybe remove endwise
--  Think about removing fugative @done(2018-02-10)
--  Write my own alternate file plugin
--  Remove vim-rails
--  Build my own status line
--  Remove airline
 -  Consider going back to one file
 -  Would be nice to save last spec and last non spec file
+Archive:
+	-  Build my own status line @done(2018-02-10) @project
+	-  Remove airline @done(2018-02-10) @project
+	-  Go to the 3rd last file @done(2018-02-10) @project
+	-  Write a function for git blame method @done(2018-02-10) @project
+	-  Clean up the spec methods to use a function @done(2018-02-10) @project
+	-  Build my own paste plugin instead of impaired @done(2018-02-10) @project
+	-  Remove vim impaired and keybind the stuff i want @done(2018-02-10) @project
+	-  Think about removing fugative @done(2018-02-10) @project

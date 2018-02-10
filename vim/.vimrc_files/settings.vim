@@ -20,6 +20,7 @@ set history=1000
 set hlsearch
 set ignorecase
 set incsearch
+set laststatus=2
 set list
 set listchars=tab:▸\ ,trail:·,nbsp:␣
 set noerrorbells
@@ -36,6 +37,7 @@ set smartcase
 set smarttab
 set splitbelow
 set splitright
+set statusline=\ %f%=\%c\ -\ %{ALEGetStatusLine()}
 set tabstop=2
 set undodir=$HOME/.vim-undo
 set undofile
