@@ -24,7 +24,7 @@ xnoremap <space>s       y:%s/<c-r><c-0>//g<left><left>
 nnoremap <space>t       :Files<cr>
 nnoremap <space>u       :PlugUpdate<cr>
 nnoremap <space>x       :PlugClean<cr>
-nnoremap <space>y       ?require \'p<cr>dj
+nnoremap <space>y       ?require \'pry\'<cr>dj
 nnoremap <space>v       :source $MYVIMRC<cr>
 
 nnoremap Q @q
