@@ -46,6 +46,9 @@ inoremap ,.     <c-x><c-l>
 inoremap ,<tab> <c-x><c-o>
 inoremap ,,     <c-x><c-p>
 
+nnoremap [<space> O<esc>j
+nnoremap ]<space> o<esc>k
+
 nnoremap <c-j>          <c-w>
 nnoremap <c-j>x         <c-w>q
 nnoremap <silent><c-j>h :TmuxNavigateLeft<cr>
