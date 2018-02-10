@@ -4,26 +4,21 @@ else
   let g:loaded_jm_commands = 1
 endif
 
-function Rspec_line()
-  if exists('$TMUX')
-    execute ':Tmux ' . 'bundle exec rspec ' . bufname('%') . ':'
-          \ . line('.') . ' --format d'
-  else
-    execute '!' . 'bundle exec rspec ' . bufname('%') . ':' . line('.')
-          \ . ' --format d'
-  endif
+function Git_blame(start, end)
+  execute '!git blame ' . expand('%:p') . ' | sed -n '. line(a:start). ','
+        \ . line(a:end) . 'p'
 endfunction
-command RspecLine call Rspec_line()
 
-function Rspec_file()
+function Rspec_command(extra)
   if exists('$TMUX')
-    execute ':Tmux ' . 'bundle exec rspec ' . bufname('%')
-          \ . ' --format d'
+    let s:base = ':Tmux '
   else
-    execute '!' . 'bundle exec rspec ' . bufname('%') . ' --format d'
+    let s:base = '!'
   endif
+  execute s:base . 'bundle exec rspec ' . bufname('%') . a:extra . ' --format d'
 endfunction
-command RspecFile call Rspec_file()
+command RspecFile call Rspec_command('')
+command RspecLine call Rspec_command(':' . line('.'))
 
 command -bang -nargs=* FzfVimGrep call
       \ fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings
