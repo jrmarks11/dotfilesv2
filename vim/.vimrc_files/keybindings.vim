@@ -39,11 +39,11 @@ nmap     s              <NOP>
 xmap     s              <NOP>
 nmap     Y              y$
 
-nnoremap <LEADER>j      :SplitjoinJoin<cr>
-nnoremap <LEADER>s      :SplitjoinSplit<cr>
-nnoremap <LEADER>t      :Switch<cr>
-xnoremap <CR>           <Plug>(EasyAlign)
-nnoremap <LEADER>l      <Plug>(EasyAlign)
+nnoremap sj             :SplitjoinJoin<CR>
+nnoremap ss             :SplitjoinSplit<CR>
+nnoremap st             :Switch<CR>
+xnoremap st             <Plug>(EasyAlign)
+nnoremap sl             <Plug>(EasyAlign)
 
 inoremap ,.             <C-X><C-L>
 inoremap ,<TAB>         <C-X><C-O>
@@ -53,6 +53,4 @@ inoremap ,,             <C-X><C-P>
 cnoremap <expr> %%  getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
 
 " Clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-  nnoremap <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
-endif
+nnoremap <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
