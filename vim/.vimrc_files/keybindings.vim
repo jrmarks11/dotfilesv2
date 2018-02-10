@@ -1,56 +1,61 @@
 scriptencoding utf-8
 let g:mapleader='s'
 
-nnoremap <SPACE><SPACE> :'{,'}s/\<<C-R><C-W>\>//g<LEFT><LEFT>
-nnoremap <SPACE><TAB>   :b#<CR>
-nnoremap <SPACE>a       :A<CR>
-nnoremap <SPACE>b       :Buffer<CR>
-nnoremap <SPACE>c       :GitGutterLineHighlightsToggle<CR>
-vnoremap <SPACE>f       y:FzfVimGrep<SPACE><C-R>0<CR>
-nnoremap <SPACE>ff      :FzfVimGrep<SPACE>
-nnoremap <SPACE>fr      :History<CR>
-nnoremap <SPACE>fw      :FzfVimGrep<SPACE><C-R><C-W><CR>
-nnoremap <SPACE>gb      :Gblame<CR>
-nnoremap <SPACE>gd      :Gdiff<CR>
-nnoremap <SPACE>i       :BLines<CR>
-nnoremap <SPACE>l       :ALEToggle<CR>
-nnoremap <SPACE>rl      :RspecLine<CR>
-nnoremap <SPACE>rs      :RspecFile<CR>
-nnoremap <SPACE>s       :%s/\<<C-R><C-W>\>//g<LEFT><LEFT>
-nnoremap <SPACE>t       :Files<CR>
-nnoremap <SPACE>u       :PlugUpdate<CR>
-nnoremap <SPACE>x       :PlugClean<CR>
-nnoremap <SPACE>v       :source $MYVIMRC<CR>
+nnoremap <space><space> :'{,'}s/\<<c-r><c-w>\>//g<left><left>
+nnoremap <space><tab>   :b#<cr>
+nnoremap <space>a       :A<cr>
+nnoremap <space>b       :Buffer<cr>
+nnoremap <space>c       :GitGutterLineHighlightsToggle<cr>
+nnoremap <space>d       orequire 'pry'<cr>binding.pry<esc>
+xnoremap <space>f       y:FzfVimGrep<space><c-r>0<cr>
+nnoremap <space>ff      :FzfVimGrep<space>
+nnoremap <space>fr      :History<cr>
+nnoremap <space>fw      :FzfVimGrep<space><c-r><c-w><cr>
+nnoremap <space>i       :BLines<cr>
+xnoremap <space>g       :<c-u>!git blame <c-r>=expand('%:p')<cr> \|
+                        \sed -n <c-r>=line("'<")<cr>,<c-r>=line("'>")<cr>p <cr>
+nnoremap <space>g       :!git blame <c-r>=expand('%:p')<cr> \|
+                        \ sed -n <c-r>=line('.')<cr>,<c-r>=line('.')<cr>p <cr>
+nnoremap <space>l       :ALEToggle<cr>
+nnoremap <space>p       :set paste<cr>]p:set nopaste<cr>
+nnoremap <space>rl      :RspecLine<cr>
+nnoremap <space>rs      :RspecFile<cr>
+nnoremap <space>s       :%s/\<<c-r><c-w>\>//g<left><left>
+nnoremap <space>t       :Files<cr>
+nnoremap <space>u       :PlugUpdate<cr>
+nnoremap <space>x       :PlugClean<cr>
+nnoremap <space>y       ?require \'p<cr>dj
+nnoremap <space>v       :source $MYVIMRC<cr>
 
-nnoremap <SILENT><C-J>h :TmuxNavigateLeft<CR>
-nnoremap <SILENT><C-J>j :TmuxNavigateDown<CR>
-nnoremap <SILENT><C-J>k :TmuxNavigateUp<CR>
-nnoremap <SILENT><C-J>l :TmuxNavigateRight<CR>
-nnoremap <SILENT><C-J>b :TmuxNavigatePrevious<CR>
+nnoremap Q @q
+xnoremap Q :'<,'> :normal @q<cr>
+xnoremap . :norm.<cr>
+nnoremap ' `
+nnoremap ` '
+nnoremap Y y$
 
-nnoremap <C-J>          <C-W>
-nnoremap <C-J>x         <C-W>q
-nnoremap Q              @q
-xnoremap Q              :'<,'>  :normal @q<CR>
-xnoremap .              :norm.<CR>
-nnoremap     '              `
-nnoremap     `              '
-nmap     s              <NOP>
-xmap     s              <NOP>
-nmap     Y              y$
+nmap     s  <nop>
+xmap     s  <nop>
+nnoremap sj :SplitjoinJoin<cr>
+nnoremap ss :SplitjoinSplit<cr>
+nnoremap st :Switch<cr>
+xmap     sl <Plug>(EasyAlign)
+nmap     sl <Plug>(EasyAlign)
 
-nnoremap sj             :SplitjoinJoin<CR>
-nnoremap ss             :SplitjoinSplit<CR>
-nnoremap st             :Switch<CR>
-xnoremap st             <Plug>(EasyAlign)
-nnoremap sl             <Plug>(EasyAlign)
+inoremap ,.     <c-x><c-l>
+inoremap ,<tab> <c-x><c-o>
+inoremap ,,     <c-x><c-p>
 
-inoremap ,.             <C-X><C-L>
-inoremap ,<TAB>         <C-X><C-O>
-inoremap ,,             <C-X><C-P>
+nnoremap <c-j>          <c-w>
+nnoremap <c-j>x         <c-w>q
+nnoremap <silent><c-j>h :TmuxNavigateLeft<cr>
+nnoremap <silent><c-j>j :TmuxNavigateDown<cr>
+nnoremap <silent><c-j>k :TmuxNavigateUp<cr>
+nnoremap <silent><c-j>l :TmuxNavigateRight<cr>
+nnoremap <silent><c-j>b :TmuxNavigatePrevious<cr>
 
 " %% expands to current path in command mode
 cnoremap <expr> %%  getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
 
 " Clear the highlighting of :set hlsearch.
-nnoremap <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+nnoremap <c-l> :nohlsearch<c-r>=has('diff')?'<Bar>diffupdate':''<cr><cr><c-l>

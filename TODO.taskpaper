@@ -1,10 +1,12 @@
 -  Go to the 3rd last file
+-  Write a functionn for git blame method
+-  Clean up the spec methods to use a function
 -  Build my own paste plugin instead of impaired
 -  Remove vim impaired and keybind the stuff i want
 -  Build my own taskpaper replacement that is minimal and remove taskpaper
 -  Build my own tslime replacement that is minimal
 -  Maybe remove endwise
--  Think about removing fugative
+-  Think about removing fugative @done(2018-02-10)
 -  Write my own alternate file plugin
 -  Remove vim-rails
 -  Build my own status line
