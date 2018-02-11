@@ -4,7 +4,6 @@ let g:gitgutter_realtime = 0
 let g:gutentags_ctags_tagfile = '.tags'
 
 let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
-
 let g:sandwich#recipes += [
       \   {'buns': ['{ ', ' }'], 'nesting': 1, 'match_syntax': 1,
       \    'kind': ['add', 'replace'], 'action': ['add'], 'input': ['{']},
