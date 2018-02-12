@@ -5,12 +5,14 @@
 -  Maybe remove endwise
 -  Consider going back to one file
 -  Would be nice to save last spec and last non spec file
+-  Move functions to autoload
+-  Build a plugin for fzf colorscheme
 Archive:
-	-  Build my own status line @done(2018-02-10) @project
-	-  Remove airline @done(2018-02-10) @project
-	-  Go to the 3rd last file @done(2018-02-10) @project
-	-  Write a function for git blame method @done(2018-02-10) @project
-	-  Clean up the spec methods to use a function @done(2018-02-10) @project
-	-  Build my own paste plugin instead of impaired @done(2018-02-10) @project
-	-  Remove vim impaired and keybind the stuff i want @done(2018-02-10) @project
-	-  Think about removing fugative @done(2018-02-10) @project
+  -  Build my own status line @done(2018-02-10) @project
+  -  Remove airline @done(2018-02-10) @project
+  -  Go to the 3rd last file @done(2018-02-10) @project
+  -  Write a function for git blame method @done(2018-02-10) @project
+  -  Clean up the spec methods to use a function @done(2018-02-10) @project
+  -  Build my own paste plugin instead of impaired @done(2018-02-10) @project
+  -  Remove vim impaired and keybind the stuff i want @done(2018-02-10) @project
+  -  Think about removing fugative @done(2018-02-10) @project
