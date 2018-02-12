@@ -27,18 +27,21 @@ nnoremap <space>x       :PlugClean<cr>
 nnoremap <space>y       ?require \'pry\'<cr>dj
 nnoremap <space>v       :source $MYVIMRC<cr>
 
+nnoremap ` '
+nnoremap ' `
+nnoremap \ :SecondToLastBuffer<cr>
+xnoremap . :norm.<cr>
 nnoremap Q @q
 xnoremap Q :'<,'> :normal @q<cr>
-xnoremap . :norm.<cr>
-nnoremap ' `
-nnoremap ` '
 nnoremap Y y$
 
 nmap     s  <nop>
 xmap     s  <nop>
+
 nnoremap sj :SplitjoinJoin<cr>
 nnoremap ss :SplitjoinSplit<cr>
 nnoremap st :Switch<cr>
+
 xmap     sl <Plug>(EasyAlign)
 nmap     sl <Plug>(EasyAlign)
 
