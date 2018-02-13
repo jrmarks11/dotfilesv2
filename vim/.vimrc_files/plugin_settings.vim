@@ -1,3 +1,7 @@
+let g:fzf_files_options =
+  \ '--reverse ' .
+  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+
 let g:gitgutter_eager = 0
 let g:gitgutter_realtime = 0
 

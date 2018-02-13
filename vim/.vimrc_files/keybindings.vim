@@ -9,8 +9,10 @@ nnoremap <space>b       :Buffer<cr>
 nnoremap <space>c       :GitGutterLineHighlightsToggle<cr>
 nnoremap <space>d       orequire 'pry'<cr>binding.pry<esc>
 xnoremap <space>f       y:FzfVimGrep<space><c-r>0<cr>
+nnoremap <space>fb      :BranchFiles<cr>
 nnoremap <space>ff      :FzfVimGrep<space>
 nnoremap <space>fr      :History<cr>
+nnoremap <space>fu      :UncommitedFiles<cr>
 nnoremap <space>fw      :FzfVimGrep<space><c-r><c-w><cr>
 nnoremap <space>i       :BLines<cr>
 xnoremap <space>g       :<c-u>call Git_blame("'<", "'>")<cr>

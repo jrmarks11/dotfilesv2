@@ -25,6 +25,22 @@ command -bang -nargs=* FzfVimGrep call
       \ --ignore-case --hidden --follow --glob "!.git/*" --color "always" '
       \ .shellescape(<q-args>), 1, <bang>0)
 
+let s:options =
+  \ '--reverse '.
+  \ '--preview "(git diff --color=always master -- {} | tail -n +5 || cat {})'.
+  \ '2> /dev/null | head -' . &lines . '"'
+
+let s:gs        = "git status --porcelain | awk '{print $2}'"
+let s:name_only = 'git diff --name-only HEAD $(git merge-base HEAD master)'
+let s:sort      = '| sort | uniq'
+let s:bf_source = '(' . s:gs. ')' . s:sort
+let s:bf_opts   = { 'source': s:bf_source, 'sink': 'e', 'options': s:options }
+let s:uf_source = '(' . s:gs . ';' . s:name_only . ')' . s:sort
+let s:uf_opts   = { 'source': s:uf_source, 'sink': 'e', 'options': s:options }
+
+command BranchFiles call fzf#run(fzf#wrap('BranchFiles', s:bf_opts, 0))
+command UncommitedFiles call fzf#run(fzf#wrap('UncommitedFiles', s:uf_opts, 0))
+
 function Buflisted()
   let s:no_qf =  "buflisted(v:val) && getbufvar(v:val, '&filetype') !=# 'qf'"
   return filter(range(1, bufnr('$')), s:no_qf)
@@ -44,4 +60,3 @@ function Second_to_last()
   end
 endfunction
 command SecondToLastBuffer call Second_to_last()
-
