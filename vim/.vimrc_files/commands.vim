@@ -71,9 +71,9 @@ let g:alt_file_patterns =
 
 function Alt_file()
   let l:file = expand('%')
-  for [p, s] in g:alt_file_patterns
-    if l:file =~ p
-      execute 'e '. substitute(l:file, p, s, 'g')
+  for [l:pattern, l:substitution] in g:alt_file_patterns
+    if l:file =~ l:pattern
+      execute 'e '. substitute(l:file, l:pattern, l:substitution, 'g')
       return
     endif
   endfor

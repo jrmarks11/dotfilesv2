@@ -6,7 +6,6 @@ xnoremap <space><space> y:'{,'}s/<c-r><c-0>//g<left><left>
 nnoremap <space><tab>   :b#<cr>
 nnoremap <space>a       :A<cr>
 nnoremap <space>b       :Buffer<cr>
-nnoremap <space>c       :GitGutterLineHighlightsToggle<cr>
 nnoremap <space>d       Obinding.pry<esc>
 xnoremap <space>f       y:FzfVimGrep<space><c-r>0<cr>
 nnoremap <space>fb      :BranchFiles<cr>
@@ -32,7 +31,7 @@ nnoremap <space>v       :source $MYVIMRC<cr>
 nnoremap ` '
 nnoremap ' `
 nnoremap \ :SecondToLastBuffer<cr>
-xnoremap . :norm.<cr>
+xnoremap . :normal .<cr>
 nnoremap Q @q
 xnoremap Q :'<,'> :normal @q<cr>
 nnoremap Y y$
@@ -42,7 +41,7 @@ xmap     s  <nop>
 xmap     sl <Plug>(EasyAlign)
 nmap     sl <Plug>(EasyAlign)
 
-inoremap ,.     <c-x><c-l>
+inoremap ;;     <c-x><c-l>
 inoremap ,<tab> <c-x><c-o>
 inoremap ,,     <c-x><c-p>
 

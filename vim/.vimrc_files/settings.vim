@@ -13,9 +13,11 @@ set clipboard=unnamed
 set colorcolumn=80
 set complete-=i
 set cursorline
+set directory=~/.vim-swap//
 set display+=lastline
 set expandtab
 set formatoptions+=j " Delete comment character when joining commented lines
+set grepformat=%f:%l:%c:%m
 set history=1000
 set hlsearch
 set ignorecase
@@ -50,7 +52,6 @@ set wildmode=longest,list
 if isdirectory($HOME . '/.vim-swap') == 0
   :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
 endif
-set directory=~/.vim-swap//
 
 if isdirectory($HOME . '/.vim-undo') == 0
   :silent !mkdir -p ~/.vim-undo >/dev/null 2>&1
@@ -61,7 +62,6 @@ if executable('rg')
 elseif executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 endif
-set grepformat=%f:%l:%c:%m
 
 if !empty(&viminfo)
   set viminfo^=!
