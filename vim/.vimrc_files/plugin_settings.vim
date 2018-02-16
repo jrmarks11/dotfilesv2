@@ -21,9 +21,9 @@ let g:sandwich#recipes += [
       \    'action': ['delete'], 'input': [')']}
       \ ]
 
-let g:splitjoin_split_mapping = ''
-let g:splitjoin_join_mapping = ''
-let g:switch_mapping = ''
+let g:splitjoin_split_mapping = 'ss'
+let g:splitjoin_join_mapping = 'sj'
+let g:switch_mapping = 'st'
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
 let g:tmux_navigator_no_mappings = 1

@@ -38,8 +38,8 @@ let s:bf_opts   = { 'source': s:bf_source, 'sink': 'e', 'options': s:options }
 let s:uf_source = '(' . s:gs . ';' . s:name_only . ')' . s:sort
 let s:uf_opts   = { 'source': s:uf_source, 'sink': 'e', 'options': s:options }
 
-command BranchFiles call fzf#run(fzf#wrap('BranchFiles', s:bf_opts, 0))
-command UncommitedFiles call fzf#run(fzf#wrap('UncommitedFiles', s:uf_opts, 0))
+command BranchFiles call fzf#run(fzf#wrap('BranchFiles', s:uf_opts, 0))
+command UncommitedFiles call fzf#run(fzf#wrap('UncommitedFiles', s:bf_opts, 0))
 
 function Buflisted()
   let s:no_qf =  "buflisted(v:val) && getbufvar(v:val, '&filetype') !=# 'qf'"
@@ -60,3 +60,22 @@ function Second_to_last()
   end
 endfunction
 command SecondToLastBuffer call Second_to_last()
+
+let g:alt_file_patterns =
+      \ [
+      \     [ 'spec\/lib\/\(.*\)_spec.rb', 'lib\/\1.rb' ],
+      \     [ 'lib\/\(.*\).rb', 'spec\/lib\/\1_spec.rb' ],
+      \     [ 'spec\/\(.*\)_spec.rb', 'app\/\1.rb' ],
+      \     [ 'app\/\(.*\).rb', 'spec\/\1_spec.rb' ]
+      \ ]
+
+function Alt_file()
+  let l:file = expand('%')
+  for [p, s] in g:alt_file_patterns
+    if l:file =~ p
+      execute 'e '. substitute(l:file, p, s, 'g')
+      return
+    endif
+  endfor
+endfunction
+command A call Alt_file()

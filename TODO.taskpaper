@@ -1,13 +1,13 @@
--  Write my own alternate file plugin
--  Remove vim-rails
 -  Build my own taskpaper replacement that is minimal and remove taskpaper
 -  Build my own tslime replacement that is minimal
--  Maybe remove endwise
 -  Consider going back to one file
 -  Would be nice to save last spec and last non spec file
 -  Move functions to autoload
 -  Build a plugin for fzf colorscheme
 Archive:
+  -  Write my own alternate file plugin @done(2018-02-16) @project
+  -  Remove vim-rails @done(2018-02-16) @project
+  -  Maybe remove endwise @done(2018-02-16) @project
   -  Build my own status line @done(2018-02-10) @project
   -  Remove airline @done(2018-02-10) @project
   -  Go to the 3rd last file @done(2018-02-10) @project

@@ -15,8 +15,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'nelstrom/vim-visual-star-search'
   Plug 'NLKNguyen/papercolor-theme'
   Plug 'tpope/vim-commentary'
-  Plug 'tpope/vim-endwise'
-  Plug 'tpope/vim-rails'
   Plug 'w0rp/ale'
 
 " text-objects

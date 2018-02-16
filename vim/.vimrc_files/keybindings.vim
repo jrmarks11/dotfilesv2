@@ -7,7 +7,7 @@ nnoremap <space><tab>   :b#<cr>
 nnoremap <space>a       :A<cr>
 nnoremap <space>b       :Buffer<cr>
 nnoremap <space>c       :GitGutterLineHighlightsToggle<cr>
-nnoremap <space>d       orequire 'pry'<cr>binding.pry<esc>
+nnoremap <space>d       Obinding.pry<esc>
 xnoremap <space>f       y:FzfVimGrep<space><c-r>0<cr>
 nnoremap <space>fb      :BranchFiles<cr>
 nnoremap <space>ff      :FzfVimGrep<space>
@@ -26,7 +26,7 @@ xnoremap <space>s       y:%s/<c-r><c-0>//g<left><left>
 nnoremap <space>t       :Files<cr>
 nnoremap <space>u       :PlugUpdate<cr>
 nnoremap <space>x       :PlugClean<cr>
-nnoremap <space>y       ?require \'pry\'<cr>dj
+nnoremap <space>y       :g/^\W*\<binding.pry\>$/d<cr>
 nnoremap <space>v       :source $MYVIMRC<cr>
 
 nnoremap ` '
@@ -39,11 +39,6 @@ nnoremap Y y$
 
 nmap     s  <nop>
 xmap     s  <nop>
-
-nnoremap sj :SplitjoinJoin<cr>
-nnoremap ss :SplitjoinSplit<cr>
-nnoremap st :Switch<cr>
-
 xmap     sl <Plug>(EasyAlign)
 nmap     sl <Plug>(EasyAlign)
 

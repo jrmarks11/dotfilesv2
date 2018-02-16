@@ -6,7 +6,7 @@ augroup END
 augroup AutoSaveAndRead
   au!
   au InsertLeave,TextChanged * silent! wall | silent! GitGutter
-  au CursorHold              * silent!checktime
+  au CursorHold              * silent! checktime
 augroup END
 
 augroup Formatting
