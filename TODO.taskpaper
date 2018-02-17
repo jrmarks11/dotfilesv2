@@ -6,7 +6,7 @@ Archive:
 - Build my own taskpaper replacement that is minimal and remove taskpaper @done(2018-02-17)
 - If i hit enter on a todo should start another todo @done(2018-02-17)
 - if i use o or O on a todo it should start another todo @done(2018-02-17)
-- if i use o or O on a non todo it shouldnt create one @done(2018-02-17)
+- if i use o or O on a non todo it shouldn't create one @done(2018-02-17)
 - if i use enter on a non todo it should just enter @done(2018-02-17)
 - mapping to toggle todo between done and not done @done(2018-02-17)
 - mapping to archive @done(2018-02-17)

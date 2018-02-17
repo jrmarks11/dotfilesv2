@@ -34,6 +34,8 @@ xnoremap . :normal .<cr>
 nnoremap Q @q
 xnoremap Q :'<,'> :normal @q<cr>
 nnoremap Y y$
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>
 
 nmap s  <nop>
 xmap s  <nop>
