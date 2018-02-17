@@ -13,6 +13,7 @@ nnoremap <space>ff      :FzfVimGrep<space>
 nnoremap <space>fr      :History<cr>
 nnoremap <space>fu      :UncommitedFiles<cr>
 nnoremap <space>fw      :FzfVimGrep<space><c-r><c-w><cr>
+nnoremap <space>h       :help<space><c-r><c-w><cr>
 nnoremap <space>i       :BLines<cr>
 xnoremap <space>g       :<c-u>call util#git_blame("'<", "'>")<cr>
 nnoremap <space>g       :call util#git_blame('.', '.')<cr>
@@ -42,14 +43,16 @@ xmap s  <nop>
 xmap sl <Plug>(EasyAlign)
 nmap sl <Plug>(EasyAlign)
 
-nnoremap [<space> O<esc>j
-nnoremap ]<space> o<esc>k
-nnoremap ]a       :next<cr>
-nnoremap [a       :previous<cr>
-nnoremap ]q       :cnext<cr>
-nnoremap [q       :cprevious<cr>
-nnoremap ]l       :lnext<cr>
-nnoremap [l       :lprevious<cr>
+nnoremap <space><cr> O<esc>j
+nnoremap <cr>        o<esc>k
+nnoremap ]a          :next<cr>
+nnoremap [a          :previous<cr>
+nnoremap ]q          :cnext<cr>
+nnoremap [q          :cprevious<cr>
+nnoremap ]l          :lnext<cr>
+nnoremap [l          :lprevious<cr>
+nnoremap ]t          :tnext<cr>
+nnoremap [t          :tprevious<cr>
 
 inoremap ;; <c-x><c-l>
 inoremap ,, <c-x><c-p>

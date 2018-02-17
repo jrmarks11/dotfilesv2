@@ -15,13 +15,19 @@ augroup Formatting
   autocmd BufWritePre * : %s/\n\n\n\+//e | %s/\s\+$//e
 augroup END
 
-augroup Vimrc
+augroup LastCursor
   autocmd!
   " When editing a file, always jump to the last known cursor position.
   " Don't do it for commit messages, when the position is invalid, or when
   " inside an event handler.
   autocmd BufReadPost *
     \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
+    \   exe 'normal g`"' |
     \ endif
+augroup END
+
+augroup CursorLine
+  autocmd!
+  autocmd WinEnter,InsertLeave * set cursorline
+  autocmd WinLeave,InsertEnter * set nocursorline
 augroup END

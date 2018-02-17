@@ -17,6 +17,7 @@ let g:fzf_files_options =
   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 
 let g:gitgutter_eager = 0
+let g:gitgutter_grep = 'rg'
 let g:gitgutter_realtime = 0
 
 let g:gutentags_ctags_tagfile = '.tags'

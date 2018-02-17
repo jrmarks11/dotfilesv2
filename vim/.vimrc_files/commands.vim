@@ -3,7 +3,8 @@ let g:alt_file_patterns =
       \     [ 'spec\/lib\/\(.*\)_spec.rb', 'lib\/\1.rb' ],
       \     [ 'lib\/\(.*\).rb', 'spec\/lib\/\1_spec.rb' ],
       \     [ 'spec\/\(.*\)_spec.rb', 'app\/\1.rb' ],
-      \     [ 'app\/\(.*\).rb', 'spec\/\1_spec.rb' ]
+      \     [ 'app\/\(.*\).rb', 'spec\/\1_spec.rb' ],
+      \     [ '.*vimrc_files\/.*.vim', '~/.vimrc' ]
       \ ]
 command! A call util#alt_file()
 

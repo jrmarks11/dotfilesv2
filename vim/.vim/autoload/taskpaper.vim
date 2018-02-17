@@ -1,6 +1,5 @@
 function taskpaper#archive(line)
-  let l:archive_line = search('Archive:')
-  call cursor(l:archive_line, '0')
+  call cursor(search('Archive:'), '0')
   normal! p
   call cursor(a:line, '0')
 endfunction
@@ -30,8 +29,8 @@ function taskpaper#done()
 endfunction
 
 function taskpaper#newline()
-  let l:line = getline('.')
-  let l:prefix = substitute(l:line, '^\(\W*-\W\).*$', '\1', 'g')
+  let l:prefix = taskpaper#prefix()
+  let l:x_saved = @x
   normal! "xDo
 
   if(l:prefix =~# '\W*-\W')
@@ -42,15 +41,13 @@ function taskpaper#newline()
     normal! 0
   endif
 
-  let @x=''
+  let @x = l:x_saved
   startinsert
   return ''
 endfunction
 
 function taskpaper#o(...)
-  let l:line = getline('.')
-  let l:prefix = substitute(l:line, '^\(\W*-\W\).*$', '\1', 'g')
-
+  let l:prefix = taskpaper#prefix()
   if(a:0)
     normal! O
   else
@@ -61,6 +58,10 @@ function taskpaper#o(...)
     call setline('.', l:prefix)
   endif
   startinsert!
+endfunction
+
+function taskpaper#prefix()
+  return substitute(getline('.'), '^\(\W*-\W\).*$', '\1', 'g')
 endfunction
 
 function taskpaper#toggle()

@@ -11,7 +11,7 @@ set cursorline
 set directory=~/.vim-swap//
 set display+=lastline
 set expandtab
-set formatoptions+=j " Delete comment character when joining commented lines
+set formatoptions+=j
 set grepformat=%f:%l:%c:%m
 set history=1000
 set hlsearch

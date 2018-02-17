@@ -9,8 +9,8 @@ function util#alt_file()
 endfunction
 
 function util#buflisted()
-  let s:no_qf = "buflisted(v:val) && getbufvar(v:val, '&filetype') !=# 'qf'"
-  return filter(range(1, bufnr('$')), s:no_qf)
+  let l:no_qf = "buflisted(v:val) && getbufvar(v:val, '&filetype') !=# 'qf'"
+  return filter(range(1, bufnr('$')), l:no_qf)
 endfunction
 
 function util#git_blame(start, end)
@@ -20,11 +20,11 @@ endfunction
 
 function util#rspec_command(extra)
   if exists('$TMUX')
-    let s:base = ':Tmux '
+    let l:base = ':Tmux '
   else
-    let s:base = '!'
+    let l:base = '!'
   endif
-  execute s:base . 'bundle exec rspec ' . bufname('%') . a:extra . ' --format d'
+  execute l:base . 'bundle exec rspec ' . bufname('%') . a:extra . ' --format d'
 endfunction
 
 function util#second_to_last()
