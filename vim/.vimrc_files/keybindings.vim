@@ -14,8 +14,8 @@ nnoremap <space>fr      :History<cr>
 nnoremap <space>fu      :UncommitedFiles<cr>
 nnoremap <space>fw      :FzfVimGrep<space><c-r><c-w><cr>
 nnoremap <space>i       :BLines<cr>
-xnoremap <space>g       :<c-u>call Git_blame("'<", "'>")<cr>
-nnoremap <space>g       :call Git_blame('.', '.')<cr>
+xnoremap <space>g       :<c-u>call util#git_blame("'<", "'>")<cr>
+nnoremap <space>g       :call util#git_blame('.', '.')<cr>
 nnoremap <space>l       :ALEToggle<cr>
 nnoremap <space>p       :set paste<cr>]p:set nopaste<cr>
 nnoremap <space>rl      :RspecLine<cr>
@@ -28,7 +28,6 @@ nnoremap <space>x       :PlugClean<cr>
 nnoremap <space>y       :g/^\W*\<binding.pry\>$/d<cr>
 nnoremap <space>v       :source $MYVIMRC<cr>
 
-nnoremap ` '
 nnoremap ' `
 nnoremap \ :SecondToLastBuffer<cr>
 xnoremap . :normal .<cr>
@@ -36,17 +35,22 @@ nnoremap Q @q
 xnoremap Q :'<,'> :normal @q<cr>
 nnoremap Y y$
 
-nmap     s  <nop>
-xmap     s  <nop>
-xmap     sl <Plug>(EasyAlign)
-nmap     sl <Plug>(EasyAlign)
-
-inoremap ;;     <c-x><c-l>
-inoremap ,<tab> <c-x><c-o>
-inoremap ,,     <c-x><c-p>
+nmap s  <nop>
+xmap s  <nop>
+xmap sl <Plug>(EasyAlign)
+nmap sl <Plug>(EasyAlign)
 
 nnoremap [<space> O<esc>j
 nnoremap ]<space> o<esc>k
+nnoremap ]a       :next<cr>
+nnoremap [a       :previous<cr>
+nnoremap ]q       :cnext<cr>
+nnoremap [q       :cprevious<cr>
+nnoremap ]l       :lnext<cr>
+nnoremap [l       :lprevious<cr>
+
+inoremap ;; <c-x><c-l>
+inoremap ,, <c-x><c-p>
 
 nnoremap <c-j>          <c-w>
 nnoremap <c-j>x         <c-w>q

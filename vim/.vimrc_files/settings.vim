@@ -1,13 +1,8 @@
 scriptencoding utf-8
 
-if exists('g:loaded_jm_settings')
-  finish
-else
-  let g:loaded_jm_settings = 1
-endif
-
 set autoindent
 set autoread
+set background=light
 set backspace=indent,eol,start
 set clipboard=unnamed
 set colorcolumn=80
@@ -33,6 +28,7 @@ set scrolljump=8
 set scrolloff=1
 set shiftround
 set shiftwidth=2
+set showcmd
 set showmatch
 set sidescrolloff=5
 set smartcase
@@ -66,3 +62,6 @@ endif
 if !empty(&viminfo)
   set viminfo^=!
 endif
+
+colorscheme PaperColor
+highlight LineNr guifg=#cccccc

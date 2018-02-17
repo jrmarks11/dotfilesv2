@@ -2,9 +2,8 @@
 -  Build my own tslime replacement that is minimal
 -  Consider going back to one file
 -  Would be nice to save last spec and last non spec file
--  Move functions to autoload
--  Build a plugin for fzf colorscheme
 Archive:
+  -  Move functions to autoload @done(2018-02-16) @project
   -  Write my own alternate file plugin @done(2018-02-16) @project
   -  Remove vim-rails @done(2018-02-16) @project
   -  Maybe remove endwise @done(2018-02-16) @project
