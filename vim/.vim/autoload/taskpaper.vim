@@ -30,6 +30,37 @@ function taskpaper#done()
 endfunction
 
 function taskpaper#newline()
+  let l:line = getline('.')
+  let l:prefix = substitute(l:line, '^\(\W*-\W\).*$', '\1', 'g')
+  normal! "xDo
+
+  if(l:prefix =~# '\W*-\W')
+    call setline('.', l:prefix . @x)
+    normal! 0w
+  else
+    call setline('.', @x)
+    normal! 0
+  endif
+
+  let @x=''
+  startinsert
+  return ''
+endfunction
+
+function taskpaper#o(...)
+  let l:line = getline('.')
+  let l:prefix = substitute(l:line, '^\(\W*-\W\).*$', '\1', 'g')
+
+  if(a:0)
+    normal! O
+  else
+    normal! o
+  endif
+
+  if(l:prefix =~# '\W*-\W')
+    call setline('.', l:prefix)
+  endif
+  startinsert!
 endfunction
 
 function taskpaper#toggle()
