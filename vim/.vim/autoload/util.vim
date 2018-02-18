@@ -31,7 +31,7 @@ function util#second_to_last()
   let l:sorted = sort(util#buflisted(), 'util#sort_buffers')
   if len(l:sorted) > 2
     execute 'b' . l:sorted[2]
-  end
+  endif
 endfunction
 
 function util#sort_buffers(...)
