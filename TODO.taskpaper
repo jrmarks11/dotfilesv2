@@ -1,4 +1,5 @@
-- Build my own tslime replacement that is minimal
+- reorder args in vimrc
+- move git blame into a command
 
 Archive:
 - Would be nice to save last spec and last non spec file @done(2018-02-17)

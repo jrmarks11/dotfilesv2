@@ -44,6 +44,19 @@ set visualbell
 set wildmenu
 set wildmode=longest,list
 
+if executable('rg')
+  set grepprg=rg\ --no-heading\ --vimgrep\ --smart-case
+endif
+if !empty(&viminfo)
+  set viminfo^=!
+endif
+if isdirectory($HOME . '/.vim-swap') == 0
+  :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
+endif
+if isdirectory($HOME . '/.vim-undo') == 0
+  :silent !mkdir -p ~/.vim-undo >/dev/null 2>&1
+endif
+
 call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'andrewradev/splitjoin.vim'
@@ -71,6 +84,8 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 runtime macros/matchit.vim
 
+colorscheme PaperColor
+highlight LineNr guifg=#cccccc
 let g:fzf_colors =
       \ { 'fg':      ['fg', 'Normal'],
       \   'bg':      ['bg', 'Normal'],
@@ -132,29 +147,18 @@ let g:alt_file_patterns =
       \ ]
 
 command! A call util#alt_file()
-command! BranchFiles call fzf#run(fzf#wrap('BranchFiles', s:bf_opts, 0))
-command! -bang -nargs=* FzfVimGrep
-      \ call fzf#vim#grep(s:fzf_grep_cmd .shellescape(<q-args>), 1, <bang>0)
 command! RspecFile call util#rspec_command('')
 command! RspecLine call util#rspec_command(':' . line('.'))
+command! BranchFiles call fzf#run(fzf#wrap('BranchFiles', s:bf_opts, 0))
 command! SecondToLastBuffer call util#second_to_last()
 command! UncommitedFiles call fzf#run(fzf#wrap('UncommitedFiles', s:uf_opts, 0))
 
-if isdirectory($HOME . '/.vim-swap') == 0
-  :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
-endif
-if isdirectory($HOME . '/.vim-undo') == 0
-  :silent !mkdir -p ~/.vim-undo >/dev/null 2>&1
-endif
-if executable('rg')
-  set grepprg=rg\ --no-heading\ --vimgrep\ --smart-case
-endif
-if !empty(&viminfo)
-  set viminfo^=!
-endif
-
-colorscheme PaperColor
-highlight LineNr guifg=#cccccc
+command! -bang -nargs=* Rg
+      \ call fzf#vim#grep(
+      \   s:fzf_grep_cmd .shellescape(<q-args>), 1,
+      \   <bang>0 ? fzf#vim#with_preview('up:60%')
+      \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+      \   <bang>0)
 
 let g:mapleader = 's'
 nmap s <nop>
@@ -173,13 +177,13 @@ nnoremap <space>b :Buffer<cr>
 nnoremap <space>c :UncommitedFiles<cr>
 nnoremap <space>d Obinding.pry<esc>
 nnoremap <space>e :History<cr>
-nnoremap <space>f :FzfVimGrep<space><c-r><c-w><cr>
-xnoremap <space>f y:FzfVimGrep<space><c-r>0<cr>
+nnoremap <space>f :Rg!<space><c-r><c-w><cr>
+xnoremap <space>f y:Rg!<space><c-r>0<cr>
 nnoremap <space>g :call util#git_blame('.', '.')<cr>
 xnoremap <space>g :<c-u>call util#git_blame("'<", "'>")<cr>
 nnoremap <space>h :help<space><c-r><c-w><cr>
 nnoremap <space>i :BLines<cr>
-nnoremap <space>j :FzfVimGrep<space>
+nnoremap <space>j :Rg!<space>
 nnoremap <space>k :RspecFile<cr>
 nnoremap <space>l :ALEToggle<cr>
 nnoremap <space>n :BranchFiles<cr>
