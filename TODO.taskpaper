@@ -1,7 +1,7 @@
 - Build my own tslime replacement that is minimal
-- Would be nice to save last spec and last non spec file
 
 Archive:
+- Would be nice to save last spec and last non spec file @done(2018-02-17)
 - Consider going back to one file @done(2018-02-17)
 - Build my own taskpaper replacement that is minimal and remove taskpaper @done(2018-02-17)
 - If i hit enter on a todo should start another todo @done(2018-02-17)

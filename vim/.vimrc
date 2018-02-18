@@ -258,3 +258,9 @@ augroup LastCursor
         \   exe 'normal g`"' |
         \ endif
 augroup END
+
+augroup SaveRecent
+  autocmd!
+  autocmd BufWrite */app*.rb  normal! mR
+  autocmd BufWrite */spec*_spec.rb  normal! mS
+augroup END
