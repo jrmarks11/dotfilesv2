@@ -4,7 +4,7 @@ set autoindent
 set autoread
 set background=light
 set backspace=indent,eol,start
-set clipboard=unnamed
+set clipboard^=unnamed
 set colorcolumn=80
 set complete-=i
 set cursorline
