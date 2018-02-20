@@ -1,62 +1,5 @@
 scriptencoding utf-8
 
-set autoindent
-set autoread
-set background=light
-set backspace=indent,eol,start
-set clipboard^=unnamed
-set colorcolumn=80
-set complete-=i
-set cursorline
-set directory=~/.vim-swap//
-set display+=lastline
-set expandtab
-set formatoptions+=j
-set grepformat=%f:%l:%c:%m
-set history=1000
-set hlsearch
-set ignorecase
-set incsearch
-set laststatus=2
-set list
-set listchars=tab:▸\ ,trail:·,nbsp:␣
-set noerrorbells
-set nrformats-=octal
-set number
-set scrolljump=8
-set scrolloff=1
-set shiftround
-set shiftwidth=2
-set showcmd
-set showmatch
-set sidescrolloff=5
-set smartcase
-set smarttab
-set splitbelow
-set splitright
-set statusline=\ %f%=\%c\ -\ %{ALEGetStatusLine()}
-set tabstop=2
-set undodir=$HOME/.vim-undo
-set undofile
-set undolevels=1000
-set undoreload=10000
-set visualbell
-set wildmenu
-set wildmode=longest,list
-
-if executable('rg')
-  set grepprg=rg\ --no-heading\ --vimgrep\ --smart-case
-endif
-if !empty(&viminfo)
-  set viminfo^=!
-endif
-if isdirectory($HOME . '/.vim-swap') == 0
-  :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
-endif
-if isdirectory($HOME . '/.vim-undo') == 0
-  :silent !mkdir -p ~/.vim-undo >/dev/null 2>&1
-endif
-
 call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'andrewradev/splitjoin.vim'
@@ -84,8 +27,71 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 runtime macros/matchit.vim
 
+set background=light
+set colorcolumn=80
+set cursorline
+set display+=lastline
+set laststatus=2
+set number
+set scrolljump=8
+set scrolloff=1
+set sidescrolloff=5
+set showcmd
+set showmatch
+set splitbelow
+set splitright
+set statusline=\ %f%=\%c\ -\ %{ALEGetStatusLine()}
 colorscheme PaperColor
 highlight LineNr guifg=#cccccc
+
+set autoindent
+set backspace=indent,eol,start
+set expandtab
+set formatoptions+=j
+set list
+set listchars=tab:▸\ ,trail:·,nbsp:␣
+set shiftwidth=2
+set smarttab
+set tabstop=2
+set shiftround
+
+set hlsearch
+set grepformat=%f:%l:%c:%m
+set ignorecase
+set incsearch
+set smartcase
+if executable('rg')
+  set grepprg=rg\ --no-heading\ --vimgrep\ --smart-case
+endif
+
+set undodir=$HOME/.vim-undo
+set undofile
+set undolevels=1000
+set undoreload=10000
+if isdirectory($HOME . '/.vim-undo') == 0
+  :silent !mkdir -p ~/.vim-undo >/dev/null 2>&1
+endif
+
+set directory=~/.vim-swap//
+if isdirectory($HOME . '/.vim-swap') == 0
+  :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
+endif
+
+if !empty(&viminfo)
+  set viminfo^=!
+endif
+
+set autoread
+set clipboard^=unnamed
+set complete-=i
+set history=1000
+set noerrorbells
+set nrformats-=octal
+set updatetime=100
+set visualbell
+set wildmenu
+set wildmode=longest,list
+
 let g:fzf_colors =
       \ { 'fg':      ['fg', 'Normal'],
       \   'bg':      ['bg', 'Normal'],
@@ -115,8 +121,14 @@ let s:dno = '(git diff --name-only HEAD $(git merge-base HEAD master))|sort|uniq
 let s:uf_opts = { 'source': s:gsp, 'sink': 'e', 'options': s:fzf_options }
 let s:bf_opts = { 'source': s:dno, 'sink': 'e', 'options': s:fzf_options }
 
-let g:gitgutter_eager = 0
-let g:gitgutter_realtime = 0
+command! BranchFiles call fzf#run(fzf#wrap('BranchFiles', s:bf_opts, 0))
+command! -bang -nargs=* Rg
+      \ call fzf#vim#grep(
+      \   s:fzf_grep_cmd .shellescape(<q-args>), 1,
+      \   <bang>0 ? fzf#vim#with_preview('up:60%')
+      \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+      \   <bang>0)
+command! UncommitedFiles call fzf#run(fzf#wrap('UncommitedFiles', s:uf_opts, 0))
 
 let g:gutentags_ctags_tagfile = '.tags'
 
@@ -149,22 +161,15 @@ let g:alt_file_patterns =
 command! A call util#alt_file()
 command! RspecFile call util#rspec_command('')
 command! RspecLine call util#rspec_command(':' . line('.'))
-command! BranchFiles call fzf#run(fzf#wrap('BranchFiles', s:bf_opts, 0))
 command! SecondToLastBuffer call util#second_to_last()
-command! UncommitedFiles call fzf#run(fzf#wrap('UncommitedFiles', s:uf_opts, 0))
 
-command! -bang -nargs=* Rg
-      \ call fzf#vim#grep(
-      \   s:fzf_grep_cmd .shellescape(<q-args>), 1,
-      \   <bang>0 ? fzf#vim#with_preview('up:60%')
-      \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-      \   <bang>0)
-
-let g:mapleader = 's'
 nmap s <nop>
 xmap s <nop>
 nmap sl <Plug>(EasyAlign)
 xmap sl <Plug>(EasyAlign)
+nmap sgs <Plug>GitGutterStageHunk
+nmap sgu <Plug>GitGutterUndoHunk
+nmap sgp <Plug>GitGutterPreviewHunk
 let g:splitjoin_split_mapping = 'ss'
 let g:splitjoin_join_mapping = 'sj'
 let g:switch_mapping = 'st'
@@ -240,7 +245,7 @@ augroup END
 
 augroup AutoSaveAndRead
   autocmd!
-  autocmd InsertLeave,TextChanged * silent! wall | silent! GitGutter
+  autocmd InsertLeave,TextChanged * silent! wall
   autocmd CursorHold              * silent! checktime
 augroup END
 
