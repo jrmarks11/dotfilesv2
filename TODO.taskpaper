@@ -1,7 +1,7 @@
-- reorder args in vimrc
 - move git blame into a command
 
 Archive:
+- reorder args in vimrc @done(2018-02-22)
 - Would be nice to save last spec and last non spec file @done(2018-02-17)
 - Consider going back to one file @done(2018-02-17)
 - Build my own taskpaper replacement that is minimal and remove taskpaper @done(2018-02-17)

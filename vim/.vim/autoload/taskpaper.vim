@@ -31,8 +31,13 @@ endfunction
 function taskpaper#newline()
   let l:prefix = taskpaper#prefix()
   let l:x_saved = @x
-  normal! "xDo
 
+  if col('.') == col('$')
+    call taskpaper#o()
+    return ''
+  end
+
+  normal! "xDo
   if(l:prefix =~# '\W*-\W')
     call setline('.', l:prefix . @x)
     normal! 0w
@@ -42,7 +47,6 @@ function taskpaper#newline()
   endif
 
   let @x = l:x_saved
-  startinsert
   return ''
 endfunction
 

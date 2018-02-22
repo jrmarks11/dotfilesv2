@@ -18,10 +18,9 @@ inoremap  <buffer> <Plug>TaskPaperNewLine
 xnoremap  <buffer> <Plug>TaskPaperArchiveVisual
       \ :<c-u>call taskpaper#archive_visual()<cr>
 
-nmap <silent><buffer> <cr> <Plug>TaskPaperToggle
-nmap <silent><buffer> -    <Plug>TaskPaperArchiveLine
-nmap <silent><buffer> o    <Plug>TaskPapero
-nmap <silent><buffer> O    <Plug>TaskPaperO
-imap <silent><buffer> <cr> <Plug>TaskPaperNewLine
-xmap <silent><buffer> -    <Plug>TaskPaperArchiveVisual
-
+nmap <buffer> <cr> <Plug>TaskPaperToggle
+nmap <buffer> -    <Plug>TaskPaperArchiveLine
+nmap <buffer> o    <Plug>TaskPapero
+nmap <buffer> O    <Plug>TaskPaperO
+imap <buffer> <cr> <Plug>TaskPaperNewLine
+xmap <buffer> -    <Plug>TaskPaperArchiveVisual
