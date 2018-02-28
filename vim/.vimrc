@@ -84,6 +84,7 @@ endif
 set autoread
 set clipboard^=unnamed
 set complete-=i
+set esckeys
 set history=1000
 set noerrorbells
 set nrformats-=octal
@@ -163,6 +164,7 @@ command! RspecFile call util#rspec_command('')
 command! RspecLine call util#rspec_command(':' . line('.'))
 command! SecondToLastBuffer call util#second_to_last()
 
+let mapleader='s'
 nmap s <nop>
 xmap s <nop>
 nmap sl <Plug>(EasyAlign)
