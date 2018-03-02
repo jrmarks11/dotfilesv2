@@ -193,16 +193,21 @@ nnoremap <space>i :BLines<cr>
 nnoremap <space>j :Rg!<space>
 nnoremap <space>k :RspecFile<cr>
 nnoremap <space>l :ALEToggle<cr>
+nnoremap <space>m m
 nnoremap <space>n :BranchFiles<cr>
+nnoremap <space>o o
 nnoremap <space>p :set paste<cr>]p:set nopaste<cr>
+nnoremap <space>q q
 nnoremap <space>r :RspecLine<cr>
 nnoremap <space>s :%s/\<<c-r><c-w>\>//g<left><left>
 xnoremap <space>s y:%s/<c-r><c-0>//g<left><left>
 nnoremap <space>t :Files<cr>
 nnoremap <space>u :PlugUpdate<cr>
+nnoremap <space>v :source $MYVIMRC<cr>
+nnoremap <space>w w
 nnoremap <space>x :PlugClean<cr>
 nnoremap <space>y :g/^\W*\<binding.pry\>$/d<cr>
-nnoremap <space>v :source $MYVIMRC<cr>
+nnoremap <space>z :Helptags<cr>
 
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
