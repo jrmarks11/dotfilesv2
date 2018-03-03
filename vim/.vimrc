@@ -262,11 +262,6 @@ augroup CursorLine
   autocmd WinLeave,InsertEnter * set nocursorline
 augroup END
 
-augroup Formatting
-  autocmd!
-  autocmd BufWritePre * : %s/\n\n\n\+//e | %s/\s\+$//e
-augroup END
-
 augroup LastCursor
   autocmd!
   autocmd BufReadPost *
@@ -275,8 +270,7 @@ augroup LastCursor
         \ endif
 augroup END
 
-augroup SaveRecent
+augroup RemoveTrailingWhitespace
   autocmd!
-  autocmd BufWrite */app*.rb  normal! mR
-  autocmd BufWrite */spec*_spec.rb  normal! mS
+  autocmd BufWritePre * : %s/\s\+$//e
 augroup END
