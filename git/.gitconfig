@@ -15,3 +15,5 @@
   s = status -s
   up = !git pull --rebase $@ && git submodule update --init --recursive && git submodule update --remote --merge
   yolo = push --force-with-lease
+[color]
+	ui = auto
