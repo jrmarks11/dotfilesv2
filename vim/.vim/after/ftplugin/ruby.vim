@@ -1,6 +1,6 @@
 augroup Formatting
   autocmd!
-  autocmd BufWritePre * : %s/\n\n\n\+//e
+  autocmd BufWritePre *.rb : %s/\n\n\n\+//e
 augroup END
 
 augroup SaveRecent
