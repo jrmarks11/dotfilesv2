@@ -129,7 +129,7 @@ command! -bang -nargs=* Rg
       \   <bang>0 ? fzf#vim#with_preview('up:60%')
       \           : fzf#vim#with_preview('right:50%:hidden', '?'),
       \   <bang>0)
-command! UncommitedFiles call fzf#run(fzf#wrap('UncommitedFiles', s:uf_opts, 0))
+command! UncommittedFiles call fzf#run(fzf#wrap('UncommittedFiles', s:uf_opts, 0))
 
 let g:gutentags_ctags_tagfile = '.tags'
 
@@ -181,7 +181,7 @@ xnoremap <space><space> y:'{,'}s/<c-r><c-0>//g<left><left>
 nnoremap <space><tab> :b#<cr>
 nnoremap <space>a :A<cr>
 nnoremap <space>b :Buffer<cr>
-nnoremap <space>c :UncommitedFiles<cr>
+nnoremap <space>c :UncommittedFiles<cr>
 nnoremap <space>d Obinding.pry<esc>
 nnoremap <space>e :History<cr>
 nnoremap <space>f :Rg!<space><c-r><c-w><cr>
