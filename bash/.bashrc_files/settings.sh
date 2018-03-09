@@ -16,12 +16,17 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   ssh-add
 fi
 
-export HISTFILESIZE=10000
-export HISTSIZE=10000
 export HISTCONTROL=ignoreboth:erasedups
-export HISTIGNORE='ls -la:v *:gs:gc *:gd:gdm:gdc:j *:jj *:ga:gb:gco *:gh:gush:gn:gu:gull:cd *:vim:ls'
+export HISTFILESIZE=500000
+export HISTSIZE=100000
+IGNORE_LIST='&:[ ]*:bg:cd:cd *:clear:exit:fg:ga:gb:gc *:gco *:gd:gdc:gdl:gdm:gh'
+IGNORE_LIST+=':gn *:gs:gu:gull:gush:history:j *:jj *:ls:ls -la:tm:v *:vim:'
+export HISTIGNORE=$IGNORE_LIST
 shopt -s histappend
+shopt -s checkwinsize
 stty -ixon
+
+PROMPT_DIRTRIM=2
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 export VISUAL=vim

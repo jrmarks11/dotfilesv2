@@ -2,7 +2,10 @@
 
 command -v brew >/dev/null 2>&1 &&
   [[ -f $(brew --prefix)/etc/bash_completion ]] &&
-  { . $(brew --prefix)/etc/bash_completion;  __git_complete gco _git_checkout; }
+  { . $(brew --prefix)/etc/bash_completion
+    __git_complete gco _git_checkout
+    __git_complete gb _git_branch
+  }
 
 [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ] && . /usr/local/opt/chruby/share/chruby/chruby.sh
 command -v chruby >/dev/null 2>&1 && [[ $(hostname -s) =~ ^CMM ]] && { chruby 2.2.2; }
