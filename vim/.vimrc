@@ -40,7 +40,7 @@ set showcmd
 set showmatch
 set splitbelow
 set splitright
-set statusline=\ %f%=\%c\ -\ %{ALEGetStatusLine()}
+set statusline=\ %f%=\%c\ -\
 colorscheme PaperColor
 highlight LineNr guifg=#cccccc
 
