@@ -122,14 +122,13 @@ let s:dno = '(git diff --name-only HEAD $(git merge-base HEAD master))|sort|uniq
 let s:uf_opts = { 'source': s:gsp, 'sink': 'e', 'options': s:fzf_options }
 let s:bf_opts = { 'source': s:dno, 'sink': 'e', 'options': s:fzf_options }
 
-command! BranchFiles call fzf#run(fzf#wrap('BranchFiles', s:bf_opts, 0))
+command! -bang BranchFiles
+      \ call fzf#run(fzf#wrap('BranchFiles', s:bf_opts, <bang>0))
 command! -bang -nargs=* Rg
-      \ call fzf#vim#grep(
-      \   s:fzf_grep_cmd .shellescape(<q-args>), 1,
-      \   <bang>0 ? fzf#vim#with_preview('up:60%')
-      \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-      \   <bang>0)
-command! UncommittedFiles call fzf#run(fzf#wrap('UncommittedFiles', s:uf_opts, 0))
+      \ call fzf#vim#grep( s:fzf_grep_cmd .shellescape(<q-args>), 1,
+      \ fzf#vim#with_preview('right:50%'), <bang>0)
+command! -bang UncommittedFiles
+      \ call fzf#run(fzf#wrap('UncommittedFiles', s:uf_opts, <bang>0))
 
 let g:gutentags_ctags_tagfile = '.tags'
 
@@ -169,9 +168,6 @@ nmap s <nop>
 xmap s <nop>
 nmap sl <Plug>(EasyAlign)
 xmap sl <Plug>(EasyAlign)
-nmap sgs <Plug>GitGutterStageHunk
-nmap sgu <Plug>GitGutterUndoHunk
-nmap sgp <Plug>GitGutterPreviewHunk
 let g:splitjoin_split_mapping = 'ss'
 let g:splitjoin_join_mapping = 'sj'
 let g:switch_mapping = 'st'
@@ -180,28 +176,28 @@ nnoremap <space><space> :'{,'}s/\<<c-r><c-w>\>//g<left><left>
 xnoremap <space><space> y:'{,'}s/<c-r><c-0>//g<left><left>
 nnoremap <space><tab> :b#<cr>
 nnoremap <space>a :A<cr>
-nnoremap <space>b :Buffer<cr>
-nnoremap <space>c :UncommittedFiles<cr>
+nnoremap <space>b :Buffer!<cr>
+nnoremap <space>c :UncommittedFiles!<cr>
 nnoremap <space>d Obinding.pry<esc>
-nnoremap <space>e :History<cr>
+nnoremap <space>e :History!<cr>
 nnoremap <space>f :Rg!<space><c-r><c-w><cr>
 xnoremap <space>f y:Rg!<space><c-r>0<cr>
 nnoremap <space>g :call util#git_blame('.', '.')<cr>
 xnoremap <space>g :<c-u>call util#git_blame("'<", "'>")<cr>
 nnoremap <space>h :help<space><c-r><c-w><cr>
-nnoremap <space>i :BLines<cr>
+nnoremap <space>i :BLines!<cr>
 nnoremap <space>j :Rg!<space>
 nnoremap <space>k :RspecFile<cr>
 nnoremap <space>l :ALEToggle<cr>
 nnoremap <space>m m
-nnoremap <space>n :BranchFiles<cr>
+nnoremap <space>n :BranchFiles!<cr>
 nnoremap <space>o o
 nnoremap <space>p :set paste<cr>]p:set nopaste<cr>
 nnoremap <space>q q
 nnoremap <space>r :RspecLine<cr>
 nnoremap <space>s :%s/\<<c-r><c-w>\>//g<left><left>
 xnoremap <space>s y:%s/<c-r><c-0>//g<left><left>
-nnoremap <space>t :Files<cr>
+nnoremap <space>t :Files!<cr>
 nnoremap <space>u :PlugUpdate<cr>
 nnoremap <space>v :source $MYVIMRC<cr>
 nnoremap <space>w w
