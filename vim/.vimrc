@@ -117,9 +117,7 @@ let s:fzf_options =
       \ '--reverse '.
       \ '--preview "(git diff --color=always master -- {} | tail -n +5 || cat {})'
       \ . '2> /dev/null | head -' . &lines . '"'
-let s:gsp = "(git status --porcelain | awk '{print $2}')|sort|uniq"
 let s:dno = '(git diff --name-only HEAD $(git merge-base HEAD master))|sort|uniq'
-let s:uf_opts = { 'source': s:gsp, 'sink': 'e', 'options': s:fzf_options }
 let s:bf_opts = { 'source': s:dno, 'sink': 'e', 'options': s:fzf_options }
 
 command! -bang BranchFiles
@@ -127,8 +125,6 @@ command! -bang BranchFiles
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep( s:fzf_grep_cmd .shellescape(<q-args>), 1,
       \ fzf#vim#with_preview('right:50%'), <bang>0)
-command! -bang UncommittedFiles
-      \ call fzf#run(fzf#wrap('UncommittedFiles', s:uf_opts, <bang>0))
 
 let g:gutentags_ctags_tagfile = '.tags'
 
@@ -177,7 +173,7 @@ xnoremap <space><space> y:'{,'}s/<c-r><c-0>//g<left><left>
 nnoremap <space><tab> :b#<cr>
 nnoremap <space>a :A<cr>
 nnoremap <space>b :Buffer!<cr>
-nnoremap <space>c :UncommittedFiles!<cr>
+nnoremap <space>c :GFiles?<cr>
 nnoremap <space>d Obinding.pry<esc>
 nnoremap <space>e :History!<cr>
 nnoremap <space>f :Rg!<space><c-r><c-w><cr>
