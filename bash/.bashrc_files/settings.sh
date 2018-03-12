@@ -26,7 +26,7 @@ export HISTIGNORE=$IGNORE_LIST
 shopt -s checkwinsize
 shopt -s cmdhist
 shopt -s histappend
-stty -ixon
+stty -ixon -ixoff
 
 PROMPT_DIRTRIM=2
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"

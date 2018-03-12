@@ -13,11 +13,6 @@ function util#buflisted()
   return filter(range(1, bufnr('$')), l:no_qf)
 endfunction
 
-function util#git_blame(start, end)
-  execute '!git blame ' . expand('%:p') . ' | sed -n '. line(a:start). ','
-        \ . line(a:end) . 'p'
-endfunction
-
 function util#rspec_command(extra)
   if exists('$TMUX')
     let l:base = ':Tmux '

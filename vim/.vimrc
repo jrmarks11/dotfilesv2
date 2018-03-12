@@ -40,7 +40,7 @@ set showcmd
 set showmatch
 set splitbelow
 set splitright
-set statusline=\ %f%=\%c\ -\
+set statusline=\ %f%=\%c
 colorscheme PaperColor
 highlight LineNr guifg=#cccccc
 
@@ -57,12 +57,12 @@ set shiftround
 
 set hlsearch
 set grepformat=%f:%l:%c:%m
+if executable('rg')
+  set grepprg=rg\ --no-heading\ --vimgrep\ --smart-case\ --hidden
+endif
 set ignorecase
 set incsearch
 set smartcase
-if executable('rg')
-  set grepprg=rg\ --no-heading\ --vimgrep\ --smart-case
-endif
 
 set undodir=$HOME/.vim-undo
 set undofile
@@ -86,12 +86,26 @@ set clipboard^=unnamed
 set complete-=i
 set esckeys
 set history=1000
-set noerrorbells
 set nrformats-=octal
 set updatetime=100
 set visualbell
 set wildmenu
 set wildmode=longest,list
+
+let g:ale_linters = {
+      \   'javascript': ['standard'],
+      \   'html': ['tidy'],
+      \   'bash': ['shellcheck'],
+      \   'ruby': ['rubocop'],
+      \ }
+let g:ale_fixers = {
+      \   'javascript': ['standard'],
+      \   'html': ['tidy'],
+      \   'bash': ['shellcheck'],
+      \   'ruby': ['rubocop'],
+      \ }
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
 
 let g:fzf_colors =
       \ { 'fg':      ['fg', 'Normal'],
@@ -110,15 +124,16 @@ let g:fzf_colors =
 let g:fzf_files_options =
       \ '--reverse ' .
       \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -' . &lines . '"'
+
 let s:fzf_grep_cmd =
-      \ "rg --column --line-number --no-heading --fixed-strings --ignore-case
-      \ --hidden --follow --glob '!.git/*' --color 'always' "
+      \ 'rg --column --line-number --no-heading --fixed-strings --ignore-case'
+      \ . "--hidden --follow --glob '!.git/*' --color 'always' "
 let s:fzf_options =
       \ '--reverse '.
       \ '--preview "(git diff --color=always master -- {} | tail -n +5 || cat {})'
       \ . '2> /dev/null | head -' . &lines . '"'
-let s:dno = '(git diff --name-only HEAD $(git merge-base HEAD master))|sort|uniq'
-let s:bf_opts = { 'source': s:dno, 'sink': 'e', 'options': s:fzf_options }
+let s:source = '(git diff --name-only HEAD $(git merge-base HEAD master))|sort|uniq'
+let s:bf_opts = { 'source': s:source, 'sink': 'e', 'options': s:fzf_options }
 
 command! -bang BranchFiles
       \ call fzf#run(fzf#wrap('BranchFiles', s:bf_opts, <bang>0))
@@ -178,14 +193,14 @@ nnoremap <space>d Obinding.pry<esc>
 nnoremap <space>e :History!<cr>
 nnoremap <space>f :Rg!<space><c-r><c-w><cr>
 xnoremap <space>f y:Rg!<space><c-r>0<cr>
-nnoremap <space>g :call util#git_blame('.', '.')<cr>
-xnoremap <space>g :<c-u>call util#git_blame("'<", "'>")<cr>
+nnoremap <space>g :grep<space><c-r><c-w><cr>
+xnoremap <space>g y:grep<space>"<c-r>0"<cr>
 nnoremap <space>h :help<space><c-r><c-w><cr>
 nnoremap <space>i :BLines!<cr>
 nnoremap <space>j :Rg!<space>
 nnoremap <space>k :RspecFile<cr>
-nnoremap <space>l :ALEToggle<cr>
-nnoremap <space>m m
+nnoremap <space>l :ALEFix<cr>
+nnoremap <space>m :ALEToggle<cr>
 nnoremap <space>n :BranchFiles!<cr>
 nnoremap <space>o o
 nnoremap <space>p :set paste<cr>]p:set nopaste<cr>
