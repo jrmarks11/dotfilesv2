@@ -125,7 +125,7 @@ let g:fzf_files_options =
 
 let s:fzf_grep_cmd =
       \ 'rg --column --line-number --no-heading --fixed-strings --ignore-case'
-      \ . "--hidden --follow --glob '!.git/*' --color 'always' "
+      \ . " --hidden --follow --glob '!.git/*' --color 'always' "
 let s:fzf_options =
       \ '--reverse '.
       \ '--preview "(git diff --color=always master -- {} | tail -n +5 || cat {})'
@@ -136,7 +136,7 @@ let s:bf_opts = { 'source': s:source, 'sink': 'e', 'options': s:fzf_options }
 command! -bang BranchFiles
       \ call fzf#run(fzf#wrap('BranchFiles', s:bf_opts, <bang>0))
 command! -bang -nargs=* Rg
-      \ call fzf#vim#grep( s:fzf_grep_cmd .shellescape(<q-args>), 1,
+      \ call fzf#vim#grep(s:fzf_grep_cmd .shellescape(<q-args>), 1,
       \ fzf#vim#with_preview('right:50%'), <bang>0)
 
 let g:gutentags_ctags_tagfile = '.tags'
