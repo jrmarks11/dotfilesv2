@@ -1,4 +1,8 @@
-[ -f ~/.asdf/asdf.sh ] && . ~/.asdf/asdf.sh
+[ -f ~/.asdf/asdf.sh ] &&
+  {
+    . "$HOME/.asdf/asdf.sh"
+    . "$HOME/.asdf/completions/asdf.bash"
+  }
 
 command -v brew >/dev/null 2>&1 &&
   [[ -f $(brew --prefix)/etc/bash_completion ]] &&
@@ -6,9 +10,6 @@ command -v brew >/dev/null 2>&1 &&
     __git_complete gco _git_checkout
     __git_complete gb _git_branch
   }
-
-[ -f /usr/local/opt/chruby/share/chruby/chruby.sh ] && . /usr/local/opt/chruby/share/chruby/chruby.sh
-command -v chruby >/dev/null 2>&1 && [[ $(hostname -s) =~ ^CMM ]] && { chruby 2.2.2; }
 
 if [[ $(command -v fasd) ]]; then
   fasd_cache="$HOME/.fasd-init-bash"
