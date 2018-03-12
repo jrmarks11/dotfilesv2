@@ -18,7 +18,6 @@ brew install \
   ruby \
   shellcheck \
   stow \
-  tidy-html5 \
   tmate \
   tmux \
   vim
