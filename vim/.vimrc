@@ -243,10 +243,14 @@ nnoremap <silent><c-j>l :TmuxNavigateRight<cr>
 nnoremap <silent><c-j>b :TmuxNavigatePrevious<cr>
 nnoremap <c-l> :nohlsearch<c-r>=has('diff')?'<Bar>diffupdate':''<cr><cr><c-l>
 
-inoremap ;f <c-x><c-f>
-inoremap ;l <c-x><c-l>
-inoremap ;n <c-x><c-n>
-inoremap ;; <c-x><c-p>
+inoremap <silent> ;f <c-x><c-f>
+inoremap <silent> ;i <c-x><c-i>
+inoremap <silent> ;l <c-x><c-l>
+inoremap <silent> ;n <c-x><c-n>
+inoremap <silent> ;o <c-x><c-o>
+inoremap <silent> ;; <c-x><c-p>
+inoremap <silent> ;t <c-x><c-]>
+inoremap <silent> ;u <c-x><c-u>
 
 cnoremap <expr> %%  getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
 
