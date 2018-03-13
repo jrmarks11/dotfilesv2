@@ -172,14 +172,19 @@ command! RspecFile call util#rspec_command('')
 command! RspecLine call util#rspec_command(':' . line('.'))
 command! SecondToLastBuffer call util#second_to_last()
 
-let mapleader='s'
-nmap s <nop>
-xmap s <nop>
-nmap sl <Plug>(EasyAlign)
-xmap sl <Plug>(EasyAlign)
-let g:splitjoin_split_mapping = 'ss'
+let g:mapleader='s'
 let g:splitjoin_join_mapping = 'sj'
+let g:splitjoin_split_mapping = 'ss'
 let g:switch_mapping = 'st'
+
+nmap     s <nop>
+xmap     s <nop>
+nnoremap sc :PlugClean<cr>
+nnoremap sf :ALEFix<cr>
+nmap     sl <Plug>(EasyAlign)
+xmap     sl <Plug>(EasyAlign)
+nnoremap so :ALEToggle<cr>
+nnoremap su :PlugUpdate<cr>
 
 nnoremap <space><space> :'{,'}s/\<<c-r><c-w>\>//g<left><left>
 xnoremap <space><space> y:'{,'}s/<c-r><c-0>//g<left><left>
@@ -187,7 +192,7 @@ nnoremap <space><tab> :b#<cr>
 nnoremap <space>a :A<cr>
 nnoremap <space>b :Buffer!<cr>
 nnoremap <space>c :GFiles?<cr>
-nnoremap <space>d Obinding.pry<esc>
+nnoremap <space>d d
 nnoremap <space>e :History!<cr>
 nnoremap <space>f :Rg!<space><c-r><c-w><cr>
 xnoremap <space>f y:Rg!<space><c-r>0<cr>
@@ -196,23 +201,24 @@ xnoremap <space>g y:grep<space>"<c-r>0"<cr>
 nnoremap <space>h :help<space><c-r><c-w><cr>
 nnoremap <space>i :BLines!<cr>
 nnoremap <space>j :Rg!<space>
-nnoremap <space>k :RspecFile<cr>
-nnoremap <space>l :ALEFix<cr>
-nnoremap <space>m :ALEToggle<cr>
+nnoremap <space>k k
+nnoremap <space>l :lgrep<space><c-r><c-w><cr>
+xnoremap <space>l y:lgrep<space>"<c-r>0"<cr>
+nnoremap <space>m m
 nnoremap <space>n :BranchFiles!<cr>
-nnoremap <space>o o
+nnoremap <space>o Obinding.pry<esc>
 nnoremap <space>p :set paste<cr>]p:set nopaste<cr>
 nnoremap <space>q q
 nnoremap <space>r :RspecLine<cr>
 nnoremap <space>s :%s/\<<c-r><c-w>\>//g<left><left>
 xnoremap <space>s y:%s/<c-r><c-0>//g<left><left>
 nnoremap <space>t :Files!<cr>
-nnoremap <space>u :PlugUpdate<cr>
+nnoremap <space>u :RspecFile<cr>
 nnoremap <space>v :source $MYVIMRC<cr>
-nnoremap <space>w w
-nnoremap <space>x :PlugClean<cr>
-nnoremap <space>y :g/^\W*\<binding.pry\>$/d<cr>
-nnoremap <space>z :Helptags<cr>
+nnoremap <space>w :g/^\W*\<binding.pry\>$/d<cr>
+nnoremap <space>x x
+nnoremap <space>y :Helptags<cr>
+nnoremap <space>z z
 
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
