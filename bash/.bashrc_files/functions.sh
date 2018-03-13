@@ -22,7 +22,7 @@ gb() {
       sed 's/^..//' | cut -d' ' -f1 |
       sed 's#^remotes/origin/##' | xargs git checkout
   else
-    git branch $@
+    git branch "$@"
   fi
 }
 
