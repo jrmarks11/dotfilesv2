@@ -16,10 +16,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'tmux-plugins/vim-tmux'
   Plug 'tpope/vim-commentary'
   Plug 'w0rp/ale'
+  Plug 'xtal8/traces.vim'
 
   Plug 'adriaanzon/vim-textobj-matchit'
   Plug 'b4winckler/vim-angry'
-  Plug 'julian/vim-textobj-variable-segment'
   Plug 'kana/vim-textobj-entire'
   Plug 'kana/vim-textobj-indent'
   Plug 'kana/vim-textobj-line'
