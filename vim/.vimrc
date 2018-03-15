@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'machakann/vim-sandwich'
   Plug 'nelstrom/vim-visual-star-search'
   Plug 'NLKNguyen/papercolor-theme'
+  Plug 'SirVer/ultisnips'
   Plug 'tmux-plugins/vim-tmux'
   Plug 'tpope/vim-commentary'
   Plug 'w0rp/ale'
@@ -101,14 +102,6 @@ let g:ale_linters = {
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_text_changed = 'normal'
 
-let g:alt_file_patterns =
-      \ [
-      \     [ 'spec\/lib\/\(.*\)_spec.rb', 'lib\/\1.rb' ],
-      \     [ 'lib\/\(.*\).rb', 'spec\/lib\/\1_spec.rb' ],
-      \     [ 'spec\/\(.*\)_spec.rb', 'app\/\1.rb' ],
-      \     [ 'app\/\(.*\).rb', 'spec\/\1_spec.rb' ],
-      \ ]
-
 let g:fzf_colors =
       \ { 'fg':      ['fg', 'Normal'],
       \   'bg':      ['bg', 'Normal'],
@@ -150,22 +143,30 @@ let g:tmux_navigator_no_mappings = 1
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
 
-let s:fzf_grep_cmd =
-      \ 'rg --column --line-number --no-heading --fixed-strings --ignore-case'
-      \ . " --hidden --follow --glob '!.git/*' --color 'always' "
+let s:source = '(git diff --name-only HEAD $(git merge-base HEAD master))|sort|uniq'
 let s:fzf_options =
       \ '--reverse '.
       \ '--preview "(git diff --color=always master -- {} | tail -n +5 || cat {})'
-      \ . '2> /dev/null | head -' . &lines . '"'
-let s:source = '(git diff --name-only HEAD $(git merge-base HEAD master))|sort|uniq'
-let s:bf_opts = { 'source': s:source, 'sink': 'e', 'options': s:fzf_options }
-command! -bang BranchFiles
-      \ call fzf#run(fzf#wrap('BranchFiles', s:bf_opts, <bang>0))
+      \ . ' 2> /dev/null | head -' . &lines . '"'
+command! -bang BranchFiles call fzf#run(fzf#wrap('BranchFiles',
+      \ { 'source': s:source, 'options': s:fzf_options }, <bang>0))
+
+let s:fzf_grep_cmd =
+      \ 'rg --column --line-number --no-heading --fixed-strings --ignore-case'
+      \ . " --hidden --follow --glob '!.git/*' --color 'always' "
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(s:fzf_grep_cmd .shellescape(<q-args>), 1,
       \ fzf#vim#with_preview('right:50%'), <bang>0)
 
+let g:alt_file_patterns =
+      \ [
+      \     [ 'spec\/lib\/\(.*\)_spec.rb', 'lib\/\1.rb' ],
+      \     [ 'lib\/\(.*\).rb', 'spec\/lib\/\1_spec.rb' ],
+      \     [ 'spec\/\(.*\)_spec.rb', 'app\/\1.rb' ],
+      \     [ 'app\/\(.*\).rb', 'spec\/\1_spec.rb' ],
+      \ ]
 command! A call util#alt_file()
+
 command! RspecFile call util#rspec_command('')
 command! RspecLine call util#rspec_command(':' . line('.'))
 command! SecondToLastBuffer call util#second_to_last()
@@ -174,7 +175,6 @@ let g:mapleader='s'
 let g:splitjoin_join_mapping = 'sj'
 let g:splitjoin_split_mapping = 'ss'
 let g:switch_mapping = 'st'
-
 nmap s <nop>
 xmap s <nop>
    " sa is sandwich add
