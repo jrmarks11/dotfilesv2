@@ -142,6 +142,10 @@ let g:textobj_line_no_default_key_mappings = 1
 let g:tmux_navigator_no_mappings = 1
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<c-b>'
+let g:UltiSnipsJumpBackwardTrigger='<c-z>'
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
 let s:source = '(git diff --name-only HEAD $(git merge-base HEAD master))|sort|uniq'
 let s:fzf_options =
