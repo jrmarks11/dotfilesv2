@@ -207,18 +207,16 @@ nnoremap <space>d d
 nnoremap <space>e :History!<cr>
 nnoremap <space>f :Rg!<space><c-r><c-w><cr>
 xnoremap <space>f y:Rg!<space><c-r>0<cr>
-nnoremap <space>g :grep<space><c-r><c-w><cr>
-xnoremap <space>g y:grep<space>"<c-r>0"<cr>
+nnoremap <space>g g
 nnoremap <space>h :help<space><c-r><c-w><cr>
 nnoremap <space>i :BLines!<cr>
 nnoremap <space>j :Rg!<space>
 nnoremap <space>k k
-nnoremap <space>l :lgrep<space><c-r><c-w><cr>
-xnoremap <space>l y:lgrep<space>"<c-r>0"<cr>
+nnoremap <space>l l
 nnoremap <space>m m
 nnoremap <space>n :BranchFiles!<cr>
 nnoremap <space>o Obinding.pry<esc>
-nnoremap <space>p :set paste<cr>]p:set nopaste<cr>
+nnoremap <space>p :set paste<cr>o<esc>]p:set nopaste<cr>
 nnoremap <space>q q
 nnoremap <space>r :RspecLine<cr>
 nnoremap <space>s :%s/\<<c-r><c-w>\>//g<left><left>
