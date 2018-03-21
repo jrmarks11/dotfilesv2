@@ -145,7 +145,7 @@ let g:tslime_always_current_window = 1
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
-let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+let g:UltiSnipsSnippetDirectories=['Snips', 'UltiSnips']
 
 let s:source = '(git diff --name-only HEAD $(git merge-base HEAD master))|sort|uniq'
 let s:fzf_options =
