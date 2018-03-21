@@ -239,6 +239,7 @@ xnoremap & :&&<CR>
 nnoremap ' `
 nnoremap Q @q
 xnoremap Q :'<,'> :normal @q<cr>
+nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 nnoremap Y y$
 nnoremap \ :SecondToLastBuffer<cr>
 xnoremap . :normal .<cr>
