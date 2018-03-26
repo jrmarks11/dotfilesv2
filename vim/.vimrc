@@ -36,6 +36,7 @@ set backspace=indent,eol,start
 set clipboard^=unnamed
 set colorcolumn=80
 set complete-=i
+set complete-=t
 set cursorline
 set directory=~/.vim-swap//
 set display+=lastline
@@ -131,14 +132,9 @@ let g:sandwich#recipes += [
       \ {'buns': ['{\s*', '\s*}'], 'nesting': 1, 'regex': 1, 'match_syntax': 1,
       \  'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'],
       \  'input': ['{']},
-      \ {'buns': ['( ', ' )'], 'nesting': 1, 'match_syntax': 1,
-      \  'kind': ['add', 'replace'], 'action': ['add'], 'input': [')']},
-      \ {'buns': ['(\s*', '\s*)'], 'nesting': 1, 'regex': 1, 'match_syntax': 1,
-      \  'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'],
-      \  'input': [')']},
       \ ]
 
-let g:textobj_line_no_default_key_mappings = 1
+let g:textobj_line_no_defkult_key_mappings = 1
 let g:tmux_navigator_no_mappings = 1
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
@@ -237,6 +233,8 @@ vmap id <Plug>(textobj-line-i)
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
 nnoremap ' `
+nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
+nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 nnoremap Q @q
 xnoremap Q :'<,'> :normal @q<cr>
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
@@ -244,10 +242,12 @@ nnoremap Y y$
 nnoremap \ :SecondToLastBuffer<cr>
 xnoremap . :normal .<cr>
 
-nnoremap [<space> O<esc>j
-nnoremap ]<space> o<esc>k
+nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>
+nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 nnoremap ]a :next<cr>
 nnoremap [a :previous<cr>
+nnoremap [e :<c-u>execute 'move -1-'. v:count1<cr>
+nnoremap ]e :<c-u>execute 'move +'. v:count1<cr>
 nnoremap ]l :lnext<cr>
 nnoremap [l :lprevious<cr>
 nnoremap ]q :cnext<cr>
@@ -273,7 +273,10 @@ inoremap <silent> ;; <c-x><c-p>
 inoremap <silent> ;t <c-x><c-]>
 inoremap <silent> ;u <c-x><c-u>
 
-cnoremap <expr> %%  getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
+cnoremap <expr> %% getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
+cnoremap <expr> .. getcmdtype() == ':' ? fnameescape(expand('%')) : '..'
+cnoremap <c-n> <down>
+cnoremap <c-p> <up>
 
 augroup AutoResize
   autocmd!
