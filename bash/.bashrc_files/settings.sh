@@ -20,9 +20,8 @@ fi
 export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=500000
 export HISTSIZE=100000
-IGNORE_LIST='&:[ ]*:bg:cd:cd *:clear:exit:fg:ga:gb:gc *:gco *:gd:gdc:gdl:gdm:gh'
-IGNORE_LIST+=':gn *:gs:gu:gull:gush:history:j *:jj *:ls:ls -la:tm:v *:vim:'
-export HISTIGNORE=$IGNORE_LIST
+export HISTIGNORE='?:??:&:[ ]*:cd *:clear:exit:gc *:gco *:gdc:gdl:gdm:gn *:gull:gush:history:j *:jj *:ls -la:v *:vim:'
+
 shopt -s checkwinsize
 shopt -s cmdhist
 shopt -s histappend
