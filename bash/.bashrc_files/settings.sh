@@ -22,9 +22,7 @@ export HISTFILESIZE=500000
 export HISTSIZE=100000
 export HISTIGNORE='?:??:&:[ ]*:cd *:clear:exit:gc *:gco *:gdc:gdl:gdm:gn *:gull:gush:history:j *:jj *:ls -la:v *:vim:'
 
-shopt -s checkwinsize
-shopt -s cmdhist
-shopt -s histappend
+shopt -s cdspell checkwinsize cmdhist direxpand dirspell globstar histappend nocaseglob
 stty -ixon -ixoff
 
 PROMPT_DIRTRIM=2
