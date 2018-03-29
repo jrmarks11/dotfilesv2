@@ -55,6 +55,7 @@ set list
 set listchars=tab:▸\ ,trail:·,nbsp:␣
 set nrformats-=octal
 set number
+set relativenumber
 set scrolljump=8
 set scrolloff=1
 set shiftround
@@ -191,7 +192,7 @@ xmap sl <Plug>(EasyAlign)
 nmap so <Plug>(ale_toggle_buffer)
    " sr is sandwich replace
    " ss is splitjoin split
-   " st is switch
+   " st is switch (toggle)
 nmap su :PlugUpdate<cr>
 
 nnoremap <space><space> :'{,'}s/\<<c-r><c-w>\>//g<left><left>
@@ -200,7 +201,7 @@ nnoremap <space><tab> :b#<cr>
 nnoremap <space>a :A<cr>
 nnoremap <space>b :Buffer!<cr>
 nnoremap <space>c :GFiles?<cr>
-nnoremap <space>d d
+nnoremap <space>d :set relativenumber!<cr>
 nnoremap <space>e :History!<cr>
 nnoremap <space>f :Rg!<space><c-r><c-w><cr>
 xnoremap <space>f y:Rg!<space><c-r>0<cr>
