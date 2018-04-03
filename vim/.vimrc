@@ -310,7 +310,11 @@ augroup LastCursor
         \ endif
 augroup END
 
-augroup RemoveTrailingWhitespace
+augroup Formatting
   autocmd!
   autocmd BufWritePre * : %s/\s\+$//e
+  autocmd FileType elixir,ruby
+        \ autocmd BufWritePre * : %s/	/  /ge
+  autocmd FileType elixir,ruby
+        \ autocmd BufWritePre * : %s/\n\n\n\+//e
 augroup END
