@@ -18,6 +18,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'SirVer/ultisnips'
   Plug 'tmux-plugins/vim-tmux'
   Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-rhubarb'
   Plug 'w0rp/ale'
   Plug 'xtal8/traces.vim'
 
@@ -123,6 +125,8 @@ let g:fzf_colors =
 let g:fzf_files_options =
       \ '--reverse ' .
       \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -' . &lines . '"'
+
+let g:github_enterprise_urls = ['http://git.innova-partners.com']
 
 let g:gutentags_ctags_tagfile = '.tags'
 
