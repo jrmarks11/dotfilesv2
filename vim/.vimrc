@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'andrewradev/switch.vim'
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'christoomey/vim-tmux-navigator'
+  Plug 'elixir-editors/vim-elixir'
   Plug 'jgdavey/tslime.vim'
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
