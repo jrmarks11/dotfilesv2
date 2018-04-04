@@ -1,4 +1,4 @@
-function ruby#rspec_command(extra)
+function! ruby#rspec_command(extra)
   if exists('$TMUX')
     let l:base = ':Tmux '
   else
