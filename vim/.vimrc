@@ -172,7 +172,8 @@ let g:alt_file_patterns =
       \     [ 'lib\/\(.*\).ex', 'test\/\1_test.exs' ],
       \ ]
 command! A call util#alt_file()
-command! SecondToLastBuffer call util#second_to_last()
+command! LastBuffer call util#last_buffer(1)
+command! SecondToLastBuffer call util#last_buffer(2)
 
 let g:mapleader='s'
 let g:splitjoin_join_mapping = 'sj'
@@ -198,7 +199,7 @@ nmap su :PlugUpdate<cr>
 
 nnoremap <space><space> :'{,'}s/\<<c-r><c-w>\>//g<left><left>
 xnoremap <space><space> y:'{,'}s/<c-r><c-0>//g<left><left>
-nnoremap <space><tab> :b#<cr>
+nnoremap <space><tab> :LastBuffer<cr>
 nnoremap <space>a :A<cr>
 nnoremap <space>b :Buffer!<cr>
 nnoremap <space>c :GFiles?<cr>

@@ -1,3 +1,13 @@
+function! util#all_files()
+  let l:sorted = sort(util#buflisted(), 'util#sort_buffers')
+
+  return fzf#vim#_uniq(map(
+        \ filter([expand('%')], 'len(v:val)')
+        \   + filter(map(l:sorted, 'bufname(v:val)'), 'len(v:val)')
+        \   + filter(copy(v:oldfiles), 'filereadable(expand(v:val))'),
+        \ "fnamemodify(v:val, ':~:.')"))
+endfunction
+
 function util#alt_file()
   let l:file = expand('%')
   for [l:pattern, l:substitution] in g:alt_file_patterns
@@ -13,15 +23,14 @@ function util#buflisted()
   return filter(range(1, bufnr('$')), l:no_qf)
 endfunction
 
-function util#second_to_last()
-  let l:sorted = sort(util#buflisted(), 'util#sort_buffers')
-  if len(l:sorted) > 2
-    execute 'b' . l:sorted[2]
+function util#last_buffer(count)
+  let l:sorted = util#all_files()
+  if len(l:sorted) > a:count
+    execute 'e ' . l:sorted[a:count]
   endif
 endfunction
 
 function util#sort_buffers(...)
-  " using fzf to track the buffer order
   let [l:b1, l:b2] = map(copy(a:000), 'get(g:fzf#vim#buffers, v:val, v:val)')
   " Using minus between a float and a number in a sort function causes an error
   return l:b1 < l:b2 ? 1 : -1
