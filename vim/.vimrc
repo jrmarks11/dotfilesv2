@@ -168,6 +168,8 @@ let g:alt_file_patterns =
       \     [ 'lib\/\(.*\).rb', 'spec\/lib\/\1_spec.rb' ],
       \     [ 'spec\/\(.*\)_spec.rb', 'app\/\1.rb' ],
       \     [ 'app\/\(.*\).rb', 'spec\/\1_spec.rb' ],
+      \     [ 'test\/\(.*\)_test.exs', 'lib\/\1.ex' ],
+      \     [ 'lib\/\(.*\).ex', 'test\/\1_test.exs' ],
       \ ]
 command! A call util#alt_file()
 command! SecondToLastBuffer call util#second_to_last()
