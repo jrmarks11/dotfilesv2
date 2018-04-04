@@ -13,15 +13,6 @@ function util#buflisted()
   return filter(range(1, bufnr('$')), l:no_qf)
 endfunction
 
-function util#rspec_command(extra)
-  if exists('$TMUX')
-    let l:base = ':Tmux '
-  else
-    let l:base = '!'
-  endif
-  execute l:base . 'bundle exec rspec ' . bufname('%') . a:extra . ' --format d'
-endfunction
-
 function util#second_to_last()
   let l:sorted = sort(util#buflisted(), 'util#sort_buffers')
   if len(l:sorted) > 2

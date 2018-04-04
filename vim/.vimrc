@@ -173,9 +173,6 @@ let g:alt_file_patterns =
       \     [ 'app\/\(.*\).rb', 'spec\/\1_spec.rb' ],
       \ ]
 command! A call util#alt_file()
-
-command! RspecFile call util#rspec_command('')
-command! RspecLine call util#rspec_command(':' . line('.'))
 command! SecondToLastBuffer call util#second_to_last()
 
 let g:mapleader='s'
@@ -218,16 +215,16 @@ nnoremap <space>k k
 nnoremap <space>l l
 nnoremap <space>m m
 nnoremap <space>n :BranchFiles!<cr>
-nnoremap <space>o Obinding.pry<esc>
+"        <space>o put pry above this line
 nnoremap <space>p :set paste<cr>o<esc>]p:set nopaste<cr>
 nnoremap <space>q q
-nnoremap <space>r :RspecLine<cr>
+"        <space>r run test for the current line
 nnoremap <space>s :%s/\<<c-r><c-w>\>//g<left><left>
 xnoremap <space>s y:%s/<c-r><c-0>//g<left><left>
 nnoremap <space>t :Files!<cr>
-nnoremap <space>u :RspecFile<cr>
+"        <space>r run test for the current file
 nnoremap <space>v :source $MYVIMRC<cr>
-nnoremap <space>w :g/^\W*\<binding.pry\>$/d<cr>
+"        <space>w  remove debug statements
 nnoremap <space>x x
 nnoremap <space>y :Helptags<cr>
 nnoremap <space>z z
