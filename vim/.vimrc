@@ -21,6 +21,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rhubarb'
   Plug 'w0rp/ale'
+  Plug 'xtal8/traces.vim'
 
   Plug 'adriaanzon/vim-textobj-matchit'
   Plug 'b4winckler/vim-angry'
@@ -94,6 +95,73 @@ if !empty(&viminfo)
   set viminfo^=!
 endif
 
+let g:ale_fixers = {
+      \   'bash': ['shellcheck'],
+      \   'elixir': ['mix_format'],
+      \   'javascript': ['standard'],
+      \   'ruby': ['rubocop'],
+      \ }
+
+let g:ale_lint_on_insert_leave = 1
+let g:ale_lint_on_text_changed = 'normal'
+
+let g:fzf_colors =
+      \ { 'fg':      ['fg', 'Normal'],
+      \   'bg':      ['bg', 'Normal'],
+      \   'hl':      ['fg', 'Comment'],
+      \   'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+      \   'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+      \   'hl+':     ['fg', 'Statement'],
+      \   'info':    ['fg', 'PreProc'],
+      \   'border':  ['fg', 'Ignore'],
+      \   'prompt':  ['fg', 'Conditional'],
+      \   'pointer': ['fg', 'Exception'],
+      \   'marker':  ['fg', 'Keyword'],
+      \   'spinner': ['fg', 'Label'],
+      \   'header':  ['fg', 'Comment'] }
+let g:fzf_files_options =
+      \ '--reverse ' .
+      \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -' . &lines . '"'
+
+let g:github_enterprise_urls = ['http://git.innova-partners.com']
+
+let g:gutentags_ctags_tagfile = '.tags'
+
+let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
+let g:sandwich#recipes += [
+      \ {'buns': ['`', '`'], 'quoteescape': 1, 'expand_range': 0, 'nesting': 0,
+      \  'linewise': 0, 'match_syntax': 1},
+      \ {'buns': ['{ ', ' }'], 'nesting': 1, 'match_syntax': 1,
+      \  'kind': ['add', 'replace'], 'action': ['add'], 'input': ['{']},
+      \ {'buns': ['{\s*', '\s*}'], 'nesting': 1, 'regex': 1, 'match_syntax': 1,
+      \  'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'],
+      \  'input': ['{']},
+      \ ]
+
+let g:textobj_line_no_defkult_key_mappings = 1
+let g:tmux_navigator_no_mappings = 1
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+let g:UltiSnipsSnippetDirectories=['Snips', 'UltiSnips']
+
+let s:source = '(git diff --name-only HEAD $(git merge-base HEAD master))|sort|uniq'
+let s:fzf_options =
+      \ '--reverse '.
+      \ '--preview "(git diff --color=always master -- {} | tail -n +5 || cat {})'
+      \ . ' 2> /dev/null | head -' . &lines . '"'
+command! -bang BranchFiles call fzf#run(fzf#wrap('BranchFiles',
+      \ { 'source': s:source, 'options': s:fzf_options }, <bang>0))
+
+let s:fzf_grep_cmd =
+      \ 'rg --column --line-number --no-heading --fixed-strings --ignore-case'
+      \ . " --hidden --follow --glob '!.git/*' --color 'always' "
+command! -bang -nargs=* Rg
+      \ call fzf#vim#grep(s:fzf_grep_cmd .shellescape(<q-args>), 1,
+      \ fzf#vim#with_preview('right:50%'), <bang>0)
+
 let g:alt_file_patterns =
       \ [
       \     [ 'spec\/lib\/\(.*\)_spec.rb', 'lib\/\1.rb' ],
@@ -107,27 +175,64 @@ command! A call util#alt_file()
 command! LastBuffer call util#last_buffer(1)
 command! SecondToLastBuffer call util#last_buffer(2)
 
+let g:mapleader='s'
+let g:splitjoin_join_mapping = 'sj'
+let g:splitjoin_split_mapping = 'ss'
+let g:switch_mapping = 'st'
 nmap s <nop>
 xmap s <nop>
-let g:mapleader='s'
+   " sa is sandwich add
+nmap sc :PlugClean<cr>
+   " sd is sandwich delete
+nmap sf <Plug>(ale_fix)
+   " shp is gitgutter hunk preview
+   " shs is gitgutter hunk stage
+   " shu is gitgutter hunk undo
+   " sj is splitjoin join
+nmap sl <Plug>(EasyAlign)
+xmap sl <Plug>(EasyAlign)
+nmap so <Plug>(ale_toggle_buffer)
+   " sr is sandwich replace
+   " ss is splitjoin split
+   " st is switch (toggle)
+nmap su :PlugUpdate<cr>
 
 nnoremap <space><space> :'{,'}s/\<<c-r><c-w>\>//g<left><left>
 xnoremap <space><space> y:'{,'}s/<c-r><c-0>//g<left><left>
 nnoremap <space><tab> :LastBuffer<cr>
 nnoremap <space>a :A<cr>
+nnoremap <space>b :Buffer!<cr>
+nnoremap <space>c :GFiles?<cr>
 nnoremap <space>d :set relativenumber!<cr>
+nnoremap <space>e :History!<cr>
+nnoremap <space>f :Rg!<space><c-r><c-w><cr>
+xnoremap <space>f y:Rg!<space><c-r>0<cr>
 nnoremap <space>g g
 nnoremap <space>h :help<space><c-r><c-w><cr>
+nnoremap <space>i :BLines!<cr>
+nnoremap <space>j :Rg!<space>
 nnoremap <space>k k
 nnoremap <space>l l
 nnoremap <space>m m
-nnoremap <space>p :set paste<cr>o<esc>]p:set nopaste<cr>{dd
+nnoremap <space>n :BranchFiles!<cr>
+"        <space>o put pry above this line
+nnoremap <space>p :set paste<cr>o<esc>]p:set nopaste<cr>
 nnoremap <space>q q
+"        <space>r run test for the current line
 nnoremap <space>s :%s/\<<c-r><c-w>\>//g<left><left>
 xnoremap <space>s y:%s/<c-r><c-0>//g<left><left>
+nnoremap <space>t :Files!<cr>
+"        <space>r run test for the current file
 nnoremap <space>v :source $MYVIMRC<cr>
+"        <space>w  remove debug statements
 nnoremap <space>x x
+nnoremap <space>y :Helptags<cr>
 nnoremap <space>z z
+
+omap ad <Plug>(textobj-line-a)
+vmap ad <Plug>(textobj-line-a)
+omap id <Plug>(textobj-line-i)
+vmap id <Plug>(textobj-line-i)
 
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
@@ -156,6 +261,11 @@ nnoremap [t :tprevious<cr>
 
 nnoremap <c-j> <c-w>
 nnoremap <c-j>x <c-w>q
+nnoremap <silent><c-j>h :TmuxNavigateLeft<cr>
+nnoremap <silent><c-j>j :TmuxNavigateDown<cr>
+nnoremap <silent><c-j>k :TmuxNavigateUp<cr>
+nnoremap <silent><c-j>l :TmuxNavigateRight<cr>
+nnoremap <silent><c-j>b :TmuxNavigatePrevious<cr>
 nnoremap <c-l> :nohlsearch<c-r>=has('diff')?'<Bar>diffupdate':''<cr><cr><c-l>
 
 inoremap <silent> ;f <c-x><c-f>
