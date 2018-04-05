@@ -21,7 +21,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rhubarb'
   Plug 'w0rp/ale'
-  Plug 'xtal8/traces.vim'
 
   Plug 'adriaanzon/vim-textobj-matchit'
   Plug 'b4winckler/vim-angry'
