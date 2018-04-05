@@ -58,7 +58,6 @@ set list
 set listchars=tab:▸\ ,trail:·,nbsp:␣
 set nrformats-=octal
 set number
-set relativenumber
 set scrolljump=8
 set scrolloff=1
 set shiftround
