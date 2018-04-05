@@ -4,5 +4,5 @@ function! elixir#test_command(extra)
   else
     let l:base = '!'
   endif
-  execute l:base . 'mix test ' . bufname('%') . a:extra
+  execute l:base . 'iex -S mix test ' . bufname('%') . a:extra
 endfunction
