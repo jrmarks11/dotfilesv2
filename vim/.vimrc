@@ -57,6 +57,7 @@ set list
 set listchars=tab:▸\ ,trail:·,nbsp:␣
 set nrformats-=octal
 set number
+set nojoinspaces
 set scrolljump=8
 set scrolloff=1
 set shiftround
@@ -70,6 +71,7 @@ set splitbelow
 set splitright
 set statusline=\ %f%=\%c
 set tabstop=2
+set textwidth=78
 set undodir=$HOME/.vim-undo
 set undofile
 set undolevels=1000

@@ -1,3 +1,6 @@
+set colorcolumn=100
+set textwidth=98
+
 command! TestFile call elixir#test_command('')
 command! TestLine call elixir#test_command(':' . line('.'))
 
