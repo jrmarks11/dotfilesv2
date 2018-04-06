@@ -1,5 +1,5 @@
-set colorcolumn=100
-set textwidth=98
+setlocal colorcolumn=100
+setlocal textwidth=98
 
 command! TestFile call elixir#test_command('')
 command! TestLine call elixir#test_command(':' . line('.'))
