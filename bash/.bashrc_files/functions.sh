@@ -29,6 +29,15 @@ gb() {
     git branch "$@"
   fi
 }
+gc() {
+  is_in_git_repo || return
+  if [[ $# -eq 0 ]] ; then
+    git commit --verbose
+  else
+    git commit -m "$1"
+  fi
+}
+
 
 tm() {
   [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
