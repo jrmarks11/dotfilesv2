@@ -38,7 +38,6 @@ gc() {
   fi
 }
 
-
 tm() {
   [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
   if [ "$1" ]; then
