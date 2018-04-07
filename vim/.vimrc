@@ -175,6 +175,16 @@ command! A call util#alt_file()
 command! LastBuffer call util#last_buffer(1)
 command! SecondToLastBuffer call util#last_buffer(2)
 
+if util#has_top_file('Gemfile.lock')
+  nnoremap <space>gk :Files! app/controllers/<cr>
+  nnoremap <space>gm :Files! app/models/<cr>
+  nnoremap <space>gu :Files! spec/<cr>
+elseif util#has_top_file('mix.exs')
+  nnoremap <space>gk :Files! lib/*_web/controllers/<cr>
+  nnoremap <space>gm :Files! lib/<cr>
+  nnoremap <space>gu :Files! test/<cr>
+endif
+
 let g:mapleader='s'
 let g:splitjoin_join_mapping = 'sj'
 let g:splitjoin_split_mapping = 'ss'
@@ -207,8 +217,7 @@ nnoremap <space>d :set relativenumber!<cr>
 nnoremap <space>e :History<cr>
 nnoremap <space>f :Rg!<space><c-r><c-w><cr>
 xnoremap <space>f y:Rg!<space><c-r>0<cr>
-nnoremap <space>g mzV:Gbrowse!<cr>`z
-xnoremap <space>g mz:Gbrowse!<cr>`z
+"        <space>g used for going to specific places
 nnoremap <space>h :help<space><c-r><c-w><cr>
 nnoremap <space>i :BLines!<cr>
 nnoremap <space>j :Rg!<space>
@@ -271,6 +280,7 @@ nnoremap <c-l> :nohlsearch<c-r>=has('diff')?'<Bar>diffupdate':''<cr><cr><c-l>
 
 inoremap <silent> ;f <c-x><c-f>
 inoremap <silent> ;i <c-x><c-i>
+inoremap <c-l> <c-x><c-l>
 inoremap <silent> ;l <c-x><c-l>
 inoremap <silent> ;n <c-x><c-n>
 inoremap <silent> ;o <c-x><c-o>

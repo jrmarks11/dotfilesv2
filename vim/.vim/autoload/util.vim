@@ -35,3 +35,8 @@ function util#sort_buffers(...)
   " Using minus between a float and a number in a sort function causes an error
   return l:b1 < l:b2 ? 1 : -1
 endfunction
+
+function util#has_top_file(name)
+  let l:message = system('git top | xargs ls | rg ' . a:name)
+  return l:message =~ a:name
+endfunction
