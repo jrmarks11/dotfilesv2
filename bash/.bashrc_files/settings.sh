@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS='--reverse'
@@ -13,7 +15,7 @@ fi
 export PATH="/usr/local/sbin:$PATH"
 
 if [ -z "$SSH_AUTH_SOCK" ] ; then
-  eval `ssh-agent -s`
+  eval "$(ssh-agent -s)"
   ssh-add
 fi
 

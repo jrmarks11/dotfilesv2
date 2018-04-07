@@ -1,11 +1,7 @@
+#!/usr/bin/env bash
+
 cl() { history -p '!!'|tr -d \\n|pbcopy; }
-rgv() { vim $(rg -l "$@"); }
 tssh() { tmate display -p '#{tmate_ssh}' | pbcopy; }
-vv() {
-  local file
-  file=$(fzf-tmux --query="$1" --select-1 --exit-0)
-  [ -n "$file" ] && ${EDITOR:-vim} "$file"
-}
 
 fzf_down() {
   fzf --height 50% "$@" --border
@@ -13,12 +9,20 @@ fzf_down() {
 is_in_git_repo() {
   git rev-parse HEAD > /dev/null 2>&1
 }
+ga() {
+  is_in_git_repo || return
+  if [[ $# -eq 0 ]] ; then
+    git add .
+  else
+    git add "$@"
+  fi
+}
 gb() {
   is_in_git_repo || return
   if [[ $# -eq 0 ]] ; then
     git branch -a --color=always | grep -v '/HEAD\s' | sort |
       fzf_down --ansi --multi --tac --preview-window right:70% \
-      --preview 'git log --oneline --graph --date=short --pretty="format:%C(auto)%cd %h%d %s" $(sed s/^..// <<< {} | cut -d" " -f1) | head -200' |
+      --preview "git log --oneline --graph --date=short --pretty='format:%C(auto)%cd %h%d %s' $(sed s/^..// <<< {} | cut -d' ' -f1) | head -200" |
       sed 's/^..//' | cut -d' ' -f1 |
       sed 's#^remotes/origin/##' | xargs git checkout
   else
@@ -28,13 +32,14 @@ gb() {
 
 tm() {
   [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
-  if [ $1 ]; then
-     tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s $1 && tmux $change -t "$1"); return
+  if [ "$1" ]; then
+     tmux $change -t "$1" 2>/dev/null ||
+       (tmux new-session -d -s "$1" && tmux $change -t "$1"); return
   fi
   if (( $(tmux list-sessions | wc -l) == 1 )); then
     session=$(tmux list-sessions -F "#{session_name}")
   else
     session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0)
   fi
-  tmux $change -t "$session" || tm $(whoami)
+  tmux $change -t "$session" || tm "$(whoami)"
 }
