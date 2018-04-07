@@ -3,9 +3,9 @@
 if [[ $(hostname -s) =~ ^CMM ]]; then
   MY_HOST="💊 ";
 elif [[ $(hostname -s) =~ ^vagrant ]]; then
-  MY_HOST="💩 ";
+  MY_HOST="VAGRANT";
 else
-  MY_HOST="🐸 ";
+  MY_HOST="";
 fi
 
 [ -f ~/.bash_files/.git-prompt.sh ] && . ~/.bash_files/.git-prompt.sh
@@ -27,7 +27,7 @@ PS1_COMBINED+=$DARK_GRAY
 PS1_COMBINED+=$GIT_BRANCH
 PS1_COMBINED+=$PURPLE
 PS1_COMBINED+=$MY_HOST
-PS1_COMBINED+="›"
+PS1_COMBINED+="❯"
 PS1_COMBINED+=$COLOR_RESET
 
 export CLICOLOR=1
