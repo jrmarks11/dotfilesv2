@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-[ -f /usr/local/opt/asdf/asdf.sh ] && . "/usr/local/opt/asdf/asdf.sh"
+[ -f /usr/local/opt/asdf/asdf.sh ] && . /usr/local/opt/asdf/asdf.sh
 
 command -v brew >/dev/null 2>&1 && [[ -f $(brew --prefix)/etc/bash_completion ]] &&
   {
