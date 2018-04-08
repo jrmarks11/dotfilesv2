@@ -1,6 +1,6 @@
 function! ruby#rspec_command(...)
   let l:base = exists('$TMUX') ? ':Tmux ' : '!'
-  let l:extra = (a:0 > 0) ? a:1 : ''
+  let l:extra = get(a:, 1, '')
   execute l:base . 'bundle exec rspec ' . bufname('%') . l:extra . ' --format d'
 endfunction
 

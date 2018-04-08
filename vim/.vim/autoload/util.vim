@@ -23,6 +23,10 @@ function! util#buflisted()
   return filter(range(1, bufnr('$')), l:no_qf)
 endfunction
 
+function util#find_current_dir()
+  execute ':Files! ' . fnameescape(expand('%:h')).'/'
+endfunction
+
 function! util#fix_tabs(line1,line2)
   let l:save_cursor = getpos('.')
   silent! execute ':' . a:line1 . ',' . a:line2 . 's/	/  /g'

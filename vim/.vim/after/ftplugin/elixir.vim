@@ -1,8 +1,8 @@
 setlocal colorcolumn=100
 setlocal textwidth=98
 
-command! -bang TestFile call elixir#test_command('', <bang>0)
-command! -bang TestLine call elixir#test_command(':' . line('.'), <bang>0)
+command! -bang TestFile call elixir#test_command(<bang>0)
+command! -bang TestLine call elixir#test_command(<bang>0,':' . line('.'))
 
 nnoremap <buffer> ,d :TestLine!<cr>
 nnoremap <buffer> ,f :TestFile<cr>
