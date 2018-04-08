@@ -1,6 +1,5 @@
-function! elixir#test_command(...)
+function! elixir#test_command(extra, bang)
   let l:base = exists('$TMUX') ? ':Tmux ' : '!'
-  let l:prefix = (a:0 > 1) ? 'iex -S ' : ''
-  let l:extra = (a:0 > 0) ? a:1 : ''
-  execute l:base . l:prefix . 'mix test --trace ' . bufname('%') . l:extra
+  let l:prefix = (a:bang == 1) ? 'iex -S ' : ''
+  execute l:base . l:prefix . 'mix test --trace ' . bufname('%') . a:extra
 endfunction
