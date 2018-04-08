@@ -13,11 +13,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'machakann/vim-sandwich'
   Plug 'nelstrom/vim-visual-star-search'
   Plug 'NLKNguyen/papercolor-theme'
+  Plug 'rhysd/clever-f.vim'
   Plug 'SirVer/ultisnips'
   Plug 'tmux-plugins/vim-tmux'
   Plug 'tpope/vim-commentary'
-  Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-rhubarb'
   Plug 'w0rp/ale'
 
   Plug 'adriaanzon/vim-textobj-matchit'

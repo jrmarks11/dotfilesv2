@@ -24,5 +24,8 @@ nnoremap \ :SecondToLastBuffer<cr>
 " dont ever need to jump with '
 nnoremap ' `
 
+" using clever-f so ; is not needed
+nnoremap ; :
+
 " clear search results when using c-l in normal, maintains c-l
 nnoremap <c-l> :nohlsearch<c-r>=has('diff')?'<Bar>diffupdate':''<cr><cr><c-l>

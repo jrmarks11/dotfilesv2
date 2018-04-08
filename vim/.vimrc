@@ -1,6 +1,7 @@
 source ~/.vim-files/autocommands.vim
 source ~/.vim-files/brace-keybindings.vim
-source ~/.vim-files/command-keybindings.vim
+source ~/.vim-files/comma-keybindings.vim
+source ~/.vim-files/commandline-keybindings.vim
 source ~/.vim-files/insert-keybindings.vim
 source ~/.vim-files/plugins.vim
 source ~/.vim-files/plugin-commands.vim

@@ -25,8 +25,6 @@ let g:fzf_files_options =
       \ '--reverse ' .
       \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -' . &lines . '"'
 
-let g:github_enterprise_urls = ['http://git.innova-partners.com']
-
 let g:gutentags_ctags_tagfile = '.tags'
 
 let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
