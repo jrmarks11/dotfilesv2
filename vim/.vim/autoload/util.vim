@@ -23,7 +23,7 @@ function! util#buflisted()
   return filter(range(1, bufnr('$')), l:no_qf)
 endfunction
 
-function util#find_current_dir()
+function util#files_same_dir()
   execute ':Files! ' . fnameescape(expand('%:h')).'/'
 endfunction
 

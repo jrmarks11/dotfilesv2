@@ -23,7 +23,8 @@ let g:fzf_colors =
       \   'header':  ['fg', 'Comment'] }
 let g:fzf_files_options =
       \ '--reverse ' .
-      \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -' . &lines . '"'
+      \ '--preview "(coderay {} || rougify {} || cat {}) 2> /dev/null | head -'
+      \ . &lines . '"'
 
 let g:gutentags_ctags_tagfile = '.tags'
 

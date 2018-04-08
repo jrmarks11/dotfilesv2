@@ -1,5 +1,5 @@
 command! A call util#alt_file()
-command! FindCurrentDir call util#find_current_dir()
+command! DFiles call util#files_same_dir()
 command! -range=% FixTabs call util#fix_tabs(<line1>,<line2>)
 command! LastBuffer call util#last_buffer(1)
 command! NoPastePaste call util#no_paste_paste()
