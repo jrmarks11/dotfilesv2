@@ -1,10 +1,7 @@
-function! ruby#rspec_command(extra)
-  if exists('$TMUX')
-    let l:base = ':Tmux '
-  else
-    let l:base = '!'
-  endif
-  execute l:base . 'bundle exec rspec ' . bufname('%') . a:extra . ' --format d'
+function! ruby#rspec_command(...)
+  let l:base = exists('$TMUX') ? ':Tmux ' : '!'
+  let l:extra = (a:0 > 0) ? a:1 : ''
+  execute l:base . 'bundle exec rspec ' . bufname('%') . l:extra . ' --format d'
 endfunction
 
 function! ruby#set_ruby_mark()

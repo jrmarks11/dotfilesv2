@@ -5,7 +5,7 @@ nnoremap ,<space> :FixWhitespace<cr>
 nnoremap ,a a
 nnoremap ,b b
 nnoremap ,c c
-nnoremap ,d d
+"        ,d run tests with debugger
 nnoremap ,e e
 "        ,f run tests for the (f)ile
 nnoremap ,g g
