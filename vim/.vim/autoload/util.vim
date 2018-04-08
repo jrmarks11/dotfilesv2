@@ -30,8 +30,8 @@ function! util#fix_tabs(line1,line2)
 endfunction
 
 function! util#has_top_file(name)
-	let l:message = system('git top | xargs ls | rg ' . a:name)
-	return l:message =~ a:name
+  let l:message = system('git top | xargs ls | rg ' . a:name)
+  return l:message =~ a:name
 endfunction
 
 function! util#last_buffer(count)
