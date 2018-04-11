@@ -1,6 +1,5 @@
 # dotfiles
 
-Dotfiles for vim, bash, tmux.  There aren't many comments because I know what
-everything does, maybe some day I will fill this out more.
+Dotfiles for vim, bash, tmux.  There are some comments but we still need more.
 
 My vim configuration relies heavily on fzf, and I use rg for my grep command.
