@@ -7,6 +7,8 @@ nnoremap ]a :next<cr>
 nnoremap [a :previous<cr>
 nnoremap [e :<c-u>execute 'move -1-'. v:count1<cr>
 nnoremap ]e :<c-u>execute 'move +'. v:count1<cr>
+xnoremap [e :<c-u>execute "'<, '>move'<--" . v:count1<cr>gv
+xnoremap ]e :<c-u>execute "'<, '>move'>+" . v:count1<cr>gv
 nnoremap ]l :lnext<cr>
 nnoremap [l :lprevious<cr>
 nnoremap ]q :cnext<cr>
