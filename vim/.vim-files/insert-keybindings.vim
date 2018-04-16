@@ -1,5 +1,3 @@
-" all insert mode mappings
-
 " file completion
 inoremap <silent> ;f <c-x><c-f>
 

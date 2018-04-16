@@ -42,16 +42,6 @@ let g:sandwich#recipes += [
 let g:splitjoin_join_mapping = 'sj'
 let g:splitjoin_split_mapping = 'ss'
 
-let g:switch_custom_definitions = [
-      \    {
-      \      '\<[a-z0-9]\+_\k\+\>': {
-      \        '_\(.\)': '\U\1'
-      \      },
-      \      '\<[a-z0-9]\+[A-Z]\k\+\>': {
-      \        '\([A-Z]\)': '_\l\1'
-      \      },
-      \    }
-      \  ]
 let g:switch_mapping = 'st'
 
 let g:textobj_line_no_default_key_mappings = 1

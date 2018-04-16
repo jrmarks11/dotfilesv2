@@ -62,4 +62,3 @@ endif
 
 colorscheme PaperColor
 highlight LineNr guifg=#cccccc
-

@@ -1,5 +1,3 @@
-" Command bindings
-
 " type %% to show the path of the current file minus the file name
 cnoremap <expr> %% getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
 " type .. to show the the current file name
