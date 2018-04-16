@@ -10,6 +10,20 @@ nnoremap <buffer> ,p Orequire<space>IEx;<space>IEx.pry()<esc>
 nnoremap <buffer> ,t :TestLine<cr>
 nnoremap <buffer> ,y :g/^\W*require IEx.*IEx.pry()$/d<cr>
 
+let s:switch_elixir_assert =
+      \ {
+      \   '\(assert\)': 'refute',
+      \   '\(refute\)': 'assert',
+      \ }
+let s:switch_elixir_map =
+      \  {
+      \    ':\(\k\+\)\s*=>\s*': '\1: ',
+      \    '\<\(\k\+\): ':      ':\1 => ',
+      \  }
+
+let b:switch_custom_definitions =
+      \ [ s:switch_elixir_assert, s:switch_elixir_map ]
+
 augroup SaveRecent
   autocmd!
   autocmd BufWrite *.ex normal! mE
