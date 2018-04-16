@@ -1,30 +1,30 @@
-snippet def "defines a new function with a multiline block" !b
-def ${1:name}(${2:params}) do
-  $0
+snippet "\bh" "Hash" r
+%{$0}
+endsnippet
+
+snippet "\b(de)?f" "def <name>..." r
+def ${1:function_name}${2:(${3:*args})} do
+	$0
 end
 endsnippet
 
-snippet defl "defines a new function" !b
-def ${1:name}(${2:params}), do: $0
+snippet "\b(de)?fl" "def <name>.. do: " r
+def ${1:function_name}${2:(${3:*args})} do: $0
 endsnippet
 
-snippet defp "defines a private method with a multiline block" !b
-defp ${1:name}(${2:params}) do
-  $0
+snippet "\b(de)?fp" "defp <name>..." r
+defp ${1:function_name}${2:(${3:*args})} do
+	$0
 end
 endsnippet
 
-snippet defpl "defines a new private function" !b
-defp ${1:name}(${2:params}), do: $0
+snippet "\b(de)?fpl" "defp <name>.. do: " r
+defp ${1:function_name}${2:(${3:*args})} do: $0
 endsnippet
 
-snippet defc "defines a behavior callback" !b
-defcallback ${1:name}(${0:params})
-endsnippet
-
-snippet defm "defines a macro" !b
-defmacro ${1:name}(${2:params}) do
-  $0
+snippet "\b(de)?fm" "defmacro <name>..." r
+def ${1:macro_name}${2:(${3:*args})} do
+	$0
 end
 endsnippet
 
@@ -100,11 +100,11 @@ snippet # "insert a string interpolation" !i
 #{${1}}$0
 endsnippet
 
-snippet | "insert a pipe operator" !i
-|>
+snippet "\bp" "insert a pipe operator" r
+|> $0
 endsnippet
 
-snippet |i "insert a pipe to IO.inspect" !i
+snippet "\bpi" "insert a pipe to IO.inspect" r
 |> IO.inspect
 endsnippet
 

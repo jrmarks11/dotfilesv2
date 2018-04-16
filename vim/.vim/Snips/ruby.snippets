@@ -1,15 +1,6 @@
-global !p
-
-def write_instance_vars(arglist, snip):
-	args = str(arglist).split(',')
-	for arg in args:
-		name = arg.strip().replace(':', ' ').split(' ', 1)[0]
-		if name:
-			snip += '  @{} = {}'.format(name, name)
-		else:
-			snip += ''
-
-endglobal
+snippet "\bh" "Hash" r
+{ $0 }
+endsnippet
 
 snippet "^#!" "#!/usr/bin/env ruby" r
 #!/usr/bin/env ruby
@@ -19,11 +10,6 @@ endsnippet
 snippet "\b(de)?f" "def <name>..." r
 def ${1:function_name}${2:(${3:*args})}
 	$0
-end
-endsnippet
-
-snippet defi "def initialize ..."
-def initialize($1)`!p write_instance_vars(t[1],snip)`$0
 end
 endsnippet
 
@@ -95,13 +81,6 @@ begin
 rescue
 	$0
 end
-endsnippet
-
-snippet rescue
-rescue Exception => e
-	puts e.message
-	puts e.backtrace.inspect
-	${0:# Rescue}
 endsnippet
 
 snippet "\b(case|sw(itch)?)" "case <variable> when <expression> ... end" r
