@@ -90,11 +90,11 @@ when $2
 end
 endsnippet
 
-snippet class "class <class_name> def initialize ... end end"
-class ${1:class_name}
-  def initialize($2)
-    $0
-  end
+snippet class "class <class_name>"
+class $1
+  ${2:def initialize($3)
+    $4
+  end}$0
 end
 endsnippet
 
@@ -108,4 +108,56 @@ snippet ###
 =begin
   $0
 =end
+endsnippet
+
+snippet "\bar" "attr_reader" r
+attr_reader :$0
+endsnippet
+
+snippet "\baw" "attr_writer" r
+attr_writer :$0
+endsnippet
+
+snippet "\barw" "attr_accessor" r
+attr_accessor :$0
+endsnippet
+
+snippet "\bstub" "rspec stub" r
+allow($1).to receive($2).and_return($3)$0
+endsnippet
+
+snippet "\bdesc" "describe" r
+describe '$1' do
+  ${2}
+end
+endsnippet
+
+snippet "\bit" "it" r
+it '$1' do
+  ${2}
+end
+endsnippet
+
+snippet "\bcon" "context" r
+context '$1' do
+  ${2}
+end
+endsnippet
+
+snippet "\bbef" "before" r
+before do
+  ${2}
+end
+endsnippet
+
+snippet "\blet" "let" r
+let(:$1) { $2 }$0
+endsnippet
+
+snippet "\bletb" "let!" r
+let!(:$1) { $2 }$0
+endsnippet
+
+snippet "\bex" "expect" r
+expect($1).to $0
 endsnippet
