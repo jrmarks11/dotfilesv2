@@ -8,5 +8,5 @@ let g:alt_file_patterns =
       \     [ 'test\/\(.*\)_test.exs', 'lib\/\1.ex' ],
       \     [ 'lib\/\(.*\).ex', 'test\/\1_test.exs' ],
       \     [ '.*\/.vim-files.*vim', '~\/.vimrc' ],
-      \     [ '.*\/.bashrc_files.*sh', '~\/.bashrc' ],
+      \     [ '.*\/.bash-files.*sh', '~\/.bashrc' ],
       \ ]

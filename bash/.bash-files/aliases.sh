@@ -1,7 +1,3 @@
-alias ..2='..; ..'
-alias ..3='..2; ..'
-alias ..4='..3; ..'
-alias ..5='..4; ..'
 alias ..='cd ..'
 alias bake='bundle exec rake'
 alias be='bundle exec'
