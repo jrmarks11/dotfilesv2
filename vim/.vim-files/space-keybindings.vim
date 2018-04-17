@@ -5,7 +5,7 @@ nnoremap <space>a :A<cr>
 nnoremap <space>b :Buffer<cr>
 "        <space>c Files (c)ontrollers
 nnoremap <space>d :DFiles<cr>
-nnoremap <space>e e
+map      <space>e :e %%
 nnoremap <space>f :Rg!<space><c-r><c-w><cr>
 xnoremap <space>f y:Rg!<space><c-r>0<cr>
 nnoremap <space>gf :e <cfile><cr>

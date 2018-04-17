@@ -1,4 +1,4 @@
-" list of regex checked for alternate files first maps to second
+" List of regex checked for alternate files first maps to second
 let g:alt_file_patterns =
       \ [
       \     [ 'spec\/lib\/\(.*\)_spec.rb', 'lib\/\1.rb' ],

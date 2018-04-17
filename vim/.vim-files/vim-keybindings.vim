@@ -21,16 +21,17 @@ nnoremap Y y$
 " This does what it sounds like and its great
 nnoremap \ :SecondToLastBuffer<cr>
 
-" dont ever need to jump with '
+" Dont ever need to jump with '
 nnoremap ' `
 xnoremap ' `
 
-" using clever-f so ; is not needed
+" Using clever-f so ; is not needed
 nnoremap ; :
 xnoremap ; :
 
+" Keep visual selection when moving
 xnoremap > >gv
 xnoremap < <gv
 
-" clear search results when using c-l in normal, maintains c-l
+" Clear search results when using c-l in normal, maintains c-l
 nnoremap <c-l> :nohlsearch<c-r>=has('diff')?'<Bar>diffupdate':''<cr><cr><c-l>

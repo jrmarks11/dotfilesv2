@@ -6,10 +6,14 @@ let g:mapleader='s'
 nmap s <nop>
 xmap s <nop>
 nmap s' <Plug>(operator-sandwich-add)iw'
+xmap s' <Plug>(operator-sandwich-add)'
 nmap s" <Plug>(operator-sandwich-add)iw"
+xmap s" <Plug>(operator-sandwich-add)"
    " sa is sandwich add
 nmap sb <Plug>(operator-sandwich-add)iw{
+xmap sb <Plug>(operator-sandwich-add)}==
 nmap sB <Plug>(operator-sandwich-add)iw}
+xmap sB <Plug>(operator-sandwich-add)}==
 nmap sc :PlugClean<cr>
    " sd is sandwich delete
 nmap se <Plug>(EasyAlign)
@@ -29,6 +33,7 @@ nmap sm m
 nmap sn n
 nmap so <Plug>(ale_toggle_buffer)
 nmap sp <Plug>(operator-sandwich-add)iw(
+xmap sp <Plug>(operator-sandwich-add)(==
    " sr is sandwich replace
    " ss is splitjoin split
    " st is switch (toggle)
@@ -41,6 +46,6 @@ nmap sy y
 nmap sz z
 
 omap ad <Plug>(textobj-line-a)
-vmap ad <Plug>(textobj-line-a)
+xmap ad <Plug>(textobj-line-a)
 omap id <Plug>(textobj-line-i)
-vmap id <Plug>(textobj-line-i)
+xmap id <Plug>(textobj-line-i)
