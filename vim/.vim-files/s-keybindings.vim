@@ -5,10 +5,15 @@
 let g:mapleader='s'
 nmap s <nop>
 xmap s <nop>
+nmap s' <Plug>(operator-sandwich-add)iw'
+nmap s" <Plug>(operator-sandwich-add)iw"
    " sa is sandwich add
-nmap sb b
+nmap sb <Plug>(operator-sandwich-add)iw{
+nmap sB <Plug>(operator-sandwich-add)iw}
 nmap sc :PlugClean<cr>
    " sd is sandwich delete
+nmap se <Plug>(EasyAlign)
+xmap se <Plug>(EasyAlign)
 nmap sf <Plug>(ale_fix)
 nmap sg g
    " shp is gitgutter hunk preview
@@ -17,16 +22,17 @@ nmap sg g
 nmap si i
    " sj is splitjoin join
 nmap sk k
-nmap sl <Plug>(EasyAlign)
-xmap sl <Plug>(EasyAlign)
+nmap sl <Plug>(operator-sandwich-add)iwilet(:<cr>) {  }<cr>f}hi
+nmap sL <Plug>(operator-sandwich-delete)<Plug>(operator-sandwich-release-count)
+       \<Plug>(textobj-sandwich-query-a)ilet(:<cr>).*<cr>
 nmap sm m
 nmap sn n
 nmap so <Plug>(ale_toggle_buffer)
-nmap sp p
-nmap sq q
+nmap sp <Plug>(operator-sandwich-add)iw(
    " sr is sandwich replace
    " ss is splitjoin split
    " st is switch (toggle)
+nmap sq q
 nmap su :PlugUpdate<cr>
 nmap sv v
 nmap sw w

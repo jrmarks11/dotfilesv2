@@ -10,6 +10,9 @@ nnoremap <buffer> ,p Orequire<space>IEx;<space>IEx.pry()<esc>
 nnoremap <buffer> ,t :TestLine<cr>
 nnoremap <buffer> ,y :g/^\W*require IEx.*IEx.pry()$/d<cr>
 
+nmap <buffer> sb <Plug>(operator-sandwich-add)iwi%{<cr>}<cr>
+nmap <buffer> s' <Plug>(operator-sandwich-add)iw"
+
 let s:switch_elixir_assert =
       \ {
       \   '\(assert\)': 'refute',
