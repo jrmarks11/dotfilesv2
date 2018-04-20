@@ -9,9 +9,9 @@ nnoremap [e :<c-u>execute 'move -1-'. v:count1<cr>
 nnoremap ]e :<c-u>execute 'move +'. v:count1<cr>
 xnoremap [e :<c-u>execute "'<, '>move'<--" . v:count1<cr>gv
 xnoremap ]e :<c-u>execute "'<, '>move'>+" . v:count1<cr>gv
-nnoremap ]l :lnext<cr>
-nnoremap [l :lprevious<cr>
-nnoremap ]q :cnext<cr>
-nnoremap [q :cprevious<cr>
+nmap     ]l <Plug>(qf_loc_next)
+nmap     [l <Plug>(qf_loc_previous)
+nmap     ]q <Plug>(qf_qf_next)
+nmap     [q <Plug>(qf_qf_previous)
 nnoremap ]t :tnext<cr>
 nnoremap [t :tprevious<cr>

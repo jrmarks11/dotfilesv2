@@ -13,12 +13,12 @@ nnoremap ,h h
 nnoremap ,i i
 nnoremap ,j j
 nnoremap ,k k
-nnoremap ,l l
+nmap     ,l <Plug>(qf_loc_toggle_stay)
 nnoremap ,m m
 nnoremap ,n n
 nnoremap ,o o
 "        ,p put a (p)ry above this line
-nnoremap ,q q
+nmap     ,q <Plug>(qf_qf_toggle_stay)
 nnoremap ,r :set relativenumber!<cr>
 nnoremap ,s s
 "        ,t run nearest (t)est

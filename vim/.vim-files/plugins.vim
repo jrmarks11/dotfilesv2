@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'nelstrom/vim-visual-star-search'
   Plug 'NLKNguyen/papercolor-theme'
   Plug 'rhysd/clever-f.vim'
+  Plug 'romainl/vim-qf'
   Plug 'SirVer/ultisnips'
   Plug 'tmux-plugins/vim-tmux'
   Plug 'tpope/vim-commentary'
