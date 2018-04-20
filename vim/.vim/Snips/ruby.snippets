@@ -8,32 +8,38 @@ $0
 endsnippet
 
 snippet "\b(de)?f" "def <name>..." r
-def $1${2:($3)}
-  $0
+def $1
+  ${0:${VISUAL:#code}}
+end
+endsnippet
+
+snippet "\b(de)?fa" "def <name>(args)" r
+def $1($2)
+  ${0:${VISUAL:#code}}
 end
 endsnippet
 
 snippet "(\S+)\.select" ".select do |<item>| <block> end" r
 `!p snip.rv=match.group(1)`.select do |${1:item}|
-  ${0:block}
+  ${0:${VISUAL:#block}}
 end
 endsnippet
 
 snippet "(\S+)\.sort" ".sort do |<a>,<b>| <block> end" r
 `!p snip.rv=match.group(1)`.sort do |$1,$2|
-  $0
+  ${0:${VISUAL:#block}}
 end
 endsnippet
 
 snippet "(\S+)\.each_?k(ey)?" ".each_key do |key| <block> end" r
 `!p snip.rv=match.group(1)`.each_key do |${1:key}|
-  $0
+  ${0:${VISUAL:#block}}
 end
 endsnippet
 
 snippet "(\S+)\.each_?val(ue)?" ".each_value do |<value>| <block> end" r
 `!p snip.rv=match.group(1)`.each_value do |${1:value}|
-  $0
+  ${0:${VISUAL:#block}}
 end
 endsnippet
 
@@ -51,7 +57,7 @@ try:
 except:
   snip.rv = 'element'
 `}|
-  $0
+  ${0:${VISUAL:#block}}
 end
 endsnippet
 
@@ -65,48 +71,46 @@ try:
 except:
   snip.rv = 'element'
 `}|
-  $0
+  ${0:${VISUAL:#block}}
 end
 endsnippet
 
 snippet while "while <expression> ... end"
 while $1
-  $0
+  ${0:${VISUAL:#code}}
 end
 endsnippet
 
 snippet begin "begin ... rescue ... end"
 begin
-  $1
+  ${1:${VISUAL:#code}}
 rescue
-  $0
+  ${0:${VISUAL:#code}}
 end
 endsnippet
 
 snippet "\b(case|sw(itch)?)" "case <variable> when <expression> ... end" r
 case $1
 when $2
-  $0
+  ${0:${VISUAL:#code}}
 end
 endsnippet
 
 snippet class "class <class_name>"
 class $1
-  ${2:def initialize($3)
-    $4
-  end}$0
+  ${0:${VISUAL:#code}}
 end
 endsnippet
 
 snippet module "module"
 module $1
-  $0
+  ${0:${VISUAL:#code}}
 end
 endsnippet
 
 snippet ###
 =begin
-  $0
+  ${0:${VISUAL:#code}}
 =end
 endsnippet
 
@@ -128,25 +132,25 @@ endsnippet
 
 snippet "\bdesc" "describe" r
 describe '$1' do
-  ${2}
+  ${0:${VISUAL:#code}}
 end
 endsnippet
 
 snippet "\bit" "it" r
 it '$1' do
-  ${2}
+  ${0:${VISUAL:#code}}
 end
 endsnippet
 
 snippet "\bcon" "context" r
 context '$1' do
-  ${2}
+  ${0:${VISUAL:#code}}
 end
 endsnippet
 
 snippet "\bbef" "before" r
 before do
-  ${2}
+  ${0:${VISUAL:#code}}
 end
 endsnippet
 

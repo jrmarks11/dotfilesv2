@@ -1,9 +1,9 @@
 snippet "\bh" "Hash" r
-{ $0 }
+{ $1 }$0
 endsnippet
 
 snippet "\bf" "function name(args)" r
-function $1(${2})
-  $0
+function $1($2)
+  ${0:${VISUAL: "code}}
 endfunction
 endsnippet

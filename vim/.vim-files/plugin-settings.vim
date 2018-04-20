@@ -7,6 +7,8 @@ let g:ale_fixers = {
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_text_changed = 'normal'
 
+let g:clever_f_across_no_line    = 1
+
 let g:fzf_colors =
       \ { 'fg':      ['fg', 'Normal'],
       \   'bg':      ['bg', 'Normal'],

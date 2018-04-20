@@ -23,8 +23,24 @@ function! util#buflisted()
   return filter(range(1, bufnr('$')), l:no_qf)
 endfunction
 
-function util#files_same_dir()
+function! util#files_same_dir()
   execute ':Files! ' . fnameescape(expand('%:h')).'/'
+endfunction
+
+function! util#fix_all_whitespace(line1, line2)
+  let l:save_cursor = getpos('.')
+  execute a:line1.','.a:line2.'FixWhitespace'
+  if(&filetype ==# 'ruby' || &filetype ==# 'elixir')
+    call util#fix_tabs(a:line1, a:line2)
+    call util#fix_extra_lines(a:line1, a:line2)
+  endif
+  call setpos('.', l:save_cursor)
+endfunction
+
+function! util#fix_extra_lines(line1,line2)
+  let l:save_cursor = getpos('.')
+  silent! execute ':' . a:line1 . ',' . a:line2 . 's/\n\n\n\+//g'
+  call setpos('.', l:save_cursor)
 endfunction
 
 function! util#fix_tabs(line1,line2)
@@ -45,7 +61,7 @@ function! util#last_buffer(count)
   endif
 endfunction
 
-function util#no_paste_paste()
+function! util#no_paste_paste()
   set paste
   normal! o
   normal! ]p

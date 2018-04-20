@@ -1,5 +1,7 @@
 command! A call util#alt_file()
 command! DFiles call util#files_same_dir()
+command! -range=% FixAllWhitespace call util#fix_all_whitespace(<line1>,<line2>)
+command! -range=% FixExtraLines call util#fix_extra_lines(<line1>,<line2>)
 command! -range=% FixTabs call util#fix_tabs(<line1>,<line2>)
 command! LastBuffer call util#last_buffer(1)
 command! NoPastePaste call util#no_paste_paste()
