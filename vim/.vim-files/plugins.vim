@@ -22,6 +22,7 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'adriaanzon/vim-textobj-matchit'
   Plug 'b4winckler/vim-angry'
+  Plug 'Julian/vim-textobj-variable-segment'
   Plug 'kana/vim-textobj-entire'
   Plug 'kana/vim-textobj-indent'
   Plug 'kana/vim-textobj-line'
