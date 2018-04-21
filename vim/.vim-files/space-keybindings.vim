@@ -16,7 +16,7 @@ nnoremap <space>j :Rg!<space>
 nnoremap <space>l l
 "        <space>m Files (m)odels
 nnoremap <space>n :BranchFiles!<cr>
-nnoremap <space>o o
+nnoremap <space>o :BTags<cr>
 nnoremap <space>p :NoPastePaste<cr>
 nnoremap <space>q q
 nnoremap <space>r :History<cr>

@@ -25,6 +25,7 @@ function taskpaper#done()
   let l:time = strftime('%Y-%m-%d', localtime())
   let l:tagged_line = l:line . ' @done('. l:time . ')'
   call setline('.', l:tagged_line)
+  normal! j
   return 1
 endfunction
 
