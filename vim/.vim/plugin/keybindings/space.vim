@@ -12,13 +12,13 @@ nnoremap <space>gf :e <cfile><cr>
 nnoremap <space>h :help<space><c-r><c-w><cr>
 nnoremap <space>i :BLines!<cr>
 nnoremap <space>j :Rg!<space>
-"        <space>k Files test or spec spe(k)
+nnoremap <space>k :Files ~/.vim/plugin/keybindings<cr>
 nnoremap <space>l l
 "        <space>m Files (m)odels
 nnoremap <space>n :BranchFiles!<cr>
 nnoremap <space>o :BTags<cr>
 nnoremap <space>p :NoPastePaste<cr>
-nnoremap <space>q q
+"        <space>q Files test or spec
 nnoremap <space>r :History<cr>
 nnoremap <space>s :%s/\<<c-r><c-w>\>//g<left><left>
 xnoremap <space>s y:%s/<c-r><c-0>//g<left><left>
@@ -33,9 +33,9 @@ nnoremap <space>z z
 if util#has_top_file('Gemfile.lock')
   nnoremap <space>c :Files! app/controllers/<cr>
   nnoremap <space>m :Files! app/models/<cr>
-  nnoremap <space>k :Files! spec/<cr>
+  nnoremap <space>q :Files! spec/<cr>
 elseif util#has_top_file('mix.exs')
   nnoremap <space>c :Files! lib/*_web/controllers/<cr>
   nnoremap <space>m :Files! lib/<cr>
-  nnoremap <space>k :Files! test/<cr>
+  nnoremap <space>q :Files! test/<cr>
 endif
