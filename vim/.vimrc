@@ -4,9 +4,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'andrewradev/splitjoin.vim'
   Plug 'andrewradev/switch.vim'
-  Plug 'bronson/vim-trailing-whitespace'
   Plug 'christoomey/vim-tmux-navigator'
-  Plug 'elixir-editors/vim-elixir'
   Plug 'jgdavey/tslime.vim'
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
@@ -18,10 +16,15 @@ call plug#begin('~/.vim/plugged')
   Plug 'rhysd/clever-f.vim'
   Plug 'romainl/vim-qf'
   Plug 'SirVer/ultisnips'
-  Plug 'tmux-plugins/vim-tmux'
   Plug 'tpope/vim-commentary'
   Plug 'w0rp/ale'
 
+  " Syntax
+  Plug 'bronson/vim-trailing-whitespace'
+  Plug 'elixir-editors/vim-elixir'
+  Plug 'tmux-plugins/vim-tmux'
+
+  " Text Objects
   Plug 'adriaanzon/vim-textobj-matchit'
   Plug 'b4winckler/vim-angry'
   Plug 'Julian/vim-textobj-variable-segment'
@@ -31,6 +34,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'kana/vim-textobj-user'
   Plug 'wellle/targets.vim'
 call plug#end()
+
 runtime macros/matchit.vim
 
 let g:ale_fixers = {
