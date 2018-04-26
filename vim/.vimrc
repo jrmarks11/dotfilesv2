@@ -33,21 +33,6 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 runtime macros/matchit.vim
 
-let s:fzf_options =
-  \ '--reverse ' .
-  \ '--preview "(mdiff {} | tail -n +5 || cat {}) 2> /dev/null | head -'.&lines.'"'
-command! -bang BranchFiles call fzf#run(fzf#wrap('BranchFiles',
-      \ { 'source': 'branch_files', 'options': s:fzf_options }, <bang>0))
-command! -bang UncommitedFiles call fzf#run(fzf#wrap('UncommitedFiles',
-      \ { 'source': 'branch_files -w', 'options': s:fzf_options }, <bang>0))
-
-let s:fzf_grep_cmd =
-      \ 'rg --column --line-number --no-heading --fixed-strings --ignore-case'
-      \ . " --hidden --follow --glob '!.git/*' --color 'always' "
-command! -bang -nargs=* Rg
-      \ call fzf#vim#grep(s:fzf_grep_cmd .shellescape(<q-args>), 1,
-      \ fzf#vim#with_preview('right:50%'), <bang>0)
-
 let g:ale_fixers = {
       \   'bash': ['shellcheck'],
       \   'elixir': ['mix_format'],
@@ -57,7 +42,7 @@ let g:ale_fixers = {
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_text_changed = 'normal'
 
-let g:clever_f_across_no_line    = 1
+let g:clever_f_across_no_line = 1
 
 let g:fzf_colors =
       \ { 'fg':      ['fg', 'Normal'],
@@ -117,7 +102,6 @@ let g:alt_file_patterns =
       \   [ 'app\/\(.*\).rb', 'spec\/\1_spec.rb' ],
       \   [ 'test\/\(.*\)_test.exs', 'lib\/\1.ex' ],
       \   [ 'lib\/\(.*\).ex', 'test\/\1_test.exs' ],
-      \   [ '.*\/.vim-files.*vim', '~\/.vimrc' ],
       \   [ '.*\/.bash-files.*sh', '~\/.bashrc' ],
       \ ]
 
