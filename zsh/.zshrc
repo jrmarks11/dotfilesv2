@@ -1,13 +1,17 @@
 source /usr/local/opt/zplug/init.zsh
 
-zplug 'mafredri/zsh-async'
-zplug 'sindresorhus/pure'
+zplug 'mafredri/zsh-async', from:github
+zplug 'dfurnes/purer', use:pure.zsh, from:github, as:theme
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions', defer:2
 zplug 'zsh-users/zsh-history-substring-search'
 zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 zplug load
 
+export EDITOR=vim
+export VISUAL=vim
+
+bindkey -v
 bindkey "^a" beginning-of-line
 bindkey "^e" end-of-line
 bindkey "^k" kill-line
@@ -80,6 +84,7 @@ alias mt='mix test --trace'
 alias mtd='iex -S mix test --trace'
 alias s.='source ~/.zshrc'
 alias v='f -e vim'
+alias vi='vim'
 
 tssh() { tmate display -p '#{tmate_ssh}' | pbcopy; }
 
