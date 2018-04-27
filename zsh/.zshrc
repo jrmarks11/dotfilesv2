@@ -172,3 +172,11 @@ fi
 [ -f /usr/local/opt/asdf/asdf.sh ] && . /usr/local/opt/asdf/asdf.sh
 [ -f /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash ] &&
   . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+
+_not_inside_tmux() {
+  [[ -z "$TMUX" ]]
+}
+
+if _not_inside_tmux; then
+  tm
+fi
