@@ -5,6 +5,8 @@
 let g:mapleader='s'
 nmap s <nop>
 xmap s <nop>
+nnoremap s. :SidewaysRight<cr>
+nnoremap s, :SidewaysLeft<cr>
 nmap s' <Plug>(operator-sandwich-add)iw'
 xmap s' <Plug>(operator-sandwich-add)'
 nmap s" <Plug>(operator-sandwich-add)iw"
@@ -14,7 +16,7 @@ nmap sb <Plug>(operator-sandwich-add)iw{
 xmap sb <Plug>(operator-sandwich-add)}==
 nmap sB <Plug>(operator-sandwich-add)iw}
 xmap sB <Plug>(operator-sandwich-add)}==
-nmap sc :PlugClean<cr>
+nnoremap sc :PlugClean<cr>
    " sd is sandwich delete
 nmap se <Plug>(EasyAlign)
 xmap se <Plug>(EasyAlign)
@@ -38,7 +40,7 @@ xmap sp <Plug>(operator-sandwich-add)(==
    " ss is splitjoin split
    " st is switch (toggle)
 nmap sq q
-nmap su :PlugUpdate<cr>
+nnoremap su :PlugUpdate<cr>
 nmap sv v
 nmap sw w
 nmap sx x
@@ -49,3 +51,8 @@ omap ad <Plug>(textobj-line-a)
 xmap ad <Plug>(textobj-line-a)
 omap id <Plug>(textobj-line-i)
 xmap id <Plug>(textobj-line-i)
+
+omap aa <Plug>SidewaysArgumentTextobjA
+xmap aa <Plug>SidewaysArgumentTextobjA
+omap ia <Plug>SidewaysArgumentTextobjI
+xmap ia <Plug>SidewaysArgumentTextobjI

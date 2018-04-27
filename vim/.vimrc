@@ -2,6 +2,7 @@ scriptencoding utf-8
 
 call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
+  Plug 'andrewradev/sideways.vim'
   Plug 'andrewradev/splitjoin.vim'
   Plug 'andrewradev/switch.vim'
   Plug 'christoomey/vim-tmux-navigator'
@@ -26,7 +27,6 @@ call plug#begin('~/.vim/plugged')
 
   " Text Objects
   Plug 'adriaanzon/vim-textobj-matchit'
-  Plug 'b4winckler/vim-angry'
   Plug 'Julian/vim-textobj-variable-segment'
   Plug 'kana/vim-textobj-entire'
   Plug 'kana/vim-textobj-indent'

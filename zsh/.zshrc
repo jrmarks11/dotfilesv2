@@ -1,11 +1,12 @@
 source /usr/local/opt/zplug/init.zsh
 
 zplug 'mafredri/zsh-async', from:github
-zplug 'dfurnes/purer', use:pure.zsh, from:github, as:theme
+zplug 'sindresorhus/pure', use:pure.zsh, from:github, as:theme
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions', defer:2
 zplug 'zsh-users/zsh-history-substring-search'
 zplug 'zsh-users/zsh-syntax-highlighting', defer:2
+zplug check || zplug install
 zplug load
 
 source ~/.zsh-files/aliases.zsh
@@ -16,10 +17,10 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.zsh_history
 setopt append_history
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
 setopt inc_append_history
 setopt share_history
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
 
 [ -f /usr/local/opt/asdf/asdf.sh ] && . /usr/local/opt/asdf/asdf.sh
 [ -f /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash ] &&
