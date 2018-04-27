@@ -2,10 +2,10 @@ source /usr/local/opt/zplug/init.zsh
 
 zplug 'mafredri/zsh-async'
 zplug 'sindresorhus/pure'
+zplug 'zsh-users/zsh-autosuggestions'
+zplug 'zsh-users/zsh-completions', defer:2
 zplug 'zsh-users/zsh-history-substring-search'
 zplug 'zsh-users/zsh-syntax-highlighting', defer:2
-zplug 'zsh-users/zsh-completions', defer:2
-
 zplug load
 
 bindkey "^a" beginning-of-line
@@ -78,10 +78,9 @@ alias lt='exa -laT'
 alias mc='iex -S mix'
 alias mt='mix test --trace'
 alias mtd='iex -S mix test --trace'
-alias sb='source ~/.bashrc'
+alias s.='source ~/.zshrc'
 alias v='f -e vim'
 
-cl() { history -p '!!'|tr -d \\n|pbcopy; }
 tssh() { tmate display -p '#{tmate_ssh}' | pbcopy; }
 
 fzf_down() {
@@ -133,9 +132,6 @@ tm() {
   tmux $change -t "$session" || tm "$(whoami)"
 }
 
-[ -f /usr/local/opt/asdf/asdf.sh ] && . /usr/local/opt/asdf/asdf.sh
-[ -f /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash ] && . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
-
 if [[ $(command -v fasd) ]]; then
   fasd_cache="$HOME/.fasd-init-zsh"
   if [ "$(command -v fasd)" -nt "$fasd_cache" ] || [ ! -s "$fasd_cache" ]; then
@@ -168,3 +164,6 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   ssh-add
 fi
 
+[ -f /usr/local/opt/asdf/asdf.sh ] && . /usr/local/opt/asdf/asdf.sh
+[ -f /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash ] &&
+  . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
