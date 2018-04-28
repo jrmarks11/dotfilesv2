@@ -22,6 +22,9 @@ setopt hist_ignore_space
 setopt inc_append_history
 setopt share_history
 
+stty start undef
+stty stop undef
+
 [ -f /usr/local/opt/asdf/asdf.sh ] && . /usr/local/opt/asdf/asdf.sh
 [ -f /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash ] &&
   . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
