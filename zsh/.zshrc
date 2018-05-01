@@ -1,17 +1,10 @@
-source /usr/local/opt/zplug/init.zsh
-
-zplug 'mafredri/zsh-async', from:github
-zplug 'sindresorhus/pure', use:pure.zsh, from:github, as:theme
-zplug 'zsh-users/zsh-autosuggestions'
-zplug 'zsh-users/zsh-completions', defer:2
-zplug 'zsh-users/zsh-history-substring-search'
-zplug 'zsh-users/zsh-syntax-highlighting', defer:2
-zplug check || zplug install
-zplug load
-
 source ~/.zsh-files/aliases.zsh
 source ~/.zsh-files/functions.zsh
 source ~/.zsh-files/keybindings.zsh
+
+if [[ -z "$TMUX" ]]; then
+  tm
+fi
 
 HISTSIZE=10000000
 SAVEHIST=10000000
@@ -24,6 +17,9 @@ setopt share_history
 
 stty start undef
 stty stop undef
+
+autoload -Uz compinit
+compinit
 
 [ -f /usr/local/opt/asdf/asdf.sh ] && . /usr/local/opt/asdf/asdf.sh
 [ -f /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash ] &&
@@ -50,6 +46,20 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   ssh-add
 fi
 
-if [[ -z "$TMUX" ]]; then
-  tm
-fi
+source "$HOME/.zplugin/bin/zplugin.zsh"
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
+
+zplugin ice silent wait"0" blockf
+zplugin light zsh-users/zsh-completions
+
+zplugin ice silent wait'0' blockf
+zplugin light zsh-users/zsh-history-substring-search
+
+zplugin ice silent wait"0" atload"_zsh_autosuggest_start"
+zplugin light zsh-users/zsh-autosuggestions
+
+zplugin ice silent wait"0" atinit"zpcompinit; zpcdreplay"
+zplugin light zdharma/fast-syntax-highlighting
+
+zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
