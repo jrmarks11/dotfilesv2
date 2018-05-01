@@ -62,4 +62,5 @@ zplugin light zsh-users/zsh-autosuggestions
 zplugin ice silent wait"0" atinit"zpcompinit; zpcdreplay"
 zplugin light zdharma/fast-syntax-highlighting
 
-zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
+zplugin light mafredri/zsh-async
+zplugin light sindresorhus/pure
