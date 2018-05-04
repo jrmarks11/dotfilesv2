@@ -23,3 +23,17 @@ function _pbcopy_last_command(){
 }
 zle -N pbcopy-last-command _pbcopy_last_command
 bindkey '^x^y' pbcopy-last-command
+
+# Keybind to fuzzy find a git branch inline
+gb_inline() {
+  is_in_git_repo || return
+  git branch -a --color=always | grep -v '/HEAD\s' | sort |
+    fzf_down --ansi --multi --tac | sed 's/^..//' | cut -d' ' -f1 |
+    sed 's#^remotes/origin/##' | pbcopy
+  RBUFFER="$(pbpaste)${RBUFFER}"
+  zle autosuggest-clear
+  zle end-of-line
+  zle reset-prompt
+}
+zle -N _gb gb_inline
+bindkey '^g' _gb

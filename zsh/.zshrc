@@ -21,6 +21,11 @@ stty stop undef
 autoload -Uz compinit
 compinit
 
+_JM_git_branch_names () {
+  compadd "${(@)${(f)$(git branch -a)}#??}"
+}
+compdef _JM_git_branch_names gb
+
 [ -f /usr/local/opt/asdf/asdf.sh ] && . /usr/local/opt/asdf/asdf.sh
 [ -f /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash ] &&
   . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
@@ -76,7 +81,7 @@ prompt_pure_update_vim_prompt() {
         print "error: pure_update_vim_prompt must be called when zle is active"
         return 1
     }
-    VIM_PROMPT=${${KEYMAP/vicmd/❮}/(main|viins)/❯}
+    VIM_PROMPT=${${KEYMAP/vicmd/%F{red}❮}/(main|viins)/❯}
     zle .reset-prompt
 }
 
