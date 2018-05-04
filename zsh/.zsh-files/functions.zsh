@@ -21,9 +21,7 @@ gb() {
   is_in_git_repo || return
   if [[ $# -eq 0 ]] ; then
     git branch -a --color=always | grep -v '/HEAD\s' | sort |
-      fzf_down --ansi --multi --tac --preview-window right:70% \
-      --preview "git log --oneline --graph --date=short --pretty='format:%C(auto)%cd %h%d %s' $(sed s/^..// <<< {} | cut -d' ' -f1) | head -200" |
-      sed 's/^..//' | cut -d' ' -f1 |
+      fzf_down --ansi --multi --tac | sed 's/^..//' | cut -d' ' -f1 |
       sed 's#^remotes/origin/##' | xargs git checkout
   else
     git branch "$@"
