@@ -19,7 +19,11 @@ stty start undef
 stty stop undef
 
 autoload -Uz compinit
-compinit
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
 
 _JM_git_branch_names () {
   compadd "${(@)${(f)$(git branch -a)}#??}"
