@@ -24,6 +24,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'elixir-editors/vim-elixir'
   Plug 'tmux-plugins/vim-tmux'
+  Plug 'slim-template/vim-slim'
 
   " Text Objects
   Plug 'adriaanzon/vim-textobj-matchit'
