@@ -17,14 +17,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'rhysd/clever-f.vim'
   Plug 'romainl/vim-qf'
   Plug 'SirVer/ultisnips'
+  Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
   Plug 'w0rp/ale'
-
-  " Syntax
-  Plug 'bronson/vim-trailing-whitespace'
-  Plug 'elixir-editors/vim-elixir'
-  Plug 'tmux-plugins/vim-tmux'
-  Plug 'slim-template/vim-slim'
 
   " Text Objects
   Plug 'adriaanzon/vim-textobj-matchit'
