@@ -41,3 +41,8 @@ alias mtd='iex -S mix test --trace'
 alias s.='source ~/.zshrc'
 alias v='f -e vim'
 alias vi='vim'
+
+# Allow nesting tmux in tmate
+if [[ "$TMUX" =~ "/tmate-" ]]; then
+  alias tmux="TMUX='' tmux"
+fi
