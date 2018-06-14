@@ -46,3 +46,6 @@ alias vi='vim'
 if [[ "$TMUX" =~ "/tmate-" ]]; then
   alias tmux="TMUX='' tmux"
 fi
+alias tmate-attach='tmate -S `tmate-socket` attach'
+alias tmate-ssh='tmate -S `tmate-socket` display -p "#{tmate_ssh}"  | tr -d "\n" | pbcopy'
+alias tmate-ls='tmate -S `tmate-socket` ls'
