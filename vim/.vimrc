@@ -39,6 +39,12 @@ let g:ale_fixers = {
       \   'javascript': ['standard'],
       \   'ruby': ['rubocop'],
       \ }
+let g:ale_linters = {
+      \   'bash': ['shellcheck'],
+      \   'elixir': ['credo'],
+      \   'javascript': ['standard'],
+      \   'ruby': ['rubocop'],
+      \ }
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_text_changed = 'normal'
 
