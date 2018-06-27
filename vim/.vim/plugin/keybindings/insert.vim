@@ -17,5 +17,5 @@ inoremap <silent> ;t <c-x><c-]>
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
-" Easy string and brace addition in insert mode
+" Easy string addition in insert mode
 imap <c-s> <esc><Plug>(operator-sandwich-add)iw'Ea
