@@ -19,4 +19,3 @@ inoremap <c-w> <c-g>u<c-w>
 
 " Easy string and brace addition in insert mode
 imap <c-s> <esc><Plug>(operator-sandwich-add)iw'Ea
-imap <c-b> <esc><Plug>(operator-sandwich-add)iw{ea

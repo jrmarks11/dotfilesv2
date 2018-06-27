@@ -15,7 +15,6 @@ xmap <buffer> sb <Plug>(operator-sandwich-add)i%{<cr>}<cr>==
 nmap <buffer> s' <Plug>(operator-sandwich-add)iw"
 xmap <buffer> s' <Plug>(operator-sandwich-add)"
 
-imap <buffer> <c-b> <esc><Plug>(operator-sandwich-add)iwi%{<cr>}<cr>ea
 imap <buffer> <c-s> <esc><Plug>(operator-sandwich-add)iw"Ea
 
 let s:switch_elixir_assert =
