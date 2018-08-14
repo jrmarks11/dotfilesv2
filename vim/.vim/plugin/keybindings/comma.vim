@@ -1,7 +1,7 @@
 " Third leader key using clever-f so , isnt needed
 
-nnoremap ,<tab> :FixTabs<cr>
-nnoremap ,<space> :FixWhitespace<cr>
+nnoremap ,<tab> <tab>
+nnoremap ,<space> <space>
 nnoremap ,a a
 nnoremap ,b b
 nnoremap ,c c
