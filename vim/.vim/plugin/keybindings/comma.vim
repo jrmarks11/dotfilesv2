@@ -26,4 +26,4 @@ nnoremap ,v v
 nnoremap ,u u
 nnoremap ,x x
 "        ,y remove pr(y)
-nnoremap ,z z
+nnoremap ,z :tabe %<cr>
