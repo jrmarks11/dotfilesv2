@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-for i in `find /private/tmp/tmate-* | sed 1d`; do
-if lsof $i >/dev/null; then
+for i in `fd . /private/tmp/tmate-*`; do
   echo $i
   exit 0
-fi
 done
 exit 1
