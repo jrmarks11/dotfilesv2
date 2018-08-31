@@ -97,7 +97,7 @@ let g:tslime_always_current_window = 1
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
-let g:UltiSnipsSnippetDirectories=['Snips', 'UltiSnips']
+let g:UltiSnipsSnippetDirectories=['Snips']
 
 " List of regex checked for alternate files first maps to second
 let g:alt_file_patterns =

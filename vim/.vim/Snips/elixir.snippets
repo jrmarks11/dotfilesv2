@@ -27,7 +27,7 @@ end
 endsnippet
 
 snippet "\b(de)?fl" "def <name>.. do: " r
-def $1${2:($3)} do: $0
+def $1${2:($3)}, do: $0
 endsnippet
 
 snippet "\b(de)?fp" "defp <name>..." r
@@ -37,7 +37,7 @@ end
 endsnippet
 
 snippet "\b(de)?fpl" "defp <name>.. do: " r
-defp $1${2:($3)} do: $0
+defp $1${2:($3)}, do: $0
 endsnippet
 
 snippet "\b(de)?fm" "defmacro <name>..." r
@@ -72,10 +72,6 @@ endsnippet
 
 snippet fn "insert an anonymous function" !i
 fn($1) -> $0 end
-endsnippet
-
-snippet & "insert an anonymous function short syntax" !i
-&($1)$0
 endsnippet
 
 snippet doc "insert a function documentation block" !b

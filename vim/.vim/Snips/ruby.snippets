@@ -19,62 +19,6 @@ def $1($2)
 end
 endsnippet
 
-snippet "(\S+)\.select" ".select do |<item>| <block> end" r
-`!p snip.rv=match.group(1)`.select do |${1:item}|
-  ${0:${VISUAL:#block}}
-end
-endsnippet
-
-snippet "(\S+)\.sort" ".sort do |<a>,<b>| <block> end" r
-`!p snip.rv=match.group(1)`.sort do |$1,$2|
-  ${0:${VISUAL:#block}}
-end
-endsnippet
-
-snippet "(\S+)\.each_?k(ey)?" ".each_key do |key| <block> end" r
-`!p snip.rv=match.group(1)`.each_key do |${1:key}|
-  ${0:${VISUAL:#block}}
-end
-endsnippet
-
-snippet "(\S+)\.each_?val(ue)?" ".each_value do |<value>| <block> end" r
-`!p snip.rv=match.group(1)`.each_value do |${1:value}|
-  ${0:${VISUAL:#block}}
-end
-endsnippet
-
-snippet "(\S+)\.ea" "<elements>.each do |<element>| <block> end" r
-`!p snip.rv=match.group(1)`.each { |${1:e}| $0 }
-endsnippet
-
-snippet "(\S+)\.map" ".map do |<element>| <block> end" r
-`!p snip.rv=match.group(1)`.map do |${1:`!p
-element_name = match.group(1).lstrip('$@')
-ematch = re.search("([A-Za-z][A-Za-z0-9_]+?)s?[^A-Za-z0-9_]*?$", element_name)
-try:
-  wmatch = re.search("([A-Za-z][A-Za-z0-9_]+)$", ematch.group(1))
-  snip.rv = wmatch.group(1).lower()
-except:
-  snip.rv = 'element'
-`}|
-  ${0:${VISUAL:#block}}
-end
-endsnippet
-
-snippet "(\S+)\.each" ".each do |<element>| <block> end" r
-`!p snip.rv=match.group(1)`.each do |${1:`!p
-element_name = match.group(1).lstrip('$@')
-ematch = re.search("([A-Za-z][A-Za-z0-9_]+?)s?[^A-Za-z0-9_]*?$", element_name)
-try:
-  wmatch = re.search("([A-Za-z][A-Za-z0-9_]+)$", ematch.group(1))
-  snip.rv = wmatch.group(1).lower()
-except:
-  snip.rv = 'element'
-`}|
-  ${0:${VISUAL:#block}}
-end
-endsnippet
-
 snippet while "while <expression> ... end"
 while $1
   ${0:${VISUAL:#code}}
