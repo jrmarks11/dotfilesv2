@@ -4,7 +4,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'andrewradev/sideways.vim'
   Plug 'andrewradev/splitjoin.vim'
-  Plug 'andrewradev/switch.vim'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'jgdavey/tslime.vim'
   Plug 'junegunn/fzf'
@@ -26,9 +25,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'Julian/vim-textobj-variable-segment'
   Plug 'kana/vim-textobj-entire'
   Plug 'kana/vim-textobj-indent'
-  Plug 'kana/vim-textobj-line'
   Plug 'kana/vim-textobj-user'
-  Plug 'wellle/targets.vim'
 call plug#end()
 
 runtime macros/matchit.vim
@@ -84,10 +81,6 @@ let g:sandwich#recipes += [
 
 let g:splitjoin_join_mapping = 'sj'
 let g:splitjoin_split_mapping = 'ss'
-
-let g:switch_mapping = 'st'
-
-let g:textobj_line_no_default_key_mappings = 1
 
 let g:tmux_navigator_no_mappings = 1
 

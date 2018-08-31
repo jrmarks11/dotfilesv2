@@ -47,11 +47,6 @@ nmap sx x
 nmap sy y
 nmap sz z
 
-omap ad <Plug>(textobj-line-a)
-xmap ad <Plug>(textobj-line-a)
-omap id <Plug>(textobj-line-i)
-xmap id <Plug>(textobj-line-i)
-
 omap aa <Plug>SidewaysArgumentTextobjA
 xmap aa <Plug>SidewaysArgumentTextobjA
 omap ia <Plug>SidewaysArgumentTextobjI

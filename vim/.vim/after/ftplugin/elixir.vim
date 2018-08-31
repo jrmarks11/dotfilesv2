@@ -17,20 +17,6 @@ xmap <buffer> s' <Plug>(operator-sandwich-add)"
 
 imap <buffer> <c-s> <esc><Plug>(operator-sandwich-add)iw"Ea
 
-let s:switch_elixir_assert =
-      \ {
-      \   '\(assert\)': 'refute',
-      \   '\(refute\)': 'assert',
-      \ }
-let s:switch_elixir_map =
-      \  {
-      \    ':\(\k\+\)\s*=>\s*': '\1: ',
-      \    '\<\(\k\+\): ':      ':\1 => ',
-      \  }
-
-let b:switch_custom_definitions =
-      \ [ s:switch_elixir_assert, s:switch_elixir_map ]
-
 augroup SaveRecent
   autocmd!
   autocmd BufWrite *.ex normal! mE
