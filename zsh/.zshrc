@@ -74,6 +74,7 @@ zplugin light zdharma/fast-syntax-highlighting
 zplugin light mafredri/zsh-async
 zplugin light sindresorhus/pure
 
+export BAT_THEME="GitHub"
 prompt_newline='%666v'
 PROMPT=" $PROMPT"
 
