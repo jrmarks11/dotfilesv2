@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'andrewradev/sideways.vim'
   Plug 'andrewradev/splitjoin.vim'
+  Plug 'bronson/vim-trailing-whitespace'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'jgdavey/tslime.vim'
   Plug 'junegunn/fzf'
