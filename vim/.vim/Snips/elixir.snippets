@@ -1,3 +1,11 @@
+snippet "\bk" "Right Arrow" r
+ -> $0
+endsnippet
+
+snippet "\bj" "Left Arrow" r
+ <- $0
+endsnippet
+
 snippet "\bh" "Hash" r
 %{$1}$0
 endsnippet
@@ -38,16 +46,6 @@ defmacro $1 do
 end
 endsnippet
 
-snippet qt "define a quote block" !b
-quote do
-  ${0:${VISUAL:#code}}
-end
-endsnippet
-
-snippet qtl "defines a quote block inline" !b
-quote do: $0
-endsnippet
-
 snippet mod "defines a new module" !b
 defmodule $1 do
   ${0:${VISUAL:#code}}
@@ -60,20 +58,6 @@ endsnippet
 
 snippet test "add a test case" !b
 test "$1" do
-  ${0:${VISUAL:#code}}
-end
-endsnippet
-
-snippet if "add an if block" !b
-if $1 do
-  ${0:${VISUAL:#code}}
-end
-endsnippet
-
-snippet ife "add an if-else block" !b
-if $1 do
-  ${2:${VISUAL:#code}}
-else
   ${0:${VISUAL:#code}}
 end
 endsnippet
@@ -106,40 +90,12 @@ ${0}
 """
 endsnippet
 
-snippet # "insert a string interpolation" !i
-#{$1}$0
-endsnippet
-
 snippet "\bp" "insert a pipe operator" r
 |> $0
 endsnippet
 
 snippet "\bpi" "insert a pipe to IO.inspect" r
 |> IO.inspect
-endsnippet
-
-snippet using "insert using macro" !b
-defmacro __using__(opts) do
-  ${0:${VISUAL:#code}}
-end
-endsnippet
-
-snippet before_compile "insert before_compile macro" !b
-defmacro __before_compile__(env) do
-  ${0:${VISUAL:#code}}
-end
-endsnippet
-
-snippet { "Insert a tuple" !i
-{$1}$0
-endsnippet
-
-snippet % "Insert a map with symbols as keys" !i
-%{$1: $2}$0
-endsnippet
-
-snippet %b "Insert a map with binaries as keys" !i
-%{"$1" => $2}$0
 endsnippet
 
 snippet ok "Insert ok tuple" !i
