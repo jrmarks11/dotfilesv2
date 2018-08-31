@@ -4,6 +4,7 @@ brew install \
   asdf \
   bash \
   bash-completion \
+  bat \
   exa \
   fasd \
   fd \
