@@ -102,7 +102,6 @@ let g:alt_file_patterns =
       \   [ 'app\/\(.*\).rb', 'spec\/\1_spec.rb' ],
       \   [ 'test\/\(.*\)_test.exs', 'lib\/\1.ex' ],
       \   [ 'lib\/\(.*\).ex', 'test\/\1_test.exs' ],
-      \   [ '.*\/.bash-files.*sh', '~\/.bashrc' ],
       \ ]
 
 set autoindent
