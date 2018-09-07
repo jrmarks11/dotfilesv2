@@ -39,7 +39,7 @@ let g:ale_fixers = {
       \ }
 let g:ale_linters = {
       \   'bash': ['shellcheck'],
-      \   'elixir': ['credo'],
+      \   'elixir': ['credo', 'mix'],
       \   'javascript': ['standard'],
       \   'ruby': ['rubocop'],
       \ }
