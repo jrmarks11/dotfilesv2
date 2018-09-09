@@ -19,7 +19,7 @@ nnoremap ,n n
 nnoremap ,o o
 "        ,p put a (p)ry above this line
 nmap     ,q <Plug>(qf_qf_toggle_stay)
-nnoremap ,r :set relativenumber!<cr>
+nnoremap ,r r
 nnoremap ,s s
 "        ,t run nearest (t)est
 nnoremap ,v v

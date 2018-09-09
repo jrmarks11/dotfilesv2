@@ -15,7 +15,7 @@ nnoremap <space>j :Rg!<space>
 nnoremap <space>k :Files ~/.vim/plugin/keybindings<cr>
 nnoremap <space>l l
 "        <space>m Files (m)odels
-nnoremap <space>n :BranchFiles!<cr>
+nnoremap <space>n :BranchFiles<cr>
 nnoremap <space>o :BTags<cr>
 nnoremap <space>p :NoPastePaste<cr>
 "        <space>q Files test or spec

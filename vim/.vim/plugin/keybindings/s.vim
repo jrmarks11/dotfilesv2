@@ -28,9 +28,7 @@ nmap sg g
 nmap si i
    " sj is splitjoin join
 nmap sk k
-nmap sl <Plug>(operator-sandwich-add)iwilet(:<cr>) {  }<cr>f}hi
-nmap sL <Plug>(operator-sandwich-delete)<Plug>(operator-sandwich-release-count)
-       \<Plug>(textobj-sandwich-query-a)ilet(:<cr>).*<cr>
+nmap sl l
 nmap sm m
 nmap sn n
 nmap so <Plug>(ale_toggle_buffer)
