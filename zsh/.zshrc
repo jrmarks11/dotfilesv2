@@ -34,6 +34,8 @@ compdef _JM_git_branch_names gb
 [ -f /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash ] &&
   . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 
+export BAT_THEME="GitHub"
+
 if [[ $(command -v fasd) ]]; then
   fasd_cache="$HOME/.fasd-init-zsh"
   if [ "$(command -v fasd)" -nt "$fasd_cache" ] || [ ! -s "$fasd_cache" ]; then
@@ -82,5 +84,3 @@ SPACESHIP_CHAR_SYMBOL=❯
 SPACESHIP_DIR_TRUNC_REPO=false
 SPACESHIP_GIT_PREFIX=""
 SPACESHIP_GIT_BRANCH_PREFIX=""
-
-export BAT_THEME="GitHub"
