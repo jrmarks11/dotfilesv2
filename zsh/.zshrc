@@ -73,4 +73,14 @@ zplugin light zdharma/fast-syntax-highlighting
 
 zplugin light denysdovhan/spaceship-prompt
 
+SPACESHIP_PROMPT_ORDER=(
+  dir           # Current directory section
+  git           # Git section (git_branch + git_status)
+  char          # Prompt character
+)
+SPACESHIP_CHAR_SYMBOL=❯
+SPACESHIP_DIR_TRUNC_REPO=false
+SPACESHIP_GIT_PREFIX=""
+SPACESHIP_GIT_BRANCH_PREFIX=""
+
 export BAT_THEME="GitHub"
