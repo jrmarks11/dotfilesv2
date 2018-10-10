@@ -61,6 +61,8 @@ source "$HOME/.zplugin/bin/zplugin.zsh"
 autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 
+zplugin light zdharma/fast-syntax-highlighting
+
 zplugin ice silent wait"0" blockf
 zplugin light zsh-users/zsh-completions
 
@@ -70,17 +72,8 @@ zplugin light zsh-users/zsh-history-substring-search
 zplugin ice silent wait"0" atload"_zsh_autosuggest_start"
 zplugin light zsh-users/zsh-autosuggestions
 
-zplugin ice silent wait"0" atinit"zpcompinit; zpcdreplay"
-zplugin light zdharma/fast-syntax-highlighting
+zplugin ice pick"async.zsh" src"pure.zsh"
+zplugin light sindresorhus/pure
 
-zplugin light denysdovhan/spaceship-prompt
-
-SPACESHIP_PROMPT_ORDER=(
-  dir           # Current directory section
-  git           # Git section (git_branch + git_status)
-  char          # Prompt character
-)
-SPACESHIP_CHAR_SYMBOL=❯
-SPACESHIP_DIR_TRUNC_REPO=false
-SPACESHIP_GIT_PREFIX=""
-SPACESHIP_GIT_BRANCH_PREFIX=""
+prompt_newline='%666v'
+PROMPT=" $PROMPT"
