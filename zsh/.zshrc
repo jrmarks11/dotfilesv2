@@ -71,27 +71,6 @@ zplugin light zsh-users/zsh-autosuggestions
 zplugin ice silent wait"0" atinit"zpcompinit; zpcdreplay"
 zplugin light zdharma/fast-syntax-highlighting
 
-zplugin light mafredri/zsh-async
-zplugin light sindresorhus/pure
+zplugin light denysdovhan/spaceship-prompt
 
 export BAT_THEME="GitHub"
-prompt_newline='%666v'
-PROMPT=" $PROMPT"
-
-VIM_PROMPT="❯"
-PROMPT='%(?.%F{magenta}.%F{red})${VIM_PROMPT}%f '
-
-prompt_pure_update_vim_prompt() {
-    zle || {
-        print "error: pure_update_vim_prompt must be called when zle is active"
-        return 1
-    }
-    VIM_PROMPT=${${KEYMAP/vicmd/%F{red}❮}/(main|viins)/❯}
-    zle .reset-prompt
-}
-
-function zle-line-init zle-keymap-select {
-    prompt_pure_update_vim_prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
