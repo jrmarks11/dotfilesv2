@@ -1,20 +1,39 @@
+export KEYTIMEOUT=1
+
 bindkey -v
 bindkey "^a" beginning-of-line
 bindkey "^e" end-of-line
 bindkey "^k" kill-line
-bindkey "^d" delete-char
 bindkey "^p" history-search-backward
 bindkey "^n" history-search-forward
-bindkey "^y" accept-and-hold
-bindkey "^w" backward-kill-word
 bindkey "^u" backward-kill-line
-bindkey "^[f" forward-word
-bindkey "^[b" backward-word
+bindkey "^_" undo
+
+backward-kill-dir () {
+    local WORDCHARS=${WORDCHARS/\/}
+    zle backward-kill-word
+}
+zle -N backward-kill-dir
+bindkey '^[^?' backward-kill-dir
+
+backward-word-dir () {
+    local WORDCHARS=${WORDCHARS/\/}
+    zle backward-word
+}
+zle -N backward-word-dir
+bindkey "^[f" forward-word-dir
+
+forward-word-dir () {
+    local WORDCHARS=${WORDCHARS/\/}
+    zle forward-word
+}
+zle -N forward-word-dir
+bindkey "^[b" backward-word-dir
 
 # Open current command in Vim
 autoload -z edit-command-line
 zle -N edit-command-line
-bindkey "^x^e" edit-command-line
+bindkey "^v" edit-command-line
 
 # Copy the most recent command to the clipboard
 function _pbcopy_last_command(){
@@ -22,7 +41,7 @@ function _pbcopy_last_command(){
     tmux display-message "Previous command coppied to clipboard"
 }
 zle -N pbcopy-last-command _pbcopy_last_command
-bindkey '^x^y' pbcopy-last-command
+bindkey '^y' pbcopy-last-command
 
 # Keybind to fuzzy find a git branch inline
 gb_inline() {
