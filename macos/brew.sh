@@ -12,7 +12,6 @@ brew install \
   git \
   hub \
   jq \
-  macvim \
   postgresql \
   reattach-to-user-namespace \
   ripgrep \
