@@ -1,6 +1,7 @@
 source ~/.zsh-files/aliases.zsh
 source ~/.zsh-files/functions.zsh
 source ~/.zsh-files/keybindings.zsh
+source ~/.zsh-local
 
 if [[ -z "$TMUX" ]]; then
   tm
