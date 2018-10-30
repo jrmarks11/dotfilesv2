@@ -19,7 +19,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'SirVer/ultisnips'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
-  Plug 'tpope/vim-fugitive'
   Plug 'w0rp/ale'
 
   " Text Objects
