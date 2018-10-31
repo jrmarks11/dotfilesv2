@@ -16,6 +16,8 @@ setopt hist_ignore_space
 setopt inc_append_history
 setopt share_history
 
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 stty start undef
 stty stop undef
 
