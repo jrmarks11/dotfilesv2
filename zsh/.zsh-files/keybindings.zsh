@@ -4,6 +4,7 @@ bindkey -v
 bindkey "^a" beginning-of-line
 bindkey "^b" backward-char
 bindkey "^[b" backward-word
+bindkey "^d" delete-char
 bindkey "^e" end-of-line
 bindkey "^f" forward-char
 bindkey "^[f" forward-word
