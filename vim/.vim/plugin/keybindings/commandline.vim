@@ -12,3 +12,5 @@ cnoremap <c-p> <up>
 cnoremap <c-a> <home>
 cnoremap <esc>b <s-left>
 cnoremap <esc>f <s-right>
+
+cnoremap w!! w !sudo tee > /dev/null %
