@@ -1,6 +1,20 @@
-# dotfiles
+# Dot files
 
-Dotfiles for vim, zsh, tmux.  There are some comments but we still need more.
-, tmux.  There are some comments but we still need more.
+I use vim tmux and zsh.
 
-My vim configuration relies heavily on fzf, and I use rg for my grep command.
+My vim configuration relies heavily on fzf.
+
+There are comments some places but this isn't very well documented.
+
+
+###setup(with HomeBrew):
+* git clone this repo into your home directory.
+* cd into it and run
+```
+./macos/brew.sh
+stow vim
+stow tmux
+stow zsh ...
+```
+Someday when if not lazy maybe ill make one script that does the whole
+install.
