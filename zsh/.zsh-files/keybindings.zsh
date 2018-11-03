@@ -2,10 +2,14 @@ export KEYTIMEOUT=1
 
 bindkey -v
 bindkey "^a" beginning-of-line
+bindkey "^b" backward-char
+bindkey "^[b" backward-word
 bindkey "^e" end-of-line
+bindkey "^f" forward-char
+bindkey "^[f" forward-word
 bindkey "^k" kill-line
-bindkey "^p" history-search-backward
-bindkey "^n" history-search-forward
+bindkey "^p" history-substring-search-up
+bindkey "^n" history-substring-search-down
 bindkey "^u" backward-kill-line
 bindkey "^_" undo
 
@@ -15,20 +19,6 @@ backward-kill-dir () {
 }
 zle -N backward-kill-dir
 bindkey '^[^?' backward-kill-dir
-
-backward-word-dir () {
-    local WORDCHARS=${WORDCHARS/\/}
-    zle backward-word
-}
-zle -N backward-word-dir
-bindkey "^[f" forward-word-dir
-
-forward-word-dir () {
-    local WORDCHARS=${WORDCHARS/\/}
-    zle forward-word
-}
-zle -N forward-word-dir
-bindkey "^[b" backward-word-dir
 
 # Open current command in Vim
 autoload -z edit-command-line

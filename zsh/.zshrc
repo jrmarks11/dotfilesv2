@@ -1,7 +1,4 @@
-source ~/.zsh-files/aliases.zsh
 source ~/.zsh-files/functions.zsh
-source ~/.zsh-files/keybindings.zsh
-source ~/.zsh-local
 
 if [[ -z "$TMUX" ]]; then
   tm
@@ -80,3 +77,7 @@ zplugin light sindresorhus/pure
 
 prompt_newline='%666v'
 PROMPT=" $PROMPT"
+
+source ~/.zsh-files/aliases.zsh
+source ~/.zsh-files/keybindings.zsh
+source ~/.zsh-local
