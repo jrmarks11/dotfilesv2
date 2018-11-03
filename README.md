@@ -8,6 +8,7 @@ There are comments some places but this isn't very well documented.
 
 
 ### setup(with HomeBrew):
+* Install zplugin(https://github.com/zdharma/zplugin)
 * git clone this repo into your home directory.
 * cd into it and run
 ```
