@@ -1,7 +1,3 @@
-" Include flags when redoing the last substitution
-nnoremap & :&&<CR>
-xnoremap & :&&<CR>
-
 " If you go more than 5 j or k add to jumplist. If there is no count use gj gk
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'

@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/vim-easy-align'
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'machakann/vim-sandwich'
+  Plug 'mattn/emmet-vim'
   Plug 'nelstrom/vim-visual-star-search'
   Plug 'NLKNguyen/papercolor-theme'
   Plug 'rhysd/clever-f.vim'
@@ -115,6 +116,7 @@ set listchars=tab:▸\ ,trail:·,nbsp:␣
 set nrformats-=octal
 set number
 set nojoinspaces
+set omnifunc=syntaxcomplete#Complete
 set scrolljump=8
 set scrolloff=1
 set shiftround
