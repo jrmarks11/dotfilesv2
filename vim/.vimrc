@@ -80,6 +80,8 @@ let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 let g:UltiSnipsSnippetDirectories=['Snips']
 
+let g:user_emmet_mode='i'
+
 " List of regex checked for alternate files first maps to second
 let g:alt_file_patterns =
       \ [
