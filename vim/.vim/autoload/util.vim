@@ -69,6 +69,16 @@ function! util#no_paste_paste()
   set nopaste
 endfunction
 
+function! util#rename_file()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+
 function! util#sort_buffers(...)
   let [l:b1, l:b2] = map(copy(a:000), 'get(g:fzf#vim#buffers, v:val, v:val)')
   " Using minus between a float and a number in a sort function causes an error

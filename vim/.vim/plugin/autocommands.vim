@@ -29,3 +29,24 @@ augroup LastCursor
         \   exe 'normal g`"' |
         \ endif
 augroup END
+
+augroup ensure_directory_exists
+  autocmd!
+  autocmd BufNewFile * call s:EnsureDirectoryExists()
+augroup END
+
+function! s:EnsureDirectoryExists()
+  let required_dir = expand("%:h")
+
+  if !isdirectory(required_dir)
+    if !confirm("Directory '" . required_dir . "' doesn't exist. Create it?")
+      return
+    endif
+
+    try
+      call mkdir(required_dir, 'p')
+    catch
+      echoerr "Can't create '" . required_dir . "'"
+    endtry
+  endif
+endfunction

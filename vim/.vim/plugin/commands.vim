@@ -5,6 +5,7 @@ command! -range=% FixExtraLines call util#fix_extra_lines(<line1>,<line2>)
 command! -range=% FixTabs call util#fix_tabs(<line1>,<line2>)
 command! LastBuffer call util#last_buffer(1)
 command! NoPastePaste call util#no_paste_paste()
+command! RenameFile call util#rename_file()
 command! SecondToLastBuffer call util#last_buffer(2)
 
 let s:fzf_options =
