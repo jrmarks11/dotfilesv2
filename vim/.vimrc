@@ -35,13 +35,13 @@ runtime macros/matchit.vim
 let g:ale_fixers = {
       \   'bash': ['shellcheck'],
       \   'elixir': ['mix_format'],
-      \   'javascript': ['standard'],
+      \   'javascript': ['eslint'],
       \   'ruby': ['rubocop'],
       \ }
 let g:ale_linters = {
       \   'bash': ['shellcheck'],
       \   'elixir': ['credo', 'mix'],
-      \   'javascript': ['standard'],
+      \   'javascript': ['eslint'],
       \   'ruby': ['rubocop'],
       \ }
 let g:ale_lint_on_insert_leave = 1

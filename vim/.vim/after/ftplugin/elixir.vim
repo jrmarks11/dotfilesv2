@@ -15,8 +15,6 @@ xmap <buffer> sb <Plug>(operator-sandwich-add)i%{<cr>}<cr>==
 nmap <buffer> s' <Plug>(operator-sandwich-add)iw"
 xmap <buffer> s' <Plug>(operator-sandwich-add)"
 
-imap <buffer> <c-s> <esc><Plug>(operator-sandwich-add)iw"Ea
-
 augroup SaveRecent
   autocmd!
   autocmd BufWrite *.ex normal! mE
