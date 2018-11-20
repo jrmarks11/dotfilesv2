@@ -1,6 +1,5 @@
 alias ..='cd ..'
 alias bake='bundle exec rake'
-alias bd='brew doctor'
 alias be='bundle exec'
 alias bec='bundle exec rails c'
 alias bes='bundle exec rails s'
