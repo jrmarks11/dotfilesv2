@@ -51,7 +51,7 @@ let g:clever_f_across_no_line = 1
 
 let g:fzf_files_options =
       \ '--reverse ' .
-      \ '--preview "(bat --color "always" {} || coderay {} || cat {}) 2> /dev/null | head -'
+      \ '--preview "(bat --color "always" {} || cat {}) 2> /dev/null | head -'
       \ . &lines . '"'
 
 let g:gutentags_ctags_tagfile = '.tags'
