@@ -57,23 +57,8 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   ssh-add
 fi
 
-source "$HOME/.zplugin/bin/zplugin.zsh"
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
-
-zplugin light zdharma/fast-syntax-highlighting
-
-zplugin ice silent wait"0" blockf
-zplugin light zsh-users/zsh-completions
-
-zplugin ice silent wait'0' blockf
-zplugin light zsh-users/zsh-history-substring-search
-
-zplugin ice silent wait"0" atload"_zsh_autosuggest_start"
-zplugin light zsh-users/zsh-autosuggestions
-
-zplugin ice pick"async.zsh" src"pure.zsh"
-zplugin light sindresorhus/pure
+source <(antibody init)
+antibody bundle < ~/.zsh-files/plugins.txt
 
 prompt_newline='%666v'
 PROMPT=" $PROMPT"

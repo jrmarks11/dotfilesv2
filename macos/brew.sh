@@ -22,5 +22,6 @@ brew install \
   tmux \
   vim
 
+brew install getantibody/tap/antibody
 brew install heroku/brew/heroku
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
