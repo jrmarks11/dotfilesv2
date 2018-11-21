@@ -8,6 +8,7 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.zsh_history
 setopt append_history
+setopt correct
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt inc_append_history
