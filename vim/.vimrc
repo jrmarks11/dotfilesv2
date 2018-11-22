@@ -73,6 +73,7 @@ let g:sandwich#recipes += [
 let g:splitjoin_join_mapping = 'sj'
 let g:splitjoin_split_mapping = 'ss'
 
+let g:startify_change_to_dir = 0
 let g:startify_custom_header = []
 let g:startify_enable_special = 0
 let g:startify_files_number = 5
