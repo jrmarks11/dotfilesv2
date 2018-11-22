@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'machakann/vim-sandwich'
   Plug 'mattn/emmet-vim'
+  Plug 'mhinz/vim-startify'
   Plug 'nelstrom/vim-visual-star-search'
   Plug 'NLKNguyen/papercolor-theme'
   Plug 'rhysd/clever-f.vim'
@@ -52,6 +53,7 @@ let g:clever_f_across_no_line = 1
 
 let g:fzf_files_options =
       \ '--reverse ' .
+      \ '--preview-window top:60% ' .
       \ '--preview "(bat --color "always" {} || cat {}) 2> /dev/null | head -'
       \ . &lines . '"'
 
@@ -70,6 +72,22 @@ let g:sandwich#recipes += [
 
 let g:splitjoin_join_mapping = 'sj'
 let g:splitjoin_split_mapping = 'ss'
+
+let g:startify_custom_header = []
+let g:startify_enable_special = 0
+let g:startify_files_number = 5
+
+let g:startify_bookmarks = [
+\ { 'v': '~/.vimrc' },
+\ { 'a': '~/.zsh-files/aliases.zsh' },
+\ { 'z': '~/.zshrc' },
+\ ]
+
+let g:startify_lists = [
+\ { 'header': ['   '. getcwd()], 'type': 'dir' },
+\ { 'header': ['   Bookmarks'], 'type': 'bookmarks' },
+\ { 'header': ['   Recent'], 'type': 'files' },
+\ ]
 
 let g:tmux_navigator_no_mappings = 1
 

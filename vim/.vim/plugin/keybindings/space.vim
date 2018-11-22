@@ -15,11 +15,11 @@ nnoremap <space>j :Rg!<space>
 nnoremap <space>k :Files ~/.vim/plugin/keybindings<cr>
 nnoremap <space>l l
 "        <space>m Files (m)odels
-nnoremap <space>n :BranchFiles<cr>
+nnoremap <space>n :BranchFiles!<cr>
 nnoremap <space>o :BTags<cr>
 nnoremap <space>p :NoPastePaste<cr>
 "        <space>q Files test or spec
-nnoremap <space>r :History<cr>
+nnoremap <space>r :HistoryWithPreview!<cr>
 nnoremap <space>s :%s/\<<c-r><c-w>\>//g<left><left>
 xnoremap <space>s y:%s/<c-r><c-0>//g<left><left>
 nnoremap <space>t :Files!<cr>

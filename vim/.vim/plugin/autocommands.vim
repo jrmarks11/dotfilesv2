@@ -16,11 +16,6 @@ augroup CursorLine
   autocmd WinLeave,InsertEnter * set nocursorline
 augroup END
 
-augroup DirvishOnStart
-  autocmd!
-  autocmd VimEnter * if argc() == 0 | Dirvish | endif
-augroup END
-
 augroup EnsureDirectoryExists
   autocmd!
   autocmd BufNewFile * call util#ensure_directory_exists()

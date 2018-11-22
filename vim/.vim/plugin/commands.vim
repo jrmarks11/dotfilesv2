@@ -10,6 +10,7 @@ command! SecondToLastBuffer call util#last_buffer(2)
 
 let s:fzf_options =
   \ '--reverse ' .
+  \ '--preview-window top:60% ' .
   \ '--preview "(mdiff {} | tail -n +5 || cat {}) 2> /dev/null | head -'.&lines.'"'
 command! -bang BranchFiles call fzf#run(fzf#wrap('BranchFiles',
       \ { 'source': 'branch_files', 'options': s:fzf_options }, <bang>0))
@@ -21,4 +22,7 @@ let s:fzf_grep_cmd =
       \ . " --hidden --follow --glob '!.git/*' --color 'always' "
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(s:fzf_grep_cmd .shellescape(<q-args>), 1,
-      \ fzf#vim#with_preview('right:50%'), <bang>0)
+      \ fzf#vim#with_preview('up:60%'), <bang>0)
+
+command! -bang -nargs=* HistoryWithPreview
+      \ call fzf#vim#history(fzf#vim#with_preview('up:60%'), <bang>0)
