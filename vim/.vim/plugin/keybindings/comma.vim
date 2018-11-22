@@ -20,7 +20,7 @@ nnoremap ,o o
 "        ,p put a (p)ry above this line
 nmap     ,q <Plug>(qf_qf_toggle_stay)
 nnoremap ,r :RenameFile<cr>
-nnoremap ,s s
+nnoremap ,s :Startify<cr>
 "        ,t run nearest (t)est
 nnoremap ,v v
 nnoremap ,u u

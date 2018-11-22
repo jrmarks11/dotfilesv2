@@ -12,7 +12,7 @@ nnoremap <space>gf :e <cfile><cr>
 nnoremap <space>h :help<space><c-r><c-w><cr>
 nnoremap <space>i :BLines!<cr>
 nnoremap <space>j :Rg!<space>
-nnoremap <space>k :Files ~/.vim/plugin/keybindings<cr>
+nnoremap <space>k :Files! ~/.vim/plugin/keybindings<cr>
 nnoremap <space>l l
 "        <space>m Files (m)odels
 nnoremap <space>n :BranchFiles!<cr>
