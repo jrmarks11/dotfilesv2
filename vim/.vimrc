@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/vim-easy-align'
+  Plug 'justinmk/vim-dirvish'
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'machakann/vim-sandwich'
   Plug 'mattn/emmet-vim'
@@ -40,7 +41,7 @@ let g:ale_fixers = {
       \ }
 let g:ale_linters = {
       \   'bash': ['shellcheck'],
-      \   'elixir': ['credo', 'mix'],
+      \   'elixir': ['credo'],
       \   'javascript': ['eslint'],
       \   'ruby': ['rubocop'],
       \ }
@@ -91,6 +92,7 @@ let g:alt_file_patterns =
       \   [ 'app\/\(.*\).rb', 'spec\/\1_spec.rb' ],
       \   [ 'test\/\(.*\)_test.exs', 'lib\/\1.ex' ],
       \   [ 'lib\/\(.*\).ex', 'test\/\1_test.exs' ],
+      \   [ '.*\/\.zsh-files\/.*', '~/.zshrc']
       \ ]
 
 set autoindent
@@ -100,14 +102,11 @@ set backspace=indent,eol,start
 set clipboard^=unnamed " Share clipboard with os
 set colorcolumn=80
 set complete-=i
-set complete-=t
 set cursorline
 set directory=~/.vim-swap//
 set display+=lastline
 set expandtab
 set formatoptions+=j
-set grepformat=%f:%l:%c:%m
-set grepprg=rg\ --no-heading\ --vimgrep\ --smart-case\ --hidden
 set history=1000
 set hlsearch
 set ignorecase

@@ -16,6 +16,16 @@ augroup CursorLine
   autocmd WinLeave,InsertEnter * set nocursorline
 augroup END
 
+augroup DirvishOnStart
+  autocmd!
+  autocmd VimEnter * if argc() == 0 | Dirvish | endif
+augroup END
+
+augroup EnsureDirectoryExists
+  autocmd!
+  autocmd BufNewFile * call util#ensure_directory_exists()
+augroup END
+
 augroup FastEscape
   autocmd!
   au InsertEnter,CmdlineEnter * set timeoutlen=200
@@ -29,24 +39,3 @@ augroup LastCursor
         \   exe 'normal g`"' |
         \ endif
 augroup END
-
-augroup ensure_directory_exists
-  autocmd!
-  autocmd BufNewFile * call s:EnsureDirectoryExists()
-augroup END
-
-function! s:EnsureDirectoryExists()
-  let required_dir = expand("%:h")
-
-  if !isdirectory(required_dir)
-    if !confirm("Directory '" . required_dir . "' doesn't exist. Create it?")
-      return
-    endif
-
-    try
-      call mkdir(required_dir, 'p')
-    catch
-      echoerr "Can't create '" . required_dir . "'"
-    endtry
-  endif
-endfunction

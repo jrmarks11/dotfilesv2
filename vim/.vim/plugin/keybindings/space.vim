@@ -29,13 +29,3 @@ nnoremap <space>w w
 nnoremap <space>x x
 nnoremap <space>y :Helptags<cr>
 nnoremap <space>z z
-
-if util#has_top_file('Gemfile.lock')
-  nnoremap <space>c :Files! app/controllers/<cr>
-  nnoremap <space>m :Files! app/models/<cr>
-  nnoremap <space>q :Files! spec/<cr>
-elseif util#has_top_file('mix.exs')
-  nnoremap <space>c :Files! lib/*_web/controllers/<cr>
-  nnoremap <space>m :Files! lib/<cr>
-  nnoremap <space>q :Files! test/<cr>
-endif

@@ -23,6 +23,22 @@ function! util#buflisted()
   return filter(range(1, bufnr('$')), l:no_qf)
 endfunction
 
+function! util#ensure_directory_exists()
+  let required_dir = expand("%:h")
+
+  if !isdirectory(required_dir)
+    if !confirm("Directory '" . required_dir . "' doesn't exist. Create it?")
+      return
+    endif
+
+    try
+      call mkdir(required_dir, 'p')
+    catch
+      echoerr "Can't create '" . required_dir . "'"
+    endtry
+  endif
+endfunction
+
 function! util#files_same_dir()
   execute ':Files! ' . fnameescape(expand('%:h')).'/'
 endfunction
@@ -47,11 +63,6 @@ function! util#fix_tabs(line1,line2)
   let l:save_cursor = getpos('.')
   silent! execute ':' . a:line1 . ',' . a:line2 . 's/	/  /g'
   call setpos('.', l:save_cursor)
-endfunction
-
-function! util#has_top_file(name)
-  let l:message = system('git top | xargs ls | rg ' . a:name)
-  return l:message =~ a:name
 endfunction
 
 function! util#last_buffer(count)
