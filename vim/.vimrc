@@ -79,16 +79,16 @@ let g:startify_enable_special = 0
 let g:startify_files_number = 5
 
 let g:startify_bookmarks = [
-\ { 'a': '~/.zsh-files/aliases.zsh' },
-\ { 'v': '~/.vimrc' },
-\ { 'z': '~/.zshrc' },
-\ ]
+      \ { 'a': '~/.zsh-files/aliases.zsh' },
+      \ { 'v': '~/.vimrc' },
+      \ { 'z': '~/.zshrc' },
+      \ ]
 
 let g:startify_lists = [
-\ { 'header': ['   '. getcwd()], 'type': 'dir' },
-\ { 'header': ['   Bookmarks'], 'type': 'bookmarks' },
-\ { 'header': ['   Recent'], 'type': 'files' },
-\ ]
+      \ { 'header': ['   '. getcwd()], 'type': 'dir' },
+      \ { 'header': ['   Bookmarks'], 'type': 'bookmarks' },
+      \ { 'header': ['   Recent'], 'type': 'files' },
+      \ ]
 
 let g:tmux_navigator_no_mappings = 1
 
