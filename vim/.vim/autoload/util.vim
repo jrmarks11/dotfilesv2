@@ -39,6 +39,11 @@ function! util#ensure_directory_exists()
   endif
 endfunction
 
+function! util#fd(pattern)
+  let l:command = 'fd --type f --hidden --follow --exclude .git ' . a:pattern
+  return fzf#vim#_uniq(systemlist(l:command))
+endfunction
+
 function! util#files_same_dir()
   execute ':Files! ' . fnameescape(expand('%:h')).'/'
 endfunction

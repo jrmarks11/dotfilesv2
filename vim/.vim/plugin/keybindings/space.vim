@@ -3,7 +3,7 @@ xnoremap <space><space> y:'{,'}s/<c-r><c-0>//g<left><left>
 nnoremap <space><tab> :LastBuffer<cr>
 nnoremap <space>a :A<cr>
 nnoremap <space>b :Buffer<cr>
-"        <space>c Files (c)ontrollers
+nnoremap <space>c :Fd! controller<cr>
 nnoremap <space>d :DFiles<cr>
 map      <space>e :e %%
 nnoremap <space>f :Rg!<space><c-r><c-w><cr>
@@ -14,11 +14,11 @@ nnoremap <space>i :BLines!<cr>
 nnoremap <space>j :Rg!<space>
 nnoremap <space>k :Files! ~/.vim/plugin/keybindings<cr>
 nnoremap <space>l l
-"        <space>m Files (m)odels
+nnoremap <space>m m
 nnoremap <space>n :BranchFiles!<cr>
 nnoremap <space>o :BTags<cr>
 nnoremap <space>p :NoPastePaste<cr>
-"        <space>q Files test or spec
+nnoremap <space>q q
 nnoremap <space>r :HistoryWithPreview!<cr>
 nnoremap <space>s :%s/\<<c-r><c-w>\>//g<left><left>
 xnoremap <space>s y:%s/<c-r><c-0>//g<left><left>

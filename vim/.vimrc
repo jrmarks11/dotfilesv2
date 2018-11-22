@@ -79,8 +79,8 @@ let g:startify_enable_special = 0
 let g:startify_files_number = 5
 
 let g:startify_bookmarks = [
-\ { 'v': '~/.vimrc' },
 \ { 'a': '~/.zsh-files/aliases.zsh' },
+\ { 'v': '~/.vimrc' },
 \ { 'z': '~/.zshrc' },
 \ ]
 

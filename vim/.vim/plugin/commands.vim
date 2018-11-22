@@ -8,9 +8,8 @@ command! NoPastePaste call util#no_paste_paste()
 command! RenameFile call util#rename_file()
 command! SecondToLastBuffer call util#last_buffer(2)
 
-let s:fzf_options =
-  \ '--reverse ' .
-  \ '--preview-window top:60% ' .
+let s:opts = '--reverse --preview-window top:60% '
+let s:fzf_options = s:opts .
   \ '--preview "(mdiff {} | tail -n +5 || cat {}) 2> /dev/null | head -'.&lines.'"'
 command! -bang BranchFiles call fzf#run(fzf#wrap('BranchFiles',
       \ { 'source': 'branch_files', 'options': s:fzf_options }, <bang>0))
@@ -26,3 +25,9 @@ command! -bang -nargs=* Rg
 
 command! -bang -nargs=* HistoryWithPreview
       \ call fzf#vim#history(fzf#vim#with_preview('up:60%'), <bang>0)
+
+let s:fzf_fd_opts = s:opts .
+      \ '--preview "(bat --color "always" {} || cat {}) 2> /dev/null | head -'
+      \ . &lines . '"'
+command! -bang -nargs=* Fd call fzf#run(fzf#wrap('Fd',
+      \ { 'source': util#fd(<q-args>), 'options': s:fzf_fd_opts }, <bang>0))

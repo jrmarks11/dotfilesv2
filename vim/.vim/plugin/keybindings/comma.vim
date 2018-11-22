@@ -11,7 +11,7 @@ nnoremap ,e e
 nnoremap ,g g
 nnoremap ,h h
 nnoremap ,i i
-nnoremap ,j j
+nnoremap ,j :Fd!<space>
 nnoremap ,k k
 nmap     ,l <Plug>(qf_loc_toggle_stay)
 nnoremap ,m m
