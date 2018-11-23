@@ -159,10 +159,6 @@ set visualbell
 set wildmenu
 set wildmode=longest,list
 
-if !empty(&viminfo)
-  set viminfo^=!
-endif
-
 if isdirectory($HOME . '/.vim-swap') == 0
   :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
 endif
