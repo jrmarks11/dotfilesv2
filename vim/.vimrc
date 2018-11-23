@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'andrewradev/sideways.vim'
   Plug 'andrewradev/splitjoin.vim'
+  Plug 'andrewradev/switch.vim'
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'jgdavey/tslime.vim'
@@ -68,9 +69,6 @@ let g:sandwich#recipes += [
       \  'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'],
       \  'input': ['{']},
       \ ]
-
-let g:splitjoin_join_mapping = 'sj'
-let g:splitjoin_split_mapping = 'ss'
 
 let g:startify_change_to_dir = 0
 let g:startify_custom_header = []

@@ -26,7 +26,7 @@ nmap sg g
    " shs is gitgutter hunk stage
    " shu is gitgutter hunk undo
 nmap si i
-   " sj is splitjoin join
+nmap sj :SplitjoinJoin<cr>
 nmap sk k
 nmap sl l
 nmap sm m
@@ -35,8 +35,8 @@ nmap so <Plug>(ale_toggle_buffer)
 nmap sp <Plug>(operator-sandwich-add)iw(
 xmap sp <Plug>(operator-sandwich-add)(==
    " sr is sandwich replace
-   " ss is splitjoin split
-   " st is switch (toggle)
+nmap ss :SplitjoinSplit<cr>
+nmap st :Switch<cr>
 nmap sq q
 nnoremap su :PlugUpdate<cr>
 nmap sv v
