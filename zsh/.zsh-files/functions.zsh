@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 tssh() { tmate display -p '#{tmate_ssh}' | pbcopy; }
 
 fzf_down() {

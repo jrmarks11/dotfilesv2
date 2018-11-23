@@ -24,7 +24,7 @@ function! util#buflisted()
 endfunction
 
 function! util#ensure_directory_exists()
-  let required_dir = expand("%:h")
+  let required_dir = expand('%:h')
 
   if !isdirectory(required_dir)
     if !confirm("Directory '" . required_dir . "' doesn't exist. Create it?")
@@ -88,7 +88,7 @@ endfunction
 function! util#rename_file()
   let old_name = expand('%')
   let new_name = input('New file name: ', expand('%'), 'file')
-  if new_name != '' && new_name != old_name
+  if new_name !=# '' && new_name != old_name
     exec ':saveas ' . new_name
     exec ':silent !rm ' . old_name
     redraw!

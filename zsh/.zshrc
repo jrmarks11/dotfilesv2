@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 source ~/.zsh-files/functions.zsh
 
 if [[ -z "$TMUX" ]]; then

@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 alias ..='cd ..'
 alias bake='bundle exec rake'
 alias be='bundle exec'

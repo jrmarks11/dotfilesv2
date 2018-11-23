@@ -35,13 +35,12 @@ call plug#end()
 runtime macros/matchit.vim
 
 let g:ale_fixers = {
-      \   'bash': ['shellcheck'],
       \   'elixir': ['mix_format'],
       \   'javascript': ['eslint'],
       \   'ruby': ['rubocop'],
       \ }
 let g:ale_linters = {
-      \   'bash': ['shellcheck'],
+      \   'zsh': ['shellcheck'],
       \   'elixir': ['credo'],
       \   'javascript': ['eslint'],
       \   'ruby': ['rubocop'],
