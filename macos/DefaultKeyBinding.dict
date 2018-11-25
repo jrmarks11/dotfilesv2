@@ -1,8 +1,15 @@
 /* Place this file in ~/Library/KeyBindings */
 {
-    "~f"      = "moveWordForward:";              /* M-f */
-    "~b"      = "moveWordBackward:";             /* M-b */
-    "~d"      = "deleteWordForward:";            /* M-d */
-    "~\177"   = "deleteWordBackward:";           /* M-delete */
-    "^/"      = "undo:";                         /* C-/ */
+  "^/"    = "undo:";
+  "^A"    = (moveToBeginningOfLineAndModifySelection:);
+  "^E"    = (moveToEndOfLineAndModifySelection:);
+  "^u"    = "deleteToBeginningOfLine:";
+  "~H"    = (moveWordBackwardAndModifySelection:);
+  "~J"    = (moveDownAndModifySelection:);
+  "~K"    = (moveUpAndModifySelection:);
+  "~L"    = (moveWordForwardAndModifySelection:);
+  "~\177" = "deleteWordBackward:"; /* M-delete */
+  "~b"    = "moveWordBackward:";
+  "~d"    = "deleteWordForward:";
+  "~f"    = "moveWordForward:";
 }
