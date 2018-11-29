@@ -53,7 +53,7 @@ tm() {
   tmux $change -t "$session" || tm "$(whoami)"
 }
 
-v() {
+vv() {
   if [[ "$#" == "0" ]]; then
     local file
     file=$(rg "^>" ~/.viminfo | cut -c 3- | fzf_down --ansi)

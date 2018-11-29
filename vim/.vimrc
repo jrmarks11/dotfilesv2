@@ -11,11 +11,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/vim-easy-align'
-  Plug 'justinmk/vim-dirvish'
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'machakann/vim-sandwich'
   Plug 'mattn/emmet-vim'
-  Plug 'mhinz/vim-startify'
   Plug 'nelstrom/vim-visual-star-search'
   Plug 'NLKNguyen/papercolor-theme'
   Plug 'rhysd/clever-f.vim'
@@ -68,23 +66,6 @@ let g:sandwich#recipes += [
       \ {'buns': ['{\s*', '\s*}'], 'nesting': 1, 'regex': 1, 'match_syntax': 1,
       \  'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'],
       \  'input': ['{']},
-      \ ]
-
-let g:startify_change_to_dir = 0
-let g:startify_custom_header = []
-let g:startify_enable_special = 0
-let g:startify_files_number = 5
-
-let g:startify_bookmarks = [
-      \ { 'a': '~/.zsh-files/aliases.zsh' },
-      \ { 'v': '~/.vimrc' },
-      \ { 'z': '~/.zshrc' },
-      \ ]
-
-let g:startify_lists = [
-      \ { 'header': ['   '. getcwd()], 'type': 'dir' },
-      \ { 'header': ['   Bookmarks'], 'type': 'bookmarks' },
-      \ { 'header': ['   Recent'], 'type': 'files' },
       \ ]
 
 let g:tmux_navigator_no_mappings = 1

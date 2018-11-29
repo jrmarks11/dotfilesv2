@@ -40,7 +40,9 @@ alias tma='tmux attach'
 alias tml='tmux ls'
 alias tmate-ssh='tmate -S `tmate-socket` display -p "#{tmate_ssh}"  | tr -d "\n" | pbcopy'
 alias up='brew upgrade -s; brew cleanup; antibody update; vim -c "PlugUpdate|qa";'
-alias vi='vim -c "call util#last_buffer(0)"'
+alias vim='vim -c "call util#last_buffer(0)"'
+alias vi='vim'
+alias v='vim'
 
 if [[ "$TMUX" =~ "/tmate-" ]]; then
   alias tmux="TMUX='' tmux"
