@@ -2,7 +2,7 @@
 " up here. I am also mapping stuff from a lot of plugins to s keys.  I think
 " of it as submodule. The s key is also automatically used by sandwich.
 
-let g:mapleader='s'
+let mapleader='s'
 nmap s <nop>
 xmap s <nop>
 nnoremap s. :SidewaysRight<cr>

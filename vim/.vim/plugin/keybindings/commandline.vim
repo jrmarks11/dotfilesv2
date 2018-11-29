@@ -12,5 +12,7 @@ cnoremap <c-p> <up>
 cnoremap <c-a> <home>
 cnoremap <esc>b <s-left>
 cnoremap <esc>f <s-right>
+cnoremap <esc><bs> <c-w>
+cnoremap <c-k> <c-\>estrpart(getcmdline(),0,getcmdpos()-1)<cr>
 
 cnoremap w!! w !sudo tee > /dev/null %
