@@ -15,4 +15,4 @@ cnoremap <esc>f <s-right>
 cnoremap <esc><bs> <c-w>
 cnoremap <c-k> <c-\>estrpart(getcmdline(),0,getcmdpos()-1)<cr>
 
-cnoremap w!! w !sudo tee > /dev/null %
+cnoremap WW w !sudo tee > /dev/null %
