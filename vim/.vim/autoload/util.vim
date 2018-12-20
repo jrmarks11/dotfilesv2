@@ -51,7 +51,7 @@ endfunction
 function! util#fix_all_whitespace(line1, line2)
   let l:save_cursor = getpos('.')
   execute a:line1.','.a:line2.'FixWhitespace'
-  if(&filetype ==# 'ruby' || &filetype ==# 'elixir')
+  if(&filetype ==# 'ruby' || &filetype ==# 'elixir' || &filetype ==# 'php')
     call util#fix_tabs(a:line1, a:line2)
     call util#fix_extra_lines(a:line1, a:line2)
   endif

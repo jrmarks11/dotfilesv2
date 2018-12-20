@@ -37,6 +37,7 @@ runtime macros/matchit.vim
 let g:ale_fixers = {
       \   'elixir': ['mix_format'],
       \   'javascript': ['eslint'],
+      \   'php': ['php_cs_fixer'],
       \   'ruby': ['rubocop'],
       \ }
 let g:ale_linters = {
