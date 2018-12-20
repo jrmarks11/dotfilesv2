@@ -10,7 +10,7 @@ nnoremap ,e e
 "        ,f run tests for the (f)ile
 nnoremap ,g g
 nnoremap ,h h
-nnoremap ,i i
+"        ,i inspect word
 nnoremap ,j :Fd!<space>
 nnoremap ,k k
 nmap     ,l <Plug>(qf_loc_toggle_stay)
