@@ -14,9 +14,3 @@ nmap <buffer> sb <Plug>(operator-sandwich-add)iwi%{<cr>}<cr>
 xmap <buffer> sb <Plug>(operator-sandwich-add)i%{<cr>}<cr>==
 nmap <buffer> s' <Plug>(operator-sandwich-add)iw"
 xmap <buffer> s' <Plug>(operator-sandwich-add)"
-
-augroup SaveRecent
-  autocmd!
-  autocmd BufWrite *.ex normal! mE
-  autocmd BufWrite *_test.exs normal! mT
-augroup END
