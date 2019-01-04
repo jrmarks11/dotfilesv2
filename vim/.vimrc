@@ -39,6 +39,7 @@ let g:ale_fixers = {
       \   'javascript': ['eslint'],
       \   'php': ['php_cs_fixer'],
       \   'ruby': ['rubocop'],
+      \   'vue': ['eslint'],
       \ }
 let g:ale_linters = {
       \   'zsh': ['shellcheck'],
