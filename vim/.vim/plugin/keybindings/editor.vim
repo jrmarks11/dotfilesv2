@@ -31,3 +31,8 @@ xnoremap < <gv
 
 " Clear search results when using c-l in normal, maintains c-l
 nnoremap <c-l> :nohlsearch<c-r>=has('diff')?'<Bar>diffupdate':''<cr><cr><c-l>
+
+nnoremap z= :setlocal spell<CR>z=
+
+" mark position before searching
+nnoremap / ms/
