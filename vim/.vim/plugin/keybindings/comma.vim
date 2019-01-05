@@ -2,7 +2,7 @@
 
 nnoremap ,<tab> <tab>
 nnoremap ,<space> <space>
-nnoremap ,a a
+nnoremap ,a :arga<cr>
 nnoremap ,b b
 nnoremap ,c c
 "        ,d run tests with (d)ebugger
