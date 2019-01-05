@@ -5,6 +5,7 @@ nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 " Q to replay q register in normal and visual
 nnoremap Q @q
 xnoremap Q :'<,'> :normal @q<cr>
+
 " Execute . on a visual range
 xnoremap . :normal .<cr>
 
@@ -20,10 +21,6 @@ nnoremap \ :SecondToLastBuffer<cr>
 " Dont ever need to jump with '
 nnoremap ' `
 xnoremap ' `
-
-" Using clever-f so ; is not needed
-nnoremap ; :
-xnoremap ; :
 
 " Keep visual selection when moving
 xnoremap > >gv

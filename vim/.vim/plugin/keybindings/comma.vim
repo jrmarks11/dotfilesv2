@@ -2,28 +2,36 @@
 
 nnoremap ,<tab> <tab>
 nnoremap ,<space> <space>
-nnoremap ,a :arga<cr>
+nnoremap ,. :SidewaysRight<cr>
+nmap     ,, <Plug>(ale_fix)
+nnoremap ,a :argadd<cr>
 nnoremap ,b b
-nnoremap ,c c
+nnoremap ,c :PlugClean<cr>
 "        ,d run tests with (d)ebugger
-nnoremap ,e e
+nmap     ,e <Plug>(EasyAlign)
+xmap     ,e <Plug>(EasyAlign)
 "        ,f run tests for the (f)ile
 nnoremap ,g g
-nnoremap ,h h
+nmap     ,h <Plug>GitGutterUndoHunk
 "        ,i inspect word
 nnoremap ,j :Fd!<space>
 nnoremap ,k k
 nmap     ,l <Plug>(qf_loc_toggle_stay)
-nnoremap ,m m
+nnoremap ,m :SidewaysLeft<cr>
 nnoremap ,n n
 nnoremap ,o <c-w>o
 "        ,p put a (p)ry above this line
 nmap     ,q <Plug>(qf_qf_toggle_stay)
 nnoremap ,r :RenameFile<cr>
-nnoremap ,s s
+nmap     ,s <Plug>(ale_fix)
 "        ,t run nearest (t)est
 nnoremap ,v v
-nnoremap ,u u
-nnoremap ,x x
+nnoremap ,u :PlugUpdate<cr>
+nnoremap ,x <Plug>(ale_toggle_buffer)
 "        ,y remove pr(y)
 nnoremap ,z :tabe %<cr>
+
+omap aa <Plug>SidewaysArgumentTextobjA
+xmap aa <Plug>SidewaysArgumentTextobjA
+omap ia <Plug>SidewaysArgumentTextobjI
+xmap ia <Plug>SidewaysArgumentTextobjI
