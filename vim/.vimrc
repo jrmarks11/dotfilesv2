@@ -71,6 +71,9 @@ let g:sandwich#recipes += [
       \  'input': ['{']},
       \ ]
 
+let g:sneak#label = 1
+let g:sneak#use_ic_scs = 1
+
 let g:tmux_navigator_no_mappings = 1
 
 let g:tslime_always_current_session = 1
