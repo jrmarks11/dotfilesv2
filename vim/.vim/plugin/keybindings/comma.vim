@@ -1,4 +1,4 @@
-" Third leader key using clever-f so , isnt needed
+" comma is my second leader key
 
 nnoremap ,<tab> <tab>
 nnoremap ,<space> <space>
@@ -23,7 +23,7 @@ nnoremap ,o <c-w>o
 "        ,p put a (p)ry above this line
 nmap     ,q <Plug>(qf_qf_toggle_stay)
 nnoremap ,r :RenameFile<cr>
-nmap     ,s <Plug>(ale_fix)
+nmap     ,s s
 "        ,t run nearest (t)est
 nnoremap ,v v
 nnoremap ,u :PlugUpdate<cr>
