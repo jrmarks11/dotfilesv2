@@ -9,8 +9,8 @@ xnoremap Q :'<,'> :normal @q<cr>
 " Execute . on a visual range
 xnoremap . :normal .<cr>
 
-" Opposite of J i think of it as Join and Split
-nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
+" Opposite of J
+nnoremap K i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 
 " Y does Y not work like this by default
 nnoremap Y y$
