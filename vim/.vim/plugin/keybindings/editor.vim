@@ -22,6 +22,9 @@ nnoremap \ :SecondToLastBuffer<cr>
 nnoremap ' `
 xnoremap ' `
 
+nnoremap ; :
+xnoremap ; :
+
 " Keep visual selection when moving
 xnoremap > >gv
 xnoremap < <gv
