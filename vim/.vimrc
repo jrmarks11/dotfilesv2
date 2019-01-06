@@ -17,7 +17,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'machakann/vim-sandwich'
   Plug 'mattn/emmet-vim'
   Plug 'nelstrom/vim-visual-star-search'
-  Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
   Plug 'NLKNguyen/papercolor-theme'
   Plug 'romainl/vim-qf'
   Plug 'SirVer/ultisnips'
