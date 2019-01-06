@@ -47,6 +47,7 @@ let g:ale_linters = {
       \   'elixir': ['credo'],
       \   'javascript': ['eslint'],
       \   'ruby': ['rubocop'],
+      \   'vue': ['eslint'],
       \ }
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_text_changed = 'normal'
