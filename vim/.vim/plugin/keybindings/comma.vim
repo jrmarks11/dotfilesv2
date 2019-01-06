@@ -1,4 +1,4 @@
-" comma is my second leader key
+" Comma is my second leader key
 
 nnoremap ,<tab> <tab>
 nnoremap ,<space> <space>
@@ -30,13 +30,3 @@ nnoremap ,u :PlugUpdate<cr>
 nnoremap ,x <Plug>(ale_toggle_buffer)
 "        ,y remove pr(y)
 nnoremap ,z :tabe %<cr>
-
-omap aa <Plug>SidewaysArgumentTextobjA
-xmap aa <Plug>SidewaysArgumentTextobjA
-omap ia <Plug>SidewaysArgumentTextobjI
-xmap ia <Plug>SidewaysArgumentTextobjI
-
-map f <Plug>Sneak_f
-map F <Plug>Sneak_F
-map t <Plug>Sneak_t
-map T <Plug>Sneak_T
