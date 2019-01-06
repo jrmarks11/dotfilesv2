@@ -1,6 +1,6 @@
 " Comma is my second leader key
 
-nnoremap ,<tab> <tab>
+nnoremap ,<tab> <c-w>v:LastBuffer<cr>
 nnoremap ,<space> <space>
 nnoremap ,. :SidewaysRight<cr>
 nmap     ,, <Plug>(ale_fix)
@@ -29,4 +29,4 @@ nnoremap ,v v
 nnoremap ,u :PlugUpdate<cr>
 nnoremap ,x <Plug>(ale_toggle_buffer)
 "        ,y remove pr(y)
-nnoremap ,z :tabe %<cr>
+nnoremap ,z :Zoom<cr>
