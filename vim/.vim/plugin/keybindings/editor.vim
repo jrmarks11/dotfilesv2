@@ -21,14 +21,15 @@ xnoremap . :normal .<cr>
 nnoremap Y y$
 
 nnoremap z= :setlocal spell<CR>z=
-" This does what it sounds like and its great
 
+" This does what it sounds like and its great
 nnoremap \ :SecondToLastBuffer<cr>
 
 " Dont ever need to jump with '
 nnoremap ' `
 xnoremap ' `
 
+" Sneak lets me move with [f,t,F,T]
 nnoremap ; :
 xnoremap ; :
 
