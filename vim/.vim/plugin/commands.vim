@@ -7,6 +7,7 @@ command! LastBuffer call util#last_buffer(1)
 command! NoPastePaste call util#no_paste_paste()
 command! RenameFile call util#rename_file()
 command! SecondToLastBuffer call util#last_buffer(2)
+command! SuperCarrot call util#super_carrot()
 command! Zoom call util#zoom()
 
 let s:opts = '--reverse --preview-window top:60% '

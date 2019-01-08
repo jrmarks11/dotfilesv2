@@ -101,6 +101,14 @@ function! util#sort_buffers(...)
   return l:b1 < l:b2 ? 1 : -1
 endfunction
 
+function! util#super_carrot()
+  if @% == @#
+    call util#last_buffer(1)
+  else
+    normal! 
+  end
+endfunction
+
 function! util#zoom()
   if winnr('$') > 1
     tab split
