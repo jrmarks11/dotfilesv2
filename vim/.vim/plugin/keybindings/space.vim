@@ -24,7 +24,7 @@ nnoremap <space>s :%s/\<<c-r><c-w>\>//g<left><left>
 xnoremap <space>s y:%s/<c-r><c-0>//g<left><left>
 nnoremap <space>t :Files!<cr>
 nnoremap <space>u :UncommitedFiles!<cr>
-nnoremap <space>v :source $MYVIMRC<cr>
+nnoremap <space>v :Fd! .vue<cr>
 nnoremap <space>w w
 nnoremap <space>x x
 nnoremap <space>y :Helptags<cr>

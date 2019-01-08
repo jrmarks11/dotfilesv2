@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'andrewradev/switch.vim'
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'christoomey/vim-tmux-navigator'
+  Plug 'janko-m/vim-test'
   Plug 'jgdavey/tslime.vim'
   Plug 'justinmk/vim-sneak'
   Plug 'justinmk/vim-dirvish'
@@ -75,6 +76,9 @@ let g:sneak#label = 1
 let g:sneak#s_next = 1
 let g:sneak#use_ic_scs = 1
 
+let g:test#preserve_screen = 1
+let g:test#strategy = 'tslime'
+
 let g:tmux_navigator_no_mappings = 1
 
 let g:tslime_always_current_session = 1
@@ -96,6 +100,8 @@ let g:alt_file_patterns =
       \   [ 'app\/\(.*\).rb', 'spec\/\1_spec.rb' ],
       \   [ 'test\/\(.*\)_test.exs', 'lib\/\1.ex' ],
       \   [ 'lib\/\(.*\).ex', 'test\/\1_test.exs' ],
+      \   [ '\(.*\).unit.test.js', '\1.vue' ],
+      \   [ '\(.*\).vue', '\1.unit.test.js' ],
       \   [ '.*\/\.zsh-files\/.*', '~/.zshrc']
       \ ]
 

@@ -7,10 +7,10 @@ nmap     ,, <Plug>(ale_fix)
 nnoremap ,a :argadd<cr>
 nnoremap ,b b
 nnoremap ,c :PlugClean<cr>
-"        ,d run tests with (d)ebugger
+nnoremap ,d :TestNearest<cr>
 nmap     ,e <Plug>(EasyAlign)
 xmap     ,e <Plug>(EasyAlign)
-"        ,f run tests for the (f)ile
+nnoremap ,f :TestFile<cr>
 nnoremap ,g g
 nmap     ,h <Plug>GitGutterUndoHunk
 "        ,i inspect word
@@ -24,8 +24,8 @@ nnoremap ,o <c-w>o
 nmap     ,q <Plug>(qf_qf_toggle_stay)
 nnoremap ,r :RenameFile<cr>
 nmap     ,s s
-"        ,t run nearest (t)est
-nnoremap ,v v
+nnoremap ,t :TestNearest<cr>
+nnoremap ,v :source $MYVIMRC<cr>
 nnoremap ,u :PlugUpdate<cr>
 nnoremap ,x <Plug>(ale_toggle_buffer)
 "        ,y remove pr(y)
