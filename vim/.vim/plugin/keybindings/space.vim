@@ -1,6 +1,6 @@
 nnoremap <space><space> :'{,'}s/\<<c-r><c-w>\>//g<left><left>
 xnoremap <space><space> y:'{,'}s/<c-r><c-0>//g<left><left>
-nnoremap <space><tab> :LastBuffer<cr>
+nnoremap <space><tab> :SuperCarrot<cr>
 nnoremap <space>a :A<cr>
 nnoremap <space>b :Buffer<cr>
 nnoremap <space>c :Fd! controller<cr>

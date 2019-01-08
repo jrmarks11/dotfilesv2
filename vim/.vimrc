@@ -8,6 +8,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'jgdavey/tslime.vim'
+  Plug 'justinmk/vim-sneak'
+  Plug 'justinmk/vim-dirvish'
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/vim-easy-align'
@@ -15,14 +17,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'machakann/vim-sandwich'
   Plug 'mattn/emmet-vim'
   Plug 'nelstrom/vim-visual-star-search'
-  Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
   Plug 'NLKNguyen/papercolor-theme'
-  Plug 'rhysd/clever-f.vim'
   Plug 'romainl/vim-qf'
   Plug 'SirVer/ultisnips'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
-  Plug 'tpope/vim-fugitive'
   Plug 'w0rp/ale'
 
   " Text Objects
@@ -34,6 +33,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 runtime macros/matchit.vim
+runtime macros/sandwich/keymap/surround.vim
 
 let g:ale_fixers = {
       \   'elixir': ['mix_format'],
@@ -47,11 +47,10 @@ let g:ale_linters = {
       \   'elixir': ['credo'],
       \   'javascript': ['eslint'],
       \   'ruby': ['rubocop'],
+      \   'vue': ['eslint'],
       \ }
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_text_changed = 'normal'
-
-let g:clever_f_across_no_line = 1
 
 let g:fzf_files_options =
       \ '--reverse ' .
@@ -71,6 +70,10 @@ let g:sandwich#recipes += [
       \  'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'],
       \  'input': ['{']},
       \ ]
+
+let g:sneak#label = 1
+let g:sneak#s_next = 1
+let g:sneak#use_ic_scs = 1
 
 let g:tmux_navigator_no_mappings = 1
 

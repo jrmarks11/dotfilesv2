@@ -100,3 +100,20 @@ function! util#sort_buffers(...)
   " Using minus between a float and a number in a sort function causes an error
   return l:b1 < l:b2 ? 1 : -1
 endfunction
+
+function! util#super_carrot()
+  if @% == @#
+    call util#last_buffer(1)
+  else
+    normal! 
+  end
+endfunction
+
+function! util#zoom()
+  if winnr('$') > 1
+    tab split
+  elseif len(filter(map(range(tabpagenr('$')), 'tabpagebuflist(v:val + 1)'),
+        \ 'index(v:val, '.bufnr('').') >= 0')) > 1
+    tabclose
+  endif
+endfunction
