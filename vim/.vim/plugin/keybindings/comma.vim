@@ -5,7 +5,7 @@ nnoremap ,<space> :'{,'}s/\<<c-r><c-w>\>//g<left><left><c-r><c-w>
 nnoremap ,. :SidewaysRight<cr>
 nmap     ,, <Plug>(ale_fix)
 nnoremap ,a :argadd<cr>
-nnoremap ,b b
+nnoremap ,b :TestVisit<cr>
 nnoremap ,c :PlugClean<cr>
 nnoremap ,d :TestNearest<cr>
 nmap     ,e <Plug>(EasyAlign)
@@ -23,7 +23,7 @@ nnoremap ,o <c-w>o
 "        ,p put a (p)ry above this line
 nmap     ,q <Plug>(qf_qf_toggle_stay)
 nnoremap ,r :RenameFile<cr>
-nmap     ,s s
+nmap     ,s :TestSuite<cr>
 nnoremap ,t :TestNearest<cr>
 nnoremap ,v :source $MYVIMRC<cr>
 nnoremap ,u :PlugUpdate<cr>
