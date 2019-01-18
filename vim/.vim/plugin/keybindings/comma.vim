@@ -5,7 +5,7 @@ nnoremap ,<space> :'{,'}s/\<<c-r><c-w>\>//g<left><left><c-r><c-w>
 nnoremap ,. :SidewaysRight<cr>
 nmap     ,, <Plug>(ale_fix)
 nnoremap ,a :argadd<cr>
-nnoremap ,b :TestVisit<cr>
+nnoremap ,b :TestVisit<cr>zz
 nnoremap ,c :PlugClean<cr>
 nnoremap ,d :TestNearest<cr>
 nmap     ,e <Plug>(EasyAlign)
@@ -15,7 +15,7 @@ nnoremap ,g g
 nmap     ,h <Plug>GitGutterUndoHunk
 "        ,i inspect word
 nnoremap ,j :Fd!<space>
-nnoremap ,k k
+nnoremap ,k :TestLast<cr>
 nmap     ,l <Plug>(qf_loc_toggle_stay)
 nnoremap ,m :SidewaysLeft<cr>
 nnoremap ,n n
