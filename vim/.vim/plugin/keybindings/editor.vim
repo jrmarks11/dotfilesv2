@@ -42,3 +42,4 @@ nnoremap <c-l> :nohlsearch<c-r>=has('diff')?'<Bar>diffupdate':''<cr><cr><c-l>
 
 " mark position before searching
 nnoremap / ms/
+nnoremap ? ms?

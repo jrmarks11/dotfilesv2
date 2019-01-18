@@ -1,7 +1,7 @@
 " Comma is my second leader key
 
 nnoremap ,<tab> <c-w>v:LastBuffer<cr>
-nnoremap ,<space> :'{,'}s/\<<c-r><c-w>\>//g<left><left><c-r><c-w>
+nnoremap ,<space> <space>
 nnoremap ,. :SidewaysRight<cr>
 nmap     ,, <Plug>(ale_fix)
 nnoremap ,a :argadd<cr>
