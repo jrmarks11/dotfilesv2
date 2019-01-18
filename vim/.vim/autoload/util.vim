@@ -4,7 +4,7 @@ function! util#all_files()
   return fzf#vim#_uniq(map(
         \ filter([expand('%')], 'len(v:val)')
         \   + filter(map(l:sorted, 'bufname(v:val)'), 'len(v:val)')
-        \   + filter(copy(v:oldfiles), 'filereadable(expand(v:val))'),
+        \   + filter(copy(fzf_mru#mrufiles#list()), 'v:val != expand("%")'),
         \ "fnamemodify(v:val, ':~:.')"))
 endfunction
 

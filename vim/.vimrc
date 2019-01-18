@@ -19,6 +19,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'mattn/emmet-vim'
   Plug 'nelstrom/vim-visual-star-search'
   Plug 'NLKNguyen/papercolor-theme'
+  Plug 'pbogut/fzf-mru.vim'
   Plug 'romainl/vim-qf'
   Plug 'SirVer/ultisnips'
   Plug 'sheerun/vim-polyglot'
@@ -58,6 +59,8 @@ let g:fzf_files_options =
       \ '--preview-window top:60% ' .
       \ '--preview "(bat --color "always" {} || cat {}) 2> /dev/null | head -'
       \ . &lines . '"'
+
+let g:fzf_mru_relative = 1
 
 let g:gutentags_ctags_tagfile = '.tags'
 
