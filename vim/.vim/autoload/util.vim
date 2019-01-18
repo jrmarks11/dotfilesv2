@@ -74,6 +74,8 @@ function! util#last_buffer(count)
   let l:sorted = util#all_files()
   if len(l:sorted) > a:count
     execute 'e ' . l:sorted[a:count]
+  else
+    execute 'e .'
   endif
 endfunction
 
