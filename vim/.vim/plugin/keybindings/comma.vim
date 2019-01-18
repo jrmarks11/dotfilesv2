@@ -11,7 +11,7 @@ nnoremap ,d :TestNearest<cr>
 nmap     ,e <Plug>(EasyAlign)
 xmap     ,e <Plug>(EasyAlign)
 nnoremap ,f :TestFile<cr>
-nnoremap ,g g
+nnoremap ,g :Gblame<cr>
 nmap     ,h <Plug>GitGutterUndoHunk
 "        ,i inspect word
 nnoremap ,j :Fd!<space>
