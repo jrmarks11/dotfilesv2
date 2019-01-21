@@ -25,9 +25,6 @@ command! -bang -nargs=* Rg
       \ call fzf#vim#grep(s:fzf_grep_cmd .shellescape(<q-args>), 1,
       \ fzf#vim#with_preview('up:60%'), <bang>0)
 
-command! -bang -nargs=* HistoryWithPreview
-      \ call fzf#vim#history(fzf#vim#with_preview('up:60%'), <bang>0)
-
 let s:fzf_fd_opts = s:opts .
       \ '--preview "(bat --color "always" {} || cat {}) 2> /dev/null | head -'
       \ . &lines . '"'
