@@ -9,7 +9,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'janko-m/vim-test'
   Plug 'jgdavey/tslime.vim'
   Plug 'justinmk/vim-sneak'
-  Plug 'justinmk/vim-dirvish'
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/vim-easy-align'
