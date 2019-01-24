@@ -30,8 +30,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'w0rp/ale'
 
   " Text Objects
-  Plug 'adriaanzon/vim-textobj-matchit'
-  Plug 'Julian/vim-textobj-variable-segment'
+  Plug 'beloglazov/vim-textobj-quotes'
   Plug 'kana/vim-textobj-entire'
   Plug 'kana/vim-textobj-indent'
   Plug 'kana/vim-textobj-user'
