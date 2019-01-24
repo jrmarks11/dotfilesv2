@@ -34,11 +34,11 @@ nnoremap ; :
 xnoremap ; :
 
 " Clear search results when using c-l in normal, maintains c-l
-nnoremap <c-l> :nohlsearch<c-r>=has('diff')?'<Bar>diffupdate':''<cr><cr><c-l>
+nnoremap <c-l> :nohlsearch<c-r>=has('diff')?'<bar>diffupdate':''<cr><cr><c-l>
 
 " mark position before searching
 nnoremap / ms/
 nnoremap ? ms?
 
-xnoremap * :<C-u>call vistar#search('/')<CR>/<C-R>=@/<CR><CR>
-xnoremap # :<C-u>call vistar#search('?')<CR>?<C-R>=@/<CR><CR>
+xnoremap * :<c-u>call vistar#search('/')<cr>/<c-r>=@/<cr><cr>
+xnoremap # :<c-u>call vistar#search('?')<cr>?<c-r>=@/<cr><cr>
