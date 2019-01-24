@@ -25,8 +25,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-rsi'
-  Plug 'tpope/vim-unimpaired'
   Plug 'w0rp/ale'
 
   " Text Objects
