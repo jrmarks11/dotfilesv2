@@ -33,4 +33,3 @@ function! to#indent_object(op, skip_blank, b, e, bd, ed)
   endfor
   execute printf('normal! %dGV%dG', max([1, d[0] + a:bd]), min([x, d[1] + a:ed]))
 endfunction
-
