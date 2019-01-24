@@ -55,6 +55,8 @@ let g:fzf_files_options =
 
 let g:fzf_mru_relative = 1
 
+let g:gitgutter_map_keys = 0
+
 let g:gutentags_ctags_tagfile = '.tags'
 
 let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
