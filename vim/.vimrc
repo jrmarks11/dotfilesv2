@@ -25,12 +25,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
   Plug 'w0rp/ale'
-
-  " Text Objects
-  Plug 'beloglazov/vim-textobj-quotes'
-  Plug 'kana/vim-textobj-entire'
-  Plug 'kana/vim-textobj-indent'
-  Plug 'kana/vim-textobj-user'
 call plug#end()
 
 runtime macros/matchit.vim
