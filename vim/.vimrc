@@ -17,7 +17,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'machakann/vim-sandwich'
   Plug 'mattn/emmet-vim'
-  Plug 'nelstrom/vim-visual-star-search'
   Plug 'NLKNguyen/papercolor-theme'
   Plug 'pbogut/fzf-mru.vim'
   Plug 'SirVer/ultisnips'

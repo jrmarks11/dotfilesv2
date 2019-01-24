@@ -39,3 +39,6 @@ nnoremap <c-l> :nohlsearch<c-r>=has('diff')?'<Bar>diffupdate':''<cr><cr><c-l>
 " mark position before searching
 nnoremap / ms/
 nnoremap ? ms?
+
+xnoremap * :<C-u>call vistar#search('/')<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call vistar#search('?')<CR>?<C-R>=@/<CR><CR>
