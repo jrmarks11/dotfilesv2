@@ -113,7 +113,7 @@ set directory=~/.vim-swap//
 set display+=lastline
 set expandtab
 set formatoptions+=j
-set grepprg=rg\ --vimgrep\ --no-heading
+set grepprg=rg\ --vimgrep\ --no-heading\ --hidden
 set history=1000
 set hlsearch
 set ignorecase
