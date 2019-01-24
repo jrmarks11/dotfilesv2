@@ -20,7 +20,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'nelstrom/vim-visual-star-search'
   Plug 'NLKNguyen/papercolor-theme'
   Plug 'pbogut/fzf-mru.vim'
-  Plug 'romainl/vim-qf'
   Plug 'SirVer/ultisnips'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'

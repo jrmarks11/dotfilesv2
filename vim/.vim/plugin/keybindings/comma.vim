@@ -16,12 +16,12 @@ nmap     ,h <Plug>GitGutterUndoHunk
 "        ,i inspect word
 nnoremap ,j :Fd!<space>
 nnoremap ,k :TestLast<cr>
-nmap     ,l <Plug>(qf_loc_toggle_stay)
+nnoremap ,l :lclose<cr>
 nnoremap ,m :SidewaysLeft<cr>
 nnoremap ,n n
 nnoremap ,o <c-w>o
 "        ,p put a (p)ry above this line
-nmap     ,q <Plug>(qf_qf_toggle_stay)
+nnoremap ,q :cclose<cr>
 nnoremap ,r :RenameFile<cr>
 nmap     ,s :TestSuite<cr>
 nnoremap ,t :TestNearest<cr>
