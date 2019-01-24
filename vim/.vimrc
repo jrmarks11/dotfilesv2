@@ -19,7 +19,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'mattn/emmet-vim'
   Plug 'NLKNguyen/papercolor-theme'
   Plug 'pbogut/fzf-mru.vim'
-  Plug 'SirVer/ultisnips'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
   Plug 'w0rp/ale'
