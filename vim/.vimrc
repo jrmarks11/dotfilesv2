@@ -76,13 +76,6 @@ let g:tmux_navigator_no_mappings = 1
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
 
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
-let g:UltiSnipsSnippetDirectories=['Snips']
-
-let g:user_emmet_mode='i'
-
 " List of regex checked for alternate files first maps to second
 let g:alt_file_patterns =
       \ [
