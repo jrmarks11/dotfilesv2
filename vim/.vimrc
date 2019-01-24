@@ -14,7 +14,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/vim-easy-align'
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'machakann/vim-sandwich'
-  Plug 'mattn/emmet-vim'
   Plug 'NLKNguyen/papercolor-theme'
   Plug 'pbogut/fzf-mru.vim'
   Plug 'sheerun/vim-polyglot'
