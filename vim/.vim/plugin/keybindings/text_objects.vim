@@ -15,7 +15,7 @@ xnoremap <silent> ai :<c-u>call to#indent_object('>=', 1, line("'<"), line("'>")
 onoremap <silent> ai :<c-u>call to#indent_object('>=', 1, line('.'), line('.'), 0, 0)<cr>
 
 " ----------------------------------------------------------------------------
-" ?am | around matchit this does ai but with the previous and next line
+" ?am | delte ai but one above and below
 " ----------------------------------------------------------------------------
 xnoremap <silent> am :<c-u>call to#indent_object('>=', 1, line("'<"), line("'>"), -1, 1)<cr>
 onoremap <silent> am :<c-u>call to#indent_object('>=', 1, line('.'), line('.'), -1, 1)<cr>
