@@ -3,18 +3,19 @@
 export KEYTIMEOUT=1
 
 bindkey -v
+bindkey "^[b" backward-word
+bindkey "^[f" forward-word
+bindkey "^_" undo
 bindkey "^a" beginning-of-line
 bindkey "^b" backward-char
-bindkey "^[b" backward-word
 bindkey "^d" delete-char
 bindkey "^e" end-of-line
 bindkey "^f" forward-char
-bindkey "^[f" forward-word
 bindkey "^k" kill-line
-bindkey "^p" history-substring-search-up
 bindkey "^n" history-substring-search-down
+bindkey "^p" history-substring-search-up
 bindkey "^u" backward-kill-line
-bindkey "^_" undo
+bindkey "^w" backward-kill-word
 
 backward-kill-dir () {
     local WORDCHARS=${WORDCHARS/\/}
@@ -40,7 +41,7 @@ bindkey '^y' pbcopy-last-command
 gb_inline() {
   is_in_git_repo || return
   git branch -a --color=always | grep -v '/HEAD\s' | sort |
-    fzf_down --ansi --multi --tac | sed 's/^..//' | cut -d' ' -f1 |
+    fzf_down --ansi --tac | sed 's/^..//' | cut -d' ' -f1 |
     sed 's#^remotes/origin/##' | pbcopy
   RBUFFER="$(pbpaste)${RBUFFER}"
   zle autosuggest-clear
@@ -49,3 +50,14 @@ gb_inline() {
 }
 zle -N _gb gb_inline
 bindkey '^g' _gb
+
+dk_inline() {
+  docker ps --format '{{.Names}}' | fzf_down --ansi --tac | pbcopy
+  RBUFFER="$(pbpaste)${RBUFFER}"
+  zle autosuggest-clear
+  zle end-of-line
+  zle reset-prompt
+}
+
+zle -N _dk dk_inline
+bindkey '^s' _dk
