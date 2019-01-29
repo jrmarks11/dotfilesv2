@@ -20,7 +20,7 @@ xnoremap . :normal .<cr>
 " Y does Y not work like this by default
 nnoremap Y y$
 
-nnoremap z= :setlocal spell<CR>z=
+nnoremap z= :setlocal spell<cr>z=
 
 " This does what it sounds like and its great
 nnoremap \ :SecondToLastBuffer<cr>
