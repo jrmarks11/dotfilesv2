@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 tssh() { tmate display -p '#{tmate_ssh}' | pbcopy; }
-shovel() ( cd ~/dev && ./script/run shovel "$@"; )
+shovel() ( cd ~/Platform && ./script/run shovel "$@"; )
 
 fzf_down() {
   fzf --height 50% "$@" --border
