@@ -1,11 +1,10 @@
 function! util#all_files()
-  let l:sorted = sort(util#buflisted(), 'util#sort_buffers')
+  let l:buffers = sort(util#buflisted(), 'util#sort_buffers')
+  let l:fnames = filter(map(l:buffers, 'bufname(v:val)'), 'len(v:val)')
+  let l:mru_fnames = copy(fzf_mru#mrufiles#list())
+  let l:all_fnames = filter(l:fnames + l:mru_fnames, 'v:val != expand("%")')
 
-  return fzf#vim#_uniq(map(
-        \ filter([expand('%')], 'len(v:val)')
-        \   + filter(map(l:sorted, 'bufname(v:val)'), 'len(v:val)')
-        \   + filter(copy(fzf_mru#mrufiles#list()), 'v:val != expand("%")'),
-        \ "fnamemodify(v:val, ':~:.')"))
+  return fzf#vim#_uniq(map(l:all_fnames, 'fnamemodify(v:val, ":~:.")'))
 endfunction
 
 function! util#alt_file()
@@ -105,7 +104,7 @@ endfunction
 
 function! util#super_carrot()
   if @% == @#
-    call util#last_buffer(1)
+    call util#last_buffer(0)
   else
     normal! 
   end
