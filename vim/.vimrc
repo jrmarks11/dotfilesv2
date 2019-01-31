@@ -15,7 +15,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'machakann/vim-sandwich'
   Plug 'NLKNguyen/papercolor-theme'
-  Plug 'pbogut/fzf-mru.vim'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
   Plug 'w0rp/ale'
@@ -46,8 +45,6 @@ let g:fzf_files_options =
       \ '--preview-window top:60% ' .
       \ '--preview "(bat --color "always" {} || cat {}) 2> /dev/null | head -'
       \ . &lines . '"'
-
-let g:fzf_mru_relative = 1
 
 let g:gitgutter_map_keys = 0
 

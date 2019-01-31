@@ -1,8 +1,10 @@
 function! util#all_files()
   let l:buffers = sort(util#buflisted(), 'util#sort_buffers')
-  let l:fnames = filter(map(l:buffers, 'bufname(v:val)'), 'len(v:val)')
-  let l:mru_fnames = copy(fzf_mru#mrufiles#list())
-  let l:all_fnames = filter(l:fnames + l:mru_fnames, 'v:val != expand("%")')
+  let l:filenames = filter(map(l:buffers, 'bufname(v:val)'), 'len(v:val)')
+  let l:no_current = filter(l:filenames, 'v:val != expand("%")')
+  let l:oldfiles = filter(copy(v:oldfiles), "filereadable(fnamemodify(v:val, ':p'))")
+  let l:current_dir = filter(l:oldfiles, '!stridx(expand(v:val), getcwd())')
+  let l:all_fnames = filter(l:no_current + l:current_dir, 'expand(v:val) != expand("%:p")')
 
   return fzf#vim#_uniq(map(l:all_fnames, 'fnamemodify(v:val, ":~:.")'))
 endfunction
