@@ -19,7 +19,7 @@ nnoremap <space>n :BranchFiles!<cr>
 nnoremap <space>o :BTags<cr>
 nnoremap <space>p :NoPastePaste<cr>
 nnoremap <space>q q
-nnoremap <space>r :FZFMru<cr>
+nnoremap <space>r :MRU!<cr>
 nnoremap <space>s :%s/\<<c-r><c-w>\>//g<left><left>
 xnoremap <space>s y:%s/<c-r><c-0>//g<left><left>
 nnoremap <space>t :Files!<cr>

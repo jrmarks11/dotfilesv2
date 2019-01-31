@@ -30,3 +30,6 @@ let s:fzf_fd_opts = s:opts .
       \ . &lines . '"'
 command! -bang -nargs=* Fd call fzf#run(fzf#wrap('Fd',
       \ { 'source': util#fd(<q-args>), 'options': s:fzf_fd_opts }, <bang>0))
+
+command! -bang -nargs=* MRU call fzf#run(fzf#wrap('MRU',
+      \ { 'source': util#all_files(), 'options': s:fzf_fd_opts }, <bang>0))
