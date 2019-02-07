@@ -54,12 +54,20 @@ tm() {
   tmux $change -t "$session" || tm "$(whoami)"
 }
 
+my_vim() {
+  if [[ "$#" == "0" ]]; then
+    vim -c "call util#last_buffer(0)"
+  else
+    vim "$@"
+  fi
+}
+
 vv() {
   if [[ "$#" == "0" ]]; then
     local file
     file=$(rg "^>" ~/.viminfo | cut -c 3- | fzf_down --ansi)
     vim ${~file}
   else
-    vim "$@"
+    fasd -e vim "$@"
   fi
 }
