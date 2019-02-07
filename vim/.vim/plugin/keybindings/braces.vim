@@ -13,9 +13,9 @@ nnoremap [e :<c-u>execute 'move -1-'. v:count1<cr>
 nnoremap ]e :<c-u>execute 'move +'. v:count1<cr>
 xnoremap [e :<c-u>execute "'<, '>move'<--" . v:count1<cr>gv
 xnoremap ]e :<c-u>execute "'<, '>move'>+" . v:count1<cr>gv
-nnoremap ]l :lnext<cr>
-nnoremap [l :lprev<cr>
-nnoremap ]q :cnext<cr>
-nnoremap [q :cprev<cr>
+nnoremap ]l :lnext<cr>zz
+nnoremap [l :lprev<cr>zz
+nnoremap ]q :cnext<cr>zz
+nnoremap [q :cprev<cr>zz
 nnoremap ]t :tnext<cr>
 nnoremap [t :tprevious<cr>
