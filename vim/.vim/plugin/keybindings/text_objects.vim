@@ -26,7 +26,7 @@ nmap <silent> ,A ^vii<c-v>$A
 
 " ?ae | entire object
 xnoremap <silent> ae gg0oG$
-onoremap <silent> ae :<c-u>execute "normal! m`"<bar>keepjumps normal! ggvg<cr>
+onoremap <silent> ae :<c-u>execute "normal! m`"<bar>keepjumps normal! ggvG<cr>
 
 " ?il | inner line
 xnoremap <silent> il <esc>^vg_
