@@ -19,7 +19,7 @@ command! -bang UncommitedFiles call fzf#run(fzf#wrap('UncommitedFiles',
       \ { 'source': 'branch_files -w', 'options': s:fzf_options }, <bang>0))
 
 let s:fzf_grep_cmd =
-      \ 'rg --column --line-number --no-heading --fixed-strings --ignore-case'
+      \ 'rg --column --line-number --no-heading --fixed-strings --smart-case'
       \ . " --hidden --follow --glob '!.git/*' --color 'always' "
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(s:fzf_grep_cmd .shellescape(<q-args>), 1,
