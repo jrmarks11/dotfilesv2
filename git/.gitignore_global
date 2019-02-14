@@ -27,3 +27,5 @@ todo.taskpaper
 TODO.taskpaper
 
 TMUX_WORKSPACE.yml
+
+.elixir_ls/
