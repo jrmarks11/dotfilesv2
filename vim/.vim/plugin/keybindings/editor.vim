@@ -1,8 +1,3 @@
-map f <Plug>Sneak_f
-map F <Plug>Sneak_F
-map t <Plug>Sneak_t
-map T <Plug>Sneak_T
-
 " If you go more than 5 j or k add to jumplist. If there is no count use gj gk
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
@@ -29,7 +24,7 @@ nnoremap \ :SecondToLastBuffer<cr>
 nnoremap ' `
 xnoremap ' `
 
-" Sneak lets me move with [f,t,F,T]
+" Using clever f so dont need ;
 nnoremap ; :
 xnoremap ; :
 

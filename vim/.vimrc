@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'machakann/vim-sandwich'
   Plug 'NLKNguyen/papercolor-theme'
+  Plug 'rhysd/clever-f.vim'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
   Plug 'w0rp/ale'
