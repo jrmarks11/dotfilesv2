@@ -8,7 +8,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'janko-m/vim-test'
   Plug 'jgdavey/tslime.vim'
-  Plug 'justinmk/vim-sneak'
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/vim-easy-align'
@@ -62,10 +61,6 @@ let g:sandwich#recipes += [
       \  'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'],
       \  'input': ['{']},
       \ ]
-
-let g:sneak#label = 1
-let g:sneak#s_next = 1
-let g:sneak#use_ic_scs = 1
 
 let g:test#preserve_screen = 1
 let g:test#strategy = 'tslime'
