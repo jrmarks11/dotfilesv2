@@ -33,13 +33,14 @@ let g:ale_fixers = {
       \ }
 let g:ale_linters = {
       \   'zsh': ['shellcheck'],
-      \   'elixir': ['credo'],
+      \   'elixir': ['elixir-ls'],
       \   'javascript': ['eslint'],
       \   'ruby': ['rubocop'],
       \   'vue': ['eslint'],
       \ }
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_text_changed = 'normal'
+let g:ale_elixir_elixir_ls_release = '/Users/jmarks/Projects/elixir-ls/rel'
 
 let g:fzf_files_options =
       \ '--reverse ' .
