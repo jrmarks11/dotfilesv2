@@ -34,7 +34,7 @@ let g:ale_linters = {
       \   'zsh': ['shellcheck'],
       \   'elixir': ['elixir-ls'],
       \   'javascript': ['eslint'],
-      \   'ruby': ['rubocop', 'solargraph'],
+      \   'ruby': ['rubocop'],
       \   'vue': ['eslint'],
       \ }
 let g:ale_lint_on_insert_leave = 1
