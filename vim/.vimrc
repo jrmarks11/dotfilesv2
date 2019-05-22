@@ -17,6 +17,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'rhysd/clever-f.vim'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-projectionist'
   Plug 'w0rp/ale'
 call plug#end()
 
@@ -70,19 +71,40 @@ let g:tmux_navigator_no_mappings = 1
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
 
-" List of regex checked for alternate files first maps to second
-let g:alt_file_patterns =
-      \ [
-      \   [ 'spec\/lib\/\(.*\)_spec.rb', 'lib\/\1.rb' ],
-      \   [ 'lib\/\(.*\).rb', 'spec\/lib\/\1_spec.rb' ],
-      \   [ 'spec\/\(.*\)_spec.rb', 'app\/\1.rb' ],
-      \   [ 'app\/\(.*\).rb', 'spec\/\1_spec.rb' ],
-      \   [ 'test\/\(.*\)_test.exs', 'lib\/\1.ex' ],
-      \   [ 'lib\/\(.*\).ex', 'test\/\1_test.exs' ],
-      \   [ '\(.*\).unit.test.js', '\1.vue' ],
-      \   [ '\(.*\).vue', '\1.unit.test.js' ],
-      \   [ '.*\/\.zsh-files\/.*', '~/.zshrc']
-      \ ]
+let g:projectionist_heuristics = {}
+let g:projectionist_heuristics['Gemfile'] = {
+      \    'Gemfile': { 'type': 'gem' },
+      \    'lib/*.rb': {
+      \      'type': 'lib',
+      \      'alternate': 'spec/lib/{}_spec.rb'
+      \    },
+      \    'spec/lib/*_spec.rb': {
+      \      'type': 'spec',
+      \      'alternate': 'lib/{}.rb'
+      \    },
+      \    'app/*.rb': {
+      \      'type': 'lib',
+      \      'alternate': 'spec/{}_spec.rb'
+      \    },
+      \    'spec/*_spec.rb': {
+      \      'type': 'spec',
+      \      'alternate': 'app/{}.rb'
+      \    }
+      \  }
+let g:projectionist_heuristics['mix.exs'] = {
+      \     'mix.exs': { 'type': 'mix' },
+      \     'lib/*.ex': {
+      \       'type': 'lib',
+      \       'alternate': 'test/{}_test.exs',
+      \       'template': ['defmodule {camelcase|capitalize|dot} do', 'end'],
+      \     },
+      \     'test/*_test.exs': {
+      \       'type': 'test',
+      \       'alternate': 'lib/{}.ex',
+      \       'template': ['defmodule {camelcase|capitalize|dot}Test do', '  use ExUnit.Case, async: true', '', '  alias {camelcase|capitalize|dot}', 'end'],
+      \     },
+      \     'config/*.exs': { 'type': 'config' },
+      \  }
 
 set autoindent
 set autoread

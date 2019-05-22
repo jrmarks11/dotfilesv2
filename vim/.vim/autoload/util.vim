@@ -9,16 +9,6 @@ function! util#all_files()
   return fzf#vim#_uniq(map(l:all_fnames, 'fnamemodify(v:val, ":~:.")'))
 endfunction
 
-function! util#alt_file()
-  let l:file = expand('%')
-  for [l:pattern, l:substitution] in g:alt_file_patterns
-    if l:file =~ l:pattern
-      execute 'e '. substitute(l:file, l:pattern, l:substitution, 'g')
-      return
-    endif
-  endfor
-endfunction
-
 function! util#buflisted()
   let l:no_qf = "buflisted(v:val) && getbufvar(v:val, '&filetype') !=# 'qf'"
   return filter(range(1, bufnr('$')), l:no_qf)

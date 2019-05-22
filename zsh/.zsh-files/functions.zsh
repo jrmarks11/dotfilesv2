@@ -11,17 +11,31 @@ is_in_git_repo() {
   git rev-parse HEAD > /dev/null 2>&1
 }
 
+not_master() {
+  CURRENTBRANCH=$(git status|awk 'NR==1{print $3}')
+
+  if [[ $CURRENTBRANCH == "master" ]]; then
+    1 > /dev/null 2>&1
+  fi
+}
+
 ga() {
   is_in_git_repo || return
-  if [[ $# -eq 0 ]] ; then
-    git add .
+
+  if not_master ; then
+    if [[ $# -eq 0 ]] ; then
+      git add .
+    else
+      git add "$@"
+    fi
   else
-    git add "$@"
+    echo "You are on master you donkey!"
   fi
 }
 
 gb() {
   is_in_git_repo || return
+
   if [[ $# -eq 0 ]] ; then
     git branch -a --color=always | grep -v '/HEAD\s' | sort |
       fzf_down --ansi --multi --tac | sed 's/^..//' | cut -d' ' -f1 |
@@ -33,10 +47,23 @@ gb() {
 
 gc() {
   is_in_git_repo || return
-  if [[ $# -eq 0 ]] ; then
-    git commit --verbose
+
+  if not_master ; then
+    if [[ $# -eq 0 ]] ; then
+      git commit --verbose
+    else
+      git commit -m "$1"
+    fi
   else
-    git commit -m "$1"
+    echo "You are on master you donkey!"
+  fi
+}
+
+gush() {
+  if not_master ; then
+    git push
+  else
+    echo "You are on master you donkey!"
   fi
 }
 
