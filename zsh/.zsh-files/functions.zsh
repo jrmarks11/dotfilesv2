@@ -11,6 +11,15 @@ is_in_git_repo() {
   git rev-parse HEAD > /dev/null 2>&1
 }
 
+is_master() {
+  CURRENTBRANCH=$(git status|awk 'NR==1{print $3}')
+
+  if [[ $CURRENTBRANCH == "master" ]]; then
+    0 > /dev/null 2>&1
+  fi
+  1 > /dev/null 2>&1
+}
+
 ga() {
   is_in_git_repo || return
   if [[ $# -eq 0 ]] ; then
@@ -37,6 +46,14 @@ gc() {
     git commit --verbose
   else
     git commit -m "$1"
+  fi
+}
+
+gush() {
+  if is_master
+    echo "You are on master you donkey!"
+  else
+    git push
   fi
 }
 
