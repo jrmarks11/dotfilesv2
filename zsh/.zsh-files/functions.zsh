@@ -52,7 +52,7 @@ gush() {
   if is_master
     echo "You are on master you donkey!"
   else
-    git push
+    echo "not master"
   fi
 }
 
