@@ -11,11 +11,11 @@ is_in_git_repo() {
   git rev-parse HEAD > /dev/null 2>&1
 }
 
-is_master() {
+not_master() {
   CURRENTBRANCH=$(git status|awk 'NR==1{print $3}')
 
   if [[ $CURRENTBRANCH == "master" ]]; then
-    0 > /dev/null 2>&1
+    1 > /dev/null 2>&1
   fi
 }
 
@@ -49,10 +49,10 @@ gc() {
 }
 
 gush() {
-  if is_master ; then
-    echo "You are on master you donkey!"
-  else
+  if not_master ; then
     echo "not master"
+  else
+    echo "You are on master you donkey!"
   fi
 }
 
