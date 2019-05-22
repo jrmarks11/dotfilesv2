@@ -15,7 +15,7 @@ is_master() {
   CURRENTBRANCH=$(git status|awk 'NR==1{print $3}')
 
   if [[ $CURRENTBRANCH == "master" ]]; then
-    1 > /dev/null 2>&1
+    0 > /dev/null 2>&1
   fi
 }
 
