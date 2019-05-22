@@ -49,7 +49,7 @@ gc() {
 }
 
 gush() {
-  if is_master
+  if is_master ; then
     echo "You are on master you donkey!"
   else
     echo "not master"
