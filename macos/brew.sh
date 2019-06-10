@@ -10,7 +10,6 @@ brew install \
   fd \
   fzf \
   git \
-  gnugp \
   hub \
   jq \
   postgresql \
