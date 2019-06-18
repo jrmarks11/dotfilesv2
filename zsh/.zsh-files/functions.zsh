@@ -11,25 +11,30 @@ is_in_git_repo() {
   git rev-parse HEAD > /dev/null 2>&1
 }
 
+is_dotfiles() {
+  [[ $(basename `git rev-parse --show-toplevel`) =~ "dotfiles" ]] > /dev/null 2>&1
+}
+
 not_master() {
+  if is_dotfiles; then
+    return
+  fi
+
   CURRENTBRANCH=$(git status|awk 'NR==1{print $3}')
 
   if [[ $CURRENTBRANCH == "master" ]]; then
-    1 > /dev/null 2>&1
+      echo "You are on master you donkey!"
+      1 > /dev/null 2>&1
   fi
 }
 
 ga() {
-  is_in_git_repo || return
+  is_in_git_repo && not_master || return
 
-  if not_master ; then
-    if [[ $# -eq 0 ]] ; then
-      git add .
-    else
-      git add "$@"
-    fi
+  if [[ $# -eq 0 ]] ; then
+    git add .
   else
-    echo "You are on master you donkey!"
+    git add "$@"
   fi
 }
 
@@ -46,25 +51,18 @@ gb() {
 }
 
 gc() {
-  is_in_git_repo || return
+  is_in_git_repo && not_master || return
 
-  if not_master ; then
-    if [[ $# -eq 0 ]] ; then
-      git commit --verbose
-    else
-      git commit -m "$1"
-    fi
+  if [[ $# -eq 0 ]] ; then
+    git commit --verbose
   else
-    echo "You are on master you donkey!"
+    git commit -m "$1"
   fi
 }
 
 gush() {
-  if not_master ; then
-    git push
-  else
-    echo "You are on master you donkey!"
-  fi
+  is_in_git_repo && not_master || return
+  git push
 }
 
 tm() {
@@ -86,15 +84,5 @@ my_vim() {
     vim -c "call util#last_buffer(0)"
   else
     vim "$@"
-  fi
-}
-
-vv() {
-  if [[ "$#" == "0" ]]; then
-    local file
-    file=$(rg "^>" ~/.viminfo | cut -c 3- | fzf_down --ansi)
-    vim ${~file}
-  else
-    fasd -e vim "$@"
   fi
 }
