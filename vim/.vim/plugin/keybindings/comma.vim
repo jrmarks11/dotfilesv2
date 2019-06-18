@@ -1,10 +1,10 @@
 " Comma is my second leader key
 
-nnoremap ,<tab> <c-w>v:LastBuffer<cr>
+nnoremap ,<tab> <tab>
 nnoremap ,<space> <space>
 nnoremap ,. :SidewaysRight<cr>
 nmap     ,, <Plug>(ale_fix)
-nnoremap ,a :argadd<cr>
+nnoremap ,a a
 nnoremap ,b :TestVisit<cr>zz
 nnoremap ,c :PlugClean<cr>
 nnoremap ,d :TestNearest<cr>
@@ -19,7 +19,7 @@ nnoremap ,k :TestLast<cr>
 nnoremap ,l :lclose<cr>
 nnoremap ,m :SidewaysLeft<cr>
 nnoremap ,n n
-nnoremap ,o <c-w>o
+nnoremap ,o o
 "        ,p put a (p)ry above this line
 nnoremap ,q :cclose<cr>
 nnoremap ,r :RenameFile<cr>
