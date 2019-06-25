@@ -68,4 +68,4 @@ PROMPT=" $PROMPT"
 
 source ~/.zsh-files/aliases.zsh
 source ~/.zsh-files/keybindings.zsh
-source ~/.zsh-local
+[ -f ~/.zsh-local ] && source ~/.zsh-local
