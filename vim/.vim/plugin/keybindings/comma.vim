@@ -2,7 +2,7 @@
 
 nnoremap ,<tab> <c-w>v:SuperCarrot<cr>
 nnoremap ,<space> :cfdo %s/\<<c-r><c-w>\>//g<space><bar><space>update<s-left><s-left><left><left><left>
-xnoremap ,<space> y:%s/<c-r><c-0>//g<space><bar><space>update<s-left><s-left><left><left><left>
+xnoremap ,<space> y:cfdo %s/<c-r><c-0>//g<space><bar><space>update<s-left><s-left><left><left><left>
 nnoremap ,. :SidewaysRight<cr>
 nmap     ,, <Plug>(ale_fix)
 nnoremap ,a :AV<cr>
