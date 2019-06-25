@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-if [[ $# -eq 1 ]] ; then
-  SHA=$1
-else
-  SHA=$(git rev-parse HEAD~1)
-fi
-
-vim "$(git diff "$SHA" --name-only)"
