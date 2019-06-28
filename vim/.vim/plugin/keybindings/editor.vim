@@ -27,7 +27,7 @@ nnoremap ; :
 xnoremap ; :
 
 " Clear search results when using c-l in normal, maintains c-l
-nnoremap <c-l> :nohlsearch<c-r>=has('diff')?'<bar>diffupdate':''<cr><cr><c-l>
+nnoremap <c-l> :nohlsearch<c-r>=has('diff')?'<bar>diffupdate':''<cr><cr>:syntax sync fromstart<cr><c-l>
 
 " mark position before searching
 nnoremap / ms/
