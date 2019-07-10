@@ -80,7 +80,8 @@ let g:projectionist_heuristics['Gemfile'] = {
       \    },
       \    'spec/lib/*_spec.rb': {
       \      'type': 'spec',
-      \      'alternate': 'lib/{}.rb'
+      \      'alternate': 'lib/{}.rb',
+      \      'template': [ '# frozen_string_literal: true', '', 'require "rails_helper"', '', 'describe {basename|camelcase|capitalize} do', 'end' ]
       \    },
       \    'app/*.rb': {
       \      'type': 'lib',
@@ -88,7 +89,8 @@ let g:projectionist_heuristics['Gemfile'] = {
       \    },
       \    'spec/*_spec.rb': {
       \      'type': 'spec',
-      \      'alternate': 'app/{}.rb'
+      \      'alternate': 'app/{}.rb',
+      \      'template': [ '# frozen_string_literal: true', '', 'require "rails_helper"', '', 'describe {basename|camelcase|capitalize} do', 'end' ]
       \    }
       \  }
 let g:projectionist_heuristics['mix.exs'] = {
