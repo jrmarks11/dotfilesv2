@@ -15,8 +15,16 @@ is_dotfiles() {
   [[ $(basename `git rev-parse --show-toplevel`) =~ "dotfiles" ]] > /dev/null 2>&1
 }
 
+is_wiki() {
+  [[ $(basename `git rev-parse --show-toplevel`) =~ "working-agreement.wiki" ]] > /dev/null 2>&1
+}
+
 not_master() {
   if is_dotfiles; then
+    return
+  fi
+
+  if is_wiki; then
     return
   fi
 
