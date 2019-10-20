@@ -9,13 +9,6 @@ echo "Running ./macos/brew.sh..."
 echo "Running ./macos/asdf_setup.sh..."
 ~/dotfilesv2/macos/asdf_setup.sh
 
-echo "Running mkdir ~/Library/KeyBindings/..."
-mkdir ~/Library/KeyBindings
-
-pushd ~/Library/KeyBindings || exit
-pwd
-ln -s ~/dotfilesv2/macos/DefaultKeyBinding.dict .
-
 pushd ~/dotfilesv2 || return
 pwd
 
@@ -33,3 +26,6 @@ echo "Running stow -R vim..."
 stow -R vim
 echo "Running stow -R zsh..."
 stow -R zsh
+
+git up
+up
