@@ -34,8 +34,6 @@ _JM_git_branch_names () {
 compdef _JM_git_branch_names gb
 
 [ -f /usr/local/opt/asdf/asdf.sh ] && . /usr/local/opt/asdf/asdf.sh
-[ -f /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash ] &&
-  . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 
 export BAT_THEME="GitHub"
 
