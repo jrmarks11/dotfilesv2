@@ -17,8 +17,6 @@ stow -R config
 echo "Running stow -R ctags..."
 stow -R ctags
 echo "Running stow -R git..."
-stow -R git
-echo "Running stow -R scripts..."
 stow -R scripts
 echo "Running stow -R tmux..."
 stow -R tmux
@@ -26,6 +24,4 @@ echo "Running stow -R vim..."
 stow -R vim
 echo "Running stow -R zsh..."
 stow -R zsh
-
-git up
-up
+echo "Set up git config manually pls"
