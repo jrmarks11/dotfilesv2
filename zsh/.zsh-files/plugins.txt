@@ -1,7 +1,6 @@
 mafredri/zsh-async
 zdharma/fast-syntax-highlighting
 zsh-users/zsh-completions
-greymd/docker-zsh-completion
 zsh-users/zsh-history-substring-search
 zsh-users/zsh-autosuggestions
 sindresorhus/pure
