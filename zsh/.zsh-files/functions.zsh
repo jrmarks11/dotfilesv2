@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+tssh() { tmate display -p '#{tmate_ssh}' | pbcopy; }
+shovel() ( cd ~/Platform && ./script/run shovel "$@"; )
+
 fzf_down() {
   fzf --height 50% "$@" --border
 }
@@ -12,8 +15,16 @@ is_dotfiles() {
   [[ $(basename `git rev-parse --show-toplevel`) =~ "dotfiles" ]] > /dev/null 2>&1
 }
 
+is_wiki() {
+  [[ $(basename `git rev-parse --show-toplevel`) =~ "working-agreement.wiki" ]] > /dev/null 2>&1
+}
+
 not_master() {
   if is_dotfiles; then
+    return
+  fi
+
+  if is_wiki; then
     return
   fi
 
