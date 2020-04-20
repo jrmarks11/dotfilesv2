@@ -28,11 +28,6 @@ else
   compinit -C
 fi
 
-_JM_git_branch_names () {
-  compadd "${(@)${(f)$(git branch -a)}#??}"
-}
-compdef _JM_git_branch_names gb
-
 [ -f /usr/local/opt/asdf/asdf.sh ] && . /usr/local/opt/asdf/asdf.sh
 
 export BAT_THEME="GitHub"
