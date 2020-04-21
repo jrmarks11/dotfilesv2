@@ -2,6 +2,7 @@
 
 nnoremap ,<tab> <c-w>v:SuperCarrot<cr>
 nnoremap ,c :PlugClean<cr>
+map      ,e :e ..
 nnoremap ,j :Fd!<space>
 nnoremap ,l :lclose<cr>
 nnoremap ,q :cclose<cr>
