@@ -10,3 +10,5 @@ nnoremap  <buffer> <Plug>TaskPaperToggle
       \ :<c-u>call taskpaper#toggle()<cr>
 
 nmap <buffer> <cr> <Plug>TaskPaperToggle
+
+iabbrev <buffer> ;o -<space>How<space>is<space>it<space>going?<cr>Your<space>Agenda<cr>Highs<space>and<space>lows<cr>Corona<cr><bs>
