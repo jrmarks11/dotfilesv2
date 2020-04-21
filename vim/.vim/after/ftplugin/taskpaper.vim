@@ -11,4 +11,4 @@ nnoremap  <buffer> <Plug>TaskPaperToggle
 
 nmap <buffer> <cr> <Plug>TaskPaperToggle
 
-iabbrev <buffer> ;o -<space>How<space>is<space>it<space>going?<cr>Your<space>Agenda<cr>Highs<space>and<space>lows<cr>Corona<cr><bs>
+iabbrev <buffer> ;o -<space>How<space>is<space>it<space>going?<cr>-<space>Your<space>Agenda<cr>-<space>Highs<space>and<space>lows<cr>-<space>Corona
