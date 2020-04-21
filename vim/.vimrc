@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'NLKNguyen/papercolor-theme'
+  Plug 'rhysd/clever-f.vim'
 call plug#end()
 
 runtime macros/matchit.vim
