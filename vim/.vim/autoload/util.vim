@@ -39,28 +39,6 @@ function! util#files_same_dir()
   execute ':Files! ' . fnameescape(expand('%:h')).'/'
 endfunction
 
-function! util#fix_all_whitespace(line1, line2)
-  let l:save_cursor = getpos('.')
-  execute a:line1.','.a:line2.'FixWhitespace'
-  if(&filetype ==# 'ruby' || &filetype ==# 'elixir' || &filetype ==# 'php')
-    call util#fix_tabs(a:line1, a:line2)
-    call util#fix_extra_lines(a:line1, a:line2)
-  endif
-  call setpos('.', l:save_cursor)
-endfunction
-
-function! util#fix_extra_lines(line1,line2)
-  let l:save_cursor = getpos('.')
-  silent! execute ':' . a:line1 . ',' . a:line2 . 's/\n\n\n\+//g'
-  call setpos('.', l:save_cursor)
-endfunction
-
-function! util#fix_tabs(line1,line2)
-  let l:save_cursor = getpos('.')
-  silent! execute ':' . a:line1 . ',' . a:line2 . 's/	/  /g'
-  call setpos('.', l:save_cursor)
-endfunction
-
 function! util#last_buffer(count)
   let l:sorted = util#all_files()
   if len(l:sorted) > a:count
@@ -100,13 +78,4 @@ function! util#super_carrot()
   else
     normal! 
   end
-endfunction
-
-function! util#zoom()
-  if winnr('$') > 1
-    tab split
-  elseif len(filter(map(range(tabpagenr('$')), 'tabpagebuflist(v:val + 1)'),
-        \ 'index(v:val, '.bufnr('').') >= 0')) > 1
-    tabclose
-  endif
 endfunction
