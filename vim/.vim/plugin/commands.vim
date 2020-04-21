@@ -1,8 +1,6 @@
 command! DFiles call util#files_same_dir()
-command! LastBuffer call util#last_buffer(0)
 command! NoPastePaste call util#no_paste_paste()
 command! RenameFile call util#rename_file()
-command! SecondToLastBuffer call util#last_buffer(1)
 command! SuperCarrot call util#super_carrot()
 
 let s:fzf_grep_cmd =
