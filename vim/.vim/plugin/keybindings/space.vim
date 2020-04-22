@@ -1,6 +1,7 @@
 nnoremap <space><space> :'{,'}s/\<<c-r><c-w>\>//g<left><left>
 xnoremap <space><space> y:'{,'}s/<c-r><c-0>//g<left><left>
 nnoremap <space><tab> :SuperCarrot<cr>
+nnoremap <space>b :Buffers<cr>
 nnoremap <space>d :DFiles<cr>
 map      <space>e :e %%
 nnoremap <space>f :Rg!<space><c-r><c-w><cr>

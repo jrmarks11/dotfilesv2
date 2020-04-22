@@ -15,5 +15,3 @@ nnoremap ]l :lnext<cr>zz
 nnoremap [l :lprev<cr>zz
 nnoremap ]q :cnext<cr>zz
 nnoremap [q :cprev<cr>zz
-nnoremap ]t :tnext<cr>
-nnoremap [t :tprevious<cr>
