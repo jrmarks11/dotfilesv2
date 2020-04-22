@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-for i in `fd . /private/tmp/tmate-*`; do
-  echo $i
-  exit 0
-done
-exit 1
