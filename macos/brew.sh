@@ -10,7 +10,6 @@ brew install \
   hub \
   reattach-to-user-namespace \
   ripgrep \
-  shellcheck \
   stow \
   tmux \
   vim \
