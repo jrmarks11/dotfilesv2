@@ -17,16 +17,3 @@ Thumbs.db
 .rubocop.yml
 
 /vendor
-
-tags*
-.tags*
-
-#Rubocop
-.rubocop.yml
-
-todo.taskpaper
-TODO.taskpaper
-
-TMUX_WORKSPACE.yml
-
-.elixir_ls/
