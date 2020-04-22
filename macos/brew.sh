@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 brew install \
-  asdf \
   bat \
   exa \
   fasd \
@@ -9,10 +8,8 @@ brew install \
   fzf \
   git \
   hub \
-  jq \
   reattach-to-user-namespace \
   ripgrep \
-  ruby \
   shellcheck \
   stow \
   tmux \
