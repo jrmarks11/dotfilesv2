@@ -10,7 +10,6 @@ brew install \
   git \
   hub \
   jq \
-  postgresql \
   reattach-to-user-namespace \
   ripgrep \
   ruby \
