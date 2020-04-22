@@ -62,6 +62,20 @@ gush() {
   git push
 }
 
+tm() {
+  [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
+  if [ "$1" ]; then
+     tmux $change -t "$1" 2>/dev/null ||
+       (tmux new-session -d -s "$1" && tmux $change -t "$1"); return
+  fi
+  if (( $(tmux list-sessions | wc -l) == 1 )); then
+    session=$(tmux list-sessions -F "#{session_name}")
+  else
+    session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0)
+  fi
+  tmux $change -t "$session" || tm "$(whoami)"
+}
+
 my_vim() {
   if [[ "$#" == "0" ]]; then
     vim -c "call util#last_buffer(0)"
