@@ -2,8 +2,6 @@
 
 brew install \
   asdf \
-  bash \
-  bash-completion \
   bat \
   exa \
   fasd \
@@ -18,9 +16,9 @@ brew install \
   ruby \
   shellcheck \
   stow \
-  tmate \
   tmux \
-  vim
+  vim \
+  zsh
 
 brew install getantibody/tap/antibody
 brew install heroku/brew/heroku
