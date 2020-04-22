@@ -23,7 +23,3 @@ alias up='brew upgrade -s; brew cleanup; antibody update; vim -c "PlugUpdate|qa"
 alias v='my_vim'
 alias vi='my_vim'
 alias vim='my_vim'
-
-if [[ "$TMUX" =~ "/tmate-" ]]; then
-  alias tmux="TMUX='' tmux"
-fi
