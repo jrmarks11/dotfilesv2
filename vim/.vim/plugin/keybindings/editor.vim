@@ -5,8 +5,15 @@ nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 " Opposite of J
 nnoremap K i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 
+" Q to replay q register in normal and visual
+nnoremap Q @q
+xnoremap Q :'<,'> :normal @q<cr>
+
 " Y does Y not work like this by default
 nnoremap Y y$
+
+" Execute . on a visual range
+xnoremap . :normal .<cr>
 
 " Dont ever need to jump with '
 nnoremap ' `
