@@ -83,3 +83,11 @@ my_vim() {
     vim "$@"
   fi
 }
+
+gdl() {
+  if [[ "$#" == "0" ]]; then
+    git diff @~
+  else
+    git diff "@~$@"
+  fi
+}
