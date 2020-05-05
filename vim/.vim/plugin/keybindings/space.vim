@@ -6,7 +6,6 @@ nnoremap <space>d :DFiles<cr>
 map      <space>e :e %%
 nnoremap <space>f :Rg!<space><c-r><c-w><cr>
 xnoremap <space>f y:Rg!<space><c-r>0<cr>
-nnoremap <space>gf :e <cfile><cr>
 nnoremap <space>j :Rg!<space>
 nnoremap <space>k :Files! ~/.vim/plugin/keybindings<cr>
 nnoremap <space>p :NoPastePaste<cr>
