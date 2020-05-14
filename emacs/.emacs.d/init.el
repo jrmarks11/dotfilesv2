@@ -33,6 +33,7 @@
 (load custom-file t)
 
 (fset 'yes-or-no-p 'y-or-n-p)
+(global-set-key "\C-c\C-d" "\C-a\C- \C-n\M-w\C-y")   
 
 (use-package diminish :ensure t)
 
@@ -70,12 +71,11 @@
 (require 'org)
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
-(global-set-key "\C-c\C-d" "\C-a\C- \C-n\M-w\C-y")
+
 (setq org-log-done t)
 (setq org-startup-indented t)
 (setq org-agenda-window-setup 'current-window)
 (setq org-directory "~/org")
-(setq org-agenda-files (list org-directory))
 (setq org-agenda-files (directory-files-recursively "~/org/" "\.org$"))
 
 (defun savebuf(begin end length)
