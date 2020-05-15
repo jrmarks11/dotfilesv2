@@ -34,3 +34,8 @@ augroup LastCursor
         \   exe 'normal g`"' |
         \ endif
 augroup END
+
+augroup Org
+  autocmd!
+  autocmd FileType org,outline setlocal nofoldenable
+augroup END
