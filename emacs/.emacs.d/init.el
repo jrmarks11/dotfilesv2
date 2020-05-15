@@ -71,12 +71,14 @@
 (require 'org)
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
+(define-key global-map "\C-cc" 'org-capture)
 
 (setq org-log-done t)
 (setq org-startup-indented t)
 (setq org-agenda-window-setup 'current-window)
 (setq org-directory "~/org")
 (setq org-agenda-files (directory-files-recursively "~/org/" "\.org$"))
+(setq org-default-notes-file (concat org-directory "/todo/notes.org"))
 
 (defun savebuf(begin end length)
   (if (and (buffer-file-name) (buffer-modified-p))
