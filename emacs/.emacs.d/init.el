@@ -79,6 +79,7 @@
 (setq org-directory "~/org")
 (setq org-agenda-files (directory-files-recursively "~/org/" "\.org$"))
 (setq org-default-notes-file (concat org-directory "/todo/notes.org"))
+(add-hook 'org-mode-hook 'turn-on-flyspell)
 
 (defun savebuf(begin end length)
   (if (and (buffer-file-name) (buffer-modified-p))
