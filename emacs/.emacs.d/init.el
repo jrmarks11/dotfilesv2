@@ -20,7 +20,7 @@
 (save-place-mode 1)
 (global-auto-revert-mode t)
 
-(setq undo-tree-auto-save-history t)
+(setq x-select-enable-clipboard t)
 (setq ring-bell-function 'ignore)
 (setq sentence-end-double-space nil)
 (setq inhibit-startup-screen t)
