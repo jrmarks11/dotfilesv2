@@ -1,7 +1,6 @@
 scriptencoding utf-8
 
 call plug#begin('~/.vim/plugged')
-  Plug 'axvr/org.vim'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'

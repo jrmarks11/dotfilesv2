@@ -85,3 +85,21 @@
   (if (and (buffer-file-name) (buffer-modified-p))
        (save-buffer)))
 (add-hook 'after-change-functions 'savebuf)
+
+(use-package evil
+  :ensure t
+  :config
+  (evil-mode 1))
+
+(use-package evil-org
+  :ensure t
+  :after org
+  :config
+  (add-hook 'org-mode-hook 'evil-org-mode)
+  (add-hook 'evil-org-mode-hook
+            (lambda ()
+              (evil-org-set-key-theme)))
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
+
+(evil-define-key '(normal visual) 'global (kbd "SPC f") 'counsel-fzf)
