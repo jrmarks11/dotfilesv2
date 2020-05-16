@@ -12,6 +12,8 @@ xnoremap Q :'<,'> :normal @q<cr>
 " Y does Y not work like this by default
 nnoremap Y y$
 
+nmap s <nop>
+
 " Execute . on a visual range
 xnoremap . :normal .<cr>
 

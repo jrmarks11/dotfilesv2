@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'NLKNguyen/papercolor-theme'
   Plug 'rhysd/clever-f.vim'
+  Plug 'SidOfc/mkdx'
 call plug#end()
 
 runtime macros/matchit.vim
@@ -15,6 +16,8 @@ let g:fzf_files_options =
       \ '--preview-window top:60% ' .
       \ '--preview "(bat --color "always" {} || cat {}) 2> /dev/null | head -'
       \ . &lines . '"'
+
+let g:mkdx#checkbox_toggles = [' ', 'X']
 
 let g:tmux_navigator_no_mappings = 1
 

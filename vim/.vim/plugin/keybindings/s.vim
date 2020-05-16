@@ -1,0 +1,8 @@
+nmap sc <Plug>(mkdx-toggle-checklist-n)
+vmap sc <Plug>(mkdx-toggle-checklist-v)
+nmap sx <Plug>(mkdx-checkbox-next-n)
+vmap sx <Plug>(mkdx-checkbox-next-v)
+nmap sl <Plug>(mkdx-wrap-link-n)
+vmap sl <Plug>(mkdx-wrap-link-v)
+nmap s. <Plug>(mkdx-demote-header)
+nmap s, <Plug>(mkdx-promote-header)
