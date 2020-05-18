@@ -52,7 +52,6 @@ function! util#no_paste_paste()
   set paste
   normal! o
   normal! ]p
-  FixTabs
   set nopaste
 endfunction
 
