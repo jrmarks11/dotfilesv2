@@ -8,6 +8,7 @@ nnoremap <space>f :Rg!<space><c-r><c-w><cr>
 xnoremap <space>f y:Rg!<space><c-r>0<cr>
 nnoremap <space>j :Rg!<space>
 nnoremap <space>k :Files! ~/.vim/plugin/keybindings<cr>
+nnoremap <space>o :Rg!<space>[<space>]<cr>
 nnoremap <space>p :NoPastePaste<cr>
 nnoremap <space>r :MRU!<cr>
 nnoremap <space>s :%s/\<<c-r><c-w>\>//g<left><left>
