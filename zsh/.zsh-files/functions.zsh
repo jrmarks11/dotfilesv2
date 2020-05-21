@@ -12,21 +12,8 @@ is_dotfiles() {
   [[ $(basename `git rev-parse --show-toplevel`) =~ "dotfiles" ]] > /dev/null 2>&1
 }
 
-not_master() {
-  if is_dotfiles; then
-    return
-  fi
-
-  CURRENTBRANCH=$(git status|awk 'NR==1{print $3}')
-
-  if [[ $CURRENTBRANCH == "master" ]]; then
-      echo "You are on master you donkey!"
-      1 > /dev/null 2>&1
-  fi
-}
-
 ga() {
-  is_in_git_repo && not_master || return
+  is_in_git_repo || return
 
   if [[ $# -eq 0 ]] ; then
     git add .
@@ -48,7 +35,7 @@ gb() {
 }
 
 gc() {
-  is_in_git_repo && not_master || return
+  is_in_git_repo || return
 
   if [[ $# -eq 0 ]] ; then
     git commit --verbose
@@ -58,7 +45,7 @@ gc() {
 }
 
 gush() {
-  is_in_git_repo && not_master || return
+  is_in_git_repo || return
   git push
 }
 
