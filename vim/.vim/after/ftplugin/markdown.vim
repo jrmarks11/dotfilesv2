@@ -14,7 +14,7 @@ vmap <buffer> sl <Plug>(mkdx-wrap-link-v)
 
 nnoremap <buffer> sh yypVr=
 nnoremap <buffer> sj yypVr-
-nnoremap <buffer> so :read ~/.vim/snippets/oneonone.md<cr>kdd}o
+nnoremap <buffer> so :read ~/.vim/snippets/oneonone.md<cr>kddGo
 nnoremap <buffer> st :read ~/.vim/snippets/teamlist.md<cr>
 
 nnoremap <silent> <buffer> sd :e =substitute(system("date \"+%Y-%m-%d\""), '\n\+$', '', '')."\.md"<cr><cr>
