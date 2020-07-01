@@ -7,5 +7,3 @@
 ## how can i help
 ## what would you say no to
 ## what worked best about this
-
-# Corona Virus?
