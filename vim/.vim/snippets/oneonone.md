@@ -1,6 +1,6 @@
 # How is it going?
 # Whats on your mind?
-## what else
+## What else
 ## whats the real challenge for you here
 ## what do you want
 ## how can i help
