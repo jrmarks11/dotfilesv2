@@ -2,6 +2,7 @@ command! DFiles call util#files_same_dir()
 command! NoPastePaste call util#no_paste_paste()
 command! RenameFile call util#rename_file()
 command! SuperCarrot call util#super_carrot()
+command! TwoFilesAgo call util#last_buffer(1)
 
 let s:fzf_grep_cmd =
       \ 'rg --column --line-number --no-heading --fixed-strings --smart-case'
