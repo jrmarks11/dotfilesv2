@@ -1,4 +1,5 @@
-# How is it going?
+# Lows and Highs (personal and professional)
+
 # Whats on your mind?
 ## What else
 ## whats the real challenge for you here
