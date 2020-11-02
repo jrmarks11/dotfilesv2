@@ -1,4 +1,6 @@
 # Lows and Highs (personal and professional)
+# what are your priorities this week?
+# how can i help you this week?
 
 # Whats on your mind?
 ## What else
