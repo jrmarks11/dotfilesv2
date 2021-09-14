@@ -1,8 +1,10 @@
-- [ ] Jake
-- [ ] Raghav
-- [ ] Nate
-- [ ] Leslie
-- [ ] Anna
-- [ ] Jim
+# Nebula
+- [ ] Wade
+- [ ] Rajeev
+- [ ] Sarah
+- [ ] Taylor
+- [ ] Julius
+
+# New
 - [ ] Scott
-- [ ] Vasanth
+- [ ] Rachel
