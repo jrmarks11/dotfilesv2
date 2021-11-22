@@ -55,6 +55,7 @@ fi
 
 source <(antibody init)
 antibody bundle < ~/.zsh-files/plugins.txt
+antibody bundle zdharma-continuum/fast-syntax-highlighting
 
 prompt_newline='%666v'
 PROMPT=" $PROMPT"
