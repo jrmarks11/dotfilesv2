@@ -1,5 +1,5 @@
 mafredri/zsh-async
-zdharma/fast-syntax-highlighting
+zdharma-continiuum/fast-syntax-highlighting
 zsh-users/zsh-completions
 zsh-users/zsh-history-substring-search
 zsh-users/zsh-autosuggestions
