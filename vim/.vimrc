@@ -1,12 +1,20 @@
 scriptencoding utf-8
 
 call plug#begin('~/.vim/plugged')
+  Plug 'airblade/vim-gitgutter'
+  Plug 'andrewradev/splitjoin.vim'
+  Plug 'bronson/vim-trailing-whitespace'
   Plug 'christoomey/vim-tmux-navigator'
+  Plug 'janko-m/vim-test'
+  Plug 'jgdavey/tslime.vim'
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
+  Plug 'ludovicchabant/vim-gutentags'
   Plug 'NLKNguyen/papercolor-theme'
   Plug 'rhysd/clever-f.vim'
-  Plug 'SidOfc/mkdx'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'tpope/vim-commentary'
+  Plug 'w0rp/ale'
 call plug#end()
 
 runtime macros/matchit.vim
@@ -17,9 +25,28 @@ let g:fzf_files_options =
       \ '--preview "(bat --color "always" {} || cat {}) 2> /dev/null | head -'
       \ . &lines . '"'
 
-let g:mkdx#checkbox_toggles = [' ', 'X']
-
 let g:tmux_navigator_no_mappings = 1
+
+let g:gitgutter_map_keys = 0
+let g:ale_fixers = {
+      \   '*' : ['remove_trailing_lines', 'trim_whitespace'],
+      \   'javascript': ['eslint'],
+      \   'ruby': ['rubocop']
+      \ }
+let g:ale_linters = {
+      \   'javascript': ['eslint'],
+      \   'ruby': ['rubocop']
+      \ }
+
+let g:ale_lint_on_insert_leave = 1
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_ruby_rubocop_auto_correct_all = 1
+
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
+
+let g:test#preserve_screen = 1
+let g:test#strategy = 'tslime'
 
 set autoindent
 set autoread

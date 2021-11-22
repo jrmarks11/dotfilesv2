@@ -7,7 +7,7 @@ command! TwoFilesAgo call util#last_buffer(1)
 let s:fzf_grep_cmd =
       \ 'rg --column --line-number --no-heading --fixed-strings --smart-case'
       \ . " --hidden --follow --glob '!.git/*' --color 'always' "
-command! -bang -nargs=* Rg
+command! -bang -nargs=* MyRg
       \ call fzf#vim#grep(s:fzf_grep_cmd .shellescape(<q-args>), 1,
       \ fzf#vim#with_preview('up:60%'), <bang>0)
 
