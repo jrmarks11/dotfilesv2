@@ -1,6 +1,11 @@
 #!/usr/bin/env zsh
 
 alias ..='cd ..'
+alias bake='bundle exec rake'
+alias be='bundle exec'
+alias bec='bundle exec rails c'
+alias ber='bundle exec rspec'
+alias bes='bundle exec rails s'
 alias cat='bat'
 alias gco='git checkout'
 alias gd='git diff'
