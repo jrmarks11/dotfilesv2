@@ -7,13 +7,15 @@ nnoremap ,b :TestVisit<cr>zz
 nnoremap ,c :PlugClean<cr>
 nnoremap ,d :TestNearest<cr>
 map      ,e :e ..
-nnoremap ,f :TestFile --format d<cr>
-nmap     ,g <Plug>GitGutterStageHunk
-nmap     ,h <Plug>GitGutterUndoHunk
+nnoremap ,f :TestFile<cr>
+nmap     ,g <Plug>(GitGutterStageHunk)
+nmap     ,h <Plug>(GitGutterUndoHunk)
 nnoremap ,i "zyawoputs(<c-r>z)<esc>
 nnoremap ,j :Fd!<space>
 nnoremap ,k :TestLast<cr>
+nnoremap ,l :lclose<cr>
 nnoremap ,p Obinding.pry<esc>
+nnoremap ,q :qclose<cr>
 nnoremap ,r :RenameFile<cr>
 nmap     ,s :TestSuite<cr>
 nnoremap ,t :TestNearest<cr>

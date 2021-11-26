@@ -14,13 +14,15 @@ call plug#begin('~/.vim/plugged')
   Plug 'rhysd/clever-f.vim'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-rails'
   Plug 'w0rp/ale'
+  Plug 'vimwiki/vimwiki'
 call plug#end()
 
 runtime macros/matchit.vim
 
 let g:fzf_files_options =
-      \ '--reverse ' .
+      \ '--tac ' .
       \ '--preview-window top:60% ' .
       \ '--preview "(bat --color "always" {} || cat {}) 2> /dev/null | head -'
       \ . &lines . '"'
@@ -47,6 +49,14 @@ let g:tslime_always_current_window = 1
 
 let g:test#preserve_screen = 1
 let g:test#strategy = 'tslime'
+
+let wiki_1 = {}
+let wiki_1.path = '~/vimwiki/'
+let wiki_1.syntax = 'markdown'
+let wiki_1.ext = '.md'
+
+let g:vimwiki_list = [wiki_1]
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 
 set autoindent
 set autoread

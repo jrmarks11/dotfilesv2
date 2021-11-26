@@ -3,6 +3,12 @@
 
 nnoremap <silent> [<space> :<c-u>put! =repeat(nr2char(10), v:count1)<cr>
 nnoremap <silent> ]<space> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
+nnoremap <silent> ]a :next<cr>
+nnoremap <silent> [a :prev<cr>
+nnoremap <silent> ]l :lnext<cr>zz
+nnoremap <silent> [l :lprev<cr>zz
+nnoremap <silent> ]q :cnext<cr>zz
+nnoremap <silent> [q :cprev<cr>zz
 nmap     <silent> ]c <Plug>(GitGutterNextHunk)
 nmap     <silent> [c <Plug>(GitGutterPrevHunk)
 nnoremap <silent> [e :<c-u>execute 'move -1-'. v:count1<cr>

@@ -12,7 +12,7 @@ command! -bang -nargs=* MyRg
       \ call fzf#vim#grep(s:fzf_grep_cmd .shellescape(<q-args>), 1,
       \ fzf#vim#with_preview('up:60%'), <bang>0)
 
-let s:opts = '--reverse --preview-window top:60% ' .
+let s:opts = '--preview-window top:60% ' .
           \  '--multi --bind alt-a:select-all,alt-d:deselect-all ' .
           \  '--preview "(bat --color "always" {} || cat {}) 2> /dev/null | head -'
           \  . &lines . '"'

@@ -16,8 +16,10 @@ ga() {
   is_in_git_repo || return
 
   if [[ $# -eq 0 ]] ; then
+    echo "git add ."
     git add .
   else
+    echo "git add $@"
     git add "$@"
   fi
 }

@@ -30,7 +30,7 @@ fi
 
 [ -f /usr/local/opt/asdf/asdf.sh ] && . /usr/local/opt/asdf/asdf.sh
 
-export BAT_THEME="GitHub"
+export BAT_THEME="ansi"
 
 if [[ $(command -v fasd) ]]; then
   fasd_cache="$HOME/.fasd-init-zsh"
@@ -44,7 +44,6 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
-export FZF_DEFAULT_OPTS='--reverse'
 
 command -v hub >/dev/null 2>&1 && { eval "$(hub alias -s)"; }
 
