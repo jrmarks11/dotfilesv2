@@ -19,7 +19,8 @@ nnoremap ,q :qclose<cr>
 nnoremap ,r :RenameFile<cr>
 nmap     ,s :TestSuite<cr>
 nnoremap ,t :TestNearest<cr>
-nnoremap ,v :source $MYVIMRC<cr>
 nnoremap ,u :PlugUpdate<cr>
+nnoremap ,v :source $MYVIMRC<cr>
+"        ,w is the vimwiki prefix
 nmap     ,x <Plug>(ale_toggle_buffer)
 nnoremap ,y :g/^\W*\<binding.pry\>$/d<cr>
