@@ -50,7 +50,7 @@ endfunction
 
 function! util#fix_tabs(line1,line2)
   let l:save_cursor = getpos('.')
-  silent! execute ':' . a:line1 . ',' . a:line2 . 's/	/  /g'
+  silent! execute ':' . a:line1 . ',' . a:line2 . 's/  /  /g'
   call setpos('.', l:save_cursor)
 endfunction
 
@@ -63,11 +63,11 @@ function! util#no_paste_paste()
 endfunction
 
 function! util#rename_file()
-  let old_name = expand('%')
-  let new_name = input('New file name: ', expand('%'), 'file')
-  if new_name !=# '' && new_name != old_name
-    exec ':saveas ' . new_name
-    exec ':silent !rm ' . old_name
+  let l:old_name = expand('%')
+  let l:new_name = input('New file name: ', expand('%'), 'file')
+  if l:new_name !=# '' && l:new_name != l:old_name
+    exec ':saveas ' . l:new_name
+    exec ':silent !rm ' . l:old_name
     redraw!
   endif
 endfunction
@@ -84,4 +84,12 @@ function! util#super_carrot()
   else
     normal! 
   end
+endfunction
+
+function! util#date_filename(date_format)
+  let l:date_command = "date " . a:date_format . "-"
+  let l:name = system(l:date_command) . expand("%:t:r")
+  let l:clean_name = substitute(l:name, "\n", '', 'g')
+
+  execute "normal! o* " . l:clean_name . "\<Esc>vB"
 endfunction

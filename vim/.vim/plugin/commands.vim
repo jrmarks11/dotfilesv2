@@ -4,6 +4,8 @@ command! RenameFile call util#rename_file()
 command! SuperCarrot call util#super_carrot()
 command! TwoFilesAgo call util#last_buffer(1)
 command! -range=% FixTabs call util#fix_tabs(<line1>,<line2>)
+command! TodayFilename call util#date_filename('+%Y-%m-%d')
+command! NextWeekFilename call util#date_filename('-v+7d "+%Y-%m-%d"')
 
 let s:fzf_grep_cmd =
       \ 'rg --column --line-number --no-heading --fixed-strings --smart-case'
