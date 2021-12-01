@@ -22,5 +22,6 @@ nnoremap ,t :TestNearest<cr>
 nnoremap ,u :PlugUpdate<cr>
 nnoremap ,v :source $MYVIMRC<cr>
 "        ,w is the vimwiki prefix
+nnoremap ,wb :VimwikiBacklinks<cr>
 nmap     ,x <Plug>(ale_toggle_buffer)
 nnoremap ,y :g/^\W*\<binding.pry\>$/d<cr>
