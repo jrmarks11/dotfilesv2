@@ -8,10 +8,6 @@ is_in_git_repo() {
   git rev-parse HEAD > /dev/null 2>&1
 }
 
-is_dotfiles() {
-  [[ $(basename `git rev-parse --show-toplevel`) =~ "dotfiles" ]] > /dev/null 2>&1
-}
-
 ga() {
   is_in_git_repo || return
 

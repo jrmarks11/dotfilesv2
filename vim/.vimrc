@@ -31,6 +31,7 @@ let g:fzf_files_options =
 let g:tmux_navigator_no_mappings = 1
 
 let g:gitgutter_map_keys = 0
+
 let g:ale_fixers = {
       \   '*' : ['remove_trailing_lines', 'trim_whitespace'],
       \   'javascript': ['eslint'],
