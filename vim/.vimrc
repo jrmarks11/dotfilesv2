@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'rhysd/clever-f.vim'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-surround'
   Plug 'tpope/vim-rails'
   Plug 'w0rp/ale'
   Plug 'vimwiki/vimwiki'
