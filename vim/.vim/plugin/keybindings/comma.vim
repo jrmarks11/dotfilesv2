@@ -17,11 +17,11 @@ nnoremap ,l :lclose<cr>
 nnoremap ,p Obinding.pry<esc>
 nnoremap ,q :qclose<cr>
 nnoremap ,r :RenameFile<cr>
-nmap     ,s :TestSuite<cr>
+nnoremap ,s :TestSuite<cr>
 nnoremap ,t :TestNearest<cr>
 nnoremap ,u :PlugUpdate<cr>
 nnoremap ,v :source $MYVIMRC<cr>
 "        ,w is the vimwiki prefix
-nnoremap ,wb :VimwikiBacklinks<cr>
+"        ~/.vim/plugin/keybindings/vimwiki.vim
 nmap     ,x <Plug>(ale_toggle_buffer)
 nnoremap ,y :g/^\W*\<binding.pry\>$/d<cr>
