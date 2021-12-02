@@ -25,3 +25,7 @@ function _pbcopy_last_command(){
 }
 zle -N pbcopy-last-command _pbcopy_last_command
 bindkey '^y' pbcopy-last-command
+
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
