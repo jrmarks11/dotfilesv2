@@ -28,7 +28,7 @@ else
   compinit -C
 fi
 
-[ -f /usr/local/opt/asdf/asdf.sh ] && . /usr/local/opt/asdf/asdf.sh
+[ -f $(brew --prefix asdf)/asdf.sh ] && . $(brew --prefix asdf)/asdf.sh
 
 export BAT_THEME="ansi"
 
@@ -62,3 +62,4 @@ PROMPT=" $PROMPT"
 source ~/.zsh-files/aliases.zsh
 source ~/.zsh-files/keybindings.zsh
 [ -f ~/.zsh-local ] && source ~/.zsh-local
+
