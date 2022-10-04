@@ -1,4 +1,3 @@
 ## Lows and Highs (personal and professional)
-## Your Topics
-## My Topics
-## Rate the meeting
+## What is the team working on
+## Development/Goals
