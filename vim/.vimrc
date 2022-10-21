@@ -57,12 +57,7 @@ let wiki_1.path = '~/vimwiki/'
 let wiki_1.syntax = 'markdown'
 let wiki_1.ext = '.md'
 
-let wiki_2 = {}
-let wiki_2.path = '~/novel/'
-let wiki_2.syntax = 'markdown'
-let wiki_2.ext = '.md'
-
-let g:vimwiki_list = [wiki_1,wiki_2]
+let g:vimwiki_list = [wiki_1]
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 let g:vimwiki_markdown_link_ext = 1
 let g:vimwiki_map_prefix = ',w'
