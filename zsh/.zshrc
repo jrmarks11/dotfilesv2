@@ -32,15 +32,6 @@ fi
 
 export BAT_THEME="ansi"
 
-if [[ $(command -v fasd) ]]; then
-  fasd_cache="$HOME/.fasd-init-zsh"
-  if [ "$(command -v fasd)" -nt "$fasd_cache" ] || [ ! -s "$fasd_cache" ]; then
-    fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install >| "$fasd_cache"
-  fi
-  . "$fasd_cache"
-  unset fasd_cache
-fi
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
@@ -51,6 +42,8 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval "$(ssh-agent -s)"
   ssh-add
 fi
+
+eval "$(zoxide init zsh)"
 
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 source <(antidote init)
