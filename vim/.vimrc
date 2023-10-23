@@ -62,6 +62,8 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown'
 let g:vimwiki_markdown_link_ext = 1
 let g:vimwiki_map_prefix = ',w'
 
+let g:rails_alternate_file_map = { 'app/models/': 'spec/models/', 'spec/models/': 'app/models/' }
+
 set autoindent
 set autoread
 set background=light
