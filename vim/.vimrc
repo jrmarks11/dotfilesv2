@@ -35,11 +35,14 @@ let g:gitgutter_map_keys = 0
 let g:ale_fixers = {
       \   '*' : ['remove_trailing_lines', 'trim_whitespace'],
       \   'javascript': ['eslint'],
-      \   'ruby': ['rubocop']
+      \   'ruby': ['rubocop'],
+      \   'python': ['black'],
+      \   'html': ['prettier']
       \ }
 let g:ale_linters = {
       \   'javascript': ['eslint'],
-      \   'ruby': ['rubocop']
+      \   'ruby': ['rubocop'],
+      \   'python': ['flake8']
       \ }
 
 let g:ale_lint_on_insert_leave = 1
