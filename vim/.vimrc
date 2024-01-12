@@ -37,7 +37,8 @@ let g:ale_fixers = {
       \   'javascript': ['eslint'],
       \   'ruby': ['rubocop'],
       \   'python': ['black'],
-      \   'html': ['prettier']
+      \   'html': ['prettier'],
+      \   'eruby': ['erb-formatter', 'erblint']
       \ }
 let g:ale_linters = {
       \   'javascript': ['eslint'],
