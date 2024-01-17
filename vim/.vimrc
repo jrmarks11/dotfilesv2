@@ -43,7 +43,8 @@ let g:ale_fixers = {
 let g:ale_linters = {
       \   'javascript': ['eslint'],
       \   'ruby': ['rubocop'],
-      \   'python': ['flake8']
+      \   'python': ['flake8'],
+      \   'eruby': ['erblint']
       \ }
 
 let g:ale_lint_on_insert_leave = 1
