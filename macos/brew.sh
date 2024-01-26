@@ -4,11 +4,12 @@ brew install \
   antidote \
   asdf \
   bat \
-  exa \
+  eza \
   fd \
   fzf \
   git \
   hub \
+  jq \
   pandoc \
   postgresql \
   reattach-to-user-namespace \
@@ -16,6 +17,7 @@ brew install \
   stow \
   tmux \
   vim \
+  yarn \
   zoxide \
   zsh
 
