@@ -34,7 +34,7 @@ let g:gitgutter_map_keys = 0
 
 let g:ale_fixers = {
       \   '*' : ['remove_trailing_lines', 'trim_whitespace'],
-      \   'javascript': ['eslint'],
+      \   'javascript': ['prettier'],
       \   'ruby': ['rubocop'],
       \   'python': ['black'],
       \   'html': ['prettier'],
