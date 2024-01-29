@@ -34,7 +34,10 @@ let g:gitgutter_map_keys = 0
 
 let g:ale_fixers = {
       \   '*' : ['remove_trailing_lines', 'trim_whitespace'],
-      \   'javascript': ['prettier'],
+      \   'javascript': ['prettier', 'eslint'],
+      \   'javascript.jsx': ['prettier', 'eslint'],
+      \   'typescript': ['prettier', 'eslint'],
+      \   'typescriptreact': ['prettier', 'eslint'],
       \   'ruby': ['rubocop'],
       \   'python': ['black'],
       \   'html': ['prettier'],
@@ -42,6 +45,9 @@ let g:ale_fixers = {
       \ }
 let g:ale_linters = {
       \   'javascript': ['eslint'],
+      \   'javascript.jsx': ['eslint'],
+      \   'typescript': ['eslint'],
+      \   'typescriptreact': ['eslint'],
       \   'ruby': ['rubocop'],
       \   'python': ['flake8'],
       \   'eruby': ['erblint']
