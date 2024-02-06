@@ -18,3 +18,5 @@ Thumbs.db
 tags
 
 /vendor
+
+/node_modules
