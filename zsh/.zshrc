@@ -2,9 +2,11 @@
 
 source ~/.zsh-files/functions.zsh
 
-if [[ -z "$TMUX" ]]; then
-  tm
-fi
+# if [[ "$TERM_PROGRAM" != "vscode" ]]; then
+#   if [[ -z "$TMUX" ]]; then
+#     exec tmux
+#   fi
+# fi
 
 HISTSIZE=10000000
 SAVEHIST=10000000
