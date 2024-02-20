@@ -13,13 +13,6 @@ if isdirectory($HOME . '/.vim-undo') == 0
   :silent !mkdir -p ~/.vim-undo >/dev/null 2>&1
 endif
 
-nnoremap <space><space> :'{,'}s/\<<c-r><c-w>\>//g<left><left>
-xnoremap <space><space> y:'{,'}s/<c-r><c-0>//g<left><left>
-nnoremap <space>s :%s/\<<c-r><c-w>\>//g<left><left>
-xnoremap <space>s y:%s/<c-r><c-0>//g<left><left>
-
-nnoremap <space>gf :e <cfile><cr>
-
 xnoremap <silent> ae gg0oG$
 onoremap <silent> ae :<c-u>execute "normal! m`"<bar>keepjumps normal! ggVG<cr>
 
@@ -48,3 +41,9 @@ xnoremap . :normal .<cr>
 " Dont ever need to jump with '
 nnoremap ' `
 xnoremap ' `
+
+xnoremap <silent> <space><space> <Cmd>lua require('vscode-neovim').call('editor.action.startFindReplaceAction')<CR>
+nnoremap ,, <Cmd>lua require('vscode-neovim').call('editor.action.formatDocument')<CR>
+
+nnoremap <silent> ]c <Cmd>lua require('vscode-neovim').call('workbench.action.editor.nextChange')<CR>
+nnoremap <silent> [c <Cmd>lua require('vscode-neovim').call('workbench.action.editor.previousChange')<CR>
