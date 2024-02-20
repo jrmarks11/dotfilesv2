@@ -62,3 +62,13 @@ nnoremap ,v :source $MYVIMRC<cr>
 
 nnoremap <silent> <space>t <Cmd>lua require('vscode-neovim').call('workbench.action.quickOpen')<CR>
 xnoremap <silent> <space><space> <Cmd>lua require('vscode-neovim').call('editor.action.startFindReplaceAction')<CR>
+
+function! VistarSearch(cmdtype)
+  let temp = @s
+  normal! gv"sy
+  let @/ = '\V' . substitute(escape(@s, a:cmdtype . '\\'), '\n', '\\n', 'g')
+  let @s = temp
+endfunction
+
+xnoremap * :<C-u>call VistarSearch('/')<CR>/<C-r>=@/<CR><CR>
+xnoremap # :<C-u>call VistarSearch('?')<CR>?<C-r>=@/<CR><CR>

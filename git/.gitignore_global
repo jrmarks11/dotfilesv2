@@ -20,3 +20,5 @@ tags
 /vendor
 
 /node_modules
+
+.vscode
