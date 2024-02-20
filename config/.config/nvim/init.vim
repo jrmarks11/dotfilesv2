@@ -57,6 +57,7 @@ nnoremap ; :
 xnoremap ; :
 
 nnoremap ,, <Cmd>lua require('vscode-neovim').call('editor.action.formatDocument')<CR>
+xnoremap ,, <Cmd>lua require('vscode-neovim').call('editor.action.formatSelection')<CR>
 nnoremap ,v :source $MYVIMRC<cr>
 
 nnoremap <silent> <space>t <Cmd>lua require('vscode-neovim').call('workbench.action.quickOpen')<CR>
