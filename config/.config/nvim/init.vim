@@ -5,6 +5,12 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 
+call plug#begin('~/.vim/plugged')
+  Plug 'andrewradev/splitjoin.vim'
+  Plug 'rhysd/clever-f.vim'
+  Plug 'tpope/vim-surround'
+call plug#end()
+
 if isdirectory($HOME . '/.vim-swap') == 0
   :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
 endif
@@ -21,6 +27,9 @@ nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 xnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 xnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 
+nmap s <nop>
+nmap ss :SplitjoinSplit<cr>
+nmap sj :SplitjoinJoin<cr>
 
 nnoremap <silent> [<space> :<c-u>put! =repeat(nr2char(10), v:count1)<cr>
 nnoremap <silent> ]<space> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
@@ -52,5 +61,3 @@ nnoremap ,v :source $MYVIMRC<cr>
 
 nnoremap <silent> <space>t <Cmd>lua require('vscode-neovim').call('workbench.action.quickOpen')<CR>
 xnoremap <silent> <space><space> <Cmd>lua require('vscode-neovim').call('editor.action.startFindReplaceAction')<CR>
-
-
