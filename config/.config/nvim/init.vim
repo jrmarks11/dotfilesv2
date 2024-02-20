@@ -24,6 +24,8 @@ xnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 
 nnoremap <silent> [<space> :<c-u>put! =repeat(nr2char(10), v:count1)<cr>
 nnoremap <silent> ]<space> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
+nnoremap <silent> ]c <Cmd>lua require('vscode-neovim').call('workbench.action.editor.nextChange')<CR>
+nnoremap <silent> [c <Cmd>lua require('vscode-neovim').call('workbench.action.editor.previousChange')<CR>
 
 " Opposite of J
 nnoremap K i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
@@ -42,8 +44,13 @@ xnoremap . :normal .<cr>
 nnoremap ' `
 xnoremap ' `
 
-xnoremap <silent> <space><space> <Cmd>lua require('vscode-neovim').call('editor.action.startFindReplaceAction')<CR>
-nnoremap ,, <Cmd>lua require('vscode-neovim').call('editor.action.formatDocument')<CR>
+nnoremap ; :
+xnoremap ; :
 
-nnoremap <silent> ]c <Cmd>lua require('vscode-neovim').call('workbench.action.editor.nextChange')<CR>
-nnoremap <silent> [c <Cmd>lua require('vscode-neovim').call('workbench.action.editor.previousChange')<CR>
+nnoremap ,, <Cmd>lua require('vscode-neovim').call('editor.action.formatDocument')<CR>
+nnoremap ,v :source $MYVIMRC<cr>
+
+nnoremap <silent> <space>t <Cmd>lua require('vscode-neovim').call('workbench.action.quickOpen')<CR>
+xnoremap <silent> <space><space> <Cmd>lua require('vscode-neovim').call('editor.action.startFindReplaceAction')<CR>
+
+
