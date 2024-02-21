@@ -1,19 +1,12 @@
 set clipboard^=unnamed " Share clipboard with os
-set history=1000
-set undodir=$HOME/.nvim-undo
-set undofile
-set undolevels=1000
-set undoreload=10000
+set ignorecase
+set smartcase
 
 call plug#begin('~/.vim/plugged')
   Plug 'andrewradev/splitjoin.vim'
   Plug 'rhysd/clever-f.vim'
   Plug 'tpope/vim-surround'
 call plug#end()
-
-if isdirectory($HOME . '/.nvim-undo') == 0
-  :silent !mkdir -p ~/.nvim-undo >/dev/null 2>&1
-endif
 
 xnoremap <silent> ae gg0oG$
 onoremap <silent> ae :<c-u>execute "normal! m`"<bar>keepjumps normal! ggVG<cr>
