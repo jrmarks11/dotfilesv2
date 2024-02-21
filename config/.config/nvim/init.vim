@@ -1,6 +1,6 @@
 set clipboard^=unnamed " Share clipboard with os
 set history=1000
-set undodir=$HOME/.vim-undo
+set undodir=$HOME/.nvim-undo
 set undofile
 set undolevels=1000
 set undoreload=10000
@@ -11,12 +11,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-surround'
 call plug#end()
 
-if isdirectory($HOME . '/.vim-swap') == 0
-  :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
-endif
-
-if isdirectory($HOME . '/.vim-undo') == 0
-  :silent !mkdir -p ~/.vim-undo >/dev/null 2>&1
+if isdirectory($HOME . '/.nvim-undo') == 0
+  :silent !mkdir -p ~/.nvim-undo >/dev/null 2>&1
 endif
 
 xnoremap <silent> ae gg0oG$
@@ -35,9 +31,6 @@ nnoremap <silent> [<space> :<c-u>put! =repeat(nr2char(10), v:count1)<cr>
 nnoremap <silent> ]<space> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 nnoremap <silent> ]c <Cmd>lua require('vscode-neovim').call('workbench.action.editor.nextChange')<CR>
 nnoremap <silent> [c <Cmd>lua require('vscode-neovim').call('workbench.action.editor.previousChange')<CR>
-
-" Opposite of J
-nnoremap K i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 
 " Q to replay q register in normal and visual
 nnoremap Q @q
@@ -62,6 +55,8 @@ nnoremap ,v :source $MYVIMRC<cr>
 
 nnoremap <silent> <space>t <Cmd>lua require('vscode-neovim').call('workbench.action.quickOpen')<CR>
 xnoremap <silent> <space><space> <Cmd>lua require('vscode-neovim').call('editor.action.startFindReplaceAction')<CR>
+nnoremap <silent> <space>r <Cmd>lua require('vscode-neovim').call('workbench.action.showAllEditorsByMostRecentlyUsed')<CR>
+nnoremap <silent> <space>d <Cmd>lua require('vscode-neovim').call('workbench.files.action.showActiveFileInExplorer')<CR>
 
 function! VistarSearch(cmdtype)
   let temp = @s
@@ -72,3 +67,8 @@ endfunction
 
 xnoremap * :<C-u>call VistarSearch('/')<CR>/<C-r>=@/<CR><CR>
 xnoremap # :<C-u>call VistarSearch('?')<CR>?<C-r>=@/<CR><CR>
+
+augroup markdown_enter
+    autocmd!
+    autocmd FileType markdown nnoremap <buffer> <CR> <Plug>NetrwBrowseX
+augroup END
