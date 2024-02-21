@@ -68,6 +68,15 @@ endfunction
 xnoremap * :<C-u>call VistarSearch('/')<CR>/<C-r>=@/<CR><CR>
 xnoremap # :<C-u>call VistarSearch('?')<CR>?<C-r>=@/<CR><CR>
 
+function! NoPastePaste()
+  set paste
+  normal! o
+  normal! ]p
+  set nopaste
+endfunction
+
+nnoremap <space>p :<C-u>call NoPastePaste()<CR><CR>
+
 augroup markdown_enter
     autocmd!
     autocmd FileType markdown nnoremap <buffer> <CR> <Plug>NetrwBrowseX
