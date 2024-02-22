@@ -1,3 +1,0 @@
-- [ ] Scott
-- [ ] Rachel
-- [ ] Ben
