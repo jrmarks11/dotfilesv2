@@ -85,11 +85,3 @@ function! util#super_carrot()
     normal! 
   end
 endfunction
-
-function! util#date_filename(date_format)
-  let l:date_command = "date " . a:date_format . "-"
-  let l:name = system(l:date_command) . expand("%:t:r")
-  let l:clean_name = substitute(l:name, "\n", '', 'g')
-
-  execute "normal! o* " . l:clean_name . "\<Esc>vB"
-endfunction
