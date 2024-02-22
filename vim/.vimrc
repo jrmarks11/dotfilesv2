@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'andrewradev/splitjoin.vim'
   Plug 'bronson/vim-trailing-whitespace'
   Plug 'christoomey/vim-tmux-navigator'
+  Plug 'github/copilot.vim'
   Plug 'janko-m/vim-test'
   Plug 'jgdavey/tslime.vim'
   Plug 'junegunn/fzf'
