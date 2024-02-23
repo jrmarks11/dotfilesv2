@@ -13,7 +13,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'NLKNguyen/papercolor-theme'
   Plug 'rhysd/clever-f.vim'
-  Plug 'sheerun/vim-polyglot'
+  " Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-rails'
