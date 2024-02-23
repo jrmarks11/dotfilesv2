@@ -43,6 +43,7 @@ let g:ale_fixers = {
       \   'python': ['black'],
       \   'html': ['prettier'],
       \   'markdown': ['prettier'],
+      \   'vimwiki': ['prettier'],
       \   'eruby': ['erb-formatter', 'erblint']
       \ }
 let g:ale_linters = {
@@ -52,7 +53,8 @@ let g:ale_linters = {
       \   'typescriptreact': ['eslint'],
       \   'ruby': ['rubocop'],
       \   'python': ['flake8'],
-      \   'eruby': ['erblint']
+      \   'eruby': ['erblint'],
+      \   'markdown': ['mdl']
       \ }
 
 let g:ale_lint_on_insert_leave = 1
