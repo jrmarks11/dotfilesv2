@@ -42,6 +42,7 @@ let g:ale_fixers = {
       \   'ruby': ['rubocop'],
       \   'python': ['black'],
       \   'html': ['prettier'],
+      \   'markdown': ['prettier'],
       \   'eruby': ['erb-formatter', 'erblint']
       \ }
 let g:ale_linters = {
