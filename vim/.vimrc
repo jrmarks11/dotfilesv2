@@ -62,7 +62,7 @@ let g:ale_linters = {
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_ruby_rubocop_auto_correct_all = 1
-let g:ale_elixir_elixir_ls_release = '~/.elixir-ls/release'
+let g:ale_elixir_elixir_ls_release = expand('~/.elixir-ls/release')
 
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
