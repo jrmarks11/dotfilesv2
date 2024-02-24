@@ -44,7 +44,8 @@ let g:ale_fixers = {
       \   'html': ['prettier'],
       \   'markdown': ['prettier'],
       \   'vimwiki': ['prettier'],
-      \   'eruby': ['erb-formatter', 'erblint']
+      \   'eruby': ['erb-formatter', 'erblint'],
+      \   'elixir': ['mix_format']
       \ }
 let g:ale_linters = {
       \   'javascript': ['eslint'],
@@ -54,12 +55,14 @@ let g:ale_linters = {
       \   'ruby': ['rubocop'],
       \   'python': ['flake8'],
       \   'eruby': ['erblint'],
-      \   'markdown': ['mdl']
+      \   'markdown': ['mdl'],
+      \   'elixir': ['credo', 'elixir-ls']
       \ }
 
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_ruby_rubocop_auto_correct_all = 1
+let g:ale_elixir_elixir_ls_release = '~/.elixir-ls/release'
 
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
