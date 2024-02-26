@@ -9,3 +9,5 @@ cnoremap <esc>b <s-left>
 cnoremap <esc>f <s-right>
 cnoremap <esc><bs> <c-w>
 cnoremap <c-k> <c-\>estrpart(getcmdline(),0,getcmdpos()-1)<cr>
+
+cnoremap <expr> .. getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '..'
