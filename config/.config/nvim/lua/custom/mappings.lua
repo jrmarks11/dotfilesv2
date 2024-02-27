@@ -1,6 +1,6 @@
-print("mappings")
+local map = vim.keymap.set
 
-vim.keymap.set('n', "'", '`', {silent = true})
-vim.keymap.set('x', "'", '`', {silent = true})
-vim.keymap.set('n', ';', ':', {silent = true})
-vim.keymap.set('x', ';', ':', {silent = true})
+map('n', "'", '`')
+map('x', "'", '`')
+map('n', ';', ':')
+map('x', ';', ':')
