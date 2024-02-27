@@ -16,8 +16,18 @@ return {
       local builtin = require('telescope.builtin')
       local map = vim.keymap.set
 
-      telescope.setup({})
+      telescope.setup({
+          defaults = {
+            layout_strategy = 'vertical',
+            layout_config = {
+              preview_cutoff = 40,
+              vertical = { width = 0.9, height = 0.9, preview_height = 0.6 },
+            },
+          }
+        })
       telescope.load_extension("fzf")
+
+      local tutil = require('util.telescope-commands')
 
       map("n", "<Space>d", function() builtin.find_files({ cwd = "%:h" }) end)
       map('n', '<Space>f', function()
@@ -29,8 +39,9 @@ return {
       map("n", "<Space>j", function()
         builtin.grep_string({ search = vim.fn.input("grep ❯ ") })
       end)
-      map("n", "<Space>o", builtin.oldfiles)
+      map("n", "<Space>r", tutil.git_recent_files)
       map('n', '<Space>t', builtin.find_files)
+      map("n", "<Space>g", builtin.git_status)
 
     end
   }
