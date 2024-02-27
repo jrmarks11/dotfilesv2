@@ -58,7 +58,7 @@ function! util#no_paste_paste()
   set paste
   normal! o
   normal! ]p
-  FixTabs
+  call util#fix_tabs(line('1'), line('$'))
   set nopaste
 endfunction
 
