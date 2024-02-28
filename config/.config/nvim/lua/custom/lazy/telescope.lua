@@ -21,6 +21,17 @@ return {
               preview_cutoff = 40,
               vertical = { width = 0.9, height = 0.9, preview_height = 0.6 },
             },
+            vimgrep_arguments = {
+              "rg",
+              "--color=never",
+              "--no-heading",
+              "--with-filename",
+              "--line-number",
+              "--column",
+              "--smart-case",
+              "--hidden",
+              "--glob", "!**/.git/*",
+            },
           },
           extensions = {
             recent_files = {
@@ -44,9 +55,15 @@ return {
         builtin.grep_string({ search = word })
       end)
 
+      map('x', '<Space>f', function()
+        vim.api.nvim_command('normal! y')
+        local visual_text = vim.fn.getreg('')
+        require('telescope.builtin').grep_string({ search = visual_text })
+      end)
+
       map('n', '<Space>h', function()
-	local word = vim.fn.expand("<cword>")
-	builtin.help_tags({ default_text = word })
+        local word = vim.fn.expand("<cword>")
+        builtin.help_tags({ default_text = word })
       end)
 
       map("n", "<Space>i", builtin.highlights)

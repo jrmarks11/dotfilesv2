@@ -4,6 +4,7 @@ local undo_dir = vim.fn.expand('$HOME') .. '/.nvim-undo'
 opt.clipboard:append('unnamed')
 opt.colorcolumn = '80'
 opt.expandtab = true
+opt.grepprg = "rg --vimgrep --smart-case"
 opt.ignorecase = true
 opt.list = true
 opt.listchars = {tab = '▸ ', trail = '·', nbsp = '␣'}
