@@ -17,6 +17,7 @@ opt.sidescrolloff = 5
 opt.smartcase = true
 opt.splitbelow = true
 opt.splitright = true
+vim.opt.swapfile = false
 opt.tabstop = 2
 opt.textwidth = 78
 opt.undodir = undo_dir
