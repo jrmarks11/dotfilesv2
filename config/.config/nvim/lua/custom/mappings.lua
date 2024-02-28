@@ -18,4 +18,7 @@ map('c', '<M-Left>', '<s-left>')
 map('c', '<M-Right>', '<s-right>')
 map('c', '<esc><bs>', '<c-w>')
 map('c', '<C-k>', '<c-\\>e strpart(getcmdline(),0,getcmdpos()-1)<cr>')
+
 map('c', '..', "getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '..'", {expr = true})
+
+map('n', '<Space>p', '<cmd>lua require("util.no_paste").paste()<CR>')
