@@ -14,6 +14,7 @@ opt.scrolloff = 1
 opt.shiftround = true
 opt.shiftwidth = 2
 opt.showmatch = true
+opt.shada = { "'300", '<50', 's10', 'h' }
 opt.sidescrolloff = 5
 opt.smartcase = true
 opt.splitbelow = true
