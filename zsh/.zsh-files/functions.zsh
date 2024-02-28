@@ -69,6 +69,14 @@ my_vim() {
   fi
 }
 
+my_nvim() {
+  if [[ "$#" == "0" ]]; then
+    nvim -c "lua require ('util.last_file_cwd').last_buffer()"
+  else
+    nvim "$@"
+  fi
+}
+
 gdl() {
   if [[ "$#" == "0" ]]; then
     git diff @~

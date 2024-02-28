@@ -38,11 +38,17 @@ return {
       telescope.load_extension("recent_files")
 
       map("n", "<Space>d", function() builtin.find_files({ cwd = "%:h" }) end)
+
       map('n', '<Space>f', function()
         local word = vim.fn.expand("<cword>")
         builtin.grep_string({ search = word })
       end)
-      map("n", "<Space>h", builtin.help_tags)
+
+      map('n', '<Space>h', function()
+	local word = vim.fn.expand("<cword>")
+	builtin.help_tags({ default_text = word })
+      end)
+
       map("n", "<Space>i", builtin.highlights)
       map("n", "<Space>j", function()
         builtin.grep_string({ search = vim.fn.input("grep ❯ ") })
@@ -50,6 +56,7 @@ return {
 
       local recent_files = require('telescope').extensions.recent_files
       map("n", "<Space>r", function()recent_files.pick()end)
+
       map('n', '<Space>t', builtin.find_files)
       map("n", "<Space>g", builtin.git_status)
 
