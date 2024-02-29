@@ -37,7 +37,7 @@ return {
             end)
           end)
 
-          map('n', 'sh', gs.stage_hunk)
+          map('n', 'sg', gs.stage_hunk)
           map('n', 'su', gs.reset_hunk)
           map('n', 'sp', gs.preview_hunk)
           map('n', 'sb', function()
