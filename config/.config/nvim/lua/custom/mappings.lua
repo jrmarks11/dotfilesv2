@@ -45,3 +45,4 @@ map('x', 'Q', [[:'<,'>normal @q<cr>]])
 map('x', '.', [[:normal .<cr>]])
 
 map('n', 's', "<nop>", {remap = true})
+map('n', '<Esc>', '<cmd>nohlsearch<CR>')

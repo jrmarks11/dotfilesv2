@@ -29,12 +29,14 @@ return {
               feedkeys("zz", "n", false)
             end)
           end)
+
           map("n", "[c", function()
             gs.prev_hunk()
             schedule(function()
               feedkeys("zz", "n", false)
             end)
           end)
+
           map("n", "sh", gs.stage_hunk)
           map("n", "su", gs.reset_hunk)
           map("n", "sp", gs.preview_hunk)
