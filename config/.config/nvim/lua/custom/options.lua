@@ -21,6 +21,7 @@ opt.splitbelow = true
 opt.splitright = true
 vim.opt.swapfile = false
 opt.tabstop = 2
+opt.termguicolors = true
 opt.textwidth = 78
 opt.undodir = undo_dir
 opt.undofile = true

@@ -6,7 +6,8 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
       'smartpde/telescope-recent-files',
-      'nvim-telescope/telescope-fzf-native.nvim', build = 'make'
+      'nvim-telescope/telescope-fzf-native.nvim', build = 'make',
+      'nvim-telescope/telescope-ui-select.nvim',
     },
 
     config = function()
@@ -15,37 +16,41 @@ return {
       local map = vim.keymap.set
 
       telescope.setup({
-          defaults = {
-            layout_strategy = 'vertical',
-            layout_config = {
-              preview_cutoff = 40,
-              vertical = { width = 0.9, height = 0.9, preview_height = 0.6 },
-            },
-            vimgrep_arguments = {
-              "rg",
-              "--color=never",
-              "--no-heading",
-              "--with-filename",
-              "--line-number",
-              "--column",
-              "--smart-case",
-              "--hidden",
-              "--glob", "!**/.git/*",
-            },
+        defaults = {
+          layout_strategy = 'vertical',
+          layout_config = {
+            preview_cutoff = 40,
+            vertical = { width = 0.9, height = 0.9, preview_height = 0.6 },
           },
-          extensions = {
-            recent_files = {
-              only_cwd = true,
-            },
+          vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            "--hidden",
+            "--glob", "!**/.git/*",
           },
-          pickers = {
-            find_files = {
-              find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
-            },
+        },
+        extensions = {
+          recent_files = {
+            only_cwd = true,
           },
-        })
+          ['ui-select'] = {
+            require('telescope.themes').get_dropdown(),
+          },
+        },
+        pickers = {
+          find_files = {
+            find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+          },
+        },
+      })
 
       telescope.load_extension("fzf")
+      telescope.load_extension("ui-select")
       telescope.load_extension("recent_files")
 
       map("n", "<Space>d", function() builtin.find_files({ cwd = "%:h" }) end)
