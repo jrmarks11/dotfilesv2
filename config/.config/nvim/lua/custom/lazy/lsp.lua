@@ -3,6 +3,7 @@ return {
   dependencies = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
@@ -14,16 +15,32 @@ return {
   },
 
   config = function()
+    local lsp = vim.lsp
+    local map = vim.keymap.set
     local cmp = require('cmp')
     local cmp_lsp = require("cmp_nvim_lsp")
+    local opts = { buffer = true }
+
     local capabilities = vim.tbl_deep_extend(
       "force",
       {},
       vim.lsp.protocol.make_client_capabilities(),
       cmp_lsp.default_capabilities())
 
+    local lsp_on_attach = function()
+      map("n", "gd", lsp.buf.definition, opts)
+      map("n", "<C-k>", lsp.buf.hover, opts)
+      map("n", "gr", lsp.buf.references, opts)
+    end
+
     require("fidget").setup({})
     require("mason").setup()
+
+    local ensure_installed = {
+      'stylua', -- Used to format lua code
+    }
+    require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
     require("mason-lspconfig").setup({
       ensure_installed = {
         "lua_ls",
@@ -33,6 +50,7 @@ return {
         function(server_name) -- default handler (optional)
 
           require("lspconfig")[server_name].setup {
+            on_attach = lsp_on_attach,
             capabilities = capabilities
           }
         end,
@@ -40,6 +58,7 @@ return {
         ["lua_ls"] = function()
           local lspconfig = require("lspconfig")
           lspconfig.lua_ls.setup {
+            on_attach = lsp_on_attach,
             capabilities = capabilities,
             settings = {
               Lua = {
