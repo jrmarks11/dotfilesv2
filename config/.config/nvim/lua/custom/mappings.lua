@@ -56,3 +56,5 @@ map('x', '.', [[:normal .<cr>]])
 
 map('n', 's', "<nop>", {remap = true})
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+map('n', ',r', '<cmd>lua require("util.rename_file").rename_file()<CR>')
