@@ -3,7 +3,6 @@ return {
   dependencies = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
@@ -36,19 +35,14 @@ return {
     require("fidget").setup({})
     require("mason").setup()
 
-    local ensure_installed = {
-      'stylua', -- Used to format lua code
-    }
-    require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
     require("mason-lspconfig").setup({
       ensure_installed = {
-        "lua_ls",
-        "rubocop",
+        'lua_ls',
+        'rubocop',
+        'elixirls',
       },
       handlers = {
         function(server_name) -- default handler (optional)
-
           require("lspconfig")[server_name].setup {
             on_attach = lsp_on_attach,
             capabilities = capabilities
@@ -90,8 +84,8 @@ return {
         { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- For luasnip users.
       }, {
-          { name = 'buffer' },
-        })
+        { name = 'buffer' },
+      })
     })
 
     vim.diagnostic.config({
