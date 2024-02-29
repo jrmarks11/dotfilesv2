@@ -8,6 +8,16 @@ vim.keymap.set('n', 'K', 'i<cr><esc>^mwgk:silent! s/\\v +$//<cr>:noh<cr>`w', {si
 
 map('n', '[<Space>', ':<C-u>put! =repeat(nr2char(10),v:count1)<CR>', {silent = true})
 map('n', ']<Space>', ':<C-u>put =repeat(nr2char(10),v:count1)<CR>', {silent = true})
+map('n', '[l', ':lprev<cr>zz')
+map('n', ']l', ':lnext<cr>zz')
+map('n', ',l', ':lclose<cr>')
+map('n', '[q', ':cprev<cr>zz')
+map('n', ']q', ':cnext<cr>zz')
+map('n', ',q', ':cclose<cr>')
+map('n', '[t', ':tprevious<cr>')
+map('n', ']t', ':tnext<cr>')
+map('n', '[d', vim.diagnostic.goto_prev)
+map('n', ']d', vim.diagnostic.goto_next)
 
 map('c', '<C-n>', '<down>')
 map('c', '<C-p>', '<up>')
