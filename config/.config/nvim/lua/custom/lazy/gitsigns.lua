@@ -1,15 +1,12 @@
 return {
   'lewis6991/gitsigns.nvim',
   dependencies = { 'nvim-lua/plenary.nvim' },
-  config = function ()
+  config = function()
     if vim.opt.diff:get() then
       return
     end
 
     local gitsigns = require('gitsigns')
-    local feedkeys = vim.api.nvim_feedkeys
-    local map = vim.keymap.set
-    local schedule = vim.schedule
 
     gitsigns.setup({
       signs = {
@@ -20,32 +17,28 @@ return {
         changedelete = { hl = 'GitSignsChangeDelete', text = '┃' },
         untracked = { hl = 'GitSignsUntracked', text = '┃' },
       },
-        on_attach = function()
-          local gs = package.loaded.gitsigns
+      on_attach = function()
+        local gs = package.loaded.gitsigns
+        local map = vim.keymap.set
+        local cmd = vim.cmd
 
-          map('n', ']c', function()
-            gs.next_hunk()
-            schedule(function()
-              feedkeys('zz', 'n', false)
-            end)
-          end)
+        map('n', ']c', function()
+          gs.next_hunk()
+          cmd('normal! zz')
+        end)
 
-          map('n', '[c', function()
-            gs.prev_hunk()
-            schedule(function()
-              feedkeys('zz', 'n', false)
-            end)
-          end)
+        map('n', '[c', function()
+          gs.prev_hunk()
+          cmd('normal! zz')
+        end)
 
-          map('n', 'sg', gs.stage_hunk)
-          map('n', 'su', gs.reset_hunk)
-          map('n', 'sp', gs.preview_hunk)
-          map('n', 'sb', function()
-            gs.blame_line({ full = true })
-          end)
-        end,
-        max_file_length = 100000,
-        sign_priority = 6,
-      })
+        map('n', 'sb', function() gs.blame_line({ full = true }) end)
+        map('n', 'sg', gs.stage_hunk)
+        map('n', 'sp', gs.preview_hunk)
+        map('n', 'su', gs.reset_hunk)
+      end,
+      max_file_length = 100000,
+      sign_priority = 6,
+    })
   end
 }

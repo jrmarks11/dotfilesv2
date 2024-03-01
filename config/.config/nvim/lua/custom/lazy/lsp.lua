@@ -15,18 +15,19 @@ return {
 
   config = function()
     local lsp = vim.lsp
-    local map = vim.keymap.set
-    local cmp = require('cmp')
     local cmp_lsp = require('cmp_nvim_lsp')
-    local opts = { buffer = true }
 
     local capabilities = vim.tbl_deep_extend(
       'force',
       {},
-      vim.lsp.protocol.make_client_capabilities(),
-      cmp_lsp.default_capabilities())
+      lsp.protocol.make_client_capabilities(),
+      cmp_lsp.default_capabilities()
+    )
 
     local lsp_on_attach = function()
+      local map = vim.keymap.set
+      local opts = { buffer = true }
+
       map('n', 'gd', lsp.buf.definition, opts)
       map('n', '<C-k>', lsp.buf.hover, opts)
       map('n', 'gr', lsp.buf.references, opts)
@@ -66,6 +67,7 @@ return {
       }
     })
 
+    local cmp = require('cmp')
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
     cmp.setup({

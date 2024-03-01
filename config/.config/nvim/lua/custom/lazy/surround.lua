@@ -11,18 +11,15 @@ return {
         ['<'] = { output = { left = '< ', right = ' >' } },
       },
       mappings = {
-        add = 'ys',
-        delete = 'ds',
-        find = '',
-        find_left = '',
+        add = 'sa',
+        delete = 'sd',
+        find = 'sf',
+        find_left = 'sF',
         highlight = '',
-        replace = 'cs',
+        replace = 'sr',
         update_n_lines = '',
       },
       search_method = 'cover_or_next',
     })
-
-    vim.api.nvim_set_keymap('x', 'S', [[:<C-u>lua MiniSurround.add('visual')<CR>]], { noremap = true })
-    vim.api.nvim_set_keymap('n', 'yss', 'ys_', { noremap = false })
   end
 }

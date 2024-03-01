@@ -7,13 +7,12 @@ return {
 
     config = function()
       local ls = require('luasnip')
+      local map = vim.keymap.set
 
-      vim.keymap.set({ 'i' }, 'se', function() ls.expand() end, { silent = true })
-
-      vim.keymap.set({ 'i', 's' }, 's;', function() ls.jump(1) end, { silent = true })
-      vim.keymap.set({ 'i', 's' }, 's,', function() ls.jump(-1) end, { silent = true })
-
-      vim.keymap.set({ 'i', 's' }, 'sE', function()
+      map({ 'i' }, 'se', function() ls.expand() end, { silent = true })
+      map({ 'i', 's' }, 's;', function() ls.jump(1) end, { silent = true })
+      map({ 'i', 's' }, 's,', function() ls.jump(-1) end, { silent = true })
+      map({ 'i', 's' }, 'sE', function()
         if ls.choice_active() then
           ls.change_choice(1)
         end

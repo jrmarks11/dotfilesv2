@@ -4,12 +4,12 @@ return {
     if vim.opt.diff:get() then
       return
     end
+
     local conform = require('conform')
-    local map = vim.keymap.set
     conform.setup({
       formatters_by_ft = {
         css = { 'prettier' },
-        eruby = {'erb_format'},
+        eruby = { 'erb_format' },
         html = { 'prettier' },
         javascript = { 'prettier' },
         json = { 'prettier' },
@@ -22,6 +22,7 @@ return {
       },
     })
 
+    local map = vim.keymap.set
     map('n', ',,', function()
       conform.format({ async = true, lsp_fallback = true, timeout_ms = 8000 })
     end, { silent = true })
