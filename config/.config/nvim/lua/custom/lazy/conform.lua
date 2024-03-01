@@ -23,9 +23,7 @@ return {
       },
     })
 
-    local map = vim.keymap.set
-
-    map('n', ',,', function()
+    vim.keymap.set('n', ',,', function()
       conform.format({ async = true, lsp_fallback = true, timeout_ms = 8000 })
     end, { silent = true })
   end,
