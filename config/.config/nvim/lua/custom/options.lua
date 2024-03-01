@@ -9,6 +9,7 @@ opt.ignorecase = true
 opt.list = true
 opt.listchars = { tab = '▸ ', trail = '·', nbsp = '␣' }
 opt.number = true
+opt.relativenumber = true
 opt.scrolljump = 8
 opt.scrolloff = 1
 opt.shiftround = true
