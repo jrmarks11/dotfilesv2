@@ -9,10 +9,10 @@ return {
       local ls = require('luasnip')
       local map = vim.keymap.set
 
-      map({ 'i' }, '<C-s>e', function() ls.expand() end, { silent = true })
-      map({ 'i', 's' }, '<C-s>;', function() ls.jump(1) end, { silent = true })
-      map({ 'i', 's' }, '<C-s>,', function() ls.jump(-1) end, { silent = true })
-      map({ 'i', 's' }, '<C-E>', function()
+      map({ 'i' }, '<C-s>C-i>', function() ls.expand() end, { silent = true })
+      map({ 'i', 's' }, '<C-s><C-j>', function() ls.jump(1) end, { silent = true })
+      map({ 'i', 's' }, '<C-s><C-k>', function() ls.jump(-1) end, { silent = true })
+      map({ 'i', 's' }, '<C-s><C-c>', function()
         if ls.choice_active() then
           ls.change_choice(1)
         end
