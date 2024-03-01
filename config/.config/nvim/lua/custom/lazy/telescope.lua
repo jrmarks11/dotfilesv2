@@ -67,7 +67,7 @@ return {
       end)
 
       map('x', '<Space>f', function()
-        vim.api.nvim_command('normal! y')
+        vim.cmd('normal! y')
         local visual_text = vim.fn.getreg('')
         builtin.grep_string({ search = visual_text })
       end)
