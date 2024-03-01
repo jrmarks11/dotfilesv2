@@ -4,10 +4,10 @@ return {
 
   config = function()
     local g = vim.g
+    local map = vim.keymap.set
+
     g['test#preserve_screen'] = 1
     g['test#strategy'] = 'tslime'
-
-    local map = vim.keymap.set
 
     map('n', ',t', ':TestNearest<CR>')
     map('n', ',k', ':TestLast<CR>')

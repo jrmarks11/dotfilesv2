@@ -2,7 +2,7 @@ return {
   'tpope/vim-projectionist',
 
   config = function()
-    vim.api.nvim_set_keymap('n', '<Space>a', ':A<CR>', { noremap = true, silent = true })
+    vim.keymap.set('n', '<Space>a', ':A<CR>', { silent = true })
 
     vim.g.projectionist_heuristics = {
       ['config/routes.rb'] = {

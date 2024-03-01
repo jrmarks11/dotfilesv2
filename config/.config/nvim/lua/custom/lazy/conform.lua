@@ -6,6 +6,7 @@ return {
     end
 
     local conform = require('conform')
+
     conform.setup({
       formatters_by_ft = {
         css = { 'prettier' },
@@ -23,6 +24,7 @@ return {
     })
 
     local map = vim.keymap.set
+
     map('n', ',,', function()
       conform.format({ async = true, lsp_fallback = true, timeout_ms = 8000 })
     end, { silent = true })
