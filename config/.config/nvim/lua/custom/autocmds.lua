@@ -69,13 +69,26 @@ autocmd('BufReadPost', {
   end,
 })
 
-local group = augroup('LastFileOnStartup', { clear = true })
-
+local last_file_on_startup_group = augroup('LastFileOnStartup', { clear = true })
 autocmd('VimEnter', {
-  group = group,
+  group = last_file_on_startup_group,
   callback = function()
     vim.defer_fn(function()
       require('util.last_file_cwd').last_buffer()
     end, 10)
+  end,
+})
+
+local qf_group = augroup('QuickFix', { clear = true })
+autocmd('QuickFixCmdPost', {
+  group = qf_group,
+  pattern = '*',
+  callback = function()
+    if #vim.fn.getqflist() > 0 then
+      vim.cmd('copen')
+    end
+    if #vim.fn.getloclist(0) > 0 then
+      vim.cmd('lopen')
+    end
   end,
 })
