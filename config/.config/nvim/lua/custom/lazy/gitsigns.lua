@@ -40,5 +40,6 @@ return {
       max_file_length = 100000,
       sign_priority = 6,
     })
-  end
+  end,
+  cond = vim.fn.exists('g:vscode') == 0
 }

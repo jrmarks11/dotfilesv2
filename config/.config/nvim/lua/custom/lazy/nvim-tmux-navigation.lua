@@ -22,5 +22,6 @@ return {
     map('c', '<C-j>j', ntn.NvimTmuxNavigateDown)
     map('c', '<C-j>k', ntn.NvimTmuxNavigateUp)
     map('c', '<C-j>l', ntn.NvimTmuxNavigateRight)
-  end
+  end,
+  cond = vim.fn.exists('g:vscode') == 0
 }

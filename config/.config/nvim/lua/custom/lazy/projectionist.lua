@@ -24,5 +24,6 @@ return {
         ['test/*_test.exs'] = { ['type'] = 'test', ['alternate'] = 'lib/{}.ex', },
       }
     }
-  end
+  end,
+  cond = vim.fn.exists('g:vscode') == 0
 }

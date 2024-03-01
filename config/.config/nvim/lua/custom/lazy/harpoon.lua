@@ -15,5 +15,6 @@ return {
     map('n', 'sk', function() harpoon:list():select(2) end)
     map('n', 'sl', function() harpoon:list():select(3) end)
     map('n', 's;', function() harpoon:list():select(4) end)
-  end
+  end,
+  cond = vim.fn.exists('g:vscode') == 0
 }

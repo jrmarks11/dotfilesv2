@@ -15,4 +15,5 @@ return {
     map('n', ',s', ':TestSuite<CR>')
     map('n', ',b', ':TestVisit<CR>zz')
   end,
+  cond = vim.fn.exists('g:vscode') == 0
 }
