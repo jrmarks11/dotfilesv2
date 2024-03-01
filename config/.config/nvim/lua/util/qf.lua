@@ -22,13 +22,18 @@ function M.toggle_list(list_type)
   local actions = {
     c = {
       check = function(win) return win.quickfix == 1 end,
-      open = 'copen',
-      close = 'cclose',
+      open = function() vim.cmd('copen') end,
+      close = function() vim.cmd('cclose') end,
     },
     l = {
       check = function(win) return win.loclist == 1 end,
-      open = 'lopen',
-      close = 'lclose',
+      open = function()
+        local status, err = pcall(vim.cmd, 'lopen')
+        if not status then
+          print(err)
+        end
+      end,
+      close = function() vim.cmd('lclose') end,
     }
   }
 
@@ -43,9 +48,9 @@ function M.toggle_list(list_type)
   end
 
   if is_open then
-    vim.cmd(list_action.close)
+    list_action.close()
   else
-    vim.cmd(list_action.open)
+    list_action.open()
   end
 end
 
