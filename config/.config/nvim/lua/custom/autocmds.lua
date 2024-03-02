@@ -85,10 +85,10 @@ autocmd('QuickFixCmdPost', {
   pattern = '*',
   callback = function()
     if #vim.fn.getqflist() > 0 then
-      vim.cmd('copen')
+      vim.cmd('Trouble quickfix')
     end
     if #vim.fn.getloclist(0) > 0 then
-      vim.cmd('lopen')
+      vim.cmd('Trouble loclist')
     end
   end,
 })

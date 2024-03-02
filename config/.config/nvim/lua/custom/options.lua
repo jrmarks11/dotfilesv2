@@ -9,6 +9,7 @@ opt.ignorecase = true
 opt.list = true
 opt.listchars = { tab = '▸ ', trail = '·', nbsp = '␣' }
 opt.number = true
+opt.pumheight = 10
 opt.relativenumber = true
 opt.scrolljump = 8
 opt.scrolloff = 1
@@ -30,6 +31,8 @@ opt.undolevels = 1000
 opt.undoreload = 10000
 opt.visualbell = true
 opt.wildmenu = true
+opt.wildmode = "longest:full,full"
+
 
 if vim.fn.isdirectory(undo_dir) == 0 then
   vim.fn.system('mkdir -p ' .. undo_dir)
