@@ -1,6 +1,5 @@
 return {
   'rhysd/clever-f.vim',
-  'tpope/vim-surround',
   {
     "github/copilot.vim",
     cond = vim.fn.exists('g:vscode') == 0
