@@ -92,3 +92,21 @@ autocmd('QuickFixCmdPost', {
     end
   end,
 })
+
+local function open_trouble_deferred()
+  vim.defer_fn(function()
+    vim.cmd('Trouble quickfix')
+    vim.cmd('cclose')
+  end, 10) -- Defer by 10 milliseconds
+end
+
+local trouble_quickfix_group = augroup('TroubleQuickFix', { clear = true })
+autocmd('FileType', {
+  group = trouble_quickfix_group,
+  pattern = 'qf',
+  callback = function()
+    if vim.bo.filetype ~= 'Trouble' then
+      open_trouble_deferred()
+    end
+  end,
+})
