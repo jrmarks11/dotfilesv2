@@ -11,6 +11,8 @@ bindkey "^k" kill-line
 
 bindkey "^n" history-substring-search-down
 bindkey "^p" history-substring-search-up
+bindkey -r "^Q"
+bindkey -r "^S"
 
 backward-kill-dir () {
     local WORDCHARS=${WORDCHARS/\/}

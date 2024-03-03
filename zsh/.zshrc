@@ -22,6 +22,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 stty start undef
 stty stop undef
+setopt noflowcontrol
 
 autoload -Uz compinit
 if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
