@@ -5,9 +5,9 @@ return {
 
   config = function()
     require('tokyonight').setup({
-      style = 'moon',
+      style = 'day',
     })
-    vim.o.background = 'dark'
+    vim.o.background = 'light'
     vim.cmd.colorscheme('tokyonight')
   end,
   cond = vim.fn.exists('g:vscode') == 0

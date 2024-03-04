@@ -74,7 +74,19 @@ autocmd('VimEnter', {
   group = last_file_on_startup_group,
   callback = function()
     vim.defer_fn(function()
+      local api = vim.api
+      local current_window = api.nvim_get_current_win()
+      local main_window = api.nvim_list_wins()[1]
+
+      if current_window ~= main_window then
+        api.nvim_set_current_win(main_window)
+      end
+
       require('util.last_file_cwd').last_buffer()
+
+      if current_window ~= main_window then
+        api.nvim_set_current_win(current_window)
+      end
     end, 10)
   end,
 })
