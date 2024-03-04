@@ -13,15 +13,15 @@ opt.pumheight = 10
 opt.relativenumber = true
 opt.scrolljump = 8
 opt.scrolloff = 1
+opt.shada = { "'300", '<50', 's10', 'h' }
 opt.shiftround = true
 opt.shiftwidth = 2
 opt.showmatch = true
-opt.shada = { "'300", '<50', 's10', 'h' }
 opt.sidescrolloff = 5
 opt.smartcase = true
 opt.splitbelow = true
 opt.splitright = true
-vim.opt.swapfile = false
+opt.swapfile = false
 opt.tabstop = 2
 opt.termguicolors = true
 opt.textwidth = 78
@@ -32,7 +32,6 @@ opt.undoreload = 10000
 opt.visualbell = true
 opt.wildmenu = true
 opt.wildmode = 'longest:full,full'
-
 
 if vim.fn.isdirectory(undo_dir) == 0 then
   vim.fn.system('mkdir -p ' .. undo_dir)

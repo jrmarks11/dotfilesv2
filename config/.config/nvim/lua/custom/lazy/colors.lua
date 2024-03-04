@@ -5,17 +5,9 @@ return {
 
   config = function()
     require('tokyonight').setup({
-      style = 'light',
-      transparent = false,
-      terminal_colors = false,
-      styles = {
-        comments = { italic = false },
-        keywords = { italic = false },
-        sidebars = 'light',
-        floats = 'light',
-      },
+      style = 'moon',
     })
-    vim.o.background = 'light'
+    vim.o.background = 'dark'
     vim.cmd.colorscheme('tokyonight')
   end,
   cond = vim.fn.exists('g:vscode') == 0
