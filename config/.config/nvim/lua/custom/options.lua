@@ -4,7 +4,7 @@ local undo_dir = vim.fn.expand('$HOME') .. '/.nvim-undo'
 opt.clipboard:append('unnamed')
 opt.colorcolumn = { 81, 82 }
 opt.expandtab = true
-opt.grepprg = "rg --vimgrep --smart-case"
+opt.grepprg = 'rg --vimgrep --smart-case'
 opt.ignorecase = true
 opt.list = true
 opt.listchars = { tab = '▸ ', trail = '·', nbsp = '␣' }
@@ -31,7 +31,7 @@ opt.undolevels = 1000
 opt.undoreload = 10000
 opt.visualbell = true
 opt.wildmenu = true
-opt.wildmode = "longest:full,full"
+opt.wildmode = 'longest:full,full'
 
 
 if vim.fn.isdirectory(undo_dir) == 0 then
