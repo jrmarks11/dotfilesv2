@@ -1,5 +1,6 @@
 return {
   'stevearc/conform.nvim',
+  event = { "BufReadPre", "BufNewFile" },
   config = function()
     if vim.opt.diff:get() then
       return

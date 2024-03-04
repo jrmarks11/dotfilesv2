@@ -1,5 +1,6 @@
 return {
   'lewis6991/gitsigns.nvim',
+  event = "BufReadPre",
   dependencies = { 'nvim-lua/plenary.nvim' },
   config = function()
     if vim.opt.diff:get() then
