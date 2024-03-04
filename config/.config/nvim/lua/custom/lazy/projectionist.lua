@@ -1,5 +1,6 @@
 return {
   'tpope/vim-projectionist',
+  event = 'VeryLazy',
 
   config = function()
     vim.keymap.set('n', '<Space>a', ':A<CR>', { silent = true })
