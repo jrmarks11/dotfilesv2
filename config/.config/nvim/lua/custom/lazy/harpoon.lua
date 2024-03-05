@@ -6,7 +6,6 @@ return {
 
   config = function()
     local harpoon = require('harpoon')
-
     harpoon:setup({ settings = { save_on_toggle = true, }, })
 
     local map = vim.keymap.set
@@ -17,5 +16,6 @@ return {
     map('n', 'sl', function() harpoon:list():select(3) end)
     map('n', 's;', function() harpoon:list():select(4) end)
   end,
+
   cond = vim.fn.exists('g:vscode') == 0
 }

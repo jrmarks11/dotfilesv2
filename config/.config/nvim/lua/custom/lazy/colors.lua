@@ -10,5 +10,6 @@ return {
     vim.o.background = 'light'
     vim.cmd.colorscheme('tokyonight')
   end,
+
   cond = vim.fn.exists('g:vscode') == 0
 }

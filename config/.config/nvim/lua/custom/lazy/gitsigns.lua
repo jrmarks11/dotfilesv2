@@ -2,13 +2,9 @@ return {
   'lewis6991/gitsigns.nvim',
   event = 'BufReadPre',
   dependencies = { 'nvim-lua/plenary.nvim' },
+
   config = function()
-    if vim.opt.diff:get() then
-      return
-    end
-
     local gitsigns = require('gitsigns')
-
     gitsigns.setup({
       signs = {
         add = { hl = 'GitSignsAdd', text = '┃' },
@@ -18,6 +14,7 @@ return {
         changedelete = { hl = 'GitSignsChangeDelete', text = '┃' },
         untracked = { hl = 'GitSignsUntracked', text = '┃' },
       },
+
       on_attach = function()
         local gs = package.loaded.gitsigns
         local map = vim.keymap.set
@@ -42,5 +39,6 @@ return {
       sign_priority = 6,
     })
   end,
+
   cond = vim.fn.exists('g:vscode') == 0
 }
