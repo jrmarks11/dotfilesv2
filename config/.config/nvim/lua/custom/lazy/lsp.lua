@@ -12,11 +12,9 @@ return {
     'hrsh7th/nvim-cmp',
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
-    'j-hui/fidget.nvim',
   },
 
   config = function()
-    require('fidget').setup({})
     require('custom.config.mason')
     require('custom.config.cmp')
     require('custom.config.diagnostic')
