@@ -6,11 +6,14 @@ local i = ls.insert_node
 local fmt = require("luasnip.extras.fmt").fmt
 
 local elixir_snippets = {
+  s("i", { t({"IO.inspect("}), i(1), t({")"}), i(0) }),
   s("pry", { t({ "require IEx", "IEx.pry" }), i(0) }),
   s("p", { t("|> "), i(0) }),
   s("fn", {t("fn "), i(1, "params"), t(" -> "), i(0), t(" end")}),
   s("m", {t("%{"), i(0), t("}")}),
   s("ne", {t("=~ "), i(0)}),
+  s("ok", { t("{:ok, "), i(1), t(" }") }),
+  s("err", { t("{:error, "), i(1), t(" }") }),
 
   s(
     "test",
