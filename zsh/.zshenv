@@ -8,5 +8,5 @@ fi
 
 export PATH="/usr/local/sbin:$PATH"
 
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
