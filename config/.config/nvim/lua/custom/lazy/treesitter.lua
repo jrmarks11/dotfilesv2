@@ -1,17 +1,52 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
-  event = { "BufReadPost", "BufNewFile" },
+  dependencies = {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+  },
+  event = { 'BufReadPost', 'BufNewFile' },
   config = function()
     require('nvim-treesitter.configs').setup({
       ensure_installed = {
-        'vimdoc', 'javascript', 'typescript', 'lua', 'bash', 'css', 'elixir',
-        'html', 'json', 'markdown', 'regex', 'ruby', 'tsx', 'yaml', 'vue'
+        'css',
+        'elixir',
+        'embedded_template',
+        'html',
+        'javascript',
+        'json',
+        'regex',
+        'ruby',
+        'tsx',
+        'typescript',
+        'yaml',
       },
 
+      highlight = { enable = true },
       auto_install = true,
       indent = { enable = true },
-      highlight = { enable = true }
+      textobjects = {
+        enable = true,
+        select = {
+          enable = true,
+          keymaps = {
+            ['af'] = '@function.outer',
+            ['if'] = '@function.inner',
+            ['aa'] = '@parameter.outer',
+            ['ia'] = '@parameter.inner',
+            ['ak'] = '@block.outer',
+            ['ik'] = '@block.inner',
+          },
+        },
+        swap = {
+          enable = true,
+          swap_next = {
+            ['s.'] = '@parameter.inner',
+          },
+          swap_previous = {
+            ['s,'] = '@parameter.inner',
+          },
+        },
+      },
     })
   end,
   cond = vim.fn.exists('g:vscode') == 0
