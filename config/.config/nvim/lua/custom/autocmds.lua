@@ -73,7 +73,7 @@ local last_file_on_startup_group = augroup('LastFileOnStartup', { clear = true }
 autocmd('VimEnter', {
   group = last_file_on_startup_group,
   callback = function()
-    if #vim.fn.argv() == 0 then
+    if #vim.fn.argv() == 0 and vim.bo.filetype ~= 'gitcommit' then
       vim.defer_fn(function()
         local api = vim.api
         local current_window = api.nvim_get_current_win()
