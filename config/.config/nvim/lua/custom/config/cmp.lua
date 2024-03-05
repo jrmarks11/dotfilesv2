@@ -1,8 +1,6 @@
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local luasnip = require('luasnip')
-require("luasnip.loaders.from_vscode").lazy_load()
-luasnip.filetype_extend("ruby", {"rails"})
 
 cmp.setup({
   snippet = {
