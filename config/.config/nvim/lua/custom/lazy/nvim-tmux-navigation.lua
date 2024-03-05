@@ -8,20 +8,10 @@ return {
     local ntn = require'nvim-tmux-navigation'
     local map = vim.keymap.set
 
-    map('n', '<C-j>h', ntn.NvimTmuxNavigateLeft)
-    map('n', '<C-j>j', ntn.NvimTmuxNavigateDown)
-    map('n', '<C-j>k', ntn.NvimTmuxNavigateUp)
-    map('n', '<C-j>l', ntn.NvimTmuxNavigateRight)
-
-    map('i', '<C-j>h', ntn.NvimTmuxNavigateLeft)
-    map('i', '<C-j>j', ntn.NvimTmuxNavigateDown)
-    map('i', '<C-j>k', ntn.NvimTmuxNavigateUp)
-    map('i', '<C-j>l', ntn.NvimTmuxNavigateRight)
-
-    map('c', '<C-j>h', ntn.NvimTmuxNavigateLeft)
-    map('c', '<C-j>j', ntn.NvimTmuxNavigateDown)
-    map('c', '<C-j>k', ntn.NvimTmuxNavigateUp)
-    map('c', '<C-j>l', ntn.NvimTmuxNavigateRight)
+    map({ 'n', 'i', 'c', 'x' }, '<C-j>h', ntn.NvimTmuxNavigateLeft)
+    map({ 'n', 'i', 'c', 'x' }, '<C-j>j', ntn.NvimTmuxNavigateDown)
+    map({ 'n', 'i', 'c', 'x' }, '<C-j>k', ntn.NvimTmuxNavigateUp)
+    map({ 'n', 'i', 'c', 'x' }, '<C-j>l', ntn.NvimTmuxNavigateRight)
   end,
   cond = vim.fn.exists('g:vscode') == 0
 }
