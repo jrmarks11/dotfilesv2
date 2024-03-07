@@ -48,5 +48,20 @@ require('mason-lspconfig').setup({
         }
       }
     end,
+
+    ['elixirls'] = function()
+      local lspconfig = require('lspconfig')
+      lspconfig.elixirls.setup {
+        on_attach = lsp_on_attach,
+        capabilities = capabilities,
+        settings = {
+          autoBuild = true,
+          dialyzerEnabled = false,
+          fetchDeps = false,
+          enableTestLenses = false,
+          suggestSpecs = false,
+        }
+      }
+    end,
   }
 })
