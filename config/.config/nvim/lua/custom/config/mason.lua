@@ -25,6 +25,7 @@ require('mason-lspconfig').setup({
     'rubocop',
     'elixirls',
     'ruby_ls',
+    'efm',
   },
   handlers = {
     function(server_name) -- default handler (optional)
@@ -60,6 +61,28 @@ require('mason-lspconfig').setup({
           fetchDeps = false,
           enableTestLenses = false,
           suggestSpecs = false,
+        }
+      }
+    end,
+
+    ['efm'] = function()
+      local lspconfig = require('lspconfig')
+      lspconfig.efm.setup {
+        on_attach = lsp_on_attach,
+        capabilities = capabilities,
+        init_options = { documentFormatting = true },
+        filetypes = { 'elixir' },
+        settings = {
+          rootMarkers = { '.git/' },
+          languages = {
+            elixir = {
+              {
+                lintCommand = 'mix credo suggest --format=flycheck --read-from-stdin',
+                lintStdin = true,
+                lintFormats = { '%f:%l:%c: %m' }
+              }
+            }
+          }
         }
       }
     end,
