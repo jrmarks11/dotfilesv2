@@ -13,6 +13,7 @@ Thumbs.db
 *.netrwhist
 
 .byebug_history
+.tool-versions
 tags
 
 /vendor
