@@ -22,3 +22,5 @@ map('n', '<Space>l', [[:Lazy<CR>]])
 map('n', '<Space>m', [[:Mason<CR>]])
 
 map('n', ',r', '<cmd>lua require("util.rename_file").rename_file()<CR>')
+
+map('n', 'gx', '<cmd>lua require("util.web").open()<CR>')
