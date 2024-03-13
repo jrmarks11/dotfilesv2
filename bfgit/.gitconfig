@@ -1,0 +1,16 @@
+[user]
+  name = John Marks
+  email = jmarks@bitfreighter.com
+  username = jrmarks11
+[core]
+  excludesfile = ~/.gitignore_global
+[push]
+  default = current
+[pull]
+  rebase = true
+[alias]
+  hs = log --pretty='format:%C(yellow)%h %Creset- %C(black)%s %C(bold blue)[%an]%Creset %Cgreen%cr' --graph
+  up = !git pull --rebase $@ && git submodule update --init --recursive && git submodule update --remote --merge
+  yolo = push --force-with-lease
+[color]
+  ui = auto
