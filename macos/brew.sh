@@ -19,6 +19,7 @@ brew install \
   vim \
   yarn \
   zoxide \
-  zsh
+  zsh \
+  nvim
 
 brew install universal-ctags/universal-ctags/universal-ctags
