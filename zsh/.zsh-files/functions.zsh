@@ -8,8 +8,21 @@ is_in_git_repo() {
   git rev-parse HEAD > /dev/null 2>&1
 }
 
+not_bf_master() {
+  if [[ $(basename `git rev-parse --show-toplevel`) != "bitfreighter" ]]; then
+    return
+  fi
+
+  CURRENTBRANCH=$(git status|awk 'NR==1{print $3}')
+
+  if [[ $CURRENTBRANCH == "master" ]]; then
+      echo "You are on master you donkey!"
+      1 > /dev/null 2>&1
+  fi
+}
+
 ga() {
-  is_in_git_repo || return
+  is_in_git_repo && not_bf_master || return
 
   if [[ $# -eq 0 ]] ; then
     echo "git add ."
@@ -33,7 +46,7 @@ gb() {
 }
 
 gc() {
-  is_in_git_repo || return
+  is_in_git_repo && not_bf_master || return
 
   if [[ $# -eq 0 ]] ; then
     git commit --verbose
@@ -43,7 +56,7 @@ gc() {
 }
 
 gush() {
-  is_in_git_repo || return
+  is_in_git_repo && not_bf_master || return
   git push
 }
 
