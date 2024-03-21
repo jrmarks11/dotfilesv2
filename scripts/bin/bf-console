@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+cd /Users/johnmarks/Projects/bitfreighter/
+./scripts/prod/api/iex 1

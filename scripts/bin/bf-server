@@ -1,0 +1,4 @@
+#!/bin/bash
+
+set -e
+iex --name bfapi@127.0.0.1 --cookie secret -S mix phx.server
