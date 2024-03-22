@@ -20,7 +20,7 @@ map('n', ']<Space>', ':<C-u>put =repeat(nr2char(10),v:count1)<CR>', { silent = t
 
 map('n', '<Space>p', '<cmd>lua require("util.no_paste").paste()<CR>', { silent = true })
 
-map('x', ',p', [["_dP]])
+map('x', ',p', [["_dPgv=]])
 map({'n', 'v'}, ',d', [["_d]])
 
 map('n', '<Space><Tab>', '<C-^>')
