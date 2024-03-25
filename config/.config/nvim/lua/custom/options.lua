@@ -18,6 +18,7 @@ opt.shiftround = true
 opt.shiftwidth = 2
 opt.showmatch = true
 opt.sidescrolloff = 5
+opt.signcolumn = 'yes'
 opt.smartcase = true
 opt.splitbelow = true
 opt.splitright = true

@@ -35,8 +35,6 @@ export BAT_THEME="ansi"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
 
-command -v hub >/dev/null 2>&1 && { eval "$(hub alias -s)"; }
-
 if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval "$(ssh-agent -s)"
   ssh-add
