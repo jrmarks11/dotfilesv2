@@ -4,7 +4,6 @@ local builtin = require('telescope.builtin')
 
 map('n', '<Space>d', function() builtin.find_files({ cwd = '%:h' }) end)
 map('n', '<Space>g', builtin.git_status)
-map('n', '<Space>i', builtin.highlights)
 map('n', '<Space>r', function() telescope.extensions.recent_files.pick() end)
 map('n', '<Space>t', builtin.find_files)
 
