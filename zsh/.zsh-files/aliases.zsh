@@ -14,7 +14,7 @@ alias deploy_app_master='gh workflow run run_playbook.yml -f playbook=deploy_app
 alias gco='git checkout'
 alias dps='docker ps --format "table {{.Names}}\t{{.Status}}"'
 alias gd='git diff'
-alias gdm='git diff main'
+alias gdm='git diff master'
 alias gce='gh copilot explain'
 alias gcs='gh copilot suggest'
 alias ghs='git hs'
