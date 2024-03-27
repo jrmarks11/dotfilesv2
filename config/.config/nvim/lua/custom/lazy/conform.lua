@@ -7,6 +7,7 @@ return {
     conform.setup({
       formatters_by_ft = {
         css = { 'prettier' },
+        elixir = { 'mix' },
         eruby = { 'erb_format' },
         html = { 'prettier' },
         javascript = { 'prettier' },
