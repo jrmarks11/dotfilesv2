@@ -124,3 +124,14 @@ autocmd('FileType', {
     end
   end,
 })
+
+local terminal_group = augroup('Terminal', { clear = true })
+vim.api.nvim_create_autocmd({"TermOpen", "WinEnter"}, {
+  group = terminal_group,
+  pattern = "*",
+  callback = function()
+    if vim.bo.buftype == "terminal" then
+      vim.cmd("startinsert")
+    end
+  end,
+})
