@@ -27,6 +27,7 @@ return {
       indent = { enable = true },
       textobjects = {
         enable = true,
+        lookahead = true,
         select = {
           enable = true,
           keymaps = {
