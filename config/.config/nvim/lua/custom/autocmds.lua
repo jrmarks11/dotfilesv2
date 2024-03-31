@@ -53,7 +53,11 @@ autocmd({ 'InsertEnter', 'CmdlineEnter' }, {
 autocmd({ 'InsertLeave', 'CmdlineLeave' }, {
   group = fast_escape_group,
   pattern = '*',
-  command = 'set timeoutlen=1000',
+  callback = function()
+    if vim.bo.buftype ~= "terminal" then
+      vim.o.timeoutlen = 1000
+    end
+  end,
 })
 
 local last_cursor_group = augroup('LastCursor', { clear = true })
@@ -132,6 +136,7 @@ vim.api.nvim_create_autocmd({"TermOpen", "WinEnter"}, {
   callback = function()
     if vim.bo.buftype == "terminal" then
       vim.cmd("startinsert")
+      vim.o.timeoutlen=200
     end
   end,
 })
