@@ -13,6 +13,7 @@ return {
         javascript = { 'prettier' },
         json = { 'prettier' },
         jsonc = { 'prettier' },
+        python = { 'black' },
         markdown = { 'prettier' },
         ruby = { 'rubocop' },
         scss = { 'prettier' },
