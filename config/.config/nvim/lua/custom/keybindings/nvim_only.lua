@@ -25,6 +25,10 @@ map('x', '<Space>s', [[y:%s/<c-r><c-0>//g<left><left>]])
 map('n', ',r', '<cmd>lua require("util.rename_file").rename_file()<CR>')
 map({ 'n', 't' }, ',z', '<cmd>lua require("util.zoom").zoom_util()<CR>')
 
+vim.keymap.set('n', 'st', function()
+  vim.cmd('vsplit | terminal')
+end)
+
 map('n', 'gx', '<cmd>lua require("util.web").open()<CR>')
 
 map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
