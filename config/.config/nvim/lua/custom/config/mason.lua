@@ -69,6 +69,7 @@ require('mason-lspconfig').setup({
       local lspconfig = require('lspconfig')
       lspconfig.efm.setup {
         on_attach = lsp_on_attach,
+        root_dir = lspconfig.util.root_pattern("mix.exs", ".git", vim.fn.getcwd()),
         capabilities = capabilities,
         init_options = { documentFormatting = true },
         filetypes = { 'elixir' },

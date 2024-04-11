@@ -16,6 +16,7 @@ autocmd({ 'InsertLeave', 'TextChanged' }, {
     vim.cmd('silent! %s/\\s\\+$//e')
     vim.cmd('silent! wall')
   end,
+  nested = true,
 })
 autocmd('CursorHold', {
   group = auto_save_and_read_group,
