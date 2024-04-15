@@ -9,7 +9,7 @@ return {
     harpoon:setup({ settings = { save_on_toggle = true, }, })
 
     local map = vim.keymap.set
-    map('n', 'sn', function() harpoon:list():append() end)
+    map('n', 'sn', function() harpoon:list():add() end)
     map('n', 'sh', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
     map('n', 'sj', function() harpoon:list():select(1) end)
     map('n', 'sk', function() harpoon:list():select(2) end)
