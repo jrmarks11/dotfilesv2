@@ -18,7 +18,6 @@ map('n', '<Space><Space>', [[:'{,'}s/\<<c-r><c-w>\>//g<left><left>]])
 map('x', '<Space><Space>', [[y:'{,'}s/<c-r><c-0>//g<left><left>]])
 map('n', '<Space>e', [[:e <cfile><CR>]])
 map('n', '<Space>l', [[:Lazy<CR>]])
-map('n', '<Space>m', [[:Mason<CR>]])
 map('n', '<Space>s', [[:%s/\<<c-r><c-w>\>//g<left><left>]])
 map('x', '<Space>s', [[y:%s/<c-r><c-0>//g<left><left>]])
 
