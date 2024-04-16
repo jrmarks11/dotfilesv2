@@ -1,14 +1,16 @@
 return {
   'janko-m/vim-test',
+  dependencies = { 'jgdavey/tslime.vim' },
   event = { 'VeryLazy' },
 
   config = function()
     local g = vim.g
     local map = vim.keymap.set
 
-    g['test#strategy'] = 'neovim_sticky'
-    g['test#neovim#term_position'] = 'vertical'
     g['test#preserve_screen'] = 1
+    g['test#strategy'] = 'tslime'
+    g['tslime_always_current_session'] = 1
+    g['tslime_always_current_window'] = 1
 
     map('n', ',t', ':TestNearest<CR>')
     map('n', ',k', ':TestLast<CR>')
