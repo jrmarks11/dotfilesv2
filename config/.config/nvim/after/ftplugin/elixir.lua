@@ -4,7 +4,6 @@ local opt = vim.opt
 map('n', ',f', '<cmd>TestFile --trace<cr>')
 map('n', ',g', '<cmd>lua require("util.elixir").run_debug_test()<CR>')
 map('n', ',w', '<cmd>lua require("util.elixir").run_watch_test()<CR>')
-map('n', ',i', '"zyawoIO.inspect(<C-r>z)<Esc>')
 map('n', ',k', '<cmd>TestLast --trace<cr>')
 map('n', ',p', 'Orequire IEx; IEx.pry()<Esc>')
 map('n', ',t', '<cmd>TestNearest --trace<cr>')
