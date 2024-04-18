@@ -21,9 +21,14 @@ require('mason').setup()
 
 require('mason-lspconfig').setup({
   ensure_installed = {
-    'lua_ls',
-    'elixirls',
+    'bashls',
+    'cssls',
     'efm',
+    'elixirls',
+    'emmet_language_server',
+    'lua_ls',
+    'tsserver',
+    'yamlls',
   },
   handlers = {
     function(server_name) -- default handler (optional)
