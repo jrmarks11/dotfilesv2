@@ -15,7 +15,7 @@ function M.run_watch_test()
 
   local executable = g['test#elixir#exunit#executable']
   g['test#elixir#exunit#executable'] = 'mix test.watch'
-  vim.cmd('TestFile')
+  vim.cmd('TestFile --trace')
   g['test#elixir#exunit#executable'] = executable
 end
 
