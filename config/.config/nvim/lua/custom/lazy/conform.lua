@@ -11,14 +11,17 @@ return {
         eruby = { 'erb_format' },
         html = { 'prettier' },
         javascript = { 'prettier' },
+        javascriptreact = { 'prettier' },
         json = { 'prettier' },
         jsonc = { 'prettier' },
-        python = { 'black' },
         markdown = { 'prettier' },
+        python = { 'black' },
         ruby = { 'rubocop' },
         scss = { 'prettier' },
         typescript = { 'prettier' },
+        typescriptreact = { 'prettier' },
         yaml = { 'prettier' },
+        vue = { 'prettier' },
       },
     })
 
