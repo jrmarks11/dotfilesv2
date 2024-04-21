@@ -9,15 +9,15 @@ return {
 
     vim.keymap.set('n', ',q', function()
       require('trouble').toggle()
-    end)
+    end, { desc = 'Trouble' })
 
     vim.keymap.set('n', ']q', function()
       require('trouble').next({ skip_groups = true, jump = true });
-    end)
+    end, { desc = 'Next Trouble' })
 
     vim.keymap.set('n', '[q', function()
       require('trouble').previous({ skip_groups = true, jump = true });
-    end)
+    end, { desc = 'Previous Trouble' })
   end,
 
   cond = vim.fn.exists('g:vscode') == 0

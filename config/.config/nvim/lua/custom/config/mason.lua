@@ -12,9 +12,9 @@ local lsp_on_attach = function()
   local map = vim.keymap.set
   local opts = { buffer = true }
 
-  map('n', 'gd', lsp.buf.definition, opts)
-  map('n', '<C-k>', lsp.buf.hover, opts)
-  map('n', 'gr', lsp.buf.references, opts)
+  map('n', 'gd', lsp.buf.definition, opts, { desc = 'Go to definition' })
+  map('n', '<C-k>', lsp.buf.hover, opts, { desc = 'Show hover' })
+  map('n', 'gr', lsp.buf.references, opts, { desc = 'Show references' })
 end
 
 require('mason').setup()

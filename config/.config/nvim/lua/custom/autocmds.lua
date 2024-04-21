@@ -56,7 +56,7 @@ autocmd({ 'InsertLeave', 'CmdlineLeave' }, {
   pattern = '*',
   callback = function()
     if vim.bo.buftype ~= "terminal" then
-      vim.o.timeoutlen = 1000
+      vim.o.timeoutlen = 500
     end
   end,
 })
