@@ -20,8 +20,8 @@ map('n', ']<Space>', ':<C-u>put =repeat(nr2char(10),v:count1)<CR>', { silent = t
 
 map('n', '<Space>p', '<cmd>lua require("util.no_paste").paste()<CR>', { silent = true, desc = 'Paste without paste' })
 
-map('x', ',p', [["_dPgv=]])
-map({ 'n', 'v' }, ',d', [["_d]])
+map('x', ',p', [["_dPgv=]], { desc = 'Delete int _ and Paste' })
+map({ 'n', 'v' }, ',d', [["_d]], { desc = 'Delete into _ register' })
 
 map('n', '<Space><Tab>', '<C-^>', { desc = 'Switch to alternate buffer' })
 
