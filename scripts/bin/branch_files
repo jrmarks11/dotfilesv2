@@ -11,7 +11,9 @@ def main(arg)
 end
 
 def formatted_list(list)
-  list.sort.reverse.uniq
+  repo_root = git_repo_root
+  list.map { |file| File.expand_path(file, repo_root) }
+      .sort.reverse.uniq
 end
 
 def branch_modified_files
@@ -31,6 +33,10 @@ end
 def current_file(status)
   _first, *rest = *status.split("\t")
   rest.last
+end
+
+def git_repo_root
+  `git rev-parse --show-toplevel`.chomp
 end
 
 main ARGV[0]

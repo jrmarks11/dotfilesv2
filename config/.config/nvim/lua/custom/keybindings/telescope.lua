@@ -2,6 +2,7 @@ local telescope = require('telescope')
 local map = vim.keymap.set
 local builtin = require('telescope.builtin')
 
+map('n', '<Space>b', builtin.buffers, { desc = 'Buffers' })
 map('n', '<Space>d', function() builtin.find_files({ cwd = '%:h' }) end, { desc = 'Find files in current directory' })
 map('n', '<Space>g', builtin.git_status, { desc = 'Git status files' })
 map('n', '<Space>r', function() telescope.extensions.recent_files.pick() end, { desc = 'Recent files' })
@@ -27,3 +28,5 @@ end, { desc = 'Help tags' })
 map('n', '<Space>j', function()
   builtin.grep_string({ search = vim.fn.input('grep ❯ ') })
 end, { desc = 'Grep' })
+
+map('n', '<space>n', [[<cmd>lua require('util.branch_files').branch_files()<cr>]], { desc = 'Files modified in branch' })

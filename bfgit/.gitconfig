@@ -9,7 +9,7 @@
   diffFilter = delta --color-only
 [delta]
   navigate = true
-  features = line-numbers decorations
+  features = decorations
   syntax-theme = GitHub
 [merge]
   conflictStyle = diff3
