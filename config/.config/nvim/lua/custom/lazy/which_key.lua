@@ -8,5 +8,7 @@ return {
       [","] = { name = "Mappings for comma" },
       ["<space>"] = { name = "Mappings for space" }
     }, { mode = "n" })   -- Adjust the mode according to your needs
-  end
+  end,
+
+  cond = vim.fn.exists('g:vscode') == 0
 }
