@@ -8,20 +8,15 @@ autocmd('VimResized', {
   command = 'wincmd =',
 })
 
-local auto_save_and_read_group = augroup('AutoSaveAndRead', { clear = true })
+local auto_save_group = augroup('AutoSaveAndRead', { clear = true })
 autocmd({ 'InsertLeave', 'TextChanged' }, {
-  group = auto_save_and_read_group,
+  group = auto_save_group,
   pattern = '*',
   callback = function()
     vim.cmd('silent! %s/\\s\\+$//e')
     vim.cmd('silent! wall')
   end,
   nested = true,
-})
-autocmd('CursorHold', {
-  group = auto_save_and_read_group,
-  pattern = '*',
-  command = 'silent! checktime',
 })
 
 local cursor_line_group = augroup('CursorLine', { clear = true })
@@ -96,48 +91,4 @@ autocmd('VimEnter', {
       end, 10)
     end
   end
-})
-
-local qf_group = augroup('QuickFix', { clear = true })
-autocmd('QuickFixCmdPost', {
-  group = qf_group,
-  pattern = '*',
-  callback = function()
-    if #vim.fn.getqflist() > 0 then
-      vim.cmd('Trouble quickfix')
-    end
-    if #vim.fn.getloclist(0) > 0 then
-      vim.cmd('Trouble loclist')
-    end
-  end,
-})
-
-local function open_trouble_deferred()
-  vim.defer_fn(function()
-    vim.cmd('Trouble quickfix')
-    vim.cmd('cclose')
-  end, 10) -- Defer by 10 milliseconds
-end
-
-local trouble_quickfix_group = augroup('TroubleQuickFix', { clear = true })
-autocmd('FileType', {
-  group = trouble_quickfix_group,
-  pattern = 'qf',
-  callback = function()
-    if vim.bo.filetype ~= 'Trouble' then
-      open_trouble_deferred()
-    end
-  end,
-})
-
-local terminal_group = augroup('Terminal', { clear = true })
-vim.api.nvim_create_autocmd({"TermOpen", "WinEnter"}, {
-  group = terminal_group,
-  pattern = "*",
-  callback = function()
-    if vim.bo.buftype == "terminal" then
-      vim.cmd("startinsert")
-      vim.o.timeoutlen=200
-    end
-  end,
 })
