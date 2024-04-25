@@ -28,7 +28,6 @@
   "plenary.nvim": { "branch": "master", "commit": "5129a3693c482fcbc5ab99a7706ffc4360b995a0" },
   "splitjoin.vim": { "branch": "main", "commit": "9b0c30f61f13ba4800a11107648bdd748ad511ba" },
   "tokyonight.nvim": { "branch": "main", "commit": "67afeaf7fd6ebba000633e89f63c31694057edde" },
-  "trouble.nvim": { "branch": "main", "commit": "b9cf677f20bb2faa2dacfa870b084e568dca9572" },
   "tslime.vim": { "branch": "main", "commit": "9b2b99e409336584103b83c597fdb6234875ae25" },
   "vim-projectionist": { "branch": "master", "commit": "729f3630a4c19e52e1fd825802d2a1659daeaf48" },
   "vim-test": { "branch": "master", "commit": "eb5bd18d58a859e7d55d732d37e4e2b94fa50275" },

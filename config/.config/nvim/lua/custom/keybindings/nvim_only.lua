@@ -2,6 +2,9 @@ local map = vim.keymap.set
 
 map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic' })
 map('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic' })
+map('n', '[q', [[<cmd>cprev<cr>]], { desc = 'Go to previous quickfix' })
+map('n', ']q', [[<cmd>cnext<cr>]], { desc = 'Go to next quickfix' })
+map('n', ',q', [[<cmd>cclose<cr>]], { desc = 'Close quickfix' })
 
 map('c', '<C-n>', '<down>')
 map('c', '<C-p>', '<up>')
