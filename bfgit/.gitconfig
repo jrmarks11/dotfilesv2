@@ -10,7 +10,7 @@
 [delta]
   navigate = true
   features = decorations
-  syntax-theme = GitHub
+  syntax-theme = gruvbox-light
 [merge]
   conflictStyle = diff3
 [diff]
