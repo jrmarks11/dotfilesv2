@@ -4,22 +4,21 @@ brew install \
   antidote \
   asdf \
   bat \
+  docker-compose \
   eza \
   fd \
   fzf \
+  gh \
   git \
-  hub \
+  git-delta \
+  joshmedeski/sesh/sesh \
   jq \
+  nvim \
   pandoc \
-  postgresql \
   reattach-to-user-namespace \
   ripgrep \
   stow \
   tmux \
-  vim \
   yarn \
   zoxide \
-  zsh \
-  nvim
-
-brew install universal-ctags/universal-ctags/universal-ctags
+  zsh
