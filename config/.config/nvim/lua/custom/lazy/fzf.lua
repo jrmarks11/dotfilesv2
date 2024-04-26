@@ -12,12 +12,12 @@ return {
       },
       keymap = {
         builtin = {
-          ["<c-h>"]        = "toggle-help",
-          ["<c-d>"]    = "preview-page-down",
-          ["<c-u>"]      = "preview-page-up",
+          ["<c-h>"] = "toggle-help",
+          ["<c-d>"] = "preview-page-down",
+          ["<c-u>"] = "preview-page-up",
         },
         fzf = {
-          ["ctrl-q"]       = "toggle-all",
+          ["ctrl-q"] = "toggle-all",
         },
       },
     }
