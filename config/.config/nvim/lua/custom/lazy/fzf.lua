@@ -10,6 +10,16 @@ return {
           layout = 'vertical',
         },
       },
+      keymap = {
+        builtin = {
+          ["<c-h>"]        = "toggle-help",
+          ["<c-d>"]    = "preview-page-down",
+          ["<c-u>"]      = "preview-page-up",
+        },
+        fzf = {
+          ["ctrl-q"]       = "toggle-all",
+        },
+      },
     }
 
     require('custom.keybindings.fzf')
