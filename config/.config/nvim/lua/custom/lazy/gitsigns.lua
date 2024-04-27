@@ -32,7 +32,7 @@ return {
 
         map('n', 'sb', function() gs.blame_line({ full = true }) end, { desc = 'Git Blame' })
         map('n', 'sg', gs.stage_hunk, { desc = 'Stage hunk' })
-        map('n', 'sp', gs.preview_hunk, { desc = 'Preview hunk' })
+        map('n', 'sv', gs.preview_hunk, { desc = 'Preview hunk' })
         map('n', 'su', gs.reset_hunk, { desc = 'Undo hunk' })
       end,
       max_file_length = 100000,
