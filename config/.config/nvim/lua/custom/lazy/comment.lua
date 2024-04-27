@@ -9,12 +9,12 @@ return {
 
   config = function()
     require('ts_context_commentstring').setup {
-      ignore = '^$',
       enable_autocmd = false,
     }
 
     local prehook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
     require('Comment').setup {
+      ignore = '^$',
       pre_hook = prehook
     }
   end,
