@@ -9,6 +9,7 @@ return {
 
   config = function()
     require('ts_context_commentstring').setup {
+      ignore = '^$',
       enable_autocmd = false,
     }
 
