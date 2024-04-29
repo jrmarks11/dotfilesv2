@@ -43,5 +43,5 @@ map('n', 'Q', '@q')
 map('x', 'Q', [[:'<,'>normal @q<cr>]])
 map('x', '.', [[:normal .<cr>]])
 
-map('n', 's', '<nop>', { remap = true, desc = 'S is a leader key' })
+map({ 'n', 'x', 'v' }, 's', '<nop>', { remap = true, desc = 'S is a leader key' })
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')

@@ -10,11 +10,11 @@ local capabilities = vim.tbl_deep_extend(
 
 local lsp_on_attach = function()
   local map = vim.keymap.set
-  local opts = { buffer = true }
 
-  map('n', 'gd', lsp.buf.definition, opts, { desc = 'Go to definition' })
-  map('n', '<C-k>', lsp.buf.hover, opts, { desc = 'Show hover' })
-  map('n', 'gr', lsp.buf.references, opts, { desc = 'Show references' })
+  map('n', 'gd', lsp.buf.definition, { buffer = true, desc = 'LSP Go to definition' })
+  map('n', '<C-k>', lsp.buf.hover, { buffer = true, desc = 'LSP Show hover' })
+  map('n', 'gr', lsp.buf.references, { buffer = true, desc = 'LSP Show references' })
+  map('n', 'sr', lsp.buf.rename, { buffer = true, desc = 'LSP Rename' })
 end
 
 require('mason').setup()
