@@ -60,7 +60,7 @@ require('mason-lspconfig').setup({
         capabilities = capabilities,
         settings = {
           autoBuild = true,
-          dialyzerEnabled = false,
+          dialyzerEnabled = true,
           fetchDeps = false,
           enableTestLenses = false,
           suggestSpecs = false,
