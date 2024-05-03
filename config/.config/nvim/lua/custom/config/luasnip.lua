@@ -15,14 +15,14 @@ local elixir_snippets = {
 
   s(
     'test',
-    fmt('test \'{}\', %{{conn: conn}} do\n  {}\nend', {
+    fmt('test "{}", %{{context: context}} do\n  {}\nend', {
       i(1, 'name'),
       i(0, '# test')
     })
   ),
   s(
     'desc',
-    fmt('describe \'{}\' do\n  {}\nend', {
+    fmt('describe "{}" do\n  {}\nend', {
       i(1, 'test group subject'),
       i(0, '# description')
     })
