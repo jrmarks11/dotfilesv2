@@ -30,6 +30,7 @@ map('o', 'ae', function()
   cmd('execute "normal! m`"')
   cmd('keepjumps normal! ggVG')
 end, { silent = true, desc = 'Select entire file' })
+
 map('x', 'il', '<esc>^vg_', { silent = true, desc = 'Select inner line' })
 map('o', 'il', function()
   cmd('execute "normal! m`"')

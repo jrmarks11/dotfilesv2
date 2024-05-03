@@ -37,15 +37,6 @@ return {
             ['ik'] = '@block.inner',
           },
         },
-        swap = {
-          enable = true,
-          swap_next = {
-            ['s.'] = '@parameter.inner',
-          },
-          swap_previous = {
-            ['s,'] = '@parameter.inner',
-          },
-        },
       },
     })
   end,

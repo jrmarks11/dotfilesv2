@@ -7,6 +7,7 @@ return {
     require('tokyonight').setup({
       style = 'day',
     })
+
     vim.o.background = 'light'
     vim.cmd.colorscheme('tokyonight')
   end,

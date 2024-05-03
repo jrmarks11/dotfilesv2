@@ -74,6 +74,5 @@ local lua_snippets = {
   }),
 }
 
--- Add the snippets to LuaSnip
 ls.add_snippets('elixir', elixir_snippets)
 ls.add_snippets('lua', lua_snippets)
