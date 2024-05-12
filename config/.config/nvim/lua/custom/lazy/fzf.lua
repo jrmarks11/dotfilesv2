@@ -10,6 +10,9 @@ return {
           layout = 'vertical',
         },
       },
+      grep = {
+        rg_opts = "--column --line-number --no-heading --color=always --smart-case --hidden",
+      },
       keymap = {
         builtin = {
           ["<c-h>"] = "toggle-help",

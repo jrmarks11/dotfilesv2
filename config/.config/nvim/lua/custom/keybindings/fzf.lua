@@ -28,3 +28,6 @@ map("n", "<space>h", "<cmd>lua require('fzf-lua').help_tags()<CR>",
 
 map("n", "<space>j", "<cmd>lua require('fzf-lua').grep()<CR>",
   { silent = true, desc = "Fzf Grep Project" })
+
+map("n", "gr", "<cmd>lua require('fzf-lua').lsp_references()<CR>",
+  { silent = true, desc = "Fzf LSP References" })
