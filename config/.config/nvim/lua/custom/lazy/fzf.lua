@@ -21,6 +21,8 @@ return {
         },
         fzf = {
           ["ctrl-q"] = "toggle-all",
+          ["ctrl-d"] = "preview-page-down",
+          ["ctrl-u"] = "preview-page-up",
         },
       },
     }
