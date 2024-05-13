@@ -16,12 +16,12 @@ return {
     cond = vim.fn.exists('g:vscode') == 0
   },
   {
-    "catppuccin/nvim",
+    'catppuccin/nvim',
     lazy = false,
     priority = 1000,
-    name = "catppuccin",
+    name = 'catppuccin',
     config = function()
-      vim.g.catppuccin_flavour = "latte"
+      vim.g.catppuccin_flavour = 'latte'
       require('catppuccin').setup({
         integrations = {
           cmp = true,
@@ -32,20 +32,20 @@ return {
           native_lsp = {
             enabled = true,
             underlines = {
-              errors = { "undercurl" },
-              hints = { "undercurl" },
-              warnings = { "undercurl" },
-              information = { "undercurl" },
+              errors = { 'undercurl' },
+              hints = { 'undercurl' },
+              warnings = { 'undercurl' },
+              information = { 'undercurl' },
             },
           },
-          navic = { enabled = true, custom_bg = "lualine" },
+          navic = { enabled = true, custom_bg = 'lualine' },
           treesitter = true,
           treesitter_context = true,
           which_key = true,
         },
       })
-      vim.o.background = "light"
-      vim.cmd([[colorscheme catppuccin]])
+      vim.o.background = 'light'
+      vim.cmd.colorscheme('catppuccin')
     end,
   },
   {
@@ -54,16 +54,16 @@ return {
     -- priority = 1000,
     config = function()
       -- vim.o.background = 'light'
-      -- vim.cmd.colorscheme 'solarized'
+      -- vim.cmd.colorscheme('solarized')
     end,
   },
   {
-    "ellisonleao/gruvbox.nvim",
+    'ellisonleao/gruvbox.nvim',
     lazy = true,
     -- priority = 1000,
     config = function()
-      -- vim.o.background = "light"
-      -- vim.cmd([[colorscheme gruvbox]])
+      -- vim.o.background = 'light'
+      -- vim.cmd.colorscheme('gruvbox')
     end,
   },
 }

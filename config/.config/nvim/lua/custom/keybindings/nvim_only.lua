@@ -23,6 +23,7 @@ map('n', '<Space>e', [[:e <cfile><CR>]], { desc = 'Edit file under cursor' })
 map('n', '<Space>l', [[:Lazy<CR>]], { desc = 'Open Lazy' })
 map('n', '<Space>s', [[:%s/\<<c-r><c-w>\>//g<left><left>]], { desc = 'Replace in buffer' })
 map('x', '<Space>s', [[y:%s/<c-r><c-0>//g<left><left>]], { desc = 'Replace in buffer' })
+map('n', '<Space>c', '<cmd>lua require("util.colorscheme").picker()<CR>', { desc = 'Change colorscheme' })
 
 map('n', ',r', '<cmd>lua require("util.rename_file").rename_file()<CR>', { desc = 'Rename file' })
 map('n', 'gx', '<cmd>lua require("util.web").open()<CR>', { desc = 'Open URL under cursor' })
