@@ -1,13 +1,12 @@
-print("branch_files.lua loaded")
-
 local M = {}
 
 function M.branch_files()
-  require('fzf-lua').git_files({
-    prompt = 'BranchFiles❯ ',
-    cmd = 'git diff --name-only master',
-    previewer = "builtin",
-  })
+  require 'fzf-lua'.fzf_exec(
+    "git diff --name-only master", {
+      fzf_opts = {
+        ['--preview'] = "cd $(git rev-parse --show-toplevel) && git diff --color=always master -- {}",
+      },
+    })
 end
 
 return M
