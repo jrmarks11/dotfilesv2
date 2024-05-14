@@ -1,8 +1,8 @@
 # Dot files
 
-I use vim tmux and zsh.
+I use nvim tmux and zsh.
 
-My vim configuration relies heavily on fzf.
+My nvim configuration relies heavily on fzf.
 
 There are comments some places but this isn't very well documented.
 
@@ -11,11 +11,9 @@ There are comments some places but this isn't very well documented.
 * cd into it and run
 ```
 ./macos/brew.sh
-stow vim
+stow config
 stow tmux
 stow zsh ...
 ```
 Someday when if not lazy maybe ill make one script that does the whole
 install.
-
-

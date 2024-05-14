@@ -14,7 +14,6 @@ brew install \
   joshmedeski/sesh/sesh \
   jq \
   nvim \
-  pandoc \
   reattach-to-user-namespace \
   ripgrep \
   stow \
