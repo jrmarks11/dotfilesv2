@@ -89,3 +89,10 @@ gdl() {
     git diff "@~$@"
   fi
 }
+
+gpr() {
+    gh pr view --web
+    if [ $? -ne 0 ]; then
+        gh pr create --web
+    fi
+}
