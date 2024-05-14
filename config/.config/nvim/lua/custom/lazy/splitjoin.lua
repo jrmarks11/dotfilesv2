@@ -1,7 +1,7 @@
 return {
   {
     'echasnovski/mini.splitjoin',
-    version = '*';
+    version = '*',
     event = 'VeryLazy',
 
     config = function()

@@ -1,6 +1,7 @@
 return {
-  "ibhagwan/fzf-lua",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  'ibhagwan/fzf-lua',
+  event = 'VeryLazy',
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
 
   config = function()
     require('fzf-lua').setup {
@@ -11,18 +12,18 @@ return {
         },
       },
       grep = {
-        rg_opts = "--column --line-number --no-heading --color=always --smart-case --hidden",
+        rg_opts = '--column --line-number --no-heading --color=always --smart-case --hidden',
       },
       keymap = {
         builtin = {
-          ["<c-h>"] = "toggle-help",
-          ["<c-d>"] = "preview-page-down",
-          ["<c-u>"] = "preview-page-up",
+          ['<c-h>'] = 'toggle-help',
+          ['<c-d>'] = 'preview-page-down',
+          ['<c-u>'] = 'preview-page-up',
         },
         fzf = {
-          ["ctrl-q"] = "toggle-all",
-          ["ctrl-d"] = "preview-page-down",
-          ["ctrl-u"] = "preview-page-up",
+          ['ctrl-q'] = 'toggle-all',
+          ['ctrl-d'] = 'preview-page-down',
+          ['ctrl-u'] = 'preview-page-up',
         },
       },
     }
@@ -30,5 +31,5 @@ return {
     require('custom.keybindings.fzf')
   end,
 
-  cond = vim.fn.exists("g:vscode") == 0,
+  cond = vim.fn.exists('g:vscode') == 0,
 }

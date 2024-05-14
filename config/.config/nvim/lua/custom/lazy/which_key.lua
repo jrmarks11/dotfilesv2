@@ -1,7 +1,9 @@
 return {
-  "folke/which-key.nvim",
+  'folke/which-key.nvim',
+  event = { 'VeryLazy' },
+
   config = function()
-    require("which-key").setup {}
+    require('which-key').setup {}
   end,
 
   cond = vim.fn.exists('g:vscode') == 0

@@ -6,15 +6,6 @@ return {
   config = function()
     local gitsigns = require('gitsigns')
     gitsigns.setup({
-      signs = {
-        add = { hl = 'GitSignsAdd', text = '┃' },
-        change = { hl = 'GitSignsChange', text = '┃' },
-        delete = { hl = 'GitSignsDelete', text = '▁' },
-        topdelete = { hl = 'GitSignsDelete', text = '▔' },
-        changedelete = { hl = 'GitSignsChangeDelete', text = '┃' },
-        untracked = { hl = 'GitSignsUntracked', text = '┃' },
-      },
-
       on_attach = function()
         local gs = package.loaded.gitsigns
         local map = vim.keymap.set

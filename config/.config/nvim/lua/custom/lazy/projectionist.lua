@@ -3,7 +3,7 @@ return {
   event = 'VeryLazy',
 
   config = function()
-    vim.keymap.set('n', '<Space>a', ':A<CR>', { silent = true, desc = 'Go To Alternate file'})
+    vim.keymap.set('n', '<Space>a', ':A<CR>', { silent = true, desc = 'Go To Alternate file' })
 
     vim.g.projectionist_heuristics = {
       ['config/routes.rb'] = {
@@ -20,6 +20,7 @@ return {
           ['alternate'] = 'app/controllers/{dirname}_controller.rb',
         },
       },
+
       ['mix.exs'] = {
         ['lib/*.ex'] = {
           ['type'] = 'lib',

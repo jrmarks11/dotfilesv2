@@ -17,18 +17,18 @@ map('x', ',,', function()
   vscode.call('editor.action.formatSelection')
 end)
 
-map('n', '<space>t', function()
+map('n', '<Space>t', function()
   vscode.call('workbench.action.quickOpen')
 end)
 
-map({ 'x', 'n' }, '<space><space>', function()
+map({ 'x', 'n' }, '<Space><Space>', function()
   vscode.call('editor.action.startFindReplaceAction')
 end)
 
-map('n', '<space>r', function()
+map('n', '<Space>r', function()
   vscode.call('workbench.action.showAllEditorsByMostRecentlyUsed')
 end)
 
-map('n', '<space>d', function()
+map('n', '<Space>d', function()
   vscode.call('workbench.files.action.showActiveFileInExplorer')
 end)

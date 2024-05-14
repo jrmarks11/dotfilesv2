@@ -1,7 +1,7 @@
 return {
   'ruifm/gitlinker.nvim',
-  dependencies = { 'nvim-lua/plenary.nvim' },
   event = { 'VeryLazy' },
+  dependencies = { 'nvim-lua/plenary.nvim' },
 
   config = function()
     require('gitlinker').setup({
@@ -9,4 +9,5 @@ return {
     })
   end,
 
+  cond = vim.fn.exists('g:vscode') == 0
 }

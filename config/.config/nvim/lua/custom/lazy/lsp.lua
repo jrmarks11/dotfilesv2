@@ -18,7 +18,7 @@ return {
     require('custom.config.mason')
     require('custom.config.cmp')
     require('custom.config.diagnostic')
-    require('custom.config.luasnip')
+    require('custom.config.snippets')
   end,
 
   cond = vim.fn.exists('g:vscode') == 0

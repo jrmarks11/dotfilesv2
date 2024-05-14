@@ -3,7 +3,7 @@ return {
   event = 'VeryLazy',
 
   dependencies = {
-    "JoosepAlviste/nvim-ts-context-commentstring",
+    'JoosepAlviste/nvim-ts-context-commentstring',
     'nvim-treesitter/nvim-treesitter',
   },
 
@@ -12,7 +12,7 @@ return {
       enable_autocmd = false,
     }
 
-    local prehook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
+    local prehook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook()
 
     require('Comment').setup {
       ignore = '^$',

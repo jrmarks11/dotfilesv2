@@ -15,7 +15,7 @@ local elixir_snippets = {
 
   s(
     'test',
-    fmt('test "{}", %{{context: context}} do\n  {}\nend', {
+    fmt('test "{}", %{{context: con}} do\n  {}\nend', {
       i(1, 'name'),
       i(0, '# test')
     })

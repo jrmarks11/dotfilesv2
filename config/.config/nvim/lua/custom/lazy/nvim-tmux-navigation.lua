@@ -3,11 +3,11 @@ return {
   lazy = false,
 
   config = function()
-    require'nvim-tmux-navigation'.setup {
+    require 'nvim-tmux-navigation'.setup {
       disable_when_zoomed = true, -- defaults to false
     }
 
-    local ntn = require'nvim-tmux-navigation'
+    local ntn = require 'nvim-tmux-navigation'
     local map = vim.keymap.set
     map({ 'n', 'i', 'c', 'x', 't' }, '<C-j>h', ntn.NvimTmuxNavigateLeft)
     map({ 'n', 'i', 'c', 'x', 't' }, '<C-j>j', ntn.NvimTmuxNavigateDown)

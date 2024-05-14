@@ -47,6 +47,8 @@ return {
       vim.o.background = 'light'
       vim.cmd.colorscheme('catppuccin')
     end,
+
+    cond = vim.fn.exists('g:vscode') == 0
   },
   {
     'maxmx03/solarized.nvim',
@@ -56,6 +58,8 @@ return {
       -- vim.o.background = 'light'
       -- vim.cmd.colorscheme('solarized')
     end,
+
+    cond = vim.fn.exists('g:vscode') == 0
   },
   {
     'ellisonleao/gruvbox.nvim',
@@ -65,5 +69,7 @@ return {
       -- vim.o.background = 'light'
       -- vim.cmd.colorscheme('gruvbox')
     end,
+
+    cond = vim.fn.exists('g:vscode') == 0
   },
 }
