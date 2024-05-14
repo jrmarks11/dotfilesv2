@@ -74,14 +74,6 @@ tm() {
   tmux $change -t "$session" || tm "$(whoami)"
 }
 
-my_vim() {
-  if [[ "$#" == "0" ]]; then
-    vim -c "call util#last_buffer(0)"
-  else
-    vim "$@"
-  fi
-}
-
 gdl() {
   if [[ "$#" == "0" ]]; then
     git diff @~

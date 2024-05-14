@@ -2,12 +2,6 @@
 
 source ~/.zsh-files/functions.zsh
 
-# if [[ "$TERM_PROGRAM" != "vscode" ]]; then
-#   if [[ -z "$TMUX" ]]; then
-#     exec tmux
-#   fi
-# fi
-
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.zsh_history
