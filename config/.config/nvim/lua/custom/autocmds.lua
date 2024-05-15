@@ -13,8 +13,11 @@ autocmd({ 'InsertLeave', 'TextChanged' }, {
   group = auto_save_group,
   pattern = '*',
   callback = function()
-    vim.cmd('silent! %s/\\s\\+$//e')
-    vim.cmd('silent! wall')
+    local ft = vim.bo.filetype
+    if ft ~= 'sql' and ft ~= 'dbui' then
+      vim.cmd('silent! %s/\\s\\+$//e')
+      vim.cmd('silent! wall')
+    end
   end,
   nested = true,
 })
