@@ -18,6 +18,7 @@ return {
         'json',
         'regex',
         'ruby',
+        'sql',
         'tsx',
         'typescript',
         'yaml',
