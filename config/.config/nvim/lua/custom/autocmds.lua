@@ -52,11 +52,7 @@ autocmd({ 'InsertEnter', 'CmdlineEnter' }, {
 autocmd({ 'InsertLeave', 'CmdlineLeave' }, {
   group = fast_escape_group,
   pattern = '*',
-  callback = function()
-    if vim.bo.buftype ~= "terminal" then
-      vim.o.timeoutlen = 500
-    end
-  end,
+  command = 'set timeoutlen=500',
 })
 
 local last_cursor_group = augroup('LastCursor', { clear = true })

@@ -4,7 +4,7 @@ return {
 
   config = function()
     require 'nvim-tmux-navigation'.setup {
-      disable_when_zoomed = true, -- defaults to false
+      disable_when_zoomed = true,
     }
 
     local ntn = require 'nvim-tmux-navigation'
