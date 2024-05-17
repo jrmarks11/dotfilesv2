@@ -1,5 +1,12 @@
 #!/usr/bin/env zsh
 
+stty start undef
+stty stop undef
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 source ~/.zsh-files/functions.zsh
 
 HISTSIZE=10000000
@@ -14,14 +21,12 @@ setopt share_history
 
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-stty start undef
-stty stop undef
 setopt noflowcontrol
 
 autoload -Uz compinit
-compinit
+compinit -C
 
-[ -f $(brew --prefix asdf)/libexec/asdf.sh ] && . $(brew --prefix asdf)/libexec/asdf.sh
+[ -f /opt/homebrew/asdf/libexec/asdf.sh ] && . opt/homebrew/asdf/libexec/asdf.sh
 
 export BAT_THEME="ansi"
 
@@ -36,14 +41,16 @@ fi
 
 eval "$(zoxide init zsh)"
 
-source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
-source <(antidote init)
-antidote bundle < ~/.zsh-files/plugins.txt
-antidote bundle zdharma-continuum/fast-syntax-highlighting
+[ -f  /opt/homebrew/opt/zinit/zinit.zsh ] && . /opt/homebrew/opt/zinit/zinit.zsh
 
-prompt_newline='%666v'
-PROMPT=" $PROMPT"
+zinit ice wait"0" lucid
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-history-substring-search
+zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma-continuum/fast-syntax-highlighting
 
 source ~/.zsh-files/aliases.zsh
 source ~/.zsh-files/keybindings.zsh
 [ -f ~/.zsh-local ] && source ~/.zsh-local
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
