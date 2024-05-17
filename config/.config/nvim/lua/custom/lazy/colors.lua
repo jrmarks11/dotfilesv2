@@ -9,7 +9,6 @@ return {
         style = 'day',
       })
 
-      -- vim.o.background = 'light'
       -- vim.cmd.colorscheme('tokyonight')
     end,
 
@@ -44,7 +43,6 @@ return {
           which_key = true,
         },
       })
-      vim.o.background = 'light'
       vim.cmd.colorscheme('catppuccin')
     end,
 
@@ -55,7 +53,6 @@ return {
     lazy = true,
     -- priority = 1000,
     config = function()
-      -- vim.o.background = 'light'
       -- vim.cmd.colorscheme('solarized')
     end,
 
@@ -66,7 +63,6 @@ return {
     lazy = true,
     -- priority = 1000,
     config = function()
-      -- vim.o.background = 'light'
       -- vim.cmd.colorscheme('gruvbox')
     end,
 
