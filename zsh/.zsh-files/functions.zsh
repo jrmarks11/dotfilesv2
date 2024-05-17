@@ -44,6 +44,10 @@ gb() {
     git branch "$@"
   fi
 }
+_JM_git_branch_names () {
+  compadd "${(@)${(f)$(git branch)}#??}"
+}
+compdef _JM_git_branch_names gb
 
 gc() {
   is_in_git_repo && not_bf_master || return

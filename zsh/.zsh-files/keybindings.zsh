@@ -24,16 +24,3 @@ bindkey '^[^?' backward-kill-dir
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
-
-fzf_git_checkout() {
-    local branches=$(git branch --all | grep -v HEAD | sed 's/.* //' | sed 's/remotes\///' | sort -u)
-    local branch=$(echo "$branches" | fzf +m --height 40% --border)
-    if [[ -n "$branch" ]]; then
-        LBUFFER+="$branch"
-        zle redisplay
-    fi
-}
-zstyle ':zle:fzf_git_insert_branch' ignored-widgets 'yes'
-zle -N fzf_git_checkout
-bindkey -r '^G'
-bindkey '^G' fzf_git_checkout
