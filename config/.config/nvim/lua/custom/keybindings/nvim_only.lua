@@ -22,4 +22,3 @@ map('n', '<leader>s', [[:%s/\<<c-r><c-w>\>//g<left><left>]], { desc = 'Replace i
 map('x', '<leader>s', [[y:%s/<c-r><c-0>//g<left><left>]], { desc = 'Replace in buffer' })
 
 map('n', ',r', [[<cmd>lua require('util.rename_file').rename_file()<CR>]], { desc = 'Rename file' })
-map('n', 'gx', [[<cmd>lua require('util.web').open()<CR>]], { desc = 'Open URL under cursor' })
