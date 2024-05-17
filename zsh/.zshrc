@@ -24,7 +24,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 setopt noflowcontrol
 
 autoload -Uz compinit
-compinit -C
+compinit -i -C
 
 [ -f /opt/homebrew/asdf/libexec/asdf.sh ] && . opt/homebrew/asdf/libexec/asdf.sh
 
@@ -45,9 +45,13 @@ eval "$(zoxide init zsh)"
 
 zinit ice wait"0" lucid
 zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit ice wait"1" lucid
 zinit light zsh-users/zsh-completions
+zinit ice wait"1" lucid
 zinit light zsh-users/zsh-history-substring-search
+zinit ice wait"1" lucid
 zinit light zsh-users/zsh-autosuggestions
+zinit ice wait"2" lucid
 zinit light zdharma-continuum/fast-syntax-highlighting
 
 source ~/.zsh-files/aliases.zsh
