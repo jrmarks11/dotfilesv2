@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 brew install \
-  antidote \
   asdf \
   bat \
   docker-compose \
@@ -20,4 +19,5 @@ brew install \
   tmux \
   yarn \
   zoxide \
+  zinit \
   zsh
