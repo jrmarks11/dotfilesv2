@@ -1,9 +1,7 @@
-local ls = require 'luasnip' -- Load the LuaSnip package
+local ls = require 'luasnip'
 local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
-
-local fmt = require('luasnip.extras.fmt').fmt
 
 local elixir_snippets = {
   s('p', { t '|> ', i(0) }),
@@ -12,51 +10,9 @@ local elixir_snippets = {
   s('ne', { t '=~ ', i(0) }),
   s('ok', { t '{:ok, ', i(1), t ' }' }),
   s('err', { t '{:error, ', i(1), t ' }' }),
-
-  s(
-    'test',
-    fmt('test "{}", %{{context: con}} do\n  {}\nend', {
-      i(1, 'name'),
-      i(0, '# test'),
-    })
-  ),
-  s(
-    'desc',
-    fmt('describe "{}" do\n  {}\nend', {
-      i(1, 'test group subject'),
-      i(0, '# description'),
-    })
-  ),
-  s(
-    'def',
-    fmt('def {}({}) do\n  {}\nend', {
-      i(1, 'name'),
-      i(2, 'params'),
-      i(0, '# function'),
-    })
-  ),
-  s(
-    'defp',
-    fmt('defp {}({}) do\n  {}\nend', {
-      i(1, 'name'),
-      i(2, 'params'),
-      i(0, '# function'),
-    })
-  ),
 }
 
 local lua_snippets = {
-  ls.s('f', {
-    ls.t 'local function ',
-    ls.i(1),
-    ls.t '(',
-    ls.i(2),
-    ls.t ')',
-    ls.t { '', '\t' },
-    ls.i(0),
-    ls.t { '', 'end' },
-  }),
-
   ls.s('mf', {
     ls.t 'function M.',
     ls.i(1),
