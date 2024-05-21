@@ -15,10 +15,25 @@ map({ 'n', 'x' }, ';', ':')
 
 map('n', 'K', 'i<cr><esc>^mwgk:silent! s/\\v +$//<cr>:noh<cr>`w', { silent = true })
 
-map('n', '[<leader>', ':<C-u>put! =repeat(nr2char(10),v:count1)<CR>', { silent = true, desc = 'Insert empty lines above' })
-map('n', ']<leader>', ':<C-u>put =repeat(nr2char(10),v:count1)<CR>', { silent = true, desc = 'Insert empty lines below' })
+map(
+  'n',
+  '[<leader>',
+  ':<C-u>put! =repeat(nr2char(10),v:count1)<CR>',
+  { silent = true, desc = 'Insert empty lines above' }
+)
+map(
+  'n',
+  ']<leader>',
+  ':<C-u>put =repeat(nr2char(10),v:count1)<CR>',
+  { silent = true, desc = 'Insert empty lines below' }
+)
 
-map('n', '<leader>p', [[<cmd>lua require('util.no_paste').paste()<CR>]], { silent = true, desc = 'Paste without paste' })
+map(
+  'n',
+  '<leader>p',
+  [[<cmd>lua require('util.no_paste').paste()<CR>]],
+  { silent = true, desc = 'Paste without paste' }
+)
 
 map('x', ',p', [["_dPgv=]], { desc = 'Delete int _ and Paste' })
 map({ 'n', 'v' }, ',d', [["_d]], { desc = 'Delete into _ register' })

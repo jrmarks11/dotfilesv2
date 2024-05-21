@@ -9,7 +9,10 @@ function M.branch_files()
       type = 'cmd',
       fn = function(items)
         local file = require('fzf-lua').path.entry_to_file(items[1])
-        return string.format('cd $(git rev-parse --show-toplevel) && git diff --color=always master -- %s | delta', file.path)
+        return string.format(
+          'cd $(git rev-parse --show-toplevel) && git diff --color=always master -- %s | delta',
+          file.path
+        )
       end,
     },
   }

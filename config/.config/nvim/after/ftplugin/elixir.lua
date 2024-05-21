@@ -9,5 +9,5 @@ map('n', ',p', 'Orequire IEx; IEx.pry()<Esc>', { desc = 'Insert IEx.pry()' })
 map('n', ',t', '<cmd>TestNearest --trace<cr>', { desc = 'TestNearest --trace' })
 map('n', ',y', ':g/^\\W*require IEx.*IEx.pry()$/d<CR>', { desc = 'Remove IEx.pry()' })
 
-opt.colorcolumn = { 101, 102 }
-opt.textwidth = 100
+opt.colorcolumn = { 121, 122 }
+opt.textwidth = 120

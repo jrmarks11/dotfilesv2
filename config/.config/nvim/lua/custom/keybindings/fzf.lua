@@ -1,11 +1,21 @@
 local map = vim.keymap.set
 map('n', '<leader>b', [[<cmd>lua require('fzf-lua').buffers()<CR>]], { silent = true, desc = 'Fzf Buffers' })
 
-map('n', '<leader>d', [[<cmd>lua require('fzf-lua').files({cwd = '%:h'})<CR>]], { silent = true, desc = 'Fzf Files CWD' })
+map(
+  'n',
+  '<leader>d',
+  [[<cmd>lua require('fzf-lua').files({cwd = '%:h'})<CR>]],
+  { silent = true, desc = 'Fzf Files CWD' }
+)
 
 map('n', '<leader>g', [[<cmd>lua require('fzf-lua').git_status()<CR>]], { silent = true, desc = 'Fzf Git Stautus' })
 
-map('n', '<leader>r', [[<cmd>lua require('fzf-lua').oldfiles({cwd_only = true})<CR>]], { silent = true, desc = 'Fzf Oldfiles' })
+map(
+  'n',
+  '<leader>r',
+  [[<cmd>lua require('fzf-lua').oldfiles({cwd_only = true})<CR>]],
+  { silent = true, desc = 'Fzf Oldfiles' }
+)
 
 map('n', '<leader>t', [[<cmd>lua require('fzf-lua').files()<CR>]], { silent = true, desc = 'Fzf Files' })
 
