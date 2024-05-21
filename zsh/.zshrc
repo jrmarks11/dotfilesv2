@@ -20,8 +20,8 @@ setopt share_history
 
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-[ -f /opt/homebrew/asdf/libexec/asdf.sh ] && . opt/homebrew/asdf/libexec/asdf.sh
-[ -f  /opt/homebrew/opt/zinit/zinit.zsh ] && . /opt/homebrew/opt/zinit/zinit.zsh
+[ -f $(brew --prefix asdf)/libexec/asdf.sh ] && source $(brew --prefix asdf)/libexec/asdf.sh
+[ -f  $(brew --prefix zinit)/zinit.zsh ] && source $(brew --prefix zinit)/zinit.zsh
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 
