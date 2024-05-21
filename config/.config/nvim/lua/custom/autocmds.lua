@@ -15,8 +15,8 @@ autocmd({ 'InsertLeave', 'TextChanged' }, {
   callback = function()
     local ft = vim.bo.filetype
     if ft ~= 'sql' and ft ~= 'dbui' then
-      vim.cmd('silent! %s/\\s\\+$//e')
-      vim.cmd('silent! wall')
+      vim.cmd 'silent! %s/\\s\\+$//e'
+      vim.cmd 'silent! wall'
     end
   end,
   nested = true,
@@ -60,10 +60,8 @@ autocmd('BufReadPost', {
   group = last_cursor_group,
   pattern = '*',
   callback = function()
-    if vim.bo.filetype ~= 'gitcommit'
-        and vim.fn.line("'\"") > 0
-        and vim.fn.line("'\"") <= vim.fn.line('$') then
-      vim.cmd('normal g`"')
+    if vim.bo.filetype ~= 'gitcommit' and vim.fn.line '\'"' > 0 and vim.fn.line '\'"' <= vim.fn.line '$' then
+      vim.cmd 'normal g`"'
     end
   end,
 })
@@ -89,5 +87,5 @@ autocmd('VimEnter', {
         end
       end, 10)
     end
-  end
+  end,
 })

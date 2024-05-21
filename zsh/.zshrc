@@ -4,7 +4,7 @@ stty start undef
 stty stop undef
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 HISTSIZE=10000000
@@ -30,8 +30,8 @@ export FZF_CTRL_T_COMMAND='fd --type f --type d --hidden --follow --exclude .git
 export BAT_THEME="ansi"
 
 if [ -z "$SSH_AUTH_SOCK" ] ; then
-  eval "$(ssh-agent -s)"
-  ssh-add
+    eval "$(ssh-agent -s)"
+    ssh-add
 fi
 
 autoload -Uz compinit

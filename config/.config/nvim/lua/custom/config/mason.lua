@@ -1,12 +1,7 @@
 local lsp = vim.lsp
-local cmp_lsp = require('cmp_nvim_lsp')
+local cmp_lsp = require 'cmp_nvim_lsp'
 
-local capabilities = vim.tbl_deep_extend(
-  'force',
-  {},
-  lsp.protocol.make_client_capabilities(),
-  cmp_lsp.default_capabilities()
-)
+local capabilities = vim.tbl_deep_extend('force', {}, lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
 
 local lsp_on_attach = function()
   local map = vim.keymap.set
@@ -19,27 +14,17 @@ end
 
 require('mason').setup()
 
-require('mason-lspconfig').setup({
-  ensure_installed = {
-    'bashls',
-    'cssls',
-    'efm',
-    'elixirls',
-    'emmet_language_server',
-    'lua_ls',
-    'tsserver',
-    'yamlls',
-  },
+require('mason-lspconfig').setup {
   handlers = {
     function(server_name) -- default handler (optional)
       require('lspconfig')[server_name].setup {
         on_attach = lsp_on_attach,
-        capabilities = capabilities
+        capabilities = capabilities,
       }
     end,
 
     ['lua_ls'] = function()
-      local lspconfig = require('lspconfig')
+      local lspconfig = require 'lspconfig'
       lspconfig.lua_ls.setup {
         on_attach = lsp_on_attach,
         capabilities = capabilities,
@@ -47,14 +32,14 @@ require('mason-lspconfig').setup({
           Lua = {
             diagnostics = {
               globals = { 'vim', 'it', 'describe', 'before_each', 'after_each' },
-            }
-          }
-        }
+            },
+          },
+        },
       }
     end,
 
     ['elixirls'] = function()
-      local lspconfig = require('lspconfig')
+      local lspconfig = require 'lspconfig'
       lspconfig.elixirls.setup {
         on_attach = lsp_on_attach,
         capabilities = capabilities,
@@ -64,12 +49,12 @@ require('mason-lspconfig').setup({
           fetchDeps = false,
           enableTestLenses = false,
           suggestSpecs = false,
-        }
+        },
       }
     end,
 
     ['efm'] = function()
-      local lspconfig = require('lspconfig')
+      local lspconfig = require 'lspconfig'
       lspconfig.efm.setup {
         on_attach = lsp_on_attach,
         root_dir = lspconfig.util.root_pattern('mix.exs', '.git', vim.fn.getcwd()),
@@ -83,12 +68,12 @@ require('mason-lspconfig').setup({
               {
                 lintCommand = 'mix credo suggest --format=flycheck --read-from-stdin',
                 lintStdin = true,
-                lintFormats = { '%f:%l:%c: %m' }
-              }
-            }
-          }
-        }
+                lintFormats = { '%f:%l:%c: %m' },
+              },
+            },
+          },
+        },
       }
     end,
-  }
-})
+  },
+}

@@ -5,12 +5,12 @@ return {
     event = 'VeryLazy',
 
     config = function()
-      require('mini.splitjoin').setup({
+      require('mini.splitjoin').setup {
         mappings = {
           toggle = 'ss',
-        }
-      })
-    end
+        },
+      }
+    end,
   },
   {
     'AndrewRadev/splitjoin.vim',
@@ -19,6 +19,6 @@ return {
     init = function()
       vim.keymap.set('n', 'sj', '<cmd>SplitjoinJoin<cr>')
       vim.keymap.set('n', 'sk', '<cmd>SplitjoinSplit<cr>')
-    end
-  }
+    end,
+  },
 }

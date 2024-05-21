@@ -1,12 +1,12 @@
 local M = {}
 
 function M.ensure_directory_exists()
-  local required_dir = vim.fn.expand('%:h')
+  local required_dir = vim.fn.expand '%:h'
 
   print(vim.fn.isdirectory(required_dir))
   if vim.fn.isdirectory(required_dir) ~= 1 then
     local confirm_msg = string.format("Directory '%s' doesn't exist. Create it?", required_dir)
-    local confirm = vim.fn.confirm(confirm_msg, "&Yes\n&No", 1)
+    local confirm = vim.fn.confirm(confirm_msg, '&Yes\n&No', 1)
 
     print(confirm)
 

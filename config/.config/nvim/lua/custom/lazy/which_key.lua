@@ -6,5 +6,5 @@ return {
     require('which-key').setup {}
   end,
 
-  cond = vim.fn.exists('g:vscode') == 0
+  cond = vim.fn.exists 'g:vscode' == 0,
 }

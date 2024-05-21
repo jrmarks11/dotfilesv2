@@ -4,12 +4,12 @@ return {
   dependencies = {
     {
       'tpope/vim-dadbod',
-      lazy = true
+      lazy = true,
     },
     {
       'kristijanhusak/vim-dadbod-completion',
       ft = { 'sql', 'mysql', 'plsql' },
-      lazy = true
+      lazy = true,
     },
   },
 
@@ -22,7 +22,7 @@ return {
 
   init = function()
     vim.g.db_ui_use_nerd_fonts = 1
-    vim.g.db_ui_save_location = os.getenv('HOME') .. '/Projects/sql/'
+    vim.g.db_ui_save_location = os.getenv 'HOME' .. '/Projects/sql/'
     vim.keymap.set('n', 'sq', '<cmd>DBUIToggle<CR>', { desc = 'Toggle DBUI' })
   end,
 }

@@ -15,11 +15,11 @@ return {
   },
 
   config = function()
-    require('custom.config.mason')
-    require('custom.config.cmp')
-    require('custom.config.diagnostic')
-    require('custom.config.snippets')
+    require 'custom.config.mason'
+    require 'custom.config.cmp'
+    require 'custom.config.diagnostic'
+    require 'custom.config.snippets'
   end,
 
-  cond = vim.fn.exists('g:vscode') == 0
+  cond = vim.fn.exists 'g:vscode' == 0,
 }

@@ -28,8 +28,8 @@ return {
       },
     }
 
-    require('custom.keybindings.fzf')
+    require 'custom.keybindings.fzf'
   end,
 
-  cond = vim.fn.exists('g:vscode') == 0,
+  cond = vim.fn.exists 'g:vscode' == 0,
 }

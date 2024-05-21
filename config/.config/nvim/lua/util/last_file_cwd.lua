@@ -21,7 +21,7 @@ function M.last_buffer()
   if #sorted > 0 then
     vim.cmd('e ' .. sorted[1])
   else
-    vim.cmd('e .')
+    vim.cmd 'e .'
   end
 end
 

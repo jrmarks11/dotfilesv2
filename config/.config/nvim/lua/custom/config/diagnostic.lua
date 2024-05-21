@@ -1,4 +1,4 @@
-vim.diagnostic.config({
+vim.diagnostic.config {
   float = {
     focusable = false,
     style = 'minimal',
@@ -7,4 +7,4 @@ vim.diagnostic.config({
     header = '',
     prefix = '',
   },
-})
+}

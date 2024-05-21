@@ -1,89 +1,89 @@
 #!/usr/bin/env zsh
 
 fzf_down() {
-  fzf --height 50% "$@" --border
+    fzf --height 50% "$@" --border
 }
 
 is_in_git_repo() {
-  git rev-parse HEAD > /dev/null 2>&1
+    git rev-parse HEAD > /dev/null 2>&1
 }
 
 not_bf_master() {
-  if [[ $(basename `git rev-parse --show-toplevel`) != "bitfreighter" ]]; then
-    return
-  fi
+    if [[ $(basename `git rev-parse --show-toplevel`) != "bitfreighter" ]]; then
+        return
+    fi
 
-  CURRENTBRANCH=$(git status|awk 'NR==1{print $3}')
+    CURRENTBRANCH=$(git status|awk 'NR==1{print $3}')
 
-  if [[ $CURRENTBRANCH == "master" ]]; then
-      echo "You are on master you donkey!"
-      1 > /dev/null 2>&1
-  fi
+    if [[ $CURRENTBRANCH == "master" ]]; then
+        echo "You are on master you donkey!"
+        1 > /dev/null 2>&1
+    fi
 }
 
 ga() {
-  is_in_git_repo && not_bf_master || return
+    is_in_git_repo && not_bf_master || return
 
-  if [[ $# -eq 0 ]] ; then
-    echo "git add ."
-    git add .
-  else
-    echo "git add $@"
-    git add "$@"
-  fi
+    if [[ $# -eq 0 ]] ; then
+        echo "git add ."
+        git add .
+    else
+        echo "git add $@"
+        git add "$@"
+    fi
 }
 
 gb() {
-  is_in_git_repo || return
+    is_in_git_repo || return
 
-  if [[ $# -eq 0 ]] ; then
-    git branch -a --color=always | grep -v '/HEAD\s' | sort |
-      fzf_down --ansi --multi --tac | sed 's/^..//' | cut -d' ' -f1 |
-      sed 's#^remotes/origin/##' | xargs git checkout
-  else
-    git branch "$@"
-  fi
+    if [[ $# -eq 0 ]] ; then
+        git branch -a --color=always | grep -v '/HEAD\s' | sort |
+        fzf_down --ansi --multi --tac | sed 's/^..//' | cut -d' ' -f1 |
+        sed 's#^remotes/origin/##' | xargs git checkout
+    else
+        git branch "$@"
+    fi
 }
 _JM_git_branch_names () {
-  compadd "${(@)${(f)$(git branch)}#??}"
+    compadd "${(@)${(f)$(git branch)}#??}"
 }
 compdef _JM_git_branch_names gb
 
 gc() {
-  is_in_git_repo && not_bf_master || return
+    is_in_git_repo && not_bf_master || return
 
-  if [[ $# -eq 0 ]] ; then
-    git commit --verbose
-  else
-    git commit -m "$1"
-  fi
+    if [[ $# -eq 0 ]] ; then
+        git commit --verbose
+    else
+        git commit -m "$1"
+    fi
 }
 
 gush() {
-  is_in_git_repo && not_bf_master || return
-  git push
+    is_in_git_repo && not_bf_master || return
+    git push
 }
 
 tm() {
-  [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
-  if [ "$1" ]; then
-     tmux $change -t "$1" 2>/dev/null ||
-       (tmux new-session -d -s "$1" && tmux $change -t "$1"); return
-  fi
-  if (( $(tmux list-sessions | wc -l) == 1 )); then
-    session=$(tmux list-sessions -F "#{session_name}")
-  else
-    session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0)
-  fi
-  tmux $change -t "$session" || tm "$(whoami)"
+    [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
+    if [ "$1" ]; then
+        tmux $change -t "$1" 2>/dev/null ||
+        (tmux new-session -d -s "$1" && tmux $change -t "$1"); return
+    fi
+    if (( $(tmux list-sessions | wc -l) == 1 )); then
+        session=$(tmux list-sessions -F "#{session_name}")
+    else
+        session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0)
+    fi
+    tmux $change -t "$session" || tm "$(whoami)"
 }
 
 gdl() {
-  if [[ "$#" == "0" ]]; then
-    git diff @~
-  else
-    git diff "@~$@"
-  fi
+    if [[ "$#" == "0" ]]; then
+        git diff @~
+    else
+        git diff "@~$@"
+    fi
 }
 
 gpr() {

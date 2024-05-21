@@ -11,7 +11,7 @@ return {
         lualine_c = { { 'filename', path = 1 } },
         lualine_x = {},
         lualine_y = {},
-        lualine_z = { 'location' }
+        lualine_z = { 'location' },
       },
       inactive_sections = {
         lualine_a = {},
@@ -19,10 +19,10 @@ return {
         lualine_c = { { 'filename', path = 1 } },
         lualine_x = { 'location' },
         lualine_y = {},
-        lualine_z = {}
+        lualine_z = {},
       },
     }
   end,
 
-  cond = vim.fn.exists('g:vscode') == 0
+  cond = vim.fn.exists 'g:vscode' == 0,
 }

@@ -4,10 +4,10 @@ return {
   dependencies = { 'nvim-lua/plenary.nvim' },
 
   config = function()
-    require('gitlinker').setup({
+    require('gitlinker').setup {
       mappings = 'sy',
-    })
+    }
   end,
 
-  cond = vim.fn.exists('g:vscode') == 0
+  cond = vim.fn.exists 'g:vscode' == 0,
 }

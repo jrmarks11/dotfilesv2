@@ -27,7 +27,7 @@ return {
           ['alternate'] = 'test/{}_test.exs',
           ['template'] = {
             'defmodule {camelcase|capitalize|dot} do',
-            'end'
+            'end',
           },
         },
         ['test/*_test.exs'] = {
@@ -38,12 +38,12 @@ return {
             '  use ExUnit.Case, async: true',
             '',
             '  alias {camelcase|capitalize|dot}',
-            'end'
+            'end',
           },
         },
-      }
+      },
     }
   end,
 
-  cond = vim.fn.exists('g:vscode') == 0
+  cond = vim.fn.exists 'g:vscode' == 0,
 }

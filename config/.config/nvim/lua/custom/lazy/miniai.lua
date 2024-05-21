@@ -4,7 +4,7 @@ return {
   event = 'VeryLazy',
 
   config = function()
-    require('mini.ai').setup({
+    require('mini.ai').setup {
       mappings = {
         around_next = '',
         inside_next = '',
@@ -12,7 +12,7 @@ return {
         inside_last = '',
         goto_left = '',
         goto_right = '',
-      }
-    })
+      },
+    }
   end,
 }

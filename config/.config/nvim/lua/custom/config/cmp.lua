@@ -1,18 +1,18 @@
-local cmp = require('cmp')
+local cmp = require 'cmp'
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local luasnip = require('luasnip')
+local luasnip = require 'luasnip'
 
-cmp.setup({
+cmp.setup {
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
     end,
   },
-  mapping = cmp.mapping.preset.insert({
+  mapping = cmp.mapping.preset.insert {
     ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-y>'] = cmp.mapping.confirm { select = true },
+    ['<CR>'] = cmp.mapping.confirm { select = true },
 
     ['<C-l>'] = cmp.mapping(function()
       if luasnip.expand_or_locally_jumpable() then
@@ -25,17 +25,17 @@ cmp.setup({
         luasnip.jump(-1)
       end
     end, { 'i', 's' }),
-  }),
+  },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'path' },
     { name = 'buffer' },
-  }, {})
-})
+  }, {}),
+}
 
-cmp.setup.filetype({ "sql" }, {
+cmp.setup.filetype({ 'sql' }, {
   sources = {
-    { name = "vim-dadbod-completion" },
-    { name = "buffer" },
+    { name = 'vim-dadbod-completion' },
+    { name = 'buffer' },
   },
 })

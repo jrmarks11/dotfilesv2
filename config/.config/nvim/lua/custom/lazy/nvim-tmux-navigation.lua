@@ -3,7 +3,7 @@ return {
   lazy = false,
 
   config = function()
-    require 'nvim-tmux-navigation'.setup {
+    require('nvim-tmux-navigation').setup {
       disable_when_zoomed = true,
     }
 
@@ -15,5 +15,5 @@ return {
     map({ 'n', 'i', 'c', 'x', 't' }, '<C-j>l', ntn.NvimTmuxNavigateRight)
   end,
 
-  cond = vim.fn.exists('g:vscode') == 0
+  cond = vim.fn.exists 'g:vscode' == 0,
 }

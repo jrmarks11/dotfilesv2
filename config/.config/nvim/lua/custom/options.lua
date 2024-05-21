@@ -1,7 +1,7 @@
 local opt = vim.opt
-local undo_dir = vim.fn.expand('$HOME') .. '/.nvim-undo'
+local undo_dir = vim.fn.expand '$HOME' .. '/.nvim-undo'
 
-opt.clipboard:append('unnamedplus')
+opt.clipboard:append 'unnamedplus'
 opt.colorcolumn = { 81, 82 }
 opt.expandtab = true
 opt.ignorecase = true
@@ -31,7 +31,7 @@ opt.visualbell = true
 opt.wildmenu = true
 opt.wildmode = 'longest:full,full'
 
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 
 if vim.fn.isdirectory(undo_dir) == 0 then
   vim.fn.system('mkdir -p ' .. undo_dir)

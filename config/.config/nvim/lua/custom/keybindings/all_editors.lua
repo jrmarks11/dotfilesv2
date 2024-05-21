@@ -27,14 +27,14 @@ map('n', '<leader><Tab>', '<C-^>', { desc = 'Switch to alternate buffer' })
 
 map('x', 'ae', 'gg0oG$', { silent = true, desc = 'Select entire file' })
 map('o', 'ae', function()
-  cmd('execute "normal! m`"')
-  cmd('keepjumps normal! ggVG')
+  cmd 'execute "normal! m`"'
+  cmd 'keepjumps normal! ggVG'
 end, { silent = true, desc = 'Select entire file' })
 
 map('x', 'il', '<esc>^vg_', { silent = true, desc = 'Select inner line' })
 map('o', 'il', function()
-  cmd('execute "normal! m`"')
-  cmd('keepjumps normal! ^vg_')
+  cmd 'execute "normal! m`"'
+  cmd 'keepjumps normal! ^vg_'
 end, { silent = true, desc = 'Select inner line' })
 
 map({ 'n', 'x' }, 'k', [[v:count == 0 ? 'gk' : 'k']], { expr = true, silent = true })

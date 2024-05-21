@@ -12,5 +12,5 @@ return {
     map('n', ',l', [[<Plug>(qf_loc_toggle)]], { desc = 'Toggle location list' })
   end,
 
-  cond = vim.fn.exists('g:vscode') == 0,
+  cond = vim.fn.exists 'g:vscode' == 0,
 }

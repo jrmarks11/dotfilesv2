@@ -10,13 +10,13 @@ function M.paste()
   opt.paste = true
   opt.expandtab = true
 
-  cmd('normal! o')
-  cmd('normal! ]p')
+  cmd 'normal! o'
+  cmd 'normal! ]p'
 
   opt.paste = original_paste
   opt.expandtab = original_expandtab
 
-  cmd('normal! `[V`]=')
+  cmd 'normal! `[V`]='
 end
 
 return M

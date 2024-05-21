@@ -5,14 +5,14 @@ return {
     -- priority = 1000,
 
     config = function()
-      require('tokyonight').setup({
+      require('tokyonight').setup {
         style = 'day',
-      })
+      }
 
       -- vim.cmd.colorscheme('tokyonight')
     end,
 
-    cond = vim.fn.exists('g:vscode') == 0
+    cond = vim.fn.exists 'g:vscode' == 0,
   },
   {
     'catppuccin/nvim',
@@ -21,7 +21,7 @@ return {
     name = 'catppuccin',
     config = function()
       vim.g.catppuccin_flavour = 'latte'
-      require('catppuccin').setup({
+      require('catppuccin').setup {
         integrations = {
           cmp = true,
           gitsigns = true,
@@ -42,11 +42,11 @@ return {
           treesitter_context = true,
           which_key = true,
         },
-      })
-      vim.cmd.colorscheme('catppuccin')
+      }
+      vim.cmd.colorscheme 'catppuccin'
     end,
 
-    cond = vim.fn.exists('g:vscode') == 0
+    cond = vim.fn.exists 'g:vscode' == 0,
   },
   {
     'maxmx03/solarized.nvim',
@@ -56,7 +56,7 @@ return {
       -- vim.cmd.colorscheme('solarized')
     end,
 
-    cond = vim.fn.exists('g:vscode') == 0
+    cond = vim.fn.exists 'g:vscode' == 0,
   },
   {
     'ellisonleao/gruvbox.nvim',
@@ -66,6 +66,6 @@ return {
       -- vim.cmd.colorscheme('gruvbox')
     end,
 
-    cond = vim.fn.exists('g:vscode') == 0
+    cond = vim.fn.exists 'g:vscode' == 0,
   },
 }

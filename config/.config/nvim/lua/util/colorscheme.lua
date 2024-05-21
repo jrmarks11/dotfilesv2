@@ -25,7 +25,7 @@ function M.picker()
   load_colorschemes()
   local colorschemes = MyColorSchemes()
 
-  require('fzf-lua').colorschemes({ colors = colorschemes, })
+  require('fzf-lua').colorschemes { colors = colorschemes }
 end
 
 return M
