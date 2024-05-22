@@ -15,3 +15,4 @@ map('n', '<leader>j', [[<cmd>lua require('fzf-lua').grep()<CR>]], 'Fzf Grep Proj
 map('n', '<leader>n', [[<cmd>lua require('util.branch_files').branch_files()<cr>]], 'Fzf Files in branch')
 map('n', '<leader>r', [[<cmd>lua require('fzf-lua').oldfiles({cwd_only = true})<CR>]], 'Fzf Oldfiles')
 map('n', '<leader>t', [[<cmd>lua require('fzf-lua').files()<CR>]], 'Fzf Files')
+map('n', '<leader>u', [[<cmd>lua require('fzf-lua').resume()<CR>]], 'Fzf Resume')
