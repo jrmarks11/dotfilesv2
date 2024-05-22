@@ -1,6 +1,7 @@
 return {
   'WhoIsSethDaniel/mason-tool-installer.nvim',
   dependencies = { 'williamboman/mason.nvim' },
+  event = { 'VeryLazy' },
 
   config = function()
     local ensure_installed = {
