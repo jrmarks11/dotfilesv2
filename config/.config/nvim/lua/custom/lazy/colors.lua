@@ -1,15 +1,13 @@
 return {
   {
     'folke/tokyonight.nvim',
-    lazy = true,
-    -- priority = 1000,
+    lazy = false,
+    event = { 'VeryLazy' },
 
     config = function()
       require('tokyonight').setup {
-        style = 'day',
+        style = 'storm',
       }
-
-      -- vim.cmd.colorscheme('tokyonight')
     end,
 
     cond = vim.fn.exists 'g:vscode' == 0,
@@ -43,27 +41,6 @@ return {
           which_key = true,
         },
       }
-      vim.cmd.colorscheme 'catppuccin'
-    end,
-
-    cond = vim.fn.exists 'g:vscode' == 0,
-  },
-  {
-    'maxmx03/solarized.nvim',
-    lazy = true,
-    -- priority = 1000,
-    config = function()
-      -- vim.cmd.colorscheme('solarized')
-    end,
-
-    cond = vim.fn.exists 'g:vscode' == 0,
-  },
-  {
-    'ellisonleao/gruvbox.nvim',
-    lazy = true,
-    -- priority = 1000,
-    config = function()
-      -- vim.cmd.colorscheme('gruvbox')
     end,
 
     cond = vim.fn.exists 'g:vscode' == 0,

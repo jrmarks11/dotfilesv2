@@ -3,10 +3,6 @@ return {
   event = { 'BufReadPost', 'BufNewFile' },
   build = ':TSUpdate',
 
-  dependencies = {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-  },
-
   config = function()
     require('nvim-treesitter.configs').setup {
       ensure_installed = {
@@ -29,19 +25,6 @@ return {
       highlight = { enable = true },
       auto_install = true,
       indent = { enable = true },
-      textobjects = {
-        enable = true,
-        lookahead = true,
-        select = {
-          enable = true,
-          keymaps = {
-            ['af'] = '@function.outer',
-            ['if'] = '@function.inner',
-            ['ak'] = '@block.outer',
-            ['ik'] = '@block.inner',
-          },
-        },
-      },
     }
   end,
 
