@@ -5,7 +5,6 @@ local function map(mode, key, command, description)
 end
 
 map('n', '<leader>b', [[<cmd>lua require('fzf-lua').buffers()<CR>]], 'Fzf Buffers')
-map('n', '<leader>c', [[<cmd>lua require('util.colorscheme').picker()<CR>]], 'Change colorscheme')
 map('n', '<leader>d', [[<cmd>lua require('fzf-lua').files({cwd = '%:h'})<CR>]], 'Fzf Files CWD')
 map('n', '<leader>f', [[<cmd>lua require('fzf-lua').grep_cword()<CR>]], 'Fzf Grep Word')
 map('x', '<leader>f', [[<cmd>lua require('fzf-lua').grep_visual()<CR>]], 'Fzf Grep Visual')

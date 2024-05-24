@@ -1,18 +1,5 @@
 return {
   {
-    'folke/tokyonight.nvim',
-    lazy = false,
-    event = { 'VeryLazy' },
-
-    config = function()
-      require('tokyonight').setup {
-        style = 'storm',
-      }
-    end,
-
-    cond = vim.fn.exists 'g:vscode' == 0,
-  },
-  {
     'catppuccin/nvim',
     lazy = false,
     priority = 1000,

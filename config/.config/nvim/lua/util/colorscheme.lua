@@ -24,25 +24,11 @@ function M.set_based_on_system_theme()
   local theme = detect_system_theme()
   if theme == 'dark' then
     vim.o.background = 'dark'
-    vim.cmd.colorscheme 'tokyonight'
+    vim.g.catppuccin_flavour = 'mocha'
   else
     vim.o.background = 'light'
-    vim.cmd.colorscheme 'catppuccin'
+    vim.g.catppuccin_flavour = 'latte'
   end
-end
-
-function M.picker()
-  local function MyColorSchemes()
-    local colorschemes = {
-      'catppuccin',
-      'tokyonight',
-    }
-
-    return colorschemes
-  end
-
-  local colorschemes = MyColorSchemes()
-  require('fzf-lua').colorschemes { colors = colorschemes }
 end
 
 return M
