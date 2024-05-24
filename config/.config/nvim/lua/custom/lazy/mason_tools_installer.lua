@@ -10,6 +10,7 @@ return {
       'elixirls',
       'emmet_language_server',
       'lua_ls',
+      'shellcheck',
       'stylua',
       'tsserver',
     }

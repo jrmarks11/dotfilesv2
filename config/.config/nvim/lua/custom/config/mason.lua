@@ -56,12 +56,19 @@ require('mason-lspconfig').setup {
 
     ['efm'] = function()
       local lspconfig = require 'lspconfig'
+
+      local shellcheck = {
+        lintCommand = 'shellcheck -f gcc -x',
+        lintStdin = true,
+        lintFormats = { '%f:%l:%c: %m' },
+      }
+
       lspconfig.efm.setup {
         on_attach = lsp_on_attach,
         root_dir = lspconfig.util.root_pattern('mix.exs', '.git', vim.fn.getcwd()),
         capabilities = capabilities,
         init_options = { documentFormatting = true },
-        filetypes = { 'elixir', 'ruby' },
+        filetypes = { 'elixir', 'ruby', 'sh', 'zsh' },
         settings = {
           rootMarkers = { '.git/' },
           languages = {
@@ -79,6 +86,8 @@ require('mason-lspconfig').setup {
                 lintFormats = { '%f:%l:%c: %m' },
               },
             },
+            sh = { shellcheck },
+            zsh = { shellcheck },
           },
         },
       }
