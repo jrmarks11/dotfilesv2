@@ -17,6 +17,13 @@ require('mason').setup()
 
 require('mason-lspconfig').setup {
   handlers = {
+    ensure_installed = {
+      'elixirls',
+      'emmet_language_server',
+      'lua_ls',
+      'tsserver',
+    },
+
     function(server_name) -- default handler (optional)
       require('lspconfig')[server_name].setup {
         on_attach = lsp_on_attach,
