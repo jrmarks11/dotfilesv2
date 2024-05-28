@@ -60,36 +60,5 @@ require('mason-lspconfig').setup {
         },
       }
     end,
-
-    ['efm'] = function()
-      local lspconfig = require 'lspconfig'
-
-      lspconfig.efm.setup {
-        on_attach = lsp_on_attach,
-        root_dir = lspconfig.util.root_pattern('mix.exs', '.git', vim.fn.getcwd()),
-        capabilities = capabilities,
-        init_options = { documentFormatting = true },
-        filetypes = { 'elixir', 'ruby' },
-        settings = {
-          rootMarkers = { '.git/' },
-          languages = {
-            elixir = {
-              {
-                lintCommand = 'mix credo suggest --format=flycheck --read-from-stdin',
-                lintStdin = true,
-                lintFormats = { '%f:%l:%c: %m' },
-              },
-            },
-            ruby = {
-              {
-                lintCommand = 'rubocop --format emacs --force-exclusion --stdin ${INPUT}',
-                lintStdin = true,
-                lintFormats = { '%f:%l:%c: %m' },
-              },
-            },
-          },
-        },
-      }
-    end,
   },
 }

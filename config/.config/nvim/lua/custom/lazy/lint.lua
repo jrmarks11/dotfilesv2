@@ -1,22 +1,15 @@
-return {}
--- return {
---   "mfussenegger/nvim-lint",
---   config = function()
---     local lint = require("lint")
---     lint.linters_by_ft = {
---       ruby = {'rubocop'},
---       elixir = {'credo'},
---       sh = { 'shellcheck', },
---       bash = { 'shellcheck', },
---       zsh = { 'shellcheck', },
---       javascript = { 'eslint_d' },
---       typescript = { 'eslint_d' },
---     }
---
---     vim.api.nvim_create_autocmd({ "BufWritePost" }, {
---       callback = function()
---         require("lint").try_lint()
---       end,
---     })
---   end
--- }
+return {
+  'mfussenegger/nvim-lint',
+  config = function()
+    local lint = require 'lint'
+    lint.linters_by_ft = {
+      elixir = { 'credo' },
+    }
+
+    vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufWritePost' }, {
+      callback = function()
+        require('lint').try_lint()
+      end,
+    })
+  end,
+}
