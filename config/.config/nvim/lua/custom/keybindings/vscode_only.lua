@@ -1,34 +1,16 @@
-local map = vim.keymap.set
-local vscode = require 'vscode-neovim'
+local function map(mode, key, vscode_command)
+  local vscode = require 'vscode-neovim'
 
-map('n', ']c', function()
-  vscode.call 'workbench.action.editor.nextChange'
-end)
+  vim.keymap.set(mode, key, function()
+    vscode.call(vscode_command)
+  end)
+end
 
-map('n', '[c', function()
-  vscode.call 'workbench.action.editor.previousChange'
-end)
-
-map('n', ',,', function()
-  vscode.call 'editor.action.formatDocument'
-end)
-
-map('x', ',,', function()
-  vscode.call 'editor.action.formatSelection'
-end)
-
-map('n', '<leader>t', function()
-  vscode.call 'workbench.action.quickOpen'
-end)
-
-map({ 'x', 'n' }, '<leader><leader>', function()
-  vscode.call 'editor.action.startFindReplaceAction'
-end)
-
-map('n', '<leader>r', function()
-  vscode.call 'workbench.action.showAllEditorsByMostRecentlyUsed'
-end)
-
-map('n', '<leader>d', function()
-  vscode.call 'workbench.files.action.showActiveFileInExplorer'
-end)
+map('n', ']c', 'workbench.action.editor.nextChange')
+map('n', '[c', 'workbench.action.editor.previousChange')
+map('n', ',,', 'editor.action.formatDocument')
+map('x', ',,', 'editor.action.formatSelection')
+map({ 'x', 'n' }, '<leader><leader>', 'editor.action.startFindReplaceAction')
+map('n', '<leader>d', 'workbench.files.action.showActiveFileInExplorer')
+map('n', '<leader>r', 'workbench.action.showAllEditorsByMostRecentlyUsed')
+map('n', '<leader>t', 'workbench.action.quickOpen')
