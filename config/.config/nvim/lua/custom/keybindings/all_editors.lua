@@ -28,15 +28,10 @@ map(
   { silent = true, desc = 'Insert empty lines below' }
 )
 
-map(
-  'n',
-  '<leader>p',
-  [[<cmd>lua require('util.no_paste').paste()<CR>]],
-  { silent = true, desc = 'Paste without paste' }
-)
+map('n', '<leader>p', [[o]p`[V`]=]], { silent = true, desc = 'Paste and format' })
 
-map('x', ',p', [["_dPgv=]], { desc = 'Delete int _ and Paste' })
-map({ 'n', 'v' }, ',d', [["_d]], { desc = 'Delete into _ register' })
+map('x', ',p', '"_dPgv=', { desc = 'Delete int _ and Paste' })
+map({ 'n', 'v' }, ',d', '"_d', { desc = 'Delete into _ register' })
 
 map('n', '<leader><Tab>', '<C-^>', { desc = 'Switch to alternate buffer' })
 
@@ -57,7 +52,7 @@ map({ 'n', 'x' }, 'j', [[v:count == 0 ? 'gj' : 'j']], { expr = true, silent = tr
 
 map('n', 'Q', '@q')
 map('x', 'Q', [[:'<,'>normal @q<cr>]])
-map('x', '.', [[:normal .<cr>]])
+map('x', '.', ':normal .<cr>')
 
 map({ 'n', 'x', 'v' }, 's', '<nop>', { remap = true, desc = 'S is a leader key' })
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
