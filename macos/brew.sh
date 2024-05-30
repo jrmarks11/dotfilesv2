@@ -3,7 +3,6 @@
 brew install \
     asdf \
     bat \
-    docker-compose \
     eza \
     fd \
     fzf \
