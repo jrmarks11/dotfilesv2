@@ -4,15 +4,7 @@ local cmp_lsp = require 'cmp_nvim_lsp'
 local capabilities =
   vim.tbl_deep_extend('force', {}, lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
 
-local lsp_on_attach = function()
-  local map = vim.keymap.set
-
-  map('n', 'gd', lsp.buf.definition, { buffer = true, desc = 'LSP Go to definition' })
-  map('n', '<C-k>', lsp.buf.hover, { buffer = true, desc = 'LSP Show hover' })
-  map('n', 'gr', lsp.buf.references, { buffer = true, desc = 'LSP Show references' })
-  map('n', 'sr', lsp.buf.rename, { buffer = true, desc = 'LSP Rename' })
-end
-
+require('custom.autocmds.lsp')
 require('mason').setup()
 
 require('mason-lspconfig').setup {
@@ -26,7 +18,6 @@ require('mason-lspconfig').setup {
   handlers = {
     function(server_name) -- default handler (optional)
       require('lspconfig')[server_name].setup {
-        on_attach = lsp_on_attach,
         capabilities = capabilities,
       }
     end,
@@ -34,7 +25,6 @@ require('mason-lspconfig').setup {
     ['lua_ls'] = function()
       local lspconfig = require 'lspconfig'
       lspconfig.lua_ls.setup {
-        on_attach = lsp_on_attach,
         capabilities = capabilities,
         settings = {
           Lua = {
@@ -49,7 +39,6 @@ require('mason-lspconfig').setup {
     ['elixirls'] = function()
       local lspconfig = require 'lspconfig'
       lspconfig.elixirls.setup {
-        on_attach = lsp_on_attach,
         capabilities = capabilities,
         settings = {
           autoBuild = true,

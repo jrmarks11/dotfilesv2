@@ -1,7 +1,7 @@
 require 'custom.options'
 require 'custom.mappings'
-require 'custom.autocmds'
 require 'custom.lazy_init'
+require 'custom.autocmds'
 
 require('util.colorscheme').set_based_on_system_theme()
 vim.cmd.colorscheme 'catppuccin'

@@ -3,7 +3,7 @@ return {
   event = 'VeryLazy',
 
   config = function()
-    vim.keymap.set('n', '<leader>a', ':A<CR>', { silent = true, desc = 'Go To Alternate file' })
+    vim.keymap.set('n', '<leader>a', ':A<CR>', { silent = true, desc = 'Go To [A]lternate File' })
 
     vim.g.projectionist_heuristics = {
       ['config/routes.rb'] = {

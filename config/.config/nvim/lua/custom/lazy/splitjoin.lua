@@ -17,8 +17,8 @@ return {
     event = 'VeryLazy',
 
     init = function()
-      vim.keymap.set('n', 'sj', '<cmd>SplitjoinJoin<cr>')
-      vim.keymap.set('n', 'sk', '<cmd>SplitjoinSplit<cr>')
+      vim.keymap.set('n', 'sj', '<cmd>SplitjoinJoin<cr>', { desc = '[J]oin' })
+      vim.keymap.set('n', 'sk', '<cmd>SplitjoinSplit<cr>', { desc = 'Split [K]' })
     end,
   },
 }

@@ -23,6 +23,6 @@ return {
   init = function()
     vim.g.db_ui_use_nerd_fonts = 1
     vim.g.db_ui_save_location = os.getenv 'HOME' .. '/Projects/sql/'
-    vim.keymap.set('n', 'sq', '<cmd>DBUIToggle<CR>', { desc = 'Toggle DBUI' })
+    vim.keymap.set('n', 'sq', '<cmd>DBUIToggle<CR>', { desc = 'Toggle S[Q]L DBUI' })
   end,
 }

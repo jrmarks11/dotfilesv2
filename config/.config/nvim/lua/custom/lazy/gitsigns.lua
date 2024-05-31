@@ -14,19 +14,19 @@ return {
         map('n', ']c', function()
           gs.next_hunk()
           cmd 'normal! zz'
-        end, { desc = 'Next hunk' })
+        end, { desc = 'Next [C]hange' })
 
         map('n', '[c', function()
           gs.prev_hunk()
           cmd 'normal! zz'
-        end, { desc = 'Previous hunk' })
+        end, { desc = 'Previous [C]hange' })
 
         map('n', 'sb', function()
           gs.blame_line { full = true }
-        end, { desc = 'Git Blame' })
-        map('n', 'sg', gs.stage_hunk, { desc = 'Stage hunk' })
-        map('n', 'sv', gs.preview_hunk, { desc = 'Preview hunk' })
-        map('n', 'su', gs.reset_hunk, { desc = 'Undo hunk' })
+        end, { desc = 'Git [B]lame' })
+        map('n', 'sg', gs.stage_hunk, { desc = '[G]it Stage Hunk' })
+        map('n', 'sv', gs.preview_hunk, { desc = 'Pre[v]iew Hunk' })
+        map('n', 'su', gs.reset_hunk, { desc = '[U]ndo Hunk' })
       end,
       max_file_length = 100000,
       sign_priority = 6,

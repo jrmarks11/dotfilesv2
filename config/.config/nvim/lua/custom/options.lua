@@ -1,35 +1,36 @@
-local opt = vim.opt
+local o = vim.opt
 local undo_dir = vim.fn.expand '$HOME' .. '/.nvim-undo'
 
-opt.clipboard:append 'unnamedplus'
-opt.colorcolumn = { 81, 82 }
-opt.expandtab = true
-opt.ignorecase = true
-opt.list = true
-opt.listchars = { tab = '▸ ', trail = '·', nbsp = '␣' }
-opt.number = true
-opt.pumheight = 15
-opt.relativenumber = true
-opt.scrolljump = 8
-opt.scrolloff = 2
-opt.shada = { "'300", '<50', 's10', 'h' }
-opt.shiftround = true
-opt.shiftwidth = 2
-opt.showmatch = true
-opt.signcolumn = 'yes'
-opt.smartcase = true
-opt.splitbelow = true
-opt.splitright = true
-opt.swapfile = false
-opt.tabstop = 2
-opt.textwidth = 78
-opt.undodir = undo_dir
-opt.undofile = true
-opt.undolevels = 1000
-opt.undoreload = 10000
-opt.visualbell = true
-opt.wildmenu = true
-opt.wildmode = 'longest:full,full'
+o.clipboard:append 'unnamedplus'
+o.colorcolumn = { 81, 82 }
+o.expandtab = true
+o.ignorecase = true
+o.list = true
+o.listchars = { tab = '▸ ', trail = '·', nbsp = '␣' }
+o.number = true
+o.pumheight = 15
+o.relativenumber = true
+o.scrolljump = 8
+o.scrolloff = 2
+o.shada = { "'300", '<50', 's10', 'h' }
+o.shiftround = true
+o.shiftwidth = 2
+o.showmatch = true
+o.signcolumn = 'yes'
+o.smartcase = true
+o.splitbelow = true
+o.splitright = true
+o.swapfile = false
+o.tabstop = 2
+o.textwidth = 78
+o.updatetime = 250
+o.undodir = undo_dir
+o.undofile = true
+o.undolevels = 1000
+o.undoreload = 10000
+o.visualbell = true
+o.wildmenu = true
+o.wildmode = 'longest:full,full'
 
 vim.g.mapleader = ' '
 

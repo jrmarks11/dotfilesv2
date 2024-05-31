@@ -21,22 +21,20 @@ map({ 'n', 'x' }, ';', ':')
 map('n', '[<leader>', ':<C-u>put! =repeat(nr2char(10),v:count1)<CR>', { silent = true, desc = 'Empty lines above' })
 map('n', ']<leader>', ':<C-u>put =repeat(nr2char(10),v:count1)<CR>', { silent = true, desc = 'Empty lines below' })
 
-map('n', '<leader>p', 'o<ESC>[p`[V`]=', { silent = true, desc = 'Paste and format' })
+map('n', '<leader><Tab>', '<C-^>', { desc = 'Switch to Last buffer' })
 
-map('n', '<leader><Tab>', '<C-^>', { desc = 'Switch to alternate buffer' })
-
-map({ 'n', 'x', 'v' }, 's', '<nop>', { remap = true, desc = 'S is a leader key' })
+map({ 'n', 'x', 'v' }, 's', '<nop>')
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
-map('x', 'ae', 'gg0oG$', { silent = true, desc = 'Select entire file' })
+map('x', 'ae', 'gg0oG$', { silent = true, desc = 'Select [A]n [E]ntire File' })
 map('o', 'ae', function()
   cmd 'execute "normal! m`"'
   cmd 'keepjumps normal! ggVG'
-end, { silent = true, desc = 'Select entire file' })
+end, { silent = true, desc = 'Select [A]n [E]ntire File' })
 
-map('x', 'il', '<esc>^vg_', { silent = true, desc = 'Select inner line' })
+map('x', 'il', '<esc>^vg_', { silent = true, desc = 'Select [I]nner [L]ine' })
 map('o', 'il', function()
   cmd 'execute "normal! m`"'
   cmd 'keepjumps normal! ^vg_'
-end, { silent = true, desc = 'Select inner line' })
+end, { silent = true, desc = 'Select [I]nner [L]ine' })
 
