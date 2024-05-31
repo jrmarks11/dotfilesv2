@@ -1,8 +1,8 @@
 local map = vim.keymap.set
 local cmd = vim.cmd
 
-map({ 'n', 'x' }, 'k', [[v:count == 0 ? 'gk' : 'k']], { expr = true, silent = true })
 map({ 'n', 'x' }, 'j', [[v:count == 0 ? 'gj' : 'j']], { expr = true, silent = true })
+map({ 'n', 'x' }, 'k', [[v:count == 0 ? 'gk' : 'k']], { expr = true, silent = true })
 
 map('v', 'J', [[:m '>+1<CR>gv=gv]])
 map('v', 'K', [[:m '<-2<CR>gv=gv]])
@@ -21,15 +21,9 @@ map({ 'n', 'x' }, ';', ':')
 map('n', '[<leader>', ':<C-u>put! =repeat(nr2char(10),v:count1)<CR>', { silent = true, desc = 'Empty lines above' })
 map('n', ']<leader>', ':<C-u>put =repeat(nr2char(10),v:count1)<CR>', { silent = true, desc = 'Empty lines below' })
 
-map('n', '<leader>p', [[o]p`[V`]=]], { silent = true, desc = 'Paste and format' })
-map('x', ',p', '"_dPgv=', { desc = 'Delete int _ and Paste' })
-map({ 'n', 'v' }, ',d', '"_d', { desc = 'Delete into _ register' })
+map('n', '<leader>p', 'o<ESC>[p`[V`]=', { silent = true, desc = 'Paste and format' })
 
 map('n', '<leader><Tab>', '<C-^>', { desc = 'Switch to alternate buffer' })
-
-map('n', 'Q', '@q')
-map('x', 'Q', [[:'<,'>normal @q<cr>]])
-map('x', '.', ':normal .<cr>')
 
 map({ 'n', 'x', 'v' }, 's', '<nop>', { remap = true, desc = 'S is a leader key' })
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
