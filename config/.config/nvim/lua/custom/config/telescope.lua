@@ -1,10 +1,17 @@
-require('telescope').setup({
+require('telescope').setup {
   defaults = {
     layout_strategy = 'vertical',
     layout_config = {
+      prompt_position = 'top',
+      height = 0.9,
       preview_cutoff = 40,
-      vertical = { width = 0.9, height = 0.9, preview_height = 0.6 },
+      bottom_pane = {
+        height = 0.6,
+        prompt_position = 'top',
+        preview_height = 0.6,
+      },
     },
+    sorting_strategy = 'ascending',
     vimgrep_arguments = {
       'rg',
       '--color=never',
@@ -14,7 +21,8 @@ require('telescope').setup({
       '--column',
       '--smart-case',
       '--hidden',
-      '--glob', '!**/.git/*',
+      '--glob',
+      '!**/.git/*',
     },
   },
   extensions = {
@@ -30,4 +38,4 @@ require('telescope').setup({
       find_command = { 'rg', '--files', '--hidden', '--glob', '!**/.git/*' },
     },
   },
-})
+}

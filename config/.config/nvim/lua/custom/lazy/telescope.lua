@@ -17,7 +17,7 @@ return {
     telescope.load_extension('fzf')
     telescope.load_extension('ui-select')
     telescope.load_extension('recent_files')
-    -- require('custom.keybindings.telescope')
+    require('custom.keybindings.telescope')
   end,
 
   cond = vim.fn.exists('g:vscode') == 0
