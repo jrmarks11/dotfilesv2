@@ -4,7 +4,8 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
 
   config = function()
-    require('fzf-lua').setup {
+    local fzf = require 'fzf-lua'
+    fzf.setup {
       winopts = {
         preview = {
           vertical = 'up:60%',
@@ -27,6 +28,8 @@ return {
         },
       },
     }
+
+    fzf.register_ui_select()
 
     require 'custom.keybindings.fzf'
   end,

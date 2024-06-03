@@ -7,7 +7,7 @@ return {
     require('lualine').setup {
       sections = {
         lualine_a = { 'mode' },
-        lualine_b = { 'grapple' },
+        lualine_b = {},
         lualine_c = { { 'filename', path = 1 } },
         lualine_x = {},
         lualine_y = {},

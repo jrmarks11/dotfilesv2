@@ -25,5 +25,9 @@ return {
     }
 
     require('mini.surround').setup()
+
+    require('mini.visits').setup()
+
+    require('custom.keybindings.mini')
   end,
 }
