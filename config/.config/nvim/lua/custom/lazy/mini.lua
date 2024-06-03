@@ -5,7 +5,18 @@ return {
 
   config = function()
     require('mini.ai').setup()
-    require('mini.indentscope').setup()
+
+    require('mini.indentscope').setup {
+      draw = {
+        animation = require('mini.indentscope').gen_animation.none(),
+      },
+    }
+
+    require('mini.jump').setup {
+      mappings = {
+        repeat_jump = '',
+      },
+    }
 
     require('mini.splitjoin').setup {
       mappings = {
