@@ -12,5 +12,7 @@ return {
         toggle = 'ss',
       },
     }
+
+    require('mini.surround').setup()
   end,
 }
