@@ -5,14 +5,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
     end
 
-    map('gd', require('fzf-lua').lsp_definitions, '[G]oto [D]efinition')
+    map('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
     map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
     map('gI', require('fzf-lua').lsp_implementations, '[G]oto [I]mplementation')
     map('gr', require('fzf-lua').lsp_references, '[G]oto [R]eferences')
     map(',c', vim.lsp.buf.code_action, '[C]ode Action')
-    map(',d', require('fzf-lua').lsp_document_symbols, '[D]ocument Symbols')
-    map(',D', require('fzf-lua').lsp_typedefs, 'Type [D]efinition')
-    map(',w', require('fzf-lua').lsp_workspace_symbols, '[W]orkspace Symbols')
+    map('<leader>s', require('fzf-lua').lsp_document_symbols, 'Document [S]ymbols')
+    map('<leader>D', require('fzf-lua').lsp_typedefs, 'Type [D]efinition')
+    map('<leader>S', require('fzf-lua').lsp_workspace_symbols, 'Workspace [S]ymbols')
     map(',R', vim.lsp.buf.rename, '[R]ename')
     map('<C-k>', vim.lsp.buf.hover, 'Hover Documentation')
 

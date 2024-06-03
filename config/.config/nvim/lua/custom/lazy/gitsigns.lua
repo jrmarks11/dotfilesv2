@@ -23,10 +23,10 @@ return {
 
         map('n', 'sb', function()
           gs.blame_line { full = true }
-        end, { desc = 'Git [B]lame' })
-        map('n', 'sg', gs.stage_hunk, { desc = '[G]it Stage Hunk' })
-        map('n', 'sv', gs.preview_hunk, { desc = 'Pre[v]iew Hunk' })
-        map('n', 'su', gs.reset_hunk, { desc = '[U]ndo Hunk' })
+        end, { desc = 'Git[S]igns [B]lame' })
+        map('n', 'sg', gs.stage_hunk, { desc = 'Git[S]igns [G]it Stage Hunk' })
+        map('n', 'sv', gs.preview_hunk, { desc = 'Git[S]igns Pre[v]iew Hunk' })
+        map('n', 'su', gs.reset_hunk, { desc = 'Git[S]igns [U]ndo Hunk' })
       end,
       max_file_length = 100000,
       sign_priority = 6,
