@@ -13,3 +13,5 @@ end
 
 map_iterate_marks('<leader>n', 'forward', '[N]ext Marked Label')
 map_iterate_marks('<leader>p', 'backward', '[P]revious Marked Label')
+
+map('n', '<leader>r', '<Cmd>lua require("util.visits").frecency_list()<CR>', { desc = '[R]ecent Files' })

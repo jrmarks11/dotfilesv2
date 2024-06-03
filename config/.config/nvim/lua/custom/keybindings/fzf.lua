@@ -11,6 +11,5 @@ map('x', '<leader>f', [[<cmd>lua require('fzf-lua').grep_visual()<CR>]], '[F]ind
 map('n', '<leader>g', [[<cmd>lua require('fzf-lua').git_status()<CR>]], '[G]it Status')
 map('n', '<leader>h', [[<cmd>lua require('fzf-lua').help_tags()<CR>]], '[H]elp Docs')
 map('n', '<leader>j', [[<cmd>lua require('fzf-lua').grep()<CR>]], 'Grep Pro[j]ect')
-map('n', '<leader>r', [[<cmd>lua require('fzf-lua').oldfiles({cwd_only = true})<CR>]], '[R]ecent Files')
 map('n', '<leader>t', [[<cmd>lua require('fzf-lua').files()<CR>]], '[T]o Files')
 map('n', '<leader>u', [[<cmd>lua require('fzf-lua').resume()<CR>]], 'Res[u]me Fzf')
