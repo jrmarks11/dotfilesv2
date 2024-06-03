@@ -20,7 +20,7 @@ return {
 
     require('mini.splitjoin').setup {
       mappings = {
-        toggle = 'ss',
+        toggle = '',
       },
     }
 

@@ -19,6 +19,11 @@ function M.frecency_list()
   local visits = require 'mini.visits'
   local sort_recent = visits.gen_sort.default { recency_weight = 0.5 }
   local recent_files = visits.list_paths(vim.fn.getcwd(), { sort = sort_recent })
+  local current_file = vim.fn.expand '%:p'
+
+  recent_files = vim.tbl_filter(function(file)
+    return file ~= current_file
+  end, recent_files)
 
   require('fzf-lua').fzf_exec(recent_files, {
     prompt = 'Recent Files> ',
