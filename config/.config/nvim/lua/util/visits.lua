@@ -18,7 +18,7 @@ end
 function M.frecency_list()
   local visits = require 'mini.visits'
   local sort_recent = visits.gen_sort.default { recency_weight = 0.5 }
-  local recent_files = visits.list_paths('', { sort = sort_recent })
+  local recent_files = visits.list_paths(vim.fn.getcwd(), { sort = sort_recent })
 
   require('fzf-lua').fzf_exec(recent_files, {
     prompt = 'Recent Files> ',
@@ -32,22 +32,22 @@ function M.frecency_list()
 end
 
 function M.section_marked_files()
-  local visits = require('mini.visits')
+  local visits = require 'mini.visits'
   local marked_files = visits.list_paths(vim.fn.getcwd(), { filter = 'marked' })
-  local current_file = vim.fn.expand('%:p')
+  local current_file = vim.fn.expand '%:p'
   local result = {}
   local current_file_pos = nil
 
   for i, file in ipairs(marked_files) do
     if file == current_file then
       current_file_pos = i
-      table.insert(result, string.format("[%d]", i))
+      table.insert(result, string.format('[%d]', i))
     else
       table.insert(result, tostring(i))
     end
   end
 
-  local status = table.concat(result, " ")
+  local status = table.concat(result, ' ')
   if current_file_pos then
     return status, 'MiniStatuslineMarked'
   else
