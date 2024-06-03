@@ -57,7 +57,17 @@ return {
       },
     }
 
-    require('mini.surround').setup()
+    require('mini.surround').setup {
+      mappings = {
+        find = '',
+        find_left = '',
+        highlight = '',
+        update_n_lines = '',
+        suffix_last = '',
+        suffix_next = '',
+      },
+    }
+
     require('mini.visits').setup()
 
     require 'custom.keybindings.mini'
