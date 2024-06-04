@@ -60,4 +60,25 @@ function M.section_marked_files()
   end
 end
 
+function M.marked_files_picker()
+  local visits = require 'mini.visits'
+  local marked_files = visits.list_paths(vim.fn.getcwd(), { filter = 'marked' })
+
+  require('fzf-lua').fzf_exec(marked_files, {
+    prompt = 'Marked Files> ',
+    previewer = 'builtin',
+    actions = {
+      ['default'] = function(selected)
+        vim.cmd('edit ' .. selected[1])
+      end,
+      ['ctrl-x'] = function(selected)
+        local file = selected[1]
+        local cwd = vim.fn.getcwd()
+        visits.remove_label('marked', file, cwd)
+        M.marked_files_picker() -- Reload the picker to reflect changes
+      end,
+    },
+  })
+end
+
 return M

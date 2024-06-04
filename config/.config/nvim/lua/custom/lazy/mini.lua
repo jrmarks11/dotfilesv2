@@ -47,7 +47,7 @@ return {
             '%<',
             { hl = 'slFilename', strings = { filename } },
             '%=',
-            { hl = 's1Filename', strings = { marks } },
+            { hl = 'slFilename', strings = { marks } },
             { hl = mode_hl, strings = { location } },
           }
         end,
