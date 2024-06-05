@@ -12,6 +12,7 @@ require('mason-lspconfig').setup {
     'elixirls',
     'emmet_language_server',
     'lua_ls',
+    'ruby_lsp',
     'tsserver',
   },
 
