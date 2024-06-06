@@ -9,6 +9,7 @@ return {
         css = { 'prettier' },
         elixir = { 'mix' },
         eruby = { 'erb_format' },
+        graphql = { 'prettier' },
         html = { 'prettier' },
         javascript = { 'prettier' },
         javascriptreact = { 'prettier' },
