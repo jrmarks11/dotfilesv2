@@ -13,10 +13,12 @@ autocmd({ 'InsertLeave', 'TextChanged' }, {
   group = auto_save_group,
   pattern = '*',
   callback = function()
+    local conform = require 'conform'
     local ft = vim.bo.filetype
     if ft ~= 'sql' and ft ~= 'dbui' then
       vim.cmd 'silent! %s/\\s\\+$//e'
       vim.cmd 'silent! wall'
+      conform.format { async = true, lsp_fallback = true, timeout_ms = 8000 }
     end
   end,
   nested = true,
