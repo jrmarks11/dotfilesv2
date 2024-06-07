@@ -16,6 +16,8 @@ return {
 
     lint.linters_by_ft = {
       elixir = { 'credo' },
+      yaml = { 'yamllint' },
+      markdown = { 'markdownlint' },
     }
 
     vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufWritePost' }, {
