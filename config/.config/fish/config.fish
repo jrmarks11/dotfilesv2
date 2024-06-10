@@ -120,32 +120,6 @@ function gush
     git push
 end
 
-function tm
-    if test -n "$TMUX"
-        set change "switch-client"
-    else
-        set change "attach-session"
-    end
-
-    if test $argv[1]
-        tmux $change -t $argv[1] 2>/dev/null
-        or begin
-            tmux new-session -d -s $argv[1]
-            tmux $change -t $argv[1]
-        end
-        return
-    end
-
-    if test (tmux list-sessions | wc -l) -eq 1
-        set session (tmux list-sessions -F "#{session_name}")
-    else
-        set session (tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0)
-    end
-
-    tmux $change -t $session
-    or tm (whoami)
-end
-
 function gdl
     if test (count $argv) -eq 0
         git diff @~
