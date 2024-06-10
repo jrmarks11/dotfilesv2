@@ -1,7 +1,7 @@
 if test -d /opt/homebrew
-	set -gx HOMEBREW_PREFIX "/opt/homebrew"
-	set -gx HOMEBREW_CELLAR "$HOMEBREW_PREFIX/Cellar"
-	set -gx HOMEBREW_REPOSITORY "$HOMEBREW_PREFIX/homebrew"
+  set -gx HOMEBREW_PREFIX "/opt/homebrew"
+  set -gx HOMEBREW_CELLAR "$HOMEBREW_PREFIX/Cellar"
+  set -gx HOMEBREW_REPOSITORY "$HOMEBREW_PREFIX/homebrew"
 end
 
 fish_add_path -gP "$HOMEBREW_PREFIX/bin" "$HOMEBREW_PREFIX/sbin";
@@ -48,11 +48,17 @@ set -gx FZF_CTRL_T_COMMAND 'fd --type f --type d --hidden --follow --exclude .gi
 
 set -gx BAT_THEME "base16"
 set -Ux GIT_PAGER delta
+set -Ux EDITOR nvim
 
 if not set -q SSH_AUTH_SOCK
     eval (ssh-agent -c)
     ssh-add
 end
+
+fish_default_key_bindings -M insert
+fish_vi_key_bindings --no-erase insert
+
+set fish_key_timeout 10
 
 function ll
     for file in (fd -Hd 1 -t l)
