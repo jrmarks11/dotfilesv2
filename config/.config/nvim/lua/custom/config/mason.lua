@@ -4,7 +4,7 @@ local cmp_lsp = require 'cmp_nvim_lsp'
 local capabilities =
   vim.tbl_deep_extend('force', {}, lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
 
-require('custom.autocmds.lsp')
+require 'custom.autocmds.lsp'
 require('mason').setup()
 
 require('mason-lspconfig').setup {

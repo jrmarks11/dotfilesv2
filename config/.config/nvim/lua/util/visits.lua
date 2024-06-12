@@ -75,7 +75,7 @@ function M.marked_files_picker()
         local file = selected[1]
         local cwd = vim.fn.getcwd()
         visits.remove_label('marked', file, cwd)
-        M.marked_files_picker() -- Reload the picker to reflect changes
+        M.marked_files_picker()
       end,
     },
   })

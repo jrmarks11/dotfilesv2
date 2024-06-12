@@ -7,7 +7,7 @@ local map_iterate_marks = function(lhs, direction, desc)
   local opts = { filter = 'marked', wrap = true }
   local rhs = function()
     require('mini.visits').iterate_paths(direction, vim.fn.getcwd(), opts)
- end
+  end
   map('n', lhs, rhs, { desc = desc })
 end
 
