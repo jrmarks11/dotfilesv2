@@ -35,7 +35,7 @@ return {
           ['alternate'] = 'lib/{}.ex',
           ['template'] = {
             'defmodule {camelcase|capitalize|dot}Test do',
-            '  use ExUnit.Case, async: true',
+            '  use Bitfreighter.DataCase, async: true',
             '',
             '  alias {camelcase|capitalize|dot}',
             'end',
@@ -44,6 +44,4 @@ return {
       },
     }
   end,
-
-  cond = vim.fn.exists 'g:vscode' == 0,
 }

@@ -18,6 +18,4 @@ return {
     map('n', ',s', ':TestSuite<CR>', { desc = 'Test [S]uite' })
     map('n', ',v', ':TestVisit<CR>zz', { desc = 'Test [V]isit' })
   end,
-
-  cond = vim.fn.exists 'g:vscode' == 0,
 }

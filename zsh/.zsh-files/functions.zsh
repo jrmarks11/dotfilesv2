@@ -92,3 +92,12 @@ gpr() {
         gh pr create --web
     fi
 }
+
+yolo() {
+  is_in_git_repo && not_bf_master || return
+
+  git add .
+  git commit --amend --no-edit
+  git push --force-with-lease
+  gpr
+}

@@ -16,6 +16,4 @@ return {
       require('gitlinker').get_buf_range_url 'v'
     end, { desc = 'Git[H]ub link for current buffer' })
   end,
-
-  cond = vim.fn.exists 'g:vscode' == 0,
 }

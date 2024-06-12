@@ -14,6 +14,4 @@ return {
     map({ 'n', 'i', 'c', 'x', 't' }, '<C-j>k', ntn.NvimTmuxNavigateUp)
     map({ 'n', 'i', 'c', 'x', 't' }, '<C-j>l', ntn.NvimTmuxNavigateRight)
   end,
-
-  cond = vim.fn.exists 'g:vscode' == 0,
 }
