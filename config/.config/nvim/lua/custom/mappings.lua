@@ -1,5 +1,6 @@
-local map = vim.keymap.set
 local cmd = vim.cmd
+local d = vim.diagnostic
+local map = vim.keymap.set
 
 map('c', '<C-n>', '<down>')
 map('c', '<C-p>', '<up>')
@@ -11,8 +12,8 @@ map('c', '<esc><bs>', '<c-w>')
 map('c', '<C-k>', '<c-\\>e strpart(getcmdline(),0,getcmdpos()-1)<cr>')
 map('c', '..', [[getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '..']], { expr = true })
 
-map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go To Previous [D]iagnostic' })
-map('n', ']d', vim.diagnostic.goto_next, { desc = 'Go To Next [D]iagnostic' })
+map('n', '[d', d.goto_prev, { desc = 'Go To Previous [D]iagnostic' })
+map('n', ']d', d.goto_next, { desc = 'Go To Next [D]iagnostic' })
 map('n', 'sp', [[:'{,'}s/\<<c-r><c-w>\>//g<left><left>]], { desc = '[S]ubstitute in [P]aragraph' })
 map('x', 'sp', [[y:'{,'}s/<c-r><c-0>//g<left><left>]], { desc = '[S]ubstitute in [P]aragraph' })
 map('n', '<leader>e', ':e <cfile><CR>', { desc = '[E]dit File Under Cursor' })
