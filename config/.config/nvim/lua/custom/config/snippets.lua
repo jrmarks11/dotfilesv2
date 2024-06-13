@@ -6,8 +6,6 @@ local i = ls.insert_node
 local elixir_snippets = {
   s('p', { t '|> ', i(0) }),
   s('fn', { t 'fn ', i(1, 'params'), t ' -> ', i(0), t ' end' }),
-  s('m', { t '%{', i(0), t '}' }),
-  s('ne', { t '=~ ', i(0) }),
   s('ok', { t '{:ok, ', i(1), t ' }' }),
   s('err', { t '{:error, ', i(1), t ' }' }),
 }
