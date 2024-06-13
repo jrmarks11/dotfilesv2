@@ -1,6 +1,7 @@
 return {
   'janko-m/vim-test',
   event = { 'VeryLazy' },
+
   dependencies = { 'jgdavey/tslime.vim' },
 
   config = function()
