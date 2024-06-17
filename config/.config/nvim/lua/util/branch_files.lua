@@ -1,9 +1,11 @@
 local M = {}
 
 function M.branch_files()
+  local cwd = vim.fn.getcwd()
   require('fzf-lua').git_files {
-    cmd = 'git diff --name-only master',
+    cmd = 'git diff --name-only master -- ' .. cwd,
     prompt = 'BranchFiles❯ ',
+    cwd = cwd,
     previewer = 'custom',
     preview = {
       type = 'cmd',
