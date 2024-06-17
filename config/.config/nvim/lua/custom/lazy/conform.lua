@@ -5,6 +5,14 @@ return {
   config = function()
     local conform = require 'conform'
     conform.setup {
+      formatters = {
+        mix = {
+          command = 'mix',
+          args = { 'format', '--stdin-filename', '$FILENAME', '-' },
+          cwd = require('conform.util').root_file { 'mix.exs' },
+        },
+      },
+
       formatters_by_ft = {
         css = { 'prettier' },
         elixir = { 'mix' },
