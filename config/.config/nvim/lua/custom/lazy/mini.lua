@@ -2,9 +2,7 @@ return {
   'echasnovski/mini.nvim',
   version = false,
   event = 'VeryLazy',
-  dependencies = {
-    'catppuccin/nvim',
-  },
+  dependencies = { { 'catppuccin/nvim', name = 'catppuccin' } },
 
   config = function()
     require('mini.ai').setup {
