@@ -4,6 +4,7 @@ return {
     lazy = false,
     priority = 1000,
     name = 'catppuccin',
+
     config = function()
       vim.g.catppuccin_flavour = 'latte'
       require('catppuccin').setup {
