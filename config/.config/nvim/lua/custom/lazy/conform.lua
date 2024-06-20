@@ -11,6 +11,12 @@ return {
           args = { 'format', '--stdin-filename', '$FILENAME', '-' },
           cwd = require('conform.util').root_file { 'mix.exs' },
         },
+        sqlfluff = {
+          command = 'sh',
+          args = { '-c', 'sqlfluff fix --dialect=postgres - || true' },
+          stdin = true,
+          require_cwd = false,
+        },
       },
 
       formatters_by_ft = {
@@ -29,6 +35,7 @@ return {
         ruby = { 'rubocop' },
         scss = { 'prettier' },
         sh = { 'beautysh' },
+        sql = { 'sqlfluff' },
         typescript = { 'prettier' },
         typescriptreact = { 'prettier' },
         yaml = { 'prettier' },
