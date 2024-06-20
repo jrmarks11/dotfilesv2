@@ -2,6 +2,9 @@ return {
   'echasnovski/mini.nvim',
   version = false,
   event = 'VeryLazy',
+  dependencies = {
+    'catppuccin/nvim',
+  },
 
   config = function()
     require('mini.ai').setup {
@@ -26,6 +29,8 @@ return {
         repeat_jump = '',
       },
     }
+    local catppuccin = require("catppuccin.palettes").get_palette()
+    vim.cmd(string.format("highlight MiniJump guifg=%s guibg=%s", catppuccin.red, catppuccin.surface1))
 
     require('mini.splitjoin').setup {
       mappings = {
