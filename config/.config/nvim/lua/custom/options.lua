@@ -16,6 +16,7 @@ o.shada = { "'300", '<50', 's10', 'h' }
 o.shiftround = true
 o.shiftwidth = 2
 o.showmatch = true
+o.showmode = false
 o.signcolumn = 'yes'
 o.smartcase = true
 o.splitbelow = true
