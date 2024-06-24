@@ -2,33 +2,15 @@ return {
   'echasnovski/mini.nvim',
   version = false,
   event = 'VeryLazy',
-  dependencies = { { 'catppuccin/nvim', name = 'catppuccin' } },
 
   config = function()
-    require('mini.ai').setup {
-      mappings = {
-        around_next = '',
-        inside_next = '',
-        around_last = '',
-        inside_last = '',
-        goto_left = '',
-        goto_right = '',
-      },
-    }
+    require('mini.ai').setup()
 
     require('mini.indentscope').setup {
       draw = {
         animation = require('mini.indentscope').gen_animation.none(),
       },
     }
-
-    require('mini.jump').setup {
-      mappings = {
-        repeat_jump = '',
-      },
-    }
-    local catppuccin = require('catppuccin.palettes').get_palette()
-    vim.cmd(string.format('highlight MiniJump guifg=%s guibg=%s', catppuccin.red, catppuccin.surface1))
 
     require('mini.splitjoin').setup {
       mappings = {
@@ -71,6 +53,7 @@ return {
 
     require('mini.surround').setup {
       mappings = {
+        add = '',
         find = '',
         find_left = '',
         highlight = '',

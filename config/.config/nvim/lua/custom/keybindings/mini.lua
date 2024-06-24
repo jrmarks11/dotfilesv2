@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 
-map('n', '<leader>m', '<Cmd>lua require("util.visits").marked_files_picker()<CR>', { desc = '[M]arked Files' })
-map('n', '<leader><leader>', '<Cmd>lua require("util.visits").toggle_marked()<CR>', { desc = 'Toggle Marked' })
+map('n', '<leader>M', '<Cmd>lua require("util.visits").marked_files_picker()<CR>', { desc = '[M]arked Files' })
+map('n', '<leader>m', '<Cmd>lua require("util.visits").toggle_marked()<CR>', { desc = 'Toggle [M]arked' })
 
 local map_iterate_marks = function(lhs, direction, desc)
   local opts = { filter = 'marked', wrap = true }
