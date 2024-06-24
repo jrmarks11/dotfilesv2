@@ -25,6 +25,15 @@ return {
       highlight = { enable = true },
       auto_install = true,
       indent = { enable = true },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = '<cr>',
+          node_incremental = '<tab>',
+          scope_incremental = '<cr>',
+          node_decremental = '<s-tab>',
+        },
+      },
     }
   end,
 }
