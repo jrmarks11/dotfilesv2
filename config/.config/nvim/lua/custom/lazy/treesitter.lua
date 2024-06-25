@@ -19,8 +19,8 @@ return {
         'sql',
         'tsx',
         'typescript',
-        'yaml',
         'vim',
+        'yaml',
       },
 
       highlight = { enable = true },
@@ -29,10 +29,19 @@ return {
       textobjects = {
         move = {
           enable = true,
-          goto_next_start = { [']f'] = '@function.outer', [']c'] = '@class.outer', [']a'] = '@parameter.inner' },
-          goto_next_end = { [']F'] = '@function.outer', [']C'] = '@class.outer', [']A'] = '@parameter.inner' },
-          goto_previous_start = { ['[f'] = '@function.outer', ['[c'] = '@class.outer', ['[a'] = '@parameter.inner' },
-          goto_previous_end = { ['[F'] = '@function.outer', ['[C'] = '@class.outer', ['[A'] = '@parameter.inner' },
+          goto_next_start = { [']f'] = '@function.outer', [']a'] = '@parameter.inner' },
+          goto_next_end = { [']F'] = '@function.outer', [']A'] = '@parameter.inner' },
+          goto_previous_start = { ['[f'] = '@function.outer', ['[a'] = '@parameter.inner' },
+          goto_previous_end = { ['[F'] = '@function.outer', ['[A'] = '@parameter.inner' },
+        },
+        swap = {
+          enable = true,
+          swap_next = {
+            ['s;'] = '@parameter.inner',
+          },
+          swap_previous = {
+            ['s,'] = '@parameter.inner',
+          },
         },
       },
     }
