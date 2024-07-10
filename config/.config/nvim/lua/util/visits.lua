@@ -25,6 +25,10 @@ function M.frecency_list()
     return file ~= current_file
   end, recent_files)
 
+  recent_files = vim.tbl_map(function(file)
+    return vim.fn.fnamemodify(file, ':.')
+  end, recent_files)
+
   require('fzf-lua').fzf_exec(recent_files, {
     prompt = 'Recent Files> ',
     previewer = 'builtin',
