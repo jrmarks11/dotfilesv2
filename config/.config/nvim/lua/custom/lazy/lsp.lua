@@ -3,18 +3,11 @@ return {
   event = { 'BufReadPre', 'BufNewFile' },
 
   dependencies = {
-    'hrsh7th/cmp-nvim-lsp',
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
   },
 
   config = function()
-    local lsp = vim.lsp
-    local cmp_lsp = require 'cmp_nvim_lsp'
-
-    local capabilities =
-      vim.tbl_deep_extend('force', {}, lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
-
     require 'custom.autocmds.lsp'
     require('mason').setup()
 
@@ -28,16 +21,13 @@ return {
       },
 
       handlers = {
-        function(server_name) -- default handler (optional)
-          require('lspconfig')[server_name].setup {
-            capabilities = capabilities,
-          }
+        function(server_name)
+          require('lspconfig')[server_name].setup {}
         end,
 
         ['lua_ls'] = function()
           local lspconfig = require 'lspconfig'
           lspconfig.lua_ls.setup {
-            capabilities = capabilities,
             settings = {
               Lua = {
                 diagnostics = {
@@ -51,7 +41,6 @@ return {
         ['elixirls'] = function()
           local lspconfig = require 'lspconfig'
           lspconfig.elixirls.setup {
-            capabilities = capabilities,
             settings = {
               autoBuild = true,
               dialyzerEnabled = true,

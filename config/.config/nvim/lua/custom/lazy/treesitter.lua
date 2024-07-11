@@ -35,11 +35,6 @@ return {
           goto_previous_start = { ['[f'] = '@function.outer', ['[a'] = '@parameter.inner' },
           goto_previous_end = { ['[F'] = '@function.outer', ['[A'] = '@parameter.inner' },
         },
-        swap = {
-          enable = true,
-          swap_next = { ['s;'] = '@parameter.inner' },
-          swap_previous = { ['s,'] = '@parameter.inner' },
-        },
       },
 
       incremental_selection = {
@@ -47,7 +42,7 @@ return {
         keymaps = {
           init_selection = '<cr>',
           node_incremental = '<tab>',
-          scope_incremental = '<cr>',
+          scope_incremental = false,
           node_decremental = '<s-tab>',
         },
       },
