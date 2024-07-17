@@ -39,13 +39,14 @@ map('n', 'N', 'Nzzzv')
 
 map({ 'n', 'x' }, [[']], '`', { remap = true })
 map({ 'n', 'x' }, ';', ':')
+map({ 'n', 'x' }, ',', '<nop>')
+map({ 'n', 'x', 'v' }, 's', '<nop>', { remap = true })
 
 map('n', '[<leader>', ':<C-u>put! =repeat(nr2char(10),v:count1)<CR>', { silent = true, desc = 'Empty lines above' })
 map('n', ']<leader>', ':<C-u>put =repeat(nr2char(10),v:count1)<CR>', { silent = true, desc = 'Empty lines below' })
 
 map('n', '<leader><Tab>', '<C-^>', { desc = 'Switch to Last buffer' })
 
-map({ 'n', 'x', 'v' }, 's', '<nop>', { remap = true })
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 map('x', 'ae', 'gg0oG$', { silent = true, desc = 'Select [A]n [E]ntire File' })
