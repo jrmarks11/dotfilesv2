@@ -32,10 +32,9 @@ map('v', 'K', [[:m '<-2<CR>gv=gv]])
 map('n', 'J', 'mzJ`z')
 map('n', 'K', 'i<cr><esc>^mwgk:silent! s/\\v +$//<cr>:noh<cr>`w', { silent = true })
 
-map({ 'n', 'x' }, [[']], '`')
+map({ 'n', 'x' }, [[']], '`', { remap = true })
 map({ 'n', 'x' }, ';', ':')
 map({ 'n', 'x' }, ',', '<nop>')
-map({ 'n', 'x' }, 's', '<nop>')
 
 map('n', '[<space>', ':<C-u>put! =repeat(nr2char(10),v:count1)<CR>', { silent = true, desc = 'Empty lines above' })
 map('n', ']<space>', ':<C-u>put =repeat(nr2char(10),v:count1)<CR>', { silent = true, desc = 'Empty lines below' })

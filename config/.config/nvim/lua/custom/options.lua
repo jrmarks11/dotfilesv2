@@ -24,6 +24,7 @@ o.splitright = true
 o.swapfile = false
 o.tabstop = 2
 o.textwidth = 78
+o.timeoutlen = 500
 o.updatetime = 250
 o.undodir = undo_dir
 o.undofile = true
