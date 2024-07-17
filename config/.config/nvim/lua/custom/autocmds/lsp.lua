@@ -10,9 +10,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map('gI', require('fzf-lua').lsp_implementations, '[G]oto [I]mplementation')
     map('gr', require('fzf-lua').lsp_references, '[G]oto [R]eferences')
     map(',c', vim.lsp.buf.code_action, '[C]ode Action')
-    map('<leader>s', require('fzf-lua').lsp_document_symbols, 'Document [S]ymbols')
-    map('<leader>D', require('fzf-lua').lsp_typedefs, 'Type [D]efinition')
-    map('<leader>S', require('fzf-lua').lsp_workspace_symbols, 'Workspace [S]ymbols')
+    map('<space>s', require('fzf-lua').lsp_document_symbols, 'Document [S]ymbols')
+    map('<space>D', require('fzf-lua').lsp_typedefs, 'Type [D]efinition')
+    map('<space>S', require('fzf-lua').lsp_workspace_symbols, 'Workspace [S]ymbols')
     map(',R', vim.lsp.buf.rename, '[R]ename')
     map('<C-k>', vim.lsp.buf.hover, 'Hover Documentation')
 
