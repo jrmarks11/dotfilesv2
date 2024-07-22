@@ -29,6 +29,7 @@ map({ 'n', 'x' }, 'k', [[v:count == 0 ? 'gk' : 'k']], { expr = true, silent = tr
 map('v', 'J', [[:m '>+1<CR>gv=gv]])
 map('v', 'K', [[:m '<-2<CR>gv=gv]])
 map({ 'n', 'x' }, ',', '<nop>')
+map({ 'n', 'x' }, 's', '<nop>')
 
 map('n', 'J', 'mzJ`z')
 map('n', 'K', 'i<cr><esc>^mwgk:silent! s/\\v +$//<cr>:noh<cr>`w', { silent = true })
