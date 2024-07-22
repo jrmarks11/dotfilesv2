@@ -10,12 +10,5 @@ return {
       end,
       desc = 'Show which-key for [s]',
     },
-    {
-      ',',
-      function()
-        require('which-key').show { keys = ',', loop = true }
-      end,
-      desc = 'Show which-key for [,]',
-    },
   },
 }
