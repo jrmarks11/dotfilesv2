@@ -11,8 +11,8 @@ local map_iterate_marks = function(lhs, direction, desc)
   map('n', lhs, rhs, { desc = desc })
 end
 
-map_iterate_marks('<space>n', 'forward', '[N]ext Marked Label')
-map_iterate_marks('<space>p', 'backward', '[P]revious Marked Label')
+map_iterate_marks('<space>n', 'forward', '[N]ext Marked Label buffer')
+map_iterate_marks('<space>p', 'backward', '[P]revious Marked Label buffer')
 
 map('n', '<space>r', '<Cmd>lua require("util.visits").frecency_list()<CR>', { desc = '[R]ecent Files' })
 

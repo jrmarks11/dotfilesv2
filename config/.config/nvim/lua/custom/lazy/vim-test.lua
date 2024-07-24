@@ -13,7 +13,7 @@ return {
     g['tslime_always_current_session'] = 1
     g['tslime_always_current_window'] = 1
 
-    map('n', ',t', ':TestNearest<CR>', { desc = '[T]est Nearest' })
+    map('n', ',t', ':TestNearest<CR>', { desc = '[T] Test Nearest' })
     map('n', ',k', ':TestLast<CR>', { desc = 'Test [L]ast' })
     map('n', ',f', ':TestFile<CR>', { desc = 'Test [F]ile' })
     map('n', ',s', ':TestSuite<CR>', { desc = 'Test [S]uite' })
