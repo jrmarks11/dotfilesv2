@@ -12,16 +12,16 @@ map('c', '<esc><bs>', '<c-w>')
 map('c', '<C-k>', '<c-\\>e strpart(getcmdline(),0,getcmdpos()-1)<cr>')
 map('c', '..', [[getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '..']], { expr = true })
 
-map('n', '[d', d.goto_prev, { desc = 'Go To Previous [D]iagnostic' })
-map('n', ']d', d.goto_next, { desc = 'Go To Next [D]iagnostic' })
-map('n', 'sp', [[:'{,'}s/\<<c-r><c-w>\>//g<left><left>]], { desc = '[S]ubstitute in [P]aragraph' })
-map('x', 'sp', [[y:'{,'}s/<c-r><c-0>//g<left><left>]], { desc = '[S]ubstitute in [P]aragraph' })
-map('n', '<space>e', ':e <cfile><CR>', { desc = '[E]dit File Under Cursor' })
-map('n', '<space>l', ':Lazy<CR>', { desc = 'Open [L] lazy' })
-map('n', 'se', [[:%s/\<<c-r><c-w>\>//g<left><left>]], { desc = '[S]ubstitute In [E]ntire Buffer' })
-map('x', 'se', 'y:%s/<c-r><c-0>//g<left><left>', { desc = '[S]ubstitute In [E]ntire Buffer' })
-map('n', ',r', [[<cmd>lua require('util.rename_file').rename_file()<CR>]], { desc = '[R]ename File' })
-map('n', 'gp', 'mz<cmd>put<CR>`zj', { desc = '[G]o [P]aste' })
+map('n', '[d', d.goto_prev, { desc = 'Go To Previous Diagnostic' })
+map('n', ']d', d.goto_next, { desc = 'Go To Next Diagnostic' })
+map('n', 'sp', [[:'{,'}s/\<<c-r><c-w>\>//g<left><left>]], { desc = 'Substitute in Paragraph' })
+map('x', 'sp', [[y:'{,'}s/<c-r><c-0>//g<left><left>]], { desc = 'Substitute in Paragraph' })
+map('n', '<space>e', ':e <cfile><CR>', { desc = 'Edit File Under Cursor' })
+map('n', '<space>l', ':Lazy<CR>', { desc = 'Open lazy' })
+map('n', 'se', [[:%s/\<<c-r><c-w>\>//g<left><left>]], { desc = 'Substitute In Entire Buffer' })
+map('x', 'se', 'y:%s/<c-r><c-0>//g<left><left>', { desc = 'Substitute In Entire Buffer' })
+map('n', ',r', [[<cmd>lua require('util.rename_file').rename_file()<CR>]], { desc = 'Rename File' })
+map('n', 'gp', 'mz<cmd>put<CR>`zj', { desc = 'Paste on next line' })
 
 map({ 'n', 'x' }, 'j', [[v:count == 0 ? 'gj' : 'j']], { expr = true, silent = true })
 map({ 'n', 'x' }, 'k', [[v:count == 0 ? 'gk' : 'k']], { expr = true, silent = true })
@@ -44,14 +44,14 @@ map('n', '<space><Tab>', '<C-^>', { desc = 'Switch to Last buffer' })
 
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
-map('x', 'ae', 'gg0oG$', { silent = true, desc = 'Select [A]n [E]ntire File' })
+map('x', 'ae', 'gg0oG$', { silent = true, desc = 'Select Entire File' })
 map('o', 'ae', function()
   cmd 'execute "normal! m`"'
   cmd 'keepjumps normal! ggVG'
-end, { silent = true, desc = 'Select [A]n [E]ntire File' })
+end, { silent = true, desc = 'Select Entire File' })
 
-map('x', 'il', '<esc>^vg_', { silent = true, desc = 'Select [I]nner [L]ine' })
+map('x', 'il', '<esc>^vg_', { silent = true, desc = 'Select Inner Line' })
 map('o', 'il', function()
   cmd 'execute "normal! m`"'
   cmd 'keepjumps normal! ^vg_'
-end, { silent = true, desc = 'Select [I]nner [L]ine' })
+end, { silent = true, desc = 'Select Inner Line' })

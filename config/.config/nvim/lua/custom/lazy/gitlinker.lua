@@ -12,10 +12,10 @@ return {
 
     map('n', 'sh', function()
       require('gitlinker').get_buf_range_url 'n'
-    end, { desc = 'Git[H]ub link for current buffer' })
+    end, { desc = 'Git Hub link for current buffer' })
 
     map('v', 'sh', function()
       require('gitlinker').get_buf_range_url 'v'
-    end, { desc = 'Git[H]ub link for current buffer' })
+    end, { desc = 'Git Hub link for current buffer' })
   end,
 }
