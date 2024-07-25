@@ -26,8 +26,10 @@ map('n', 'gp', 'mz<cmd>put<CR>`zj', { desc = 'Paste on next line' })
 map({ 'n', 'x' }, 'j', [[v:count == 0 ? 'gj' : 'j']], { expr = true, silent = true })
 map({ 'n', 'x' }, 'k', [[v:count == 0 ? 'gk' : 'k']], { expr = true, silent = true })
 
-map('v', 'J', [[:m '>+1<CR>gv=gv]])
-map('v', 'K', [[:m '<-2<CR>gv=gv]])
+map('x', 'J', [[:m '>+1<CR>gv=gv]])
+map('x', 'K', [[:m '<-2<CR>gv=gv]])
+map('x', '>' , [[>gv]])
+map('x', '<' , [[<gv]])
 map({ 'n', 'x' }, ',', '<nop>')
 map({ 'n', 'x' }, 's', '<nop>')
 
