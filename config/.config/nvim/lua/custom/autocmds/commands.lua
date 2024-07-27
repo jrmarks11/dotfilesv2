@@ -49,7 +49,7 @@ autocmd({ 'InsertEnter', 'CmdlineEnter' }, {
 autocmd({ 'InsertLeave', 'CmdlineLeave' }, {
   group = fast_escape_group,
   pattern = '*',
-  command = 'set timeoutlen=500',
+  command = 'set timeoutlen=1000',
 })
 
 local last_cursor_group = augroup('LastCursor', { clear = true })

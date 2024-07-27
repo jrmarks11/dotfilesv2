@@ -10,7 +10,6 @@ map('c', '<M-Left>', '<s-left>')
 map('c', '<M-Right>', '<s-right>')
 map('c', '<esc><bs>', '<c-w>')
 map('c', '<C-k>', '<c-\\>e strpart(getcmdline(),0,getcmdpos()-1)<cr>')
-map('c', '..', [[getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '..']], { expr = true })
 
 map('n', '[d', d.goto_prev, { desc = 'Go To Previous Diagnostic' })
 map('n', ']d', d.goto_next, { desc = 'Go To Next Diagnostic' })
@@ -20,7 +19,6 @@ map('n', '<space>e', ':e <cfile><CR>', { desc = 'Edit File Under Cursor' })
 map('n', '<space>l', ':Lazy<CR>', { desc = 'Open lazy' })
 map('n', 'se', [[:%s/\<<c-r><c-w>\>//g<left><left>]], { desc = 'Substitute In Entire Buffer' })
 map('x', 'se', 'y:%s/<c-r><c-0>//g<left><left>', { desc = 'Substitute In Entire Buffer' })
-map('n', ',r', [[<cmd>lua require('util.rename_file').rename_file()<CR>]], { desc = 'Rename File' })
 map('n', 'gp', 'mz<cmd>put<CR>`zj', { desc = 'Paste on next line' })
 
 map({ 'n', 'x' }, 'j', [[v:count == 0 ? 'gj' : 'j']], { expr = true, silent = true })
@@ -28,8 +26,9 @@ map({ 'n', 'x' }, 'k', [[v:count == 0 ? 'gk' : 'k']], { expr = true, silent = tr
 
 map('x', 'J', [[:m '>+1<CR>gv=gv]])
 map('x', 'K', [[:m '<-2<CR>gv=gv]])
-map('x', '>' , [[>gv]])
-map('x', '<' , [[<gv]])
+map('x', '>', [[>gv]])
+map('x', '<', [[<gv]])
+
 map({ 'n', 'x' }, ',', '<nop>')
 map({ 'n', 'x' }, 's', '<nop>')
 

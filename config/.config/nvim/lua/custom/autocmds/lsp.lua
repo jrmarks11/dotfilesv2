@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map('<space>s', require('fzf-lua').lsp_document_symbols, 'Document Symbols')
     map('<space>D', require('fzf-lua').lsp_typedefs, 'Type Definition')
     map('<space>S', require('fzf-lua').lsp_workspace_symbols, 'Workspace Symbols')
-    map(',R', vim.lsp.buf.rename, 'Rename')
+    map(',r', vim.lsp.buf.rename, 'Rename')
     map('<C-k>', vim.lsp.buf.hover, 'Hover Documentation')
 
     local client = vim.lsp.get_client_by_id(event.data.client_id)
