@@ -1,7 +1,5 @@
-local m = vim.keymap.set
-
 local function map(mode, key, command, description)
-  m(mode, key, command, { silent = true, desc = description })
+  vim.keymap.set(mode, key, command, { silent = true, desc = description })
 end
 
 map('n', '<space>b', [[<cmd>lua require('util.branch_files').branch_files()<cr>]], 'Branch Files')

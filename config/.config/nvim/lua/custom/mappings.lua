@@ -13,13 +13,16 @@ map('c', '<C-k>', '<c-\\>e strpart(getcmdline(),0,getcmdpos()-1)<cr>')
 
 map('n', '[d', d.goto_prev, { desc = 'Go To Previous Diagnostic' })
 map('n', ']d', d.goto_next, { desc = 'Go To Next Diagnostic' })
+
 map('n', 'sp', [[:'{,'}s/\<<c-r><c-w>\>//g<left><left>]], { desc = 'Substitute in Paragraph' })
 map('x', 'sp', [[y:'{,'}s/<c-r><c-0>//g<left><left>]], { desc = 'Substitute in Paragraph' })
-map('n', '<space>e', ':e <cfile><CR>', { desc = 'Edit File Under Cursor' })
-map('n', '<space>l', ':Lazy<CR>', { desc = 'Open lazy' })
 map('n', 'se', [[:%s/\<<c-r><c-w>\>//g<left><left>]], { desc = 'Substitute In Entire Buffer' })
 map('x', 'se', 'y:%s/<c-r><c-0>//g<left><left>', { desc = 'Substitute In Entire Buffer' })
+
 map('n', 'gp', 'mz<cmd>put<CR>`zj', { desc = 'Paste on next line' })
+
+map('n', '<space>e', ':e <cfile><CR>', { desc = 'Edit File Under Cursor' })
+map('n', '<space>l', ':Lazy<CR>', { desc = 'Open lazy' })
 
 map({ 'n', 'x' }, 'j', [[v:count == 0 ? 'gj' : 'j']], { expr = true, silent = true })
 map({ 'n', 'x' }, 'k', [[v:count == 0 ? 'gk' : 'k']], { expr = true, silent = true })

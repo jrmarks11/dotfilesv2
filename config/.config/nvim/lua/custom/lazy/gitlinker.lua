@@ -6,16 +6,16 @@ return {
 
   config = function()
     local map = vim.keymap.set
-    require('gitlinker').setup {
-      mappings = nil,
-    }
+    local gitlinker = require 'gitlinker'
+
+    gitlinker.setup { mappings = nil }
 
     map('n', 'sh', function()
-      require('gitlinker').get_buf_range_url 'n'
+      gitlinker.get_buf_range_url 'n'
     end, { desc = 'Git Hub link for current buffer' })
 
     map('v', 'sh', function()
-      require('gitlinker').get_buf_range_url 'v'
+      gitlinker.get_buf_range_url 'v'
     end, { desc = 'Git Hub link for current buffer' })
   end,
 }
