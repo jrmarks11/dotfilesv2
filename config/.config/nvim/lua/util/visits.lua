@@ -29,15 +29,8 @@ function M.frecency_list()
     return vim.fn.fnamemodify(file, ':.')
   end, recent_files)
 
-  require('fzf-lua').fzf_exec(recent_files, {
-    prompt = 'Recent Files> ',
-    previewer = 'builtin',
-    actions = {
-      ['default'] = function(selected)
-        vim.cmd('edit ' .. selected[1])
-      end,
-    },
-  })
+  local opts = require('fzf-lua.config').normalize_opts({ prompt = 'Recent Files> ' }, 'files')
+  require('fzf-lua').fzf_exec(recent_files, opts)
 end
 
 function M.section_marked_files()
