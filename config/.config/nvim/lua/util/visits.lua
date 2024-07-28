@@ -30,7 +30,7 @@ function M.frecency_list()
   end, recent_files)
 
   local opts = require('fzf-lua.config').normalize_opts({ prompt = 'Recent Files> ' }, 'files')
-  require('fzf-lua').fzf_exec(recent_files, opts)
+  require('fzf-lua.core').fzf_exec(recent_files, opts)
 end
 
 function M.section_marked_files()
