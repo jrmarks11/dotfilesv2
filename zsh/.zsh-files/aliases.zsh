@@ -3,7 +3,7 @@
 alias ..='cd ..'
 alias cat='bat'
 alias d='docker'
-alias dc='docker-compose'
+alias dc='docker compose'
 alias dps='docker ps --format "table {{.Names}}\t{{.Status}}"'
 alias dsp='docker system prune'
 alias gco='git checkout'
