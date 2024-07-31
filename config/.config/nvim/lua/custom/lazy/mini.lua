@@ -30,6 +30,8 @@ return {
       },
     }
 
+    require('mini.cursorword').setup()
+
     require('mini.icons').setup {}
 
     require('mini.indentscope').setup {
