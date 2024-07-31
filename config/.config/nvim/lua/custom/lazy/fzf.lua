@@ -5,15 +5,21 @@ return {
   config = function()
     local fzf = require 'fzf-lua'
     fzf.setup {
+      defaults = {
+        file_icons = 'mini',
+      },
+
       winopts = {
         preview = {
           vertical = 'up:60%',
           layout = 'vertical',
         },
       },
+
       grep = {
         rg_opts = '--column --line-number --no-heading --color=always --smart-case --hidden',
       },
+
       keymap = {
         builtin = {
           ['<c-h>'] = 'toggle-help',
