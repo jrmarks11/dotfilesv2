@@ -3,6 +3,7 @@ local undo_dir = vim.fn.expand '$HOME' .. '/.nvim-undo'
 
 o.clipboard:append 'unnamedplus'
 o.colorcolumn = { 81, 82 }
+o.cursorline = true
 o.expandtab = true
 o.ignorecase = true
 o.list = true
