@@ -101,3 +101,11 @@ yolo() {
     git push --force-with-lease
     gpr
 }
+
+deploy_api() {
+    gh workflow run run_playbook.yml -f playbook=deploy_api.yml
+}
+
+deploy_app() {
+    gh workflow run run_playbook.yml -f playbook=deploy_app.yml
+}
