@@ -10,4 +10,5 @@ map('n', '<space>g', [[<cmd>lua require('fzf-lua').git_status()<CR>]], 'Git Stat
 map('n', '<space>h', [[<cmd>lua require('fzf-lua').help_tags()<CR>]], 'Search Help Docs')
 map('n', '<space>j', [[<cmd>lua require('fzf-lua').grep()<CR>]], 'Search Grep Project')
 map('n', '<space>t', [[<cmd>lua require('fzf-lua').files()<CR>]], 'To Files')
+map('n', '<space>T', [[<cmd>lua require('fzf-lua').tags()<CR>]], 'To Tags')
 map('n', '<space>u', [[<cmd>lua require('fzf-lua').resume()<CR>]], 'Resume Fzf Search')
