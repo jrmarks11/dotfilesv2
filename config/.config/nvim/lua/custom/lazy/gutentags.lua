@@ -3,7 +3,6 @@ return {
   event = 'VeryLazy',
 
   config = function()
-    -- https://www.reddit.com/r/vim/comments/d77t6j/guide_how_to_setup_ctags_with_gutentags_properly/
     vim.g.gutentags_ctags_exclude = {
       '*.git',
       '*.svg',
@@ -80,9 +79,8 @@ return {
     vim.g.gutentags_generate_on_write = true
     vim.g.gutentags_generate_on_empty_buffer = true
     vim.g.gutentags_modules = true
-    vim.g.gutentags_ctags_extra_args = { '--tag-relative=yes', '--fields=+ailmnS', }
+    vim.g.gutentags_ctags_extra_args = { '--tag-relative=yes', '--fields=+ailmnS' }
 
-    -- custom
     vim.g.gutentags_modules = { 'ctags' }
-  end
+  end,
 }
