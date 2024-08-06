@@ -42,11 +42,9 @@ return {
           local lspconfig = require 'lspconfig'
           lspconfig.elixirls.setup {
             settings = {
-              autoBuild = true,
               dialyzerEnabled = true,
-              fetchDeps = false,
-              enableTestLenses = false,
-              suggestSpecs = false,
+              fetchDeps = true,
+              trace = { server = "verbose" }
             },
           }
         end,
