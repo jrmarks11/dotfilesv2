@@ -40,6 +40,7 @@ return {
         typescriptreact = { 'prettier' },
         yaml = { 'prettier' },
         vue = { 'prettier' },
+        xml = { 'xmllint' },
         zsh = { 'beautysh' },
       },
     }
