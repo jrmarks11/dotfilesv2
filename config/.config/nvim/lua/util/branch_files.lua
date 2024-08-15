@@ -20,7 +20,7 @@ function M.branch_files()
       end,
     },
     actions = {
-      ['default'] = function(selected)
+      ['enter'] = function(selected)
         local file = fzf_lua.path.entry_to_file(selected[1])
         local git_root = fzf_lua.path.git_root()
         local relative_path = cwd:gsub('^' .. vim.pesc(git_root) .. '/', '')
