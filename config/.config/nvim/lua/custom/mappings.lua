@@ -20,6 +20,7 @@ map('n', 'se', [[:%s/\<<c-r><c-w>\>//g<left><left>]], { desc = 'Substitute In En
 map('x', 'se', 'y:%s/<c-r><c-0>//g<left><left>', { desc = 'Substitute In Entire Buffer' })
 
 map('n', 'gp', 'mz<cmd>put<CR>`zj', { desc = 'Paste on next line' })
+map('n', 'gP', 'mz<cmd>put!<CR>`zk', { desc = 'Paste on previous line' })
 
 map('n', '<space>e', ':e <cfile><CR>', { desc = 'Edit File Under Cursor' })
 map('n', '<space>l', ':Lazy<CR>', { desc = 'Open lazy' })
