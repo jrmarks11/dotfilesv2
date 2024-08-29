@@ -9,7 +9,6 @@ return {
       vim.g.catppuccin_flavour = 'latte'
       require('catppuccin').setup {
         integrations = {
-          cmp = true,
           gitsigns = true,
           mason = true,
           markdown = true,
