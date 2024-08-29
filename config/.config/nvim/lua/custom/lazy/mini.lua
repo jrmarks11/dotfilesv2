@@ -4,8 +4,6 @@ return {
   event = 'VeryLazy',
 
   config = function()
-    local map = vim.keymap.set
-
     require('mini.ai').setup {
       n_lines = 500,
       custom_textobjects = {
@@ -22,33 +20,13 @@ return {
         },
         u = require('mini.ai').gen_spec.function_call(), -- u for "Usage"
       },
-      mappings = {
-        around_next = '',
-        inside_next = '',
-        around_last = '',
-        inside_last = '',
-        goto_left = '',
-        goto_right = '',
-      },
+      mappings = { around_next = '', inside_next = '', around_last = '', inside_last = '', goto_left = '', goto_right = '', },
     }
 
     require('mini.cursorword').setup()
-
-    require('mini.icons').setup {}
-
-    require('mini.indentscope').setup {
-      draw = {
-        animation = require('mini.indentscope').gen_animation.none(),
-      },
-    }
-
-    require('mini.splitjoin').setup {
-      mappings = {
-        toggle = '',
-      },
-    }
-
-    map('n', 'ss', '<Cmd>lua require("mini.splitjoin").toggle()<CR>', { desc = 'SplitJoin Toggle' })
+    require('mini.icons').setup()
+    require('mini.indentscope').setup { draw = { animation = require('mini.indentscope').gen_animation.none(), }, }
+    require('mini.splitjoin').setup { mappings = { toggle = 'ss', }, }
 
     local sl = require 'mini.statusline'
     sl.setup {
@@ -63,7 +41,7 @@ return {
             '%<',
             { hl = 'slFilename', strings = { filename } },
             '%=',
-            { hl = mode_hl,      strings = { location } },
+            { hl = mode_hl, strings = { location } },
           }
         end,
 
@@ -82,18 +60,10 @@ return {
     }
 
     require('mini.surround').setup {
-      mappings = {
-        find = '',
-        find_left = '',
-        highlight = '',
-        update_n_lines = '',
-        suffix_last = '',
-        suffix_next = '',
-      },
+      mappings = { find = '', find_left = '', highlight = '', update_n_lines = '', suffix_last = '', suffix_next = '', },
     }
 
     require('mini.visits').setup()
-
-    map('n', '<space>r', '<Cmd>lua require("util.visits").frecency_list()<CR>', { desc = 'Recent Files' })
+    vim.keymap.set('n', '<space>r', '<Cmd>lua require("util.visits").frecency_list()<CR>', { desc = 'Recent Files' })
   end,
 }
