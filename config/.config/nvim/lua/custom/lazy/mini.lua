@@ -4,6 +4,8 @@ return {
   event = 'VeryLazy',
 
   config = function()
+    local map = vim.keymap.set
+
     require('mini.ai').setup {
       n_lines = 500,
       custom_textobjects = {
@@ -11,10 +13,10 @@ return {
           a = { '@block.outer', '@conditional.outer', '@loop.outer' },
           i = { '@block.inner', '@conditional.inner', '@loop.inner' },
         },
-        f = require('mini.ai').gen_spec.treesitter { a = '@function.outer', i = '@function.inner' }, -- function
+        f = require('mini.ai').gen_spec.treesitter { a = '@function.outer', i = '@function.inner' },
         t = { '<([%p%w]-)%f[^<%w][^<>]->.-</%1>', '^<.->().*()</[^/]->$' }, -- tags
-        d = { '%f[%d]%d+' }, -- digits
-        c = { -- Word with case
+        d = { '%f[%d]%d+' },                                                -- digits
+        c = {                                                               -- Word with case
           { '%u[%l%d]+%f[^%l%d]', '%f[%S][%l%d]+%f[^%l%d]', '%f[%P][%l%d]+%f[^%l%d]', '^[%l%d]+%f[^%l%d]' },
           '^().*()$',
         },
@@ -46,22 +48,22 @@ return {
       },
     }
 
+    map('n', 'ss', '<Cmd>lua require("mini.splitjoin").toggle()<CR>', { desc = 'SplitJoin Toggle' })
+
     local sl = require 'mini.statusline'
     sl.setup {
       content = {
         active = function()
           local mode, mode_hl = sl.section_mode { trunc_width = 120 }
           local filename = sl.section_filename { trunc_width = 140 }
-          local marks = require('util.visits').section_marked_files()
           local location = '%2l:%-2v'
 
           return sl.combine_groups {
-            { hl = mode_hl, strings = { mode } },
+            { hl = mode_hl,      strings = { mode } },
             '%<',
             { hl = 'slFilename', strings = { filename } },
             '%=',
-            { hl = 'slFilename', strings = { marks } },
-            { hl = mode_hl, strings = { location } },
+            { hl = mode_hl,      strings = { location } },
           }
         end,
 
@@ -92,6 +94,6 @@ return {
 
     require('mini.visits').setup()
 
-    require 'custom.keybindings.mini'
+    map('n', '<space>r', '<Cmd>lua require("util.visits").frecency_list()<CR>', { desc = 'Recent Files' })
   end,
 }
