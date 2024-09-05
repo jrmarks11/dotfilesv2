@@ -28,22 +28,9 @@ return {
           local lspconfig = require 'lspconfig'
           lspconfig.lua_ls.setup {
             settings = {
-              Lua = {
-                diagnostics = {
-                  globals = { 'vim', 'it', 'describe', 'before_each', 'after_each' },
-                },
-              },
-            },
-          }
-        end,
-
-        ['elixirls'] = function()
-          local lspconfig = require 'lspconfig'
-          lspconfig.elixirls.setup {
-            settings = {
-              dialyzerEnabled = true,
-              fetchDeps = true,
-              trace = { server = "verbose" }
+              Lua = { diagnostics = { globals = {
+                'vim'
+              }, }, },
             },
           }
         end,
