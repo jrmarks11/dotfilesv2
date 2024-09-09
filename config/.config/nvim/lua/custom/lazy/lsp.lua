@@ -16,15 +16,11 @@ return {
         'elixirls',
         'lua_ls',
         'ruby_lsp',
-        'tsserver',
+        'ts_ls',
       },
 
       handlers = {
         function(server_name)
-          if server_name == 'tsserver' then
-            server_name = 'ts_ls'
-          end
-
           require('lspconfig')[server_name].setup {}
         end,
 
