@@ -19,16 +19,20 @@ autocmd({ 'InsertLeave', 'TextChanged' }, {
   nested = true,
 })
 
-local cursor_line_group = augroup('CursorLine', { clear = true })
+local relative_number_group = augroup('RelativeNumber', { clear = true })
 autocmd({ 'WinEnter', 'InsertLeave' }, {
-  group = cursor_line_group,
+  group = relative_number_group,
   pattern = '*',
-  command = 'set cursorline',
+  callback = function()
+    vim.opt.relativenumber = true
+  end,
 })
 autocmd({ 'WinLeave', 'InsertEnter' }, {
-  group = cursor_line_group,
+  group = relative_number_group,
   pattern = '*',
-  command = 'set nocursorline',
+  callback = function()
+    vim.opt.relativenumber = false
+  end,
 })
 
 local ensure_directory_exists_group = augroup('EnsureDirectoryExists', { clear = true })
