@@ -93,15 +93,6 @@ gpr() {
     fi
 }
 
-yolo() {
-    is_in_git_repo && not_bf_master || return
-
-    git add .
-    git commit --amend --no-edit
-    git push --force-with-lease
-    gpr
-}
-
 deploy_api() {
     gh workflow run run_playbook.yml -f playbook=deploy_api.yml
 }
