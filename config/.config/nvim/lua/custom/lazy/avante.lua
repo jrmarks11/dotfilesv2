@@ -8,11 +8,37 @@ return {
     openai = {
       model = 'gpt-4o',
     },
+    mappings = {
+      ask = ',a',
+      edit = ',e',
+      refresh = ',r',
+    },
   },
   keys = {
-    { ',a', function() require('avante.api').ask() end, desc = 'avante: ask', mode = { 'n', 'v' } },
-    { ',r', function() require('avante.api').refresh() end, desc = 'avante: refresh' },
-    { ',e', function() require('avante.api').edit() end, desc = 'avante: edit', mode = 'v' },
+    {
+      ',a',
+      function()
+        require('avante.api').ask()
+      end,
+      desc = 'avante: ask',
+      mode = { 'n', 'v' },
+    },
+    {
+      ',r',
+      function()
+        require('avante.api').refresh()
+      end,
+      desc = 'avante: refresh',
+    },
+    {
+      ',e',
+      function()
+        require('avante.api').edit()
+        vim.cmd [[startinsert]]
+      end,
+      desc = 'avante: edit',
+      mode = 'v',
+    },
   },
   build = 'make',
   dependencies = {
