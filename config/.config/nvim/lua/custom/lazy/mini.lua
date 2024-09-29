@@ -7,26 +7,48 @@ return {
     require('mini.ai').setup {
       n_lines = 500,
       custom_textobjects = {
-        o = require('mini.ai').gen_spec.treesitter { -- code block
+        o = require('mini.ai').gen_spec.treesitter {
           a = { '@block.outer', '@conditional.outer', '@loop.outer' },
           i = { '@block.inner', '@conditional.inner', '@loop.inner' },
         },
-        f = require('mini.ai').gen_spec.treesitter { a = '@function.outer', i = '@function.inner' },
-        t = { '<([%p%w]-)%f[^<%w][^<>]->.-</%1>', '^<.->().*()</[^/]->$' }, -- tags
-        d = { '%f[%d]%d+' },                                                -- digits
-        c = {                                                               -- Word with case
+        f = require('mini.ai').gen_spec.treesitter {
+          a = '@function.outer',
+          i = '@function.inner',
+        },
+        t = {
+          '<([%p%w]-)%f[^<%w][^<>]->.-</%1>',
+          '^<.->().*()</[^/]->$',
+        },
+        d = { '%f[%d]%d+' },
+        c = {
           { '%u[%l%d]+%f[^%l%d]', '%f[%S][%l%d]+%f[^%l%d]', '%f[%P][%l%d]+%f[^%l%d]', '^[%l%d]+%f[^%l%d]' },
           '^().*()$',
         },
-        u = require('mini.ai').gen_spec.function_call(), -- u for "Usage"
       },
-      mappings = { around_next = '', inside_next = '', around_last = '', inside_last = '', goto_left = '', goto_right = '', },
+      mappings = {
+        around_next = '',
+        inside_next = '',
+        around_last = '',
+        inside_last = '',
+        goto_left = '',
+        goto_right = '',
+      },
     }
 
     require('mini.cursorword').setup()
     require('mini.icons').setup()
-    require('mini.indentscope').setup { draw = { animation = require('mini.indentscope').gen_animation.none(), }, }
-    require('mini.splitjoin').setup { mappings = { toggle = 'ss', }, }
+
+    require('mini.indentscope').setup {
+      draw = {
+        animation = require('mini.indentscope').gen_animation.none(),
+      },
+    }
+
+    require('mini.splitjoin').setup {
+      mappings = {
+        toggle = 'ss',
+      },
+    }
 
     local sl = require 'mini.statusline'
     sl.setup {
@@ -37,7 +59,7 @@ return {
           local location = '%2l:%-2v'
 
           return sl.combine_groups {
-            { hl = mode_hl,      strings = { mode } },
+            { hl = mode_hl, strings = { mode } },
             '%<',
             { hl = 'slFilename', strings = { filename } },
             '%=',
@@ -60,7 +82,14 @@ return {
     }
 
     require('mini.surround').setup {
-      mappings = { find = '', find_left = '', highlight = '', update_n_lines = '', suffix_last = '', suffix_next = '', },
+      mappings = {
+        find = '',
+        find_left = '',
+        highlight = '',
+        update_n_lines = '',
+        suffix_last = '',
+        suffix_next = '',
+      },
     }
 
     require('mini.visits').setup()
