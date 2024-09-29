@@ -35,7 +35,6 @@ return {
       '*.zip',
       '*.pyc',
       '*.class',
-      '*.sln',
       '*.Master',
       '*.csproj',
       '*.tmp',
@@ -78,9 +77,7 @@ return {
     vim.g.gutentags_generate_on_missing = true
     vim.g.gutentags_generate_on_write = true
     vim.g.gutentags_generate_on_empty_buffer = true
-    vim.g.gutentags_modules = true
-    vim.g.gutentags_ctags_extra_args = { '--tag-relative=yes', '--fields=+ailmnS' }
-
     vim.g.gutentags_modules = { 'ctags' }
+    vim.g.gutentags_ctags_extra_args = { '--tag-relative=yes', '--fields=+ailmnS' }
   end,
 }
