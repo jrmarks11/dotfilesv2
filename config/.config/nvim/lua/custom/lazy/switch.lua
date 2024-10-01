@@ -15,6 +15,7 @@ return {
             vim.g.switch_builtins.ruby_hash_style,
             vim.g.switch_builtins.elixir_list_shorthand,
             { 'assert', 'refute' },
+            { 'assert_enqueued', 'refute_enqueued'},
             {
               ['"\\(\\k\\+\\%([?!]\\)\\=\\)"'] = ':\\1',
               [':\\(\\k\\+\\%([?!]\\)\\=\\)'] = '"\\1"'
