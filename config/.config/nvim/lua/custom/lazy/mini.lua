@@ -25,14 +25,7 @@ return {
           '^().*()$',
         },
       },
-      mappings = {
-        around_next = '',
-        inside_next = '',
-        around_last = '',
-        inside_last = '',
-        goto_left = '',
-        goto_right = '',
-      },
+      mappings = { around_next = '', inside_next = '', around_last = '', inside_last = '', goto_left = '', goto_right = '' },
     }
 
     require('mini.cursorword').setup()
@@ -45,9 +38,7 @@ return {
     }
 
     require('mini.splitjoin').setup {
-      mappings = {
-        toggle = 'ss',
-      },
+      mappings = { toggle = 'ss' },
     }
 
     local sl = require 'mini.statusline'
@@ -59,7 +50,7 @@ return {
           local location = '%2l:%-2v'
 
           return sl.combine_groups {
-            { hl = mode_hl, strings = { mode } },
+            { hl = mode_hl,      strings = { mode } },
             '%<',
             { hl = 'slFilename', strings = { filename } },
             '%=',
@@ -82,14 +73,7 @@ return {
     }
 
     require('mini.surround').setup {
-      mappings = {
-        find = '',
-        find_left = '',
-        highlight = '',
-        update_n_lines = '',
-        suffix_last = '',
-        suffix_next = '',
-      },
+      mappings = { find = '', find_left = '', highlight = '', update_n_lines = '', suffix_last = '', suffix_next = '' },
     }
 
     require('mini.visits').setup()
