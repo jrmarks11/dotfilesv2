@@ -25,7 +25,14 @@ return {
           '^().*()$',
         },
       },
-      mappings = { around_next = '', inside_next = '', around_last = '', inside_last = '', goto_left = '', goto_right = '' },
+      mappings = {
+        around_next = '',
+        inside_next = '',
+        around_last = '',
+        inside_last = '',
+        goto_left = '',
+        goto_right = '',
+      },
     }
 
     require('mini.cursorword').setup()
@@ -42,18 +49,21 @@ return {
     }
 
     local sl = require 'mini.statusline'
+    local arrow = require 'arrow.statusline'
     sl.setup {
       content = {
         active = function()
           local mode, mode_hl = sl.section_mode { trunc_width = 120 }
           local filename = sl.section_filename { trunc_width = 140 }
+          local arrow_status = arrow.text_for_statusline_with_icons()
           local location = '%2l:%-2v'
 
           return sl.combine_groups {
-            { hl = mode_hl,      strings = { mode } },
+            { hl = mode_hl, strings = { mode } },
             '%<',
             { hl = 'slFilename', strings = { filename } },
             '%=',
+            { hl = 'slArrowStatus', strings = { arrow_status } },
             { hl = mode_hl, strings = { location } },
           }
         end,
