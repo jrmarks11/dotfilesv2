@@ -1,11 +1,7 @@
 return {
   'neovim/nvim-lspconfig',
   event = { 'BufReadPre', 'BufNewFile' },
-
-  dependencies = {
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
-  },
+  dependencies = { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', },
 
   config = function()
     require 'custom.autocmds.lsp'

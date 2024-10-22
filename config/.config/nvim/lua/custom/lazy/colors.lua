@@ -1,18 +1,16 @@
 return {
-  {
-    'catppuccin/nvim',
-    lazy = false,
-    priority = 1000,
-    name = 'catppuccin',
+  'catppuccin/nvim',
+  lazy = false,
+  priority = 1000,
+  name = 'catppuccin',
 
-    config = function()
-      vim.g.catppuccin_flavour = 'latte'
-      require('catppuccin').setup {
-        integrations = {
-          mason = true,
-          which_key = true,
-        },
-      }
-    end,
-  },
+  config = function()
+    vim.g.catppuccin_flavour = 'latte'
+    require('catppuccin').setup {
+      integrations = {
+        mason = true,
+        which_key = true,
+      },
+    }
+  end,
 }
