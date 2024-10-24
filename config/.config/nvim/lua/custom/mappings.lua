@@ -25,8 +25,8 @@ map('n', 'gP', 'mz<cmd>put!<CR>`zk', { desc = 'Paste on previous line' })
 map('n', '<space>e', ':e <cfile><CR>', { desc = 'Edit File Under Cursor' })
 map('n', '<space>l', ':Lazy<CR>', { desc = 'Open lazy' })
 
-map({ 'n', 'x' }, 'j', [[v:count == 0 ? 'gj' : 'j']], { expr = true, silent = true })
-map({ 'n', 'x' }, 'k', [[v:count == 0 ? 'gk' : 'k']], { expr = true, silent = true })
+map({ 'n', 'x' }, 'j', [[v:count == 0 ? 'gj' : 'jzz']], { expr = true, silent = true })
+map({ 'n', 'x' }, 'k', [[v:count == 0 ? 'gk' : 'kzz']], { expr = true, silent = true })
 
 map('x', 'J', [[:m '>+1<CR>gv=gv]])
 map('x', 'K', [[:m '<-2<CR>gv=gv]])
@@ -60,3 +60,13 @@ map('o', 'il', function()
   cmd 'execute "normal! m`"'
   cmd 'keepjumps normal! ^vg_'
 end, { silent = true, desc = 'Select Inner Line' })
+
+map('n', 'n', 'nzz', { silent = true })
+map('n', 'N', 'Nzz', { silent = true })
+map({ 'n', 'x' }, '<C-u>', '<C-u>zz', { silent = true })
+map({ 'n', 'x' }, '<C-d>', '<C-d>zz', { silent = true })
+map({ 'n', 'x' }, '{', '{zz', { silent = true })
+map({ 'n', 'x' }, '}', '}zz', { silent = true })
+map('n', '<C-o>', '<C-o>zz', { silent = true })
+map('n', '<C-i>', '<C-i>zz', { silent = true })
+map({ 'n', 'x' }, 'G', 'Gzz', { silent = true })
