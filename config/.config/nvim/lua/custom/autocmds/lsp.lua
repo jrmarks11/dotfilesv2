@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map('gd', vim.lsp.buf.definition, 'Goto Definition')
     map('gr', require('fzf-lua').lsp_references, 'Goto References')
     map(',c', vim.lsp.buf.code_action, 'Code Action')
-    map(',R', vim.lsp.buf.rename, 'Rename')
+    map(',r', vim.lsp.buf.rename, 'Rename')
     map('<C-k>', vim.lsp.buf.hover, 'Hover Documentation')
   end,
 })

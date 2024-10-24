@@ -1,8 +1,9 @@
 local M = {}
 
-function M.frecency_list()
+function M.frecency_list(rw)
+  local weight = rw or 0.5
   local visits = require 'mini.visits'
-  local sort_recent = visits.gen_sort.default { recency_weight = 0.5 }
+  local sort_recent = visits.gen_sort.default { recency_weight = weight }
   local recent_files = visits.list_paths(vim.fn.getcwd(), { sort = sort_recent })
   local current_file = vim.fn.expand '%:p'
 
