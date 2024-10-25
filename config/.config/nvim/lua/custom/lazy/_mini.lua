@@ -41,37 +41,11 @@ return {
       mappings = { toggle = 'ss' },
     }
 
-    local sl = require 'mini.statusline'
-    local arrow = require 'arrow.statusline'
-    sl.setup {
+    local sl = require 'util.statusline'
+    require('mini.statusline').setup {
       content = {
-        active = function()
-          local mode, mode_hl = sl.section_mode { trunc_width = 120 }
-          local filename = sl.section_filename { trunc_width = 140 }
-          local arrow_status = arrow.text_for_statusline_with_icons()
-          local location = '%2l:%-2v'
-
-          return sl.combine_groups {
-            { hl = mode_hl,      strings = { mode } },
-            '%<',
-            { hl = 'slFilename', strings = { filename } },
-            '%=',
-            { hl = 'slArrowStatus', strings = { arrow_status } },
-            { hl = mode_hl,         strings = { location } },
-          }
-        end,
-
-        inactive = function()
-          local filename = sl.section_filename { trunc_width = 140 }
-          local location = '%2l:%-2v'
-
-          return sl.combine_groups {
-            '%<',
-            { hl = 'slFilename', strings = { filename } },
-            '%=',
-            { hl = 'slInactive', strings = { location } },
-          }
-        end,
+        active = sl.active,
+        inactive = sl.inactive,
       },
     }
 
@@ -80,6 +54,9 @@ return {
     }
 
     require('mini.visits').setup()
-    vim.keymap.set('n', '<space>R', '<Cmd>lua require("util.visits").frecency_list(1)<CR>', { desc = 'Recent Files' })
-    vim.keymap.set('n', '<space>r', '<Cmd>lua require("util.visits").frecency_list(0.5)<CR>', { desc = 'Frecent Files' }) end,
+    vim.keymap.set({ 'n', 'x' }, '<space>r', '<Cmd>lua require("util.visits").frecency_list(1)<CR>',
+      { desc = 'Recent Files' })
+    vim.keymap.set({ 'n', 'x' }, '<space>t', '<Cmd>lua require("util.visits").frecency_list(0.5)<CR>',
+      { desc = 'Frecent Files' })
+  end,
 }

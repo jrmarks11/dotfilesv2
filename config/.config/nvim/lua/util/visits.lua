@@ -15,8 +15,25 @@ function M.frecency_list(rw)
     return vim.fn.fnamemodify(file, ':.')
   end, recent_files)
 
-  local opts = require('fzf-lua.config').normalize_opts({ prompt = 'Recent Files> ' }, 'files')
-  require('fzf-lua.core').fzf_exec(recent_files, opts)
+  local all_files = vim.fn.systemlist('fd --type f --hidden --exclude .git')
+
+  all_files = vim.tbl_filter(function(file)
+    return vim.fn.fnamemodify(file, ':p') ~= current_file
+  end, all_files)
+
+  local file_list = vim.list_extend(recent_files, all_files)
+
+  local seen = {}
+  file_list = vim.tbl_filter(function(file)
+    if seen[file] then
+      return false
+    end
+    seen[file] = true
+    return true
+  end, file_list)
+
+  local opts = require('fzf-lua.config').normalize_opts({ prompt = 'Files> ' }, 'files')
+  require('fzf-lua.core').fzf_exec(file_list, opts)
 end
 
 return M

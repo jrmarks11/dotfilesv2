@@ -8,5 +8,4 @@ map('x', '<space>f', [[<cmd>lua require('fzf-lua').grep_visual()<CR>]], 'Search 
 map({ 'n', 'x' }, '<space>g', [[<cmd>lua require('fzf-lua').git_status()<CR>]], 'Git Status')
 map({ 'n', 'x' }, '<space>i', [[<cmd>lua require('fzf-lua').grep_curbuf()<CR>]], 'Search Current Buffer')
 map({ 'n', 'x' }, '<space>j', [[<cmd>lua require('fzf-lua').grep({no_esc = true})<CR>]], 'Search Grep Project')
-map({ 'n', 'x' }, '<space>t', [[<cmd>lua require('fzf-lua').files()<CR>]], 'To Files')
 map({ 'n', 'x' }, '<space>u', [[<cmd>lua require('fzf-lua').resume()<CR>]], 'Resume Fzf Search')
