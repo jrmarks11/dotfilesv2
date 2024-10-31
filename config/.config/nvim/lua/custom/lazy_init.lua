@@ -12,8 +12,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup {
-  spec = 'custom.lazy',
+require("lazy").setup({
+  { import = "custom.lazy",        cond = function() return not vim.g.vscode end },
+  { import = "custom.lazy_vscode", cond = function() return vim.g.vscode end },
+}, {
   change_detection = { notify = false },
   performance = {
     rtp = {
@@ -31,4 +33,4 @@ require('lazy').setup {
   ui = {
     border = 'rounded',
   },
-}
+})
