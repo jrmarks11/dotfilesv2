@@ -1,8 +1,8 @@
+require 'custom.options'
 require 'custom.mappings'
 require 'custom.lazy_init'
 
 if not vim.g.vscode then
-  require 'custom.options'
   require 'custom.autocmds'
 
   require('util.colorscheme').set_based_on_system_theme()
