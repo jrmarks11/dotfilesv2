@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+cd /Users/johnmarks/Projects/bitfreighter/
+docker-compose down
+./scripts/dev
