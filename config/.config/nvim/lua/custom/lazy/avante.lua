@@ -10,7 +10,7 @@ return {
     },
     mappings = {
       ask = ',a',
-      edit = ',e',
+      edit = ',c',
       refresh = ',r',
     },
   },
