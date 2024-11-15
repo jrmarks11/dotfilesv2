@@ -47,5 +47,5 @@ map('x', '<space>f', function()
 end)
 
 map('n', '<space>f', function()
-  vscode.action('workbench.action.findInFiles', { args = { query = vim.fn.expand '<cword>' } })
+  vscode.call('workbench.action.findInFiles', { args = { query = vim.fn.expand '<cword>' } })
 end)
