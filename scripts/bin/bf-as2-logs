@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+cd /Users/johnmarks/Projects/bitfreighter/
+docker compose -f docker-compose.yml -f docker-compose.as2lib.yml logs as2lib -f
