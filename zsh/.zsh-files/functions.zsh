@@ -100,3 +100,7 @@ deploy_api() {
 deploy_app() {
     gh workflow run run_playbook.yml -f playbook=deploy_app.yml
 }
+
+deploy_as2lib() {
+    gh workflow run Deploy_to_ECS.yml -f app=as2lib
+}
