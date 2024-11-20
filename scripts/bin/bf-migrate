@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+cd /Users/johnmarks/Projects/bitfreighter/apps/api
+docker compose down api
+docker compose run api mix ecto.reset
+docker compose up api -d
