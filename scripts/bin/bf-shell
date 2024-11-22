@@ -3,5 +3,9 @@
 set -e
 
 cd /Users/johnmarks/Projects/bitfreighter/
-./scripts/prod/api/shell 1
 
+if [ $# -gt 0 ]; then
+    ./scripts/prod/api/shell "$1"
+else
+    ./scripts/prod/api/shell 1
+fi
