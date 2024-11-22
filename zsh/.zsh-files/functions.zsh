@@ -94,7 +94,7 @@ gpr() {
 }
 
 deploy_api() {
-    gh workflow run run_playbook.yml -f playbook=deploy_api.yml
+    gh workflow run Deploy_to_ECS.yml -f app=api
 }
 
 deploy_app() {
