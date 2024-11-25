@@ -94,7 +94,7 @@ gpr() {
 }
 
 deploy_api() {
-    gh workflow run Deploy_to_ECS.yml -f app=api
+    gh workflow run deploy_to_ecs.yml -f app=api
 }
 
 deploy_app() {
@@ -102,5 +102,5 @@ deploy_app() {
 }
 
 deploy_as2lib() {
-    gh workflow run Deploy_to_ECS.yml -f app=as2lib
+    gh workflow run deploy_to_ecs.yml -f app=as2lib
 }
