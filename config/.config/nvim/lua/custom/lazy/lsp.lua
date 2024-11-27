@@ -30,6 +30,18 @@ return {
             },
           }
         end,
+
+        ['elixirls'] = function()
+          local lspconfig = require 'lspconfig'
+          lspconfig.elixirls.setup {
+            settings = {
+              elixirLS = {
+                dialyzerEnabled = true,
+                fetchDeps = true,
+              },
+            },
+          }
+        end,
       },
     }
 
