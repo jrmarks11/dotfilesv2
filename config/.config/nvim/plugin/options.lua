@@ -1,4 +1,3 @@
-print('custom options 2')
 local o = vim.opt
 local undo_dir = vim.fn.expand '$HOME' .. '/.nvim-undo'
 
