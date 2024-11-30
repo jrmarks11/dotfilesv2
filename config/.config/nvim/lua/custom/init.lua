@@ -1,17 +1,37 @@
 vim.g.mapleader = '<Space>'
 
-require 'custom.lazy_init'
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 
-if not vim.g.vscode then
-  require('util.colorscheme').set_based_on_system_theme()
-  vim.cmd.colorscheme 'catppuccin'
-
-  local timer = vim.loop.new_timer()
-  timer:start(
-    0,
-    3000,
-    vim.schedule_wrap(function()
-      require('util.colorscheme').set_based_on_system_theme()
-    end)
-  )
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system {
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable',
+    lazypath,
+  }
 end
+vim.opt.rtp:prepend(lazypath)
+
+require('lazy').setup({
+  { import = 'custom.lazy' },
+}, {
+  change_detection = { notify = false },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        'gzip',
+        'netrwPlugin',
+        'rplugin',
+        'tarPlugin',
+        'tohtml',
+        'tutor',
+        'zipPlugin',
+      },
+    },
+  },
+  ui = {
+    border = 'rounded',
+  },
+})

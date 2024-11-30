@@ -11,4 +11,6 @@ return {
       height = { min = 5, max = 30 }
     },
   },
+
+  cond = vim.fn.exists 'g:vscode' == 0,
 }

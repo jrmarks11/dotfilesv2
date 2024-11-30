@@ -8,4 +8,6 @@ return {
     buffer_leader_key = ',m',
     index_keys = 'afghjklwruiop',
   },
+
+  cond = vim.fn.exists('g:vscode') == 0
 }

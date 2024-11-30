@@ -11,4 +11,6 @@ return {
     map('n', ']l', [[<Plug>(qf_loc_next)zz]], { desc = 'Go To Next Location List' })
     map('n', ',l', [[<Plug>(qf_loc_toggle)]], { desc = 'Toggle Location List' })
   end,
+
+  cond = vim.fn.exists 'g:vscode' == 0,
 }

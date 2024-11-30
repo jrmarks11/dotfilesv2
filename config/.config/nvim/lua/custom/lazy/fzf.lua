@@ -48,4 +48,6 @@ return {
     map({ 'n', 'x' }, '<space>j', [[<cmd>lua require('fzf-lua').grep({no_esc = true})<CR>]], 'Search Grep Project')
     map({ 'n', 'x' }, '<space>u', [[<cmd>lua require('fzf-lua').resume()<CR>]], 'Resume Fzf Search')
   end,
+
+  cond = vim.fn.exists 'g:vscode' == 0,
 }

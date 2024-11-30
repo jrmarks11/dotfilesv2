@@ -25,11 +25,15 @@ return {
           '^().*()$',
         },
       },
-      mappings = { around_next = '', inside_next = '', around_last = '', inside_last = '', goto_left = '', goto_right = '', },
+      mappings = {
+        around_next = '',
+        inside_next = '',
+        around_last = '',
+        inside_last = '',
+        goto_left = '',
+        goto_right = '',
+      },
     }
-
-    require('mini.cursorword').setup()
-    require('mini.icons').setup()
 
     require('mini.indentscope').setup {
       draw = {
@@ -41,22 +45,36 @@ return {
       mappings = { toggle = 'ss' },
     }
 
-    local sl = require 'util.statusline'
-    require('mini.statusline').setup {
-      content = {
-        active = sl.active,
-        inactive = sl.inactive,
-      },
-    }
-
     require('mini.surround').setup {
       mappings = { find = '', find_left = '', highlight = '', update_n_lines = '', suffix_last = '', suffix_next = '' },
     }
 
-    require('mini.visits').setup()
-    vim.keymap.set({ 'n', 'x' }, '<space>r', '<Cmd>lua require("util.visits").frecency_list(1)<CR>',
-      { desc = 'Recent Files' })
-    vim.keymap.set({ 'n', 'x' }, '<space>t', '<Cmd>lua require("util.visits").frecency_list(0.5)<CR>',
-      { desc = 'Frecent Files' })
+    if not vim.g.vscode then
+      require('mini.cursorword').setup()
+      require('mini.icons').setup()
+
+      local sl = require 'util.statusline'
+
+      require('mini.statusline').setup {
+        content = {
+          active = sl.active,
+          inactive = sl.inactive,
+        },
+      }
+
+      require('mini.visits').setup()
+      vim.keymap.set(
+        { 'n', 'x' },
+        '<space>r',
+        '<Cmd>lua require("util.visits").frecency_list(1)<CR>',
+        { desc = 'Recent Files' }
+      )
+      vim.keymap.set(
+        { 'n', 'x' },
+        '<space>t',
+        '<Cmd>lua require("util.visits").frecency_list(0.5)<CR>',
+        { desc = 'Frecent Files' }
+      )
+    end
   end,
 }

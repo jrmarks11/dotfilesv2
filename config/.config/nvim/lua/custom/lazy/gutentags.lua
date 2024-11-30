@@ -80,4 +80,6 @@ return {
     vim.g.gutentags_modules = { 'ctags' }
     vim.g.gutentags_ctags_extra_args = { '--tag-relative=yes', '--fields=+ailmnS' }
   end,
+
+  cond = vim.fn.exists 'g:vscode' == 0,
 }
