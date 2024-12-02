@@ -49,4 +49,6 @@ return {
       conform.format { async = true, lsp_fallback = true, timeout_ms = 8000 }
     end, { silent = true, desc = 'Format buffer' })
   end,
+
+  cond = vim.fn.exists 'g:vscode' == 0,
 }

@@ -35,8 +35,6 @@ o.visualbell = true
 o.wildmenu = true
 o.wildmode = 'longest:full,full'
 
-vim.g.mapleader = '<Space>'
-
 if vim.fn.isdirectory(undo_dir) == 0 then
   vim.fn.system('mkdir -p ' .. undo_dir)
 end

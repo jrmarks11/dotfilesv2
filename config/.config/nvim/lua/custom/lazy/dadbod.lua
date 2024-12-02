@@ -31,4 +31,6 @@ return {
     vim.g.db_ui_save_location = os.getenv 'HOME' .. '/Projects/sql/'
     vim.keymap.set('n', 'sq', '<cmd>DBUIToggle<CR>', { desc = 'Toggle SQL DBUI' })
   end,
+
+  cond = vim.fn.exists 'g:vscode' == 0,
 }

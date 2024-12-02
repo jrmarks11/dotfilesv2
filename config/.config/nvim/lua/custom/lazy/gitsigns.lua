@@ -33,4 +33,6 @@ return {
       sign_priority = 6,
     }
   end,
+
+  cond = vim.fn.exists 'g:vscode' == 0,
 }
