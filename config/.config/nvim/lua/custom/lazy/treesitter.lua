@@ -42,9 +42,9 @@ return {
         enable = true,
         keymaps = {
           init_selection = '<cr>',
-          node_incremental = '<tab>',
-          scope_incremental = false,
-          node_decremental = '<s-tab>',
+          node_decremental = '<bs>',
+          node_incremental = '<cr>',
+          scope_incremental = '<tab>',
         },
       },
     }
