@@ -28,11 +28,6 @@ map('n', '<space>l', ':Lazy<CR>', { desc = 'Open lazy' })
 map({ 'n', 'x' }, 'j', [[v:count == 0 ? 'gj' : 'jzz']], { expr = true, silent = true })
 map({ 'n', 'x' }, 'k', [[v:count == 0 ? 'gk' : 'kzz']], { expr = true, silent = true })
 
-map('x', 'J', [[:m '>+1<CR>gv=gv]])
-map('x', 'K', [[:m '<-2<CR>gv=gv]])
-map('x', '>', [[>gv]])
-map('x', '<', [[<gv]])
-
 map({ 'n', 'x' }, ',', '<nop>')
 map({ 'n', 'x' }, 's', '<nop>')
 
@@ -79,3 +74,8 @@ map('n', 'gm', 'gM', { silent = true, desc = 'Go to middle of line' })
 map('i', '<C-q>', '|> ')
 map('i', '<C-l>', '=> ')
 map('i', '<C-b>', '<C-x><C-o>')
+
+map('x', 'J', [[:m '>+1<CR>gv=gv]])
+map('x', 'K', [[:m '<-2<CR>gv=gv]])
+map('x', '>', [[>gv]])
+map('x', '<', [[<gv]])
