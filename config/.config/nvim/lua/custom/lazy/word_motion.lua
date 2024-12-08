@@ -1,16 +1,13 @@
 return {
   'chaoren/vim-wordmotion',
-  event = 'VeryLazy',
+
+  keys = {
+    { ',w', '<Plug>WordMotion_w', desc = 'Word Motion w', mode = { 'n', 'x', 'o' } },
+    { ',b', '<Plug>WordMotion_b', desc = 'Word Motion b', mode = { 'n', 'x', 'o' } },
+    { ',e', '<Plug>WordMotion_e', desc = 'Word Motion e', mode = { 'n', 'x', 'o' } },
+  },
 
   init = function()
-    local function map(key, cmd, desc)
-      vim.keymap.set({ 'n', 'x', 'o' }, key, cmd, { remap = true, desc = desc })
-    end
-
     vim.g.wordmotion_nomap = 1
-
-    map(',w', '<Plug>WordMotion_w', 'Word Motion w')
-    map(',b', '<Plug>WordMotion_b', 'Word Motion b')
-    map(',e', '<Plug>WordMotion_e', 'Word Motion e')
   end,
 }

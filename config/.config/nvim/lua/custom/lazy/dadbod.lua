@@ -1,6 +1,5 @@
 return {
   'kristijanhusak/vim-dadbod-ui',
-  lazy = true,
   command = 'DBUIToggle',
 
   dependencies = {
@@ -11,7 +10,6 @@ return {
     {
       'kristijanhusak/vim-dadbod-completion',
       ft = { 'sql' },
-      lazy = true,
 
       config = function()
         vim.api.nvim_exec([[ autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni ]], false)

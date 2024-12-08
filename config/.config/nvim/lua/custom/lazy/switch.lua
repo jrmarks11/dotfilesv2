@@ -1,10 +1,10 @@
 return {
   'AndrewRadev/switch.vim',
 
-  lazy = true,
   keys = {
     { 'gs', '<cmd>Switch<CR>', desc = 'Switch' },
   },
+  ft = { 'elixir' },
 
   init = function()
     vim.g.switch_mapping = ''
