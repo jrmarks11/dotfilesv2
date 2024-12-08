@@ -1,7 +1,7 @@
 return {
   'AndrewRadev/switch.vim',
-  event = 'VeryLazy',
 
+  lazy = true,
   keys = {
     { 'gs', '<cmd>Switch<CR>', desc = 'Switch' },
   },

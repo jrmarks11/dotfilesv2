@@ -1,6 +1,7 @@
 return {
   'kristijanhusak/vim-dadbod-ui',
-  event = { 'VeryLazy' },
+  lazy = true,
+  command = 'DBUIToggle',
 
   dependencies = {
     {
