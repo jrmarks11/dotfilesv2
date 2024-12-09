@@ -8,13 +8,6 @@ local keys = {
     mode = { 'n', 'v' },
   },
   {
-    ',ar',
-    function()
-      require('avante.api').refresh()
-    end,
-    desc = 'Avante: Refresh',
-  },
-  {
     ',ae',
     function()
       require('avante.api').edit()
@@ -22,6 +15,20 @@ local keys = {
     end,
     desc = 'Avante: Edit',
     mode = 'v',
+  },
+  {
+    ',af',
+    function()
+      require('avante.api').focus()
+    end,
+    desc = 'Avante: Focus',
+  },
+  {
+    ',ar',
+    function()
+      require('avante.api').refresh()
+    end,
+    desc = 'Avante: Refresh',
   },
 }
 
@@ -56,7 +63,7 @@ local dependencies = {
 
 local opts = {
   provider = 'copilot',
-  mappings = { ask = ',aa', edit = ',ae', refresh = ',ar', },
+  mappings = { ask = ',aa', edit = ',ae', refresh = ',ar', focus = ',af', },
   hints = { enabled = false, },
 }
 
