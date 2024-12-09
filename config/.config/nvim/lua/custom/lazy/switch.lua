@@ -1,14 +1,14 @@
 return {
   'AndrewRadev/switch.vim',
-
   keys = {
     { 'gs', '<cmd>Switch<CR>', desc = 'Switch' },
   },
-  ft = { 'elixir' },
 
   init = function()
     vim.g.switch_mapping = ''
+  end,
 
+  config = function()
     vim.api.nvim_create_autocmd('FileType', {
       pattern = 'elixir',
       callback = function()

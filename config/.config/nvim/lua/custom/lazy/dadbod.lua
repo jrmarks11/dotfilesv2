@@ -1,7 +1,6 @@
 return {
   'kristijanhusak/vim-dadbod-ui',
-  command = 'DBUIToggle',
-
+  cmd = 'DBUIToggle',
   dependencies = {
     {
       'tpope/vim-dadbod',
@@ -15,13 +14,6 @@ return {
         vim.api.nvim_exec([[ autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni ]], false)
       end,
     },
-  },
-
-  cmd = {
-    'DBUI',
-    'DBUIToggle',
-    'DBUIAddConnection',
-    'DBUIFindBuffer',
   },
 
   init = function()

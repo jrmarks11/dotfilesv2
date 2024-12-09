@@ -1,6 +1,6 @@
 return {
   'mfussenegger/nvim-lint',
-  event = 'BufReadPre',
+  ft = { 'elixir', 'markdown', 'sql', 'yaml' },
 
   config = function()
     local lint = require 'lint'
@@ -15,9 +15,17 @@ return {
       sql = { 'sqlfluff' },
     }
 
-    vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufWritePost' }, {
+    local debounce_timer = nil
+
+    vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufWritePost', 'FileType' }, {
       callback = function()
-        require('lint').try_lint()
+        if debounce_timer then
+          debounce_timer:stop()
+        end
+
+        debounce_timer = vim.defer_fn(function()
+          require('lint').try_lint()
+        end, 200)
       end,
     })
   end,

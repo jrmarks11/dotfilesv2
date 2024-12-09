@@ -1,6 +1,16 @@
 return {
   'stevearc/conform.nvim',
-  event = { 'BufReadPre', 'BufNewFile' },
+  keys = {
+    {
+      ',,',
+      function()
+        local conform = require 'conform'
+        conform.format { async = true, lsp_fallback = true, timeout_ms = 8000 }
+      end,
+      desc = 'Format buffer',
+      silent = true,
+    },
+  },
 
   config = function()
     local conform = require 'conform'
@@ -44,10 +54,6 @@ return {
         zsh = { 'beautysh' },
       },
     }
-
-    vim.keymap.set('n', ',,', function()
-      conform.format { async = true, lsp_fallback = true, timeout_ms = 8000 }
-    end, { silent = true, desc = 'Format buffer' })
   end,
 
   cond = vim.fn.exists 'g:vscode' == 0,

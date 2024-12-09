@@ -1,7 +1,6 @@
 return {
   'janko-m/vim-test',
   dependencies = { 'jgdavey/tslime.vim', cond = vim.fn.exists 'g:vscode' == 0 },
-
   keys = {
     { ',t', ':TestNearest<CR>', desc = 'Test Nearest' },
     { ',k', ':TestLast<CR>', desc = 'Test Last' },
@@ -9,7 +8,6 @@ return {
     { ',s', ':TestSuite<CR>', desc = 'Test Suite' },
     { ',v', ':TestVisit<CR>zz', desc = 'Test Visit' },
   },
-
   ft = { 'elixir' },
 
   config = function()

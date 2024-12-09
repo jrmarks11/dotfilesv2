@@ -1,8 +1,5 @@
 return {
   'folke/flash.nvim',
-  event = 'VeryLazy',
-
-  opts = {},
   keys = {
     {
       '<space><space>',
@@ -22,4 +19,6 @@ return {
       desc = 'Remote Flash Search',
     },
   },
+
+  opts = {},
 }

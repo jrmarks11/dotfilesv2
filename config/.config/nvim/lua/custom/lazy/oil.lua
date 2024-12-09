@@ -1,6 +1,8 @@
 return {
   'stevearc/oil.nvim',
-  event = 'VeryLazy',
+  keys = {
+    { '-', '<CMD>Oil<CR>', { desc = 'Open parent directory file' } },
+  },
 
   config = function()
     require('oil').setup {
@@ -13,8 +15,6 @@ return {
         end,
       },
     }
-
-    vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory file' })
   end,
 
   cond = vim.fn.exists 'g:vscode' == 0,

@@ -1,6 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
-  event = { 'BufReadPre', 'BufNewFile' },
+  ft = { 'elixir', 'lua', 'ruby', 'typescript' },
   dependencies = { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim' },
 
   config = function()

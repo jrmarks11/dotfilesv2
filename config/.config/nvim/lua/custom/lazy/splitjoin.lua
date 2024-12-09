@@ -1,6 +1,6 @@
 return {
   'AndrewRadev/splitjoin.vim',
-
+  event = { 'VeryLazy' },
   keys = {
     { 'sj', '<cmd>SplitjoinJoin<CR>', desc = 'Splitjoin Join Code' },
     { 'sk', '<cmd>SplitjoinSplit<CR>', desc = 'Splitjoin Split Code' },

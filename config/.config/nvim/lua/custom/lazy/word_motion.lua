@@ -1,6 +1,5 @@
 return {
   'chaoren/vim-wordmotion',
-
   keys = {
     { ',w', '<Plug>WordMotion_w', desc = 'Word Motion w', mode = { 'n', 'x', 'o' } },
     { ',b', '<Plug>WordMotion_b', desc = 'Word Motion b', mode = { 'n', 'x', 'o' } },
