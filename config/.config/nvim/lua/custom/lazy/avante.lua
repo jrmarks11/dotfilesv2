@@ -1,78 +1,60 @@
-local keys = {
-  {
-    ',aa',
-    function()
-      require('avante.api').ask()
-    end,
-    desc = 'Avante: Ask',
-    mode = { 'n', 'v' },
-  },
-  {
-    ',ae',
-    function()
-      require('avante.api').edit()
-      vim.cmd [[startinsert]]
-    end,
-    desc = 'Avante: Edit',
-    mode = 'v',
-  },
-  {
-    ',af',
-    function()
-      require('avante.api').focus()
-    end,
-    desc = 'Avante: Focus',
-  },
-  {
-    ',ar',
-    function()
-      require('avante.api').refresh()
-    end,
-    desc = 'Avante: Refresh',
-  },
-}
+local function ensure_sidebar_and_execute()
+  local avante = require("avante")
+  local sidebar = avante.get()
 
-local dependencies = {
-  "zbirenbaum/copilot.lua",
-  'nvim-treesitter/nvim-treesitter',
-  'stevearc/dressing.nvim',
-  'nvim-lua/plenary.nvim',
-  'MunifTanjim/nui.nvim',
-  {
-    'HakonHarnes/img-clip.nvim',
-    event = 'VeryLazy',
-    opts = {
-      default = {
-        embed_image_as_base64 = false,
-        prompt_for_file_name = false,
-        drag_and_drop = {
-          insert_mode = true,
-        },
-        use_absolute_path = true,
-      },
-    },
-  },
-  {
-    'MeanderingProgrammer/render-markdown.nvim',
-    opts = {
-      file_types = { 'markdown', 'Avante' },
-    },
-    ft = { 'markdown', 'Avante' },
-  },
-}
+  if not sidebar then
+    require("avante")._init(vim.api.nvim_get_current_tabpage())
+  end
 
-local opts = {
-  provider = 'copilot',
-  mappings = { ask = ',aa', edit = ',ae', refresh = ',ar', focus = ',af', },
-  hints = { enabled = false, },
-}
+  return require("avante.api")
+end
 
 return {
   'yetone/avante.nvim',
-  keys = keys,
-  dependencies = dependencies,
+  keys = {
+    { ',aa', function() ensure_sidebar_and_execute().ask() end,     desc = 'Avante: Ask',    mode = { 'n', 'v' } },
+    { ',ae', function() ensure_sidebar_and_execute().edit() end,    desc = 'Avante: Edit',   mode = 'v' },
+    { ',af', function() ensure_sidebar_and_execute().focus() end,   desc = 'Avante: Focus',  mode = { 'n', 'v' } },
+    { ',ar', function() ensure_sidebar_and_execute().refresh() end, desc = 'Avante: Refresh' },
+  },
+
+  dependencies = {
+    "zbirenbaum/copilot.lua",
+    'nvim-treesitter/nvim-treesitter',
+    'stevearc/dressing.nvim',
+    'nvim-lua/plenary.nvim',
+    'MunifTanjim/nui.nvim',
+    {
+      'HakonHarnes/img-clip.nvim',
+      event = 'VeryLazy',
+      opts = {
+        default = {
+          embed_image_as_base64 = false,
+          prompt_for_file_name = false,
+          drag_and_drop = {
+            insert_mode = true,
+          },
+          use_absolute_path = true,
+        },
+      },
+    },
+    {
+      'MeanderingProgrammer/render-markdown.nvim',
+      opts = {
+        file_types = { 'markdown', 'Avante' },
+      },
+      ft = { 'markdown', 'Avante' },
+    },
+  },
+
   version = false,
-  opts = opts,
+
+  opts = {
+    provider = 'copilot',
+    mappings = { ask = ',aa', edit = ',ae', refresh = ',ar', focus = ',af', },
+    hints = { enabled = false, },
+  },
+
   build = 'make',
   cond = vim.fn.exists 'g:vscode' == 0,
 }
