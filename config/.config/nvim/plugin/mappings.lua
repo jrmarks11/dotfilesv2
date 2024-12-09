@@ -67,8 +67,8 @@ map('n', '<C-i>', '<C-i>zz', { silent = true })
 map({ 'n', 'x' }, 'G', 'Gzz', { silent = true })
 
 map('n', '<C-c>', 'ciw')
-map({ 'n', 'o' }, 'gh', '_', { silent = true, desc = 'Go to first non-blank character _' })
-map({ 'n', 'o' }, 'gl', '$', { silent = true, desc = 'Go to end of line $' })
+map({ 'n', 'o', 'x' }, 'gh', '_', { silent = true, desc = 'Go to first non-blank character _' })
+map({ 'n', 'o', 'x' }, 'gl', '$', { silent = true, desc = 'Go to end of line $' })
 map('n', 'gm', 'gM', { silent = true, desc = 'Go to middle of line' })
 
 map('i', '<C-q>', '|> ')
