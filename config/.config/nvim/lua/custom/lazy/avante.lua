@@ -1,25 +1,53 @@
 local function ensure_sidebar_and_execute()
-  local avante = require("avante")
+  local avante = require 'avante'
   local sidebar = avante.get()
 
   if not sidebar then
-    require("avante")._init(vim.api.nvim_get_current_tabpage())
+    require('avante')._init(vim.api.nvim_get_current_tabpage())
   end
 
-  return require("avante.api")
+  return require 'avante.api'
 end
 
 return {
   'yetone/avante.nvim',
+  build = 'make',
+  version = false,
   keys = {
-    { ',aa', function() ensure_sidebar_and_execute().ask() end,     desc = 'Avante: Ask',    mode = { 'n', 'v' } },
-    { ',ae', function() ensure_sidebar_and_execute().edit() end,    desc = 'Avante: Edit',   mode = 'v' },
-    { ',af', function() ensure_sidebar_and_execute().focus() end,   desc = 'Avante: Focus',  mode = { 'n', 'v' } },
-    { ',ar', function() ensure_sidebar_and_execute().refresh() end, desc = 'Avante: Refresh' },
+    {
+      ',aa',
+      function()
+        ensure_sidebar_and_execute().ask()
+      end,
+      desc = 'Avante: Ask',
+      mode = { 'n', 'v' },
+    },
+    {
+      ',ae',
+      function()
+        ensure_sidebar_and_execute().edit()
+      end,
+      desc = 'Avante: Edit',
+      mode = 'v',
+    },
+    {
+      ',af',
+      function()
+        ensure_sidebar_and_execute().focus()
+      end,
+      desc = 'Avante: Focus',
+      mode = { 'n', 'v' },
+    },
+    {
+      ',ar',
+      function()
+        ensure_sidebar_and_execute().refresh()
+      end,
+      desc = 'Avante: Refresh',
+    },
   },
-
   dependencies = {
-    "zbirenbaum/copilot.lua",
+    'zbirenbaum/copilot.lua',
     'nvim-treesitter/nvim-treesitter',
     'stevearc/dressing.nvim',
     'nvim-lua/plenary.nvim',
@@ -47,14 +75,11 @@ return {
     },
   },
 
-  version = false,
-
   opts = {
     provider = 'copilot',
-    mappings = { ask = ',aa', edit = ',ae', refresh = ',ar', focus = ',af', },
-    hints = { enabled = false, },
+    mappings = { ask = ',aa', edit = ',ae', refresh = ',ar', focus = ',af' },
+    hints = { enabled = false },
   },
 
-  build = 'make',
   cond = vim.fn.exists 'g:vscode' == 0,
 }

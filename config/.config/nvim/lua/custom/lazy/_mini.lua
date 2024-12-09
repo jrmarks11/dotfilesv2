@@ -36,9 +36,7 @@ return {
     }
 
     require('mini.indentscope').setup {
-      draw = {
-        animation = require('mini.indentscope').gen_animation.none(),
-      },
+      draw = { animation = require('mini.indentscope').gen_animation.none() },
     }
 
     require('mini.splitjoin').setup {
@@ -54,12 +52,8 @@ return {
       require('mini.icons').setup()
 
       local sl = require 'util.statusline'
-
       require('mini.statusline').setup {
-        content = {
-          active = sl.active,
-          inactive = sl.inactive,
-        },
+        content = { active = sl.active, inactive = sl.inactive },
       }
 
       require('mini.visits').setup()

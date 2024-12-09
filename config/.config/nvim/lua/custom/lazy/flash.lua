@@ -9,7 +9,6 @@ return {
       end,
       desc = 'Flash Search',
     },
-
     {
       'r',
       mode = 'o',

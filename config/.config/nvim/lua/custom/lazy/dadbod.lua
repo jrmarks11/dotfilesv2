@@ -2,10 +2,7 @@ return {
   'kristijanhusak/vim-dadbod-ui',
   cmd = 'DBUIToggle',
   dependencies = {
-    {
-      'tpope/vim-dadbod',
-      lazy = true,
-    },
+    { 'tpope/vim-dadbod', lazy = true },
     {
       'kristijanhusak/vim-dadbod-completion',
       ft = { 'sql' },

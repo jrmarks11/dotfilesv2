@@ -6,7 +6,6 @@ return {
     { 'sk', '<cmd>SplitjoinSplit<CR>', desc = 'Splitjoin Split Code' },
   },
 
-
   init = function()
     vim.g.splitjoin_split_mapping = ''
     vim.g.splitjoin_join_mapping = ''
