@@ -9,12 +9,12 @@ function M.active()
   local location = '%2l:%-2v'
 
   return sl.combine_groups {
-    { hl = mode_hl,      strings = { mode } },
+    { hl = mode_hl, strings = { mode } },
     '%<',
     { hl = 'slFilename', strings = { filename } },
     '%=',
     { hl = 'slArrowStatus', strings = { arrow_status } },
-    { hl = mode_hl,         strings = { location } },
+    { hl = mode_hl, strings = { location } },
   }
 end
 

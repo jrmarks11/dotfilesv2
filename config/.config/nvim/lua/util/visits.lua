@@ -15,7 +15,7 @@ function M.frecency_list(rw)
     return vim.fn.fnamemodify(file, ':.')
   end, recent_files)
 
-  local all_files = vim.fn.systemlist('fd --type f --hidden --exclude .git')
+  local all_files = vim.fn.systemlist 'fd --type f --hidden --exclude .git'
 
   all_files = vim.tbl_filter(function(file)
     return vim.fn.fnamemodify(file, ':p') ~= current_file
@@ -34,7 +34,7 @@ function M.frecency_list(rw)
 
   local opts = require('fzf-lua.config').normalize_opts({
     prompt = 'Files> ',
-    fzf_opts = { ['--tiebreak'] = 'index', }
+    fzf_opts = { ['--tiebreak'] = 'index' },
   }, 'files')
 
   require('fzf-lua.core').fzf_exec(file_list, opts)
