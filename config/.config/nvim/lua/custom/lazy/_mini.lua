@@ -59,13 +59,13 @@ return {
       require('mini.visits').setup()
       vim.keymap.set(
         { 'n', 'x' },
-        '<space>r',
+        '<space>R',
         '<Cmd>lua require("util.visits").frecency_list(1)<CR>',
         { desc = 'Recent Files' }
       )
       vim.keymap.set(
         { 'n', 'x' },
-        '<space>t',
+        '<space>T',
         '<Cmd>lua require("util.visits").frecency_list(0.5)<CR>',
         { desc = 'Frecent Files' }
       )
