@@ -23,6 +23,10 @@ function M.frecency_list(rw)
 
   local file_list = vim.list_extend(recent_files, all_files)
 
+  file_list = vim.tbl_filter(function(file)
+    return not file:match '%.local/share/nvim/scratch'
+  end, file_list)
+
   local seen = {}
   file_list = vim.tbl_filter(function(file)
     if seen[file] then
