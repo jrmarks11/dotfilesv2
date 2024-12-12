@@ -1,6 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
-  ft = { 'elixir', 'lua', 'ruby', 'typescript' },
+  ft = { 'elixir', 'lua', 'ruby', 'typescript', 'vue' },
   dependencies = { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim' },
 
   config = function()
@@ -26,6 +26,7 @@ return {
         'lua_ls',
         'ruby_lsp',
         'ts_ls',
+        'volar',
       },
 
       handlers = {
@@ -37,11 +38,15 @@ return {
           local lspconfig = require 'lspconfig'
           lspconfig.lua_ls.setup {
             settings = {
-              Lua = { diagnostics = { globals = {
-                'vim',
-                'Snacks',
-                'dbg',
-              } } },
+              Lua = {
+                diagnostics = {
+                  globals = {
+                    'vim',
+                    'Snacks',
+                    'dbg',
+                  },
+                },
+              },
             },
           }
         end,
@@ -53,6 +58,19 @@ return {
               elixirLS = {
                 dialyzerEnabled = true,
                 fetchDeps = true,
+              },
+            },
+          }
+        end,
+
+        ['volar'] = function()
+          local lspconfig = require 'lspconfig'
+          lspconfig.volar.setup {
+            settings = {
+              init_options = {
+                vue = {
+                  hybridMode = true,
+                },
               },
             },
           }

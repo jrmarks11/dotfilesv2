@@ -20,6 +20,7 @@ return {
         'tsx',
         'typescript',
         'vim',
+        'vue',
         'yaml',
         'comment',
       },
