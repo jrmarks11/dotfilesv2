@@ -16,6 +16,7 @@ return {
     { '<space>j', '<cmd>FzfLua grep<CR>', desc = 'Search Grep Project', mode = { 'n', 'x' } },
     { '<space>u', '<cmd>FzfLua resume<CR>', desc = 'Resume Fzf Search', mode = { 'n', 'x' } },
   },
+  cmd = 'FzfLua',
 
   config = function()
     local fzf = require 'fzf-lua'
