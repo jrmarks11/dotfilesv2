@@ -1,5 +1,6 @@
 return {
   'stevearc/oil.nvim',
+  cmd = 'Oil',
   keys = { { '-', '<CMD>Oil<CR>', { desc = 'Open parent directory file' } } },
 
   config = function()

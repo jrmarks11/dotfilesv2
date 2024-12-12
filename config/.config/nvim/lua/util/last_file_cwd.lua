@@ -20,11 +20,14 @@ end
 function M.last_buffer()
   local sorted = M.all_files()
 
-  if #sorted > 0 then
-    vim.cmd('e ' .. sorted[1])
-  else
-    vim.cmd 'e .'
+  for _, file in ipairs(sorted) do
+    if vim.fn.filereadable(file) == 1 then
+      vim.cmd('e ' .. file)
+      return
+    end
   end
+
+  vim.cmd('Oil')
 end
 
 return M
