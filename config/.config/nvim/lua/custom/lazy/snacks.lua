@@ -16,12 +16,20 @@ return {
       desc = 'Toggle Scratch Buffer',
     },
     {
-      'sh',
+      'sH',
       function()
         Snacks.gitbrowse()
       end,
-      desc = 'Git Browse',
-      mode = {'n', 'v'},
+      desc = 'Git Browse (open)',
+      mode = { 'n', 'v' },
+    },
+    {
+      'sh',
+      function()
+        Snacks.gitbrowse({ open = function(url) vim.fn.setreg("+", url) end, notify = false })
+      end,
+      desc = 'Git Browse (copy)',
+      mode = { 'n', 'v' },
     },
   },
 
