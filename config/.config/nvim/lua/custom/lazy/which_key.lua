@@ -22,6 +22,11 @@ return {
         { pattern = 'word', icon = ' ', color = 'cyan' },
       },
     },
+    spec = {
+      mode = { 'n', 'v' },
+      { ',a', group = 'Avante' },
+      { 'gx', desc = 'Open with system app' },
+    },
   },
 
   cond = vim.fn.exists 'g:vscode' == 0,
