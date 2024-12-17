@@ -14,14 +14,7 @@ return {
   build = 'make',
   version = false,
   keys = {
-    {
-      ',aa',
-      function()
-        ensure_sidebar_and_execute().ask()
-      end,
-      desc = 'Avante: Ask',
-      mode = { 'n', 'v' },
-    },
+    { ',aa', '<cmd>AvanteAsk<CR>', desc = 'Avante: Ask', mode = { 'n', 'v' } },
     {
       ',ae',
       function()
@@ -30,21 +23,8 @@ return {
       desc = 'Avante: Edit',
       mode = 'v',
     },
-    {
-      ',af',
-      function()
-        ensure_sidebar_and_execute().focus()
-      end,
-      desc = 'Avante: Focus',
-      mode = { 'n', 'v' },
-    },
-    {
-      ',ar',
-      function()
-        ensure_sidebar_and_execute().refresh()
-      end,
-      desc = 'Avante: Refresh',
-    },
+    { ',at', '<cmd>AvanteToggle<CR>', desc = 'Avante: Toggle', mode = { 'n', 'v' } },
+    { ',ar', '<cmd>AvanteRefresh<CR>', desc = 'Avante: Refresh', mode = { 'n', 'v' } },
   },
   dependencies = {
     'zbirenbaum/copilot.lua',
