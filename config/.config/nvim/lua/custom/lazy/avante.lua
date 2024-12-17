@@ -54,7 +54,6 @@ return {
     'MunifTanjim/nui.nvim',
     {
       'HakonHarnes/img-clip.nvim',
-      event = 'VeryLazy',
       opts = {
         default = {
           embed_image_as_base64 = false,
