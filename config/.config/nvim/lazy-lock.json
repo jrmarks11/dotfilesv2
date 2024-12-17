@@ -6,7 +6,7 @@
   "copilot.lua": { "branch": "master", "commit": "d3783b9283a7c35940ed8d71549030d5f5f9f980" },
   "dressing.nvim": { "branch": "master", "commit": "fc78a3ca96f4db9f8893bb7e2fd9823e0780451b" },
   "flash.nvim": { "branch": "main", "commit": "34c7be146a91fec3555c33fe89c7d643f6ef5cf1" },
-  "fzf-lua": { "branch": "main", "commit": "73e7f5f93b65028b9fc94a27a4c80611ff8ba2a0" },
+  "fzf-lua": { "branch": "main", "commit": "71de69c0a30829e2384b4beb08e4c0e3143e085e" },
   "gitsigns.nvim": { "branch": "main", "commit": "5f808b5e4fef30bd8aca1b803b4e555da07fc412" },
   "img-clip.nvim": { "branch": "main", "commit": "5ff183655ad98b5fc50c55c66540375bbd62438c" },
   "lazy.nvim": { "branch": "main", "commit": "7e6c863bc7563efbdd757a310d17ebc95166cef3" },
