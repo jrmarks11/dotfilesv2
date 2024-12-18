@@ -38,7 +38,7 @@ function M.frecency_list(rw)
 
   local opts = require('fzf-lua.config').normalize_opts({
     prompt = 'Frecent(' .. weight .. ')> ',
-    fzf_opts = { ['--no-sort'] = '' },
+    fzf_opts = { ['--tiebreak'] = 'index' },
   }, 'files')
 
   require('fzf-lua.core').fzf_exec(file_list, opts)
