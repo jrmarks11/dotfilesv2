@@ -26,7 +26,12 @@ return {
     {
       'sh',
       function()
-        Snacks.gitbrowse({ open = function(url) vim.fn.setreg("+", url) end, notify = false })
+        Snacks.gitbrowse {
+          open = function(url)
+            vim.fn.setreg('+', url)
+          end,
+          notify = false,
+        }
       end,
       desc = 'Git Browse (copy)',
       mode = { 'n', 'v' },

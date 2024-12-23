@@ -10,6 +10,12 @@ return {
       mode = { 'n', 'x' },
     },
     { '<space>c', '<cmd>FzfLua git_bcommits<CR>', desc = 'Search Git Commits', mode = { 'n', 'x' } },
+    {
+      '<space>d',
+      "<cmd>lua require('fzf-lua').files({cwd = '%:h'})<CR>",
+      desc = 'Fzf Files CWD',
+      mode = { 'n', 'x' },
+    },
     { '<space>f', '<cmd>FzfLua grep_cword<CR>', desc = 'Search Find Word' },
     { '<space>f', '<cmd>FzfLua grep_visual<CR>', desc = 'Search Find Visual', mode = 'x' },
     { '<space>g', '<cmd>FzfLua git_status<CR>', desc = 'Git Status', mode = { 'n', 'x' } },
