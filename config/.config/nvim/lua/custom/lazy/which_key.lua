@@ -24,7 +24,6 @@ return {
     },
     spec = {
       mode = { 'n', 'v' },
-      { ',a', group = 'Avante' },
       { 'gx', desc = 'Open with system app' },
       { 'sa', desc = 'Surround Add' },
       { 'sd', desc = 'Surround Delete' },
