@@ -27,6 +27,7 @@ return {
     { ',ar', '<cmd>AvanteRefresh<CR>', desc = 'Avante: Refresh', mode = { 'n', 'v' } },
   },
   dependencies = {
+    'echasnovski/mini.icons',
     'zbirenbaum/copilot.lua',
     'nvim-treesitter/nvim-treesitter',
     'stevearc/dressing.nvim',

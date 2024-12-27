@@ -1,6 +1,7 @@
 return {
   'otavioschwanck/arrow.nvim',
-  event = { 'VeryLazy' },
+  keys = '\\',
+  dependencies = { { 'echasnovski/mini.icons' } },
 
   opts = {
     show_icons = true,

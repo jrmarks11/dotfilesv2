@@ -1,6 +1,7 @@
 return {
   'stevearc/oil.nvim',
   cmd = 'Oil',
+  dependencies = { { 'echasnovski/mini.icons' } },
   keys = { { '-', '<CMD>Oil<CR>', { desc = 'Open parent directory file' } } },
 
   config = function()

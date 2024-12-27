@@ -26,6 +26,10 @@ return {
       mode = { 'n', 'v' },
       { ',a', group = 'Avante' },
       { 'gx', desc = 'Open with system app' },
+      { 'sa', desc = 'Surround Add' },
+      { 'sd', desc = 'Surround Delete' },
+      { 'sr', desc = 'Surround Replace' },
+      { 'ss', desc = 'Split Toggle'},
     },
   },
 
