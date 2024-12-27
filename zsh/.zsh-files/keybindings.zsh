@@ -3,8 +3,10 @@
 export KEYTIMEOUT=1
 
 bindkey -v
-bindkey "^[[1;3C" forward-word  # Meta-f
-bindkey "^[[1;3D" backward-word # Meta-b
+bindkey "^[f" forward-word
+bindkey "^[b" backward-word
+# bindkey "^[[1;3C" forward-word  # Meta-f
+# bindkey "^[[1;3D" backward-word # Meta-b
 bindkey "^a" beginning-of-line
 bindkey "^e" end-of-line
 bindkey "^k" kill-line

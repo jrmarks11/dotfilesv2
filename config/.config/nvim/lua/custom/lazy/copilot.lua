@@ -11,7 +11,7 @@ return {
 
         keymap = {
           accept = '<tab>',
-          accept_word = '<M-Right>',
+          accept_word = '<A-f>',
           accept_line = '<C-E>',
           next = '<M-]>',
           prev = '<M-[>',
