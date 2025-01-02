@@ -3,4 +3,4 @@
 set -e
 
 cd /Users/johnmarks/Projects/bitfreighter/
-./scripts/prod/api/iex 1
+./scripts/prod/api/iex
