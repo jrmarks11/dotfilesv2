@@ -60,7 +60,11 @@ return {
   {
     'echasnovski/mini.surround',
     version = false,
-    keys = { 'sa', 'sd', 'sr' },
+    keys = {
+      { 'sa', mode = { 'n', 'x' } },
+      { 'sd', mode = { 'n', 'x' } },
+      { 'sr', mode = { 'n', 'x' } },
+    },
 
     config = function()
       require('mini.surround').setup {
