@@ -73,3 +73,5 @@ map('n', 'gm', 'gM', { silent = true, desc = 'Go to middle of line' })
 map('i', '<C-q>', '|> ')
 map('i', '<C-l>', '=> ')
 map('i', '<C-b>', '<C-x><C-o>')
+
+map('n', 'gy', "'[V']'")
