@@ -20,7 +20,7 @@
   "nvim-tmux-navigation": { "branch": "main", "commit": "4898c98702954439233fdaf764c39636681e2861" },
   "nvim-treesitter": { "branch": "master", "commit": "57713d079c3c2afcc31f3e0650bf8594a2a296ba" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "ad8f0a472148c3e0ae9851e26a722ee4e29b1595" },
-  "oil.nvim": { "branch": "master", "commit": "c6a39a69b2df7c10466f150dde0bd23e49c1fba3" },
+  "oil.nvim": { "branch": "master", "commit": "254bc6635cb3f77e6e9a89155652f368e5535160" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
   "snacks.nvim": { "branch": "main", "commit": "d312053f78b4fb55523def179ac502438dd93193" },
   "splitjoin.vim": { "branch": "main", "commit": "f7a688c6b444dd159919da38c53e9fa64f109f18" },
