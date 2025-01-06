@@ -6,6 +6,7 @@ return {
     bigfile = { enabled = true },
     input = { enabled = true },
     notifier = { enabled = true },
+    statuscolumn = { enabled = true },
   },
   keys = {
     {
