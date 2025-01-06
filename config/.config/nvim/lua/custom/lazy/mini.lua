@@ -45,9 +45,7 @@ return {
     'echasnovski/mini.icons',
     version = false,
     lazy = true,
-    config = function()
-      require('mini.icons').setup {}
-    end,
+    opts = {},
   },
   {
     'echasnovski/mini.surround',
@@ -58,29 +56,15 @@ return {
       { 'sr', mode = { 'n', 'x' } },
     },
 
-    config = function()
-      require('mini.surround').setup {
-        mappings = {
-          find = '',
-          find_left = '',
-          highlight = '',
-          update_n_lines = '',
-          suffix_last = '',
-          suffix_next = '',
-        },
-      }
-    end,
+    opts = {
+      mappings = { find = '', find_left = '', highlight = '', update_n_lines = '', suffix_last = '', suffix_next = '' },
+    },
   },
   {
     'echasnovski/mini.splitjoin',
     version = false,
     keys = { 'ss' },
-
-    config = function()
-      require('mini.splitjoin').setup {
-        mappings = { toggle = 'ss' },
-      }
-    end,
+    opts = { mappings = { toggle = 'ss' } },
   },
   {
     'echasnovski/mini.statusline',

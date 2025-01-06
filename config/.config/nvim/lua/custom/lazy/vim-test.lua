@@ -10,7 +10,7 @@ return {
   },
   ft = { 'elixir' },
 
-  config = function()
+  init = function()
     local g = vim.g
 
     if vim.g.vscode then

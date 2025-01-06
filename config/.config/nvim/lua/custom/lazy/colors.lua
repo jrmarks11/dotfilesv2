@@ -4,14 +4,15 @@ return {
   name = 'catppuccin',
   priority = 1000,
 
-  config = function()
+  opts = {
+    integrations = {
+      mason = true,
+      which_key = true,
+    },
+  },
+
+  init = function()
     vim.g.catppuccin_flavour = 'latte'
-    require('catppuccin').setup {
-      integrations = {
-        mason = true,
-        which_key = true,
-      },
-    }
   end,
 
   cond = vim.fn.exists 'g:vscode' == 0,

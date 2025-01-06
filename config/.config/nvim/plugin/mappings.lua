@@ -1,4 +1,3 @@
-local cmd = vim.cmd
 local d = vim.diagnostic
 local map = vim.keymap.set
 
