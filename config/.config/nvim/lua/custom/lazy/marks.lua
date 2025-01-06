@@ -1,10 +1,10 @@
 return {
-  "chentoast/marks.nvim",
-  event = "VeryLazy",
+  'chentoast/marks.nvim',
+  event = 'VeryLazy',
   opts = {
     mappings = {
-      next = "]m",
-      prev = "[m",
+      next = ']m',
+      prev = '[m',
     },
   },
 }

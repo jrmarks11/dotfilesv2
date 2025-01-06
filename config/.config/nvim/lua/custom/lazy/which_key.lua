@@ -28,7 +28,7 @@ return {
       { 'sa', desc = 'Surround Add' },
       { 'sd', desc = 'Surround Delete' },
       { 'sr', desc = 'Surround Replace' },
-      { 'ss', desc = 'Split Toggle'},
+      { 'ss', desc = 'Split Toggle' },
     },
   },
 
