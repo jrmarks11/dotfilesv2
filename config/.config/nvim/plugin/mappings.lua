@@ -44,18 +44,6 @@ map('n', '<space><Tab>', '<C-^>', { desc = 'Switch to Last buffer' })
 
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
-map('x', 'ae', 'gg0oG$', { silent = true, desc = 'Select Entire File' })
-map('o', 'ae', function()
-  cmd 'execute "normal! m`"'
-  cmd 'keepjumps normal! ggVG'
-end, { silent = true, desc = 'Select Entire File' })
-
-map('x', 'il', '<esc>^vg_', { silent = true, desc = 'Select Inner Line' })
-map('o', 'il', function()
-  cmd 'execute "normal! m`"'
-  cmd 'keepjumps normal! ^vg_'
-end, { silent = true, desc = 'Select Inner Line' })
-
 map('n', 'n', 'nzz', { silent = true })
 map('n', 'N', 'Nzz', { silent = true })
 map({ 'n', 'x' }, '<C-u>', '<C-u>zz', { silent = true })
@@ -66,12 +54,6 @@ map('n', '<C-o>', '<C-o>zz', { silent = true })
 map('n', '<C-i>', '<C-i>zz', { silent = true })
 map({ 'n', 'x' }, 'G', 'Gzz', { silent = true })
 
-map({ 'n', 'o', 'x' }, 'gh', '_', { silent = true, desc = 'Go to first non-blank character _' })
-map({ 'n', 'o', 'x' }, 'gl', '$', { silent = true, desc = 'Go to end of line $' })
-map('n', 'gm', 'gM', { silent = true, desc = 'Go to middle of line' })
-
-map('i', '<C-q>', '|> ')
-map('i', '<C-l>', '=> ')
 map('i', '<C-b>', '<C-x><C-o>')
 
 map('n', 'gy', "'[V']'")

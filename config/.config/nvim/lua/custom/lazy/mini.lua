@@ -4,27 +4,31 @@ return {
     version = false,
     event = 'VeryLazy',
 
+    dependencies = {
+      'echasnovski/mini.extra',
+      lazy = true,
+      config = function()
+        require('mini.extra').setup {}
+      end,
+    },
+
     config = function()
+      local gen_spec = require('mini.ai').gen_spec
+      local gen_extra_spec = require('mini.extra').gen_ai_spec
+
       require('mini.ai').setup {
         n_lines = 500,
         custom_textobjects = {
-          o = require('mini.ai').gen_spec.treesitter {
+          c = gen_spec.treesitter { a = '@comment.outer', i = '@comment.outer' },
+          d = gen_extra_spec.number(),
+          e = gen_extra_spec.buffer(),
+          f = gen_spec.treesitter { a = '@function.outer', i = '@function.inner' },
+          i = gen_extra_spec.indent(),
+          l = gen_extra_spec.line(),
+          o = gen_spec.treesitter({
             a = { '@block.outer', '@conditional.outer', '@loop.outer' },
             i = { '@block.inner', '@conditional.inner', '@loop.inner' },
-          },
-          f = require('mini.ai').gen_spec.treesitter {
-            a = '@function.outer',
-            i = '@function.inner',
-          },
-          t = {
-            '<([%p%w]-)%f[^<%w][^<>]->.-</%1>',
-            '^<.->().*()</[^/]->$',
-          },
-          d = { '%f[%d]%d+' },
-          c = {
-            { '%u[%l%d]+%f[^%l%d]', '%f[%S][%l%d]+%f[^%l%d]', '%f[%P][%l%d]+%f[^%l%d]', '^[%l%d]+%f[^%l%d]' },
-            '^().*()$',
-          },
+          }, {}),
         },
         mappings = {
           around_next = '',
@@ -34,18 +38,6 @@ return {
           goto_left = '',
           goto_right = '',
         },
-      }
-    end,
-  },
-  {
-    'echasnovski/mini.indentscope',
-    version = false,
-    event = { 'BufReadPost', 'BufNewFile' },
-
-    config = function()
-      require('mini.indentscope').setup {
-        draw = { animation = require('mini.indentscope').gen_animation.none() },
-        options = { indent_at_cursor = false },
       }
     end,
   },
