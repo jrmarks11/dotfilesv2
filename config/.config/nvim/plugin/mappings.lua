@@ -56,3 +56,17 @@ map({ 'n', 'x' }, 'G', 'Gzz', { silent = true })
 map('i', '<C-b>', '<C-x><C-o>')
 
 map('n', 'gy', "'[V']'")
+
+vim.keymap.set("n", "dm", function()
+  local current_line = vim.fn.line(".")
+  for i = 97, 122 do
+    local mark = string.char(i)
+    local pos = vim.fn.getpos("'"..mark)
+    if pos[2] == current_line then
+      vim.cmd("delmarks "..mark)
+    end
+  end
+end)
+
+map('n', '[m', "['zz")
+map('n', ']m', "]'zz")
