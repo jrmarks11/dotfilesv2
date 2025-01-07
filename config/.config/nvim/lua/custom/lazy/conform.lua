@@ -13,8 +13,7 @@ return {
   },
 
   config = function()
-    local conform = require 'conform'
-    conform.setup {
+    require('conform').setup {
       formatters = {
         mix = {
           command = 'mix',
