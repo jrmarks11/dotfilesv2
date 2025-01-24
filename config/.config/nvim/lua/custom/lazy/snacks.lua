@@ -6,6 +6,36 @@ return {
     bigfile = { enabled = true },
     input = { enabled = true },
     notifier = { enabled = true },
+    picker = {
+      layout = {
+
+        layout = {
+          backdrop = false,
+          row = 1,
+          width = 0.4,
+          min_width = 95,
+          height = 0.9,
+          border = 'none',
+          box = 'vertical',
+          { win = 'preview', title = '{preview}', height = 0.7, border = 'single' },
+          {
+            box = 'vertical',
+            border = 'single',
+            title = '{title} {live} {flags}',
+            title_pos = 'center',
+            { win = 'input', height = 1, border = 'bottom' },
+            { win = 'list', border = 'none' },
+          },
+        },
+      },
+      win = {
+        input = {
+          keys = {
+            ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
+          },
+        },
+      },
+    },
     statuscolumn = { enabled = true },
   },
   keys = {
@@ -36,6 +66,13 @@ return {
       end,
       desc = 'Git Browse (copy)',
       mode = { 'n', 'v' },
+    },
+    {
+      '<space>t',
+      function()
+        Snacks.picker.smart()
+      end,
+      'Snacks Smart Open File',
     },
   },
 
