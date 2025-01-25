@@ -39,21 +39,10 @@ return {
     statuscolumn = { enabled = true },
   },
   keys = {
-    {
-      ',.',
-      function()
-        Snacks.scratch()
-      end,
-      desc = 'Toggle Scratch Buffer',
-    },
-    {
-      'sH',
-      function()
-        Snacks.gitbrowse()
-      end,
-      desc = 'Git Browse (open)',
-      mode = { 'n', 'v' },
-    },
+    { '<space>F', '<cmd>lua Snacks.picker.grep_word()<cr>', desc = 'Snacks grep word', mode = { 'n', 'x' } },
+    { '<space>t', '<cmd>lua Snacks.picker.smart()<cr>', desc = 'Snacks Smart Open File' },
+    { ',.', '<cmd>lua Snacks.scratch()<cr>', desc = 'Toggle Scratch Buffer' },
+    { 'sH', '<cmd>lua Snacks.gitbrowse()<cr>', desc = 'Git Browse (open)', mode = { 'n', 'v' } },
     {
       'sh',
       function()
@@ -66,13 +55,6 @@ return {
       end,
       desc = 'Git Browse (copy)',
       mode = { 'n', 'v' },
-    },
-    {
-      '<space>t',
-      function()
-        Snacks.picker.smart()
-      end,
-      desc = 'Snacks Smart Open File',
     },
   },
 
