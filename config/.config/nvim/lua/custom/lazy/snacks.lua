@@ -72,7 +72,7 @@ return {
       function()
         Snacks.picker.smart()
       end,
-      'Snacks Smart Open File',
+      desc = 'Snacks Smart Open File',
     },
   },
 
