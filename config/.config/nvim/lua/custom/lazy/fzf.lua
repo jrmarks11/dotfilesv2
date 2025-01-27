@@ -51,6 +51,10 @@ return {
         rg_opts = '--column --line-number --no-heading --color=always --smart-case --hidden',
       },
 
+      grep_curbuf = {
+        previewer = false,
+      },
+
       keymap = {
         builtin = {
           ['<c-h>'] = 'toggle-help',

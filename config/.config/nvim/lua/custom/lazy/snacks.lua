@@ -2,28 +2,17 @@ return {
   'folke/snacks.nvim',
   priority = 1000,
   lazy = false,
+
   opts = {
     bigfile = { enabled = true },
     input = { enabled = true },
     notifier = { enabled = true },
     statuscolumn = { enabled = true },
   },
+
   keys = {
-    {
-      ',.',
-      function()
-        Snacks.scratch()
-      end,
-      desc = 'Toggle Scratch Buffer',
-    },
-    {
-      'sH',
-      function()
-        Snacks.gitbrowse()
-      end,
-      desc = 'Git Browse (open)',
-      mode = { 'n', 'v' },
-    },
+    { ',.', '<cmd>lua Snacks.scratch()<cr>', desc = 'Toggle Scratch Buffer' },
+    { 'sH', '<cmd>lua Snacks.gitbrowse()<cr>', desc = 'Git Browse (open)', mode = { 'n', 'v' } },
     {
       'sh',
       function()
