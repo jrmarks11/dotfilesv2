@@ -11,14 +11,6 @@ return {
       desc = 'Branch Files',
       mode = { 'n', 'x' },
     },
-    {
-      '<space>B',
-      function()
-        require('util.branch_files').bf2()
-      end,
-      desc = 'Branch Files 2',
-      mode = { 'n', 'x' },
-    },
     { '<space>c', '<cmd>FzfLua git_bcommits<CR>', desc = 'Search Git Commits', mode = { 'n', 'x' } },
     {
       '<space>d',
