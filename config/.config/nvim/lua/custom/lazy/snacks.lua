@@ -8,9 +8,40 @@ return {
     input = { enabled = true },
     notifier = { enabled = true },
     statuscolumn = { enabled = true },
+
+    picker = {
+      layout = {
+        layout = {
+          backdrop = false,
+          min_width = 95,
+          height = 0.9,
+          width = 0.8,
+          box = 'vertical',
+          { win = 'preview', title = '{preview}', height = 0.7, border = 'single' },
+          {
+            box = 'vertical',
+            border = 'single',
+            title = '{title} {live} {flags}',
+            { win = 'input', height = 1, border = 'bottom' },
+            { win = 'list', border = 'none' },
+          },
+        },
+      },
+      win = {
+        input = {
+          keys = {
+            ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
+            ['<c-d>'] = { 'preview_scroll_down', mode = { 'i', 'n' } },
+            ['<c-u>'] = { 'preview_scroll_up', mode = { 'i', 'n' } },
+          },
+        },
+      },
+    },
   },
 
   keys = {
+    { '<space>n', '<cmd>lua Snacks.picker.notifications()<cr>', desc = 'Notifications Picker' },
+    { '<space>T', '<cmd>lua Snacks.picker.smart()<cr>', desc = 'Snacks Smart Picker' },
     { ',.', '<cmd>lua Snacks.scratch()<cr>', desc = 'Toggle Scratch Buffer' },
     { 'sH', '<cmd>lua Snacks.gitbrowse()<cr>', desc = 'Git Browse (open)', mode = { 'n', 'v' } },
     {
