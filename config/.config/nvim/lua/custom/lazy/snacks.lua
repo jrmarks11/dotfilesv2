@@ -41,7 +41,8 @@ return {
 
   keys = {
     { '<space>n', '<cmd>lua Snacks.picker.notifications()<cr>', desc = 'Notifications Picker' },
-    { '<space>R', '<cmd>lua Snacks.picker.smart()<cr>', desc = 'Snacks Smart Picker' },
+    { '<space>t', '<cmd>lua Snacks.picker.smart()<cr>', desc = 'Snacks Smart Picker' },
+    { ',u', '<cmd>lua Snacks.picker.undo()<cr>', desc = 'Snacks Smart Picker' },
     { ',.', '<cmd>lua Snacks.scratch()<cr>', desc = 'Toggle Scratch Buffer' },
     { 'sH', '<cmd>lua Snacks.gitbrowse()<cr>', desc = 'Git Browse (open)', mode = { 'n', 'v' } },
     {

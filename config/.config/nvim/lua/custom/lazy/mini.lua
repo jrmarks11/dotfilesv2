@@ -90,7 +90,7 @@ return {
 
       vim.keymap.set(
         { 'n', 'x' },
-        '<space>t',
+        '<space>T',
         '<Cmd>lua require("util.visits").frecency_list()<CR>',
         { desc = 'Frecent Files' }
       )
