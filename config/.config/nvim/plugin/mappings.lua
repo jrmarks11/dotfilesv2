@@ -18,8 +18,8 @@ map('x', 'sp', [[y:'{,'}s/<c-r><c-0>//g<left><left>]], { desc = 'Substitute in P
 map('n', 'se', [[:%s/\<<c-r><c-w>\>//g<left><left>]], { desc = 'Substitute In Entire Buffer' })
 map('x', 'se', 'y:%s/<c-r><c-0>//g<left><left>', { desc = 'Substitute In Entire Buffer' })
 
-map('n', 'gp', 'mz<cmd>put<CR>`zj', { desc = 'Paste on next line' })
-map('n', 'gP', 'mz<cmd>put!<CR>`zk', { desc = 'Paste on previous line' })
+map('n', 'gp', 'mz<cmd>put<CR>`zj<cmd>delmarks z<cr>', { desc = 'Paste on next line' })
+map('n', 'gP', 'mz<cmd>put!<CR>`zk<cmd>delmarks z<cr>', { desc = 'Paste on previous line' })
 
 map('n', '<space>e', ':e <cfile><CR>', { desc = 'Edit File Under Cursor' })
 map('n', '<space>l', ':Lazy<CR>', { desc = 'Open lazy' })
@@ -30,8 +30,8 @@ map({ 'n', 'x' }, 'k', [[v:count == 0 ? 'gk' : 'kzz']], { expr = true, silent = 
 map({ 'n', 'x' }, ',', '<nop>')
 map({ 'n', 'x' }, 's', '<nop>')
 
-map('n', 'J', 'mzJ`z')
-map('n', 'K', 'i<cr><esc>^mwgk:silent! s/\\v +$//<cr>:noh<cr>`w', { silent = true })
+map('n', 'J', 'mzJ`z<cmd>delmarks z<cr>', { silent = true })
+map('n', 'K', 'i<cr><esc>^mzgk:silent! s/\\v +$//<cr>:noh<cr>`z:delmarks z<cr>', { silent = true })
 
 map({ 'n', 'x' }, [[']], '`', { remap = true })
 map({ 'n', 'x' }, ';', ':')
