@@ -3,4 +3,5 @@
 set -e
 
 cd /Users/johnmarks/Projects/bitfreighter/
+docker compose -f docker-compose.yml -f docker-compose.as2lib.yml build --no-cache as2lib
 docker compose -f docker-compose.yml -f docker-compose.as2lib.yml up as2lib apitest
