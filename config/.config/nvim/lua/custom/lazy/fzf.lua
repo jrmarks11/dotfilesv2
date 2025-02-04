@@ -11,9 +11,9 @@ return {
       desc = 'Branch Files',
       mode = { 'n', 'x' },
     },
-    { '<space>c', '<cmd>FzfLua git_bcommits<CR>', desc = 'Search Git Commits', mode = { 'n', 'x' } },
+    { '<space>C', '<cmd>FzfLua git_bcommits<CR>', desc = 'Search Git Commits', mode = { 'n', 'x' } },
     {
-      '<space>d',
+      '<space>D',
       "<cmd>lua require('fzf-lua').files({cwd = '%:h'})<CR>",
       desc = 'Fzf Files CWD',
       mode = { 'n', 'x' },
@@ -21,10 +21,10 @@ return {
     { '<space>F', '<cmd>FzfLua grep_cword<CR>', desc = 'Search Find Word' },
     { '<space>F', '<cmd>FzfLua grep_visual<CR>', desc = 'Search Find Visual', mode = 'x' },
     { '<space>G', '<cmd>FzfLua git_status<CR>', desc = 'Git Status', mode = { 'n', 'x' } },
-    { '<space>i', '<cmd>FzfLua grep_curbuf<CR>', desc = 'Search Current Buffer', mode = { 'n', 'x' } },
-    { '<space>j', '<cmd>FzfLua grep<CR>', desc = 'Search Grep Project', mode = { 'n', 'x' } },
-    { '<space>r', '<cmd>FzfLua oldfiles<CR>', desc = 'Recent Files', mode = { 'n', 'x' } },
-    { '<space>u', '<cmd>FzfLua resume<CR>', desc = 'Resume Fzf Search', mode = { 'n', 'x' } },
+    { '<space>I', '<cmd>FzfLua grep_curbuf<CR>', desc = 'Search Current Buffer', mode = { 'n', 'x' } },
+    { '<space>J', '<cmd>FzfLua grep<CR>', desc = 'Search Grep Project', mode = { 'n', 'x' } },
+    { '<space>R', '<cmd>FzfLua oldfiles<CR>', desc = 'Recent Files', mode = { 'n', 'x' } },
+    { '<space>U', '<cmd>FzfLua resume<CR>', desc = 'Resume Fzf Search', mode = { 'n', 'x' } },
   },
   cmd = 'FzfLua',
 
@@ -68,8 +68,6 @@ return {
         },
       },
     }
-
-    fzf.register_ui_select()
   end,
 
   cond = vim.fn.exists 'g:vscode' == 0,
