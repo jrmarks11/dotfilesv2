@@ -10,6 +10,7 @@ return {
     statuscolumn = { enabled = true },
 
     picker = {
+      hidden = true,
       layout = {
         layout = {
           backdrop = false,
@@ -40,11 +41,13 @@ return {
   },
 
   keys = {
-    { '<space>n', '<cmd>lua Snacks.picker.notifications()<cr>', desc = 'Notifications Picker' },
-    { '<space>t', '<cmd>lua Snacks.picker.smart()<cr>', desc = 'Snacks Smart Picker' },
-    { ',u', '<cmd>lua Snacks.picker.undo()<cr>', desc = 'Snacks Smart Picker' },
-    { ',.', '<cmd>lua Snacks.scratch()<cr>', desc = 'Toggle Scratch Buffer' },
-    { 'sH', '<cmd>lua Snacks.gitbrowse()<cr>', desc = 'Git Browse (open)', mode = { 'n', 'v' } },
+    { '<space>f', '<cmd>lua Snacks.picker.grep_word()<cr>', desc = 'Snacks Grep Word Picker', mode = { 'n', 'x' } },
+    { '<space>g', '<cmd>lua Snacks.picker.git_status()<cr>', desc = 'Snacks Git Status Picker', mode = { 'n', 'x' } },
+    { '<space>n', '<cmd>lua Snacks.picker.notifications()<cr>', desc = 'Notifications Picker', mode = { 'n', 'x' } },
+    { '<space>t', '<cmd>lua Snacks.picker.smart()<cr>', desc = 'Snacks Smart Picker', mode = { 'n', 'x' } },
+    { ',u', '<cmd>lua Snacks.picker.undo()<cr>', desc = 'Snacks Smart Picker', mode = { 'n', 'x' } },
+    { ',.', '<cmd>lua Snacks.scratch()<cr>', desc = 'Toggle Scratch Buffer', mode = { 'n', 'x' } },
+    { 'sH', '<cmd>lua Snacks.gitbrowse()<cr>', desc = 'Git Browse (open)', mode = { 'n', 'x' } },
     {
       'sh',
       function()
@@ -56,7 +59,7 @@ return {
         }
       end,
       desc = 'Git Browse (copy)',
-      mode = { 'n', 'v' },
+      mode = { 'n', 'x' },
     },
   },
 
