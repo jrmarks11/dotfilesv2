@@ -42,7 +42,7 @@ return {
 
   keys = {
     {
-      '<space>B',
+      '<space>b',
       function()
         require('util.branch_files').snacks_branch_files()
       end,

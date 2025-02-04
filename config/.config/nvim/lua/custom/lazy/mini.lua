@@ -80,22 +80,4 @@ return {
 
     cond = vim.fn.exists 'g:vscode' == 0,
   },
-  {
-    'echasnovski/mini.visits',
-    version = false,
-    event = 'VeryLazy',
-
-    config = function()
-      require('mini.visits').setup()
-
-      vim.keymap.set(
-        { 'n', 'x' },
-        '<space>T',
-        '<Cmd>lua require("util.visits").frecency_list()<CR>',
-        { desc = 'Frecent Files' }
-      )
-    end,
-
-    cond = vim.fn.exists 'g:vscode' == 0,
-  },
 }
