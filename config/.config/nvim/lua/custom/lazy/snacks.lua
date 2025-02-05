@@ -34,6 +34,7 @@ return {
             ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
             ['<c-d>'] = { 'preview_scroll_down', mode = { 'i', 'n' } },
             ['<c-u>'] = { 'preview_scroll_up', mode = { 'i', 'n' } },
+            ['<c-h>'] = { 'toggle_help', mode = { 'i', 'n' } },
           },
         },
       },
