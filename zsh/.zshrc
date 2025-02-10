@@ -20,7 +20,9 @@ setopt share_history
 
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-[ -f $(brew --prefix asdf)/libexec/asdf.sh ] && source $(brew --prefix asdf)/libexec/asdf.sh
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+
 [ -f  $(brew --prefix zinit)/zinit.zsh ] && source $(brew --prefix zinit)/zinit.zsh
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
