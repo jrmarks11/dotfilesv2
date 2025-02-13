@@ -8,7 +8,6 @@ brew install \
     fzf \
     gh \
     git \
-    git-delta \
     joshmedeski/sesh/sesh \
     jq \
     nvim \
