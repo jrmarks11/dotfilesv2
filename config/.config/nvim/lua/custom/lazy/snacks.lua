@@ -67,6 +67,7 @@ return {
     { '<space>u', '<cmd>lua Snacks.picker.resume()<cr>', desc = 'Snacks Resume Picker', mode = { 'n', 'x' } },
     { ',u', '<cmd>lua Snacks.picker.undo()<cr>', desc = 'Snacks Smart Picker', mode = { 'n', 'x' } },
     { ',.', '<cmd>lua Snacks.scratch()<cr>', desc = 'Toggle Scratch Buffer', mode = { 'n', 'x' } },
+    { ',>', '<cmd>lua Snacks.scratch.select()<cr>', desc = 'Select Scratch Buffer', mode = { 'n', 'x' } },
     { 'sH', '<cmd>lua Snacks.gitbrowse()<cr>', desc = 'Git Browse (open)', mode = { 'n', 'x' } },
     {
       'sh',

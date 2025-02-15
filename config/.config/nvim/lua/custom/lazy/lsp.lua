@@ -11,8 +11,8 @@ return {
           vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
 
-        map('gd', vim.lsp.buf.definition, 'Goto Definition')
-        map('gr', '<cmd>lua Snacks.picker.lsp_references<CR>', 'Goto References')
+        map('gd', '<cmd>lua Snacks.picker.lsp_definitions()<cr>', 'Goto Definition')
+        map('gr', '<cmd>lua Snacks.picker.lsp_references()<cr>', 'Goto References')
         map(',c', vim.lsp.buf.code_action, 'Code Action')
         map(',r', vim.lsp.buf.rename, 'Rename')
         map('<C-k>', vim.lsp.buf.hover, 'Hover Documentation')
