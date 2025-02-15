@@ -5,11 +5,10 @@ export KEYTIMEOUT=1
 bindkey -v
 bindkey "^[f" forward-word
 bindkey "^[b" backward-word
-# bindkey "^[[1;3C" forward-word  # Meta-f
-# bindkey "^[[1;3D" backward-word # Meta-b
 bindkey "^a" beginning-of-line
 bindkey "^e" end-of-line
 bindkey "^k" kill-line
+bindkey '^y' yank
 
 bindkey "^n" history-substring-search-down
 bindkey "^p" history-substring-search-up
