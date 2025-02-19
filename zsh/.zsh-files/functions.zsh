@@ -104,3 +104,7 @@ deploy_app() {
 deploy_as2lib() {
     gh workflow run deploy_to_ecs.yml -f app=as2lib
 }
+
+deploy_timezones() {
+    gh workflow run deploy_to_ecs.yml -f app=timezones
+}
