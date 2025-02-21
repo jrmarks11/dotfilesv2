@@ -16,6 +16,29 @@ return {
         map(',c', vim.lsp.buf.code_action, 'Code Action')
         map(',r', vim.lsp.buf.rename, 'Rename')
         map('<C-k>', vim.lsp.buf.hover, 'Hover Documentation')
+
+        local client = vim.lsp.get_client_by_id(event.data.client_id)
+        if client.name == 'elixirls' then
+          map('<space>p', function()
+            local pos = vim.api.nvim_win_get_cursor(0)
+            local row = pos[1] - 1
+            local col = pos[2]
+            client.request_sync('workspace/executeCommand', {
+              command = 'manipulatePipes:serverid',
+              arguments = { 'toPipe', 'file://' .. vim.api.nvim_buf_get_name(0), row, col },
+            }, nil, 0)
+          end, 'To Pipe')
+
+          map('<space>P', function()
+            local pos = vim.api.nvim_win_get_cursor(0)
+            local row = pos[1] - 1
+            local col = pos[2]
+            client.request_sync('workspace/executeCommand', {
+              command = 'manipulatePipes:serverid',
+              arguments = { 'fromPipe', 'file://' .. vim.api.nvim_buf_get_name(0), row, col },
+            }, nil, 0)
+          end, 'From Pipe')
+        end
       end,
     })
 
