@@ -4,9 +4,7 @@ return {
 
   opts = {
     suggestion = {
-      enabled = true,
       auto_trigger = true,
-      panel = { enabled = false },
 
       keymap = {
         accept = '<tab>',

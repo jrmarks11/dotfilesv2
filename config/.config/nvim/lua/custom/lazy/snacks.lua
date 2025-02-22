@@ -4,10 +4,6 @@ return {
   lazy = false,
 
   opts = {
-    bigfile = { enabled = true },
-    input = { enabled = true },
-    notifier = { enabled = true },
-    statuscolumn = { enabled = true },
 
     picker = {
       hidden = true,
@@ -58,7 +54,7 @@ return {
       desc = 'Files in Dir',
       mode = { 'n', 'x' },
     },
-    { '<space>g', '<cmd>lua Snacks.picker.git_status()<cr>', desc = 'Git Status', mode = { 'n', 'x' } },
+    { '<space>gs', '<cmd>lua Snacks.picker.git_status()<cr>', desc = 'Git Status', mode = { 'n', 'x' } },
     { '<space>i', '<cmd>lua Snacks.picker.lines()<cr>', desc = 'Grep Buffer', mode = { 'n', 'x' } },
     { '<space>j', '<cmd>lua Snacks.picker.grep()<cr>', desc = 'Live Grep', mode = { 'n', 'x' } },
     { '<space>n', '<cmd>lua Snacks.picker.notifications()<cr>', desc = 'Notifications', mode = { 'n', 'x' } },
@@ -68,9 +64,9 @@ return {
     { ',u', '<cmd>lua Snacks.picker.undo()<cr>', desc = 'Undo List', mode = { 'n', 'x' } },
     { ',.', '<cmd>lua Snacks.scratch()<cr>', desc = 'Toggle Scratch Buffer', mode = { 'n', 'x' } },
     { ',>', '<cmd>lua Snacks.scratch.select()<cr>', desc = 'Select Scratch Buffer', mode = { 'n', 'x' } },
-    { 'sH', '<cmd>lua Snacks.gitbrowse()<cr>', desc = 'Git Browse (open)', mode = { 'n', 'x' } },
+    { '<space>gB', '<cmd>lua Snacks.gitbrowse()<cr>', desc = 'Git Browse (open)', mode = { 'n', 'x' } },
     {
-      'sh',
+      '<space>gb',
       function()
         Snacks.gitbrowse {
           open = function(url)

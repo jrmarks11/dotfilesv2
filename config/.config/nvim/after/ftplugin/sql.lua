@@ -1,4 +1,4 @@
 local map = vim.keymap.set
 
-map({ 'n', 'v' }, 's<cr>', '<Plug>(DBUI_ExecuteQuery)')
-map('n', 'sw', '<Plug>(DBUI_SaveQuery)')
+map({ 'n', 'v' }, '<space>q<cr>', '<Plug>(DBUI_ExecuteQuery)')
+map('n', '<space>qw', '<Plug>(DBUI_SaveQuery)')

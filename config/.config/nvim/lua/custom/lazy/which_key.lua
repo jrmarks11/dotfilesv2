@@ -5,14 +5,12 @@ return {
   opts = {
     triggers = {
       { '<auto>', mode = 'nixsotc' },
-      { 's', mode = { 'n', 'v' } },
     },
     win = {
       height = { min = 5, max = 30 },
     },
     icons = {
       rules = {
-        { pattern = 'avante', icon = ' ', color = 'red' },
         { pattern = 'case', icon = ' ', color = 'red' },
         { pattern = 'go', icon = ' ', color = 'blue' },
         { pattern = 'paste', icon = ' ', color = 'green' },
@@ -25,10 +23,10 @@ return {
     spec = {
       mode = { 'n', 'v' },
       { 'gx', desc = 'Open with system app' },
-      { 'sa', desc = 'Surround Add' },
-      { 'sd', desc = 'Surround Delete' },
-      { 'sr', desc = 'Surround Replace' },
-      { 'ss', desc = 'Split Toggle' },
+      { 'gsa', desc = 'Surround Add' },
+      { 'gsd', desc = 'Surround Delete' },
+      { 'gsr', desc = 'Surround Replace' },
+      { 'gss', desc = 'Split Toggle' },
     },
   },
 

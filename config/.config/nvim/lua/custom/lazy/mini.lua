@@ -51,20 +51,32 @@ return {
     'echasnovski/mini.surround',
     version = false,
     keys = {
-      { 'sa', mode = { 'n', 'x' } },
-      { 'sd', mode = { 'n', 'x' } },
-      { 'sr', mode = { 'n', 'x' } },
+      { 'gsa', mode = { 'n', 'x' } },
+      { 'gsd', mode = { 'n', 'x' } },
+      { 'gsr', mode = { 'n', 'x' } },
+      { 'gsf', mode = { 'n', 'x' } },
+      { 'gsF', mode = { 'n', 'x' } },
+      { 'gsn', mode = { 'n', 'x' } },
+      { 'gsh', mode = { 'n', 'x' } },
     },
 
     opts = {
-      mappings = { find = '', find_left = '', highlight = '', update_n_lines = '', suffix_last = '', suffix_next = '' },
+      mappings = {
+        add = 'gsa',
+        delete = 'gsd',
+        find = 'gsf',
+        find_left = 'gsF',
+        highlight = 'gsh',
+        replace = 'gsr',
+        update_n_lines = 'gsn',
+      },
     },
   },
   {
     'echasnovski/mini.splitjoin',
     version = false,
-    keys = { 'ss' },
-    opts = { mappings = { toggle = 'ss' } },
+    keys = { 'gss' },
+    opts = { mappings = { toggle = 'gss' } },
   },
   {
     'echasnovski/mini.statusline',

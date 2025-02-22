@@ -79,7 +79,6 @@ return {
           lspconfig.elixirls.setup {
             settings = {
               elixirLS = {
-                dialyzerEnabled = true,
                 fetchDeps = true,
               },
             },
