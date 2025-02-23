@@ -42,6 +42,7 @@ return {
   },
 
   keys = {
+    { '<space><space>', '<cmd>lua Snacks.picker.smart()<cr>', desc = 'Smart Open Files', mode = { 'n', 'x' } },
     {
       '<space>b',
       function()
@@ -51,7 +52,7 @@ return {
       mode = { 'n', 'x' },
     },
     { '<space>f', '<cmd>lua Snacks.picker.grep_word()<cr>', desc = 'Grep Word', mode = { 'n', 'x' } },
-    { '<space>c', '<cmd>lua Snacks.picker.git_log_file()<cr>', desc = 'Git Log File', mode = { 'n', 'x' } },
+    { '<space>c', '<cmd>lua Snacks.picker.git_log_file()<cr>', desc = 'Git Commits File', mode = { 'n', 'x' } },
     {
       '<space>d',
       '<cmd>lua Snacks.picker.files({ cwd = vim.fn.expand("%:h") })<cr>',
@@ -68,9 +69,9 @@ return {
     { ',u', '<cmd>lua Snacks.picker.undo()<cr>', desc = 'Undo List', mode = { 'n', 'x' } },
     { ',.', '<cmd>lua Snacks.scratch()<cr>', desc = 'Toggle Scratch Buffer', mode = { 'n', 'x' } },
     { ',>', '<cmd>lua Snacks.scratch.select()<cr>', desc = 'Select Scratch Buffer', mode = { 'n', 'x' } },
-    { 'sH', '<cmd>lua Snacks.gitbrowse()<cr>', desc = 'Git Browse (open)', mode = { 'n', 'x' } },
+    { 'sL', '<cmd>lua Snacks.gitbrowse()<cr>', desc = 'Git Browse (open)', mode = { 'n', 'x' } },
     {
-      'sh',
+      'sl',
       function()
         Snacks.gitbrowse {
           open = function(url)

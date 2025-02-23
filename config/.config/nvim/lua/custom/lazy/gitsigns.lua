@@ -25,6 +25,10 @@ return {
           gs.blame_line { full = true }
         end, { desc = 'Git Blame' })
 
+        map('n', 'sB', function()
+          gs.blame()
+        end, { desc = 'Blame Buffer' })
+
         map('n', 'sg', gs.stage_hunk, { desc = 'Git Stage Hunk' })
         map('n', 'sv', gs.preview_hunk, { desc = 'Git Preview Hunk' })
         map('n', 'su', gs.reset_hunk, { desc = 'Git Undo Hunk' })

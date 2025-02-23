@@ -12,7 +12,7 @@ return {
     },
     icons = {
       rules = {
-        { pattern = 'avante', icon = ' ', color = 'red' },
+        { pattern = 'flash', icon = ' ', color = 'red' },
         { pattern = 'case', icon = ' ', color = 'red' },
         { pattern = 'go', icon = ' ', color = 'blue' },
         { pattern = 'paste', icon = ' ', color = 'green' },

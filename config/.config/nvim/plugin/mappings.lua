@@ -7,7 +7,7 @@ map('c', '<C-a>', '<home>')
 map('c', '<C-e>', '<end>')
 map('c', '<M-Left>', '<s-left>')
 map('c', '<M-Right>', '<s-right>')
-map('c', '<esc><bs>', '<c-w>')
+map('c', '<M-BS>', '<c-w>')
 map('c', '<C-k>', '<c-\\>e strpart(getcmdline(),0,getcmdpos()-1)<cr>')
 
 map('n', '[d', d.goto_prev, { desc = 'Go To Previous Diagnostic' })
