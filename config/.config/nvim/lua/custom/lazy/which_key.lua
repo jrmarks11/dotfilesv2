@@ -18,7 +18,6 @@ return {
         { pattern = 'paste', icon = ' ', color = 'green' },
         { pattern = 'substitute', icon = ' ', color = 'yellow' },
         { pattern = 'surround', icon = ' ', color = 'purple' },
-        { pattern = 'switch', icon = ' ', color = 'orange' },
         { pattern = 'word', icon = ' ', color = 'cyan' },
       },
     },
