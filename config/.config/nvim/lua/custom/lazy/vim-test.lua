@@ -2,11 +2,11 @@ return {
   'janko-m/vim-test',
   dependencies = { { 'preservim/vimux', cond = vim.fn.exists 'g:vscode' == 0 } },
   keys = {
-    { ',t', ':TestNearest<CR>', desc = 'Test Nearest' },
-    { ',k', ':TestLast<CR>', desc = 'Test Last' },
-    { ',f', ':TestFile<CR>', desc = 'Test File' },
-    { ',s', ':TestSuite<CR>', desc = 'Test Suite' },
-    { ',v', ':TestVisit<CR>zz', desc = 'Test Visit' },
+    { ',t', ':TestNearest<CR>', desc = 'Test Nearest', mode = { 'n', 'x' } },
+    { ',k', ':TestLast<CR>', desc = 'Test Last', mode = { 'n', 'x' } },
+    { ',f', ':TestFile<CR>', desc = 'Test File', mode = { 'n', 'x' } },
+    { ',s', ':TestSuite<CR>', desc = 'Test Suite', mode = { 'n', 'x' } },
+    { ',v', ':TestVisit<CR>zz', desc = 'Test Visit', mode = { 'n', 'x' } },
   },
   ft = { 'elixir' },
 
