@@ -27,7 +27,7 @@ function M.last_buffer()
     end
   end
 
-  vim.cmd('Oil')
+  vim.cmd 'Oil'
 end
 
 return M

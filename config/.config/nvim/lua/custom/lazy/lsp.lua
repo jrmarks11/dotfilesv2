@@ -18,7 +18,7 @@ return {
         map('<C-k>', vim.lsp.buf.hover, 'Hover Documentation')
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
-        if client.name == 'elixirls' then
+        if client and client.name == 'elixirls' then
           map('<space>p', function()
             local pos = vim.api.nvim_win_get_cursor(0)
             local row = pos[1] - 1
@@ -44,6 +44,7 @@ return {
 
     require('mason').setup()
     require('mason-lspconfig').setup {
+      automatic_installation = true,
       ensure_installed = {
         'elixirls',
         'lua_ls',
@@ -106,7 +107,7 @@ return {
         focusable = false,
         style = 'minimal',
         border = 'rounded',
-        source = 'always',
+        source = 'if_many',
         header = '',
         prefix = '',
       },
