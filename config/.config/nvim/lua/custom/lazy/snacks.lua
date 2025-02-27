@@ -51,7 +51,6 @@ return {
       desc = 'Git Branch Files',
       mode = { 'n', 'x' },
     },
-    { '<space>f', '<cmd>lua Snacks.picker.grep_word()<cr>', desc = 'Grep Word', mode = { 'n', 'x' } },
     { '<space>c', '<cmd>lua Snacks.picker.git_log_file()<cr>', desc = 'Git Commits File', mode = { 'n', 'x' } },
     {
       '<space>d',
@@ -59,16 +58,20 @@ return {
       desc = 'Files in Dir',
       mode = { 'n', 'x' },
     },
+    { '<space>f', '<cmd>lua Snacks.picker.grep_word()<cr>', desc = 'Grep Word', mode = { 'n', 'x' } },
     { '<space>g', '<cmd>lua Snacks.picker.git_status()<cr>', desc = 'Git Status', mode = { 'n', 'x' } },
     { '<space>i', '<cmd>lua Snacks.picker.lines()<cr>', desc = 'Grep Buffer', mode = { 'n', 'x' } },
     { '<space>j', '<cmd>lua Snacks.picker.grep()<cr>', desc = 'Live Grep', mode = { 'n', 'x' } },
     { '<space>n', '<cmd>lua Snacks.picker.notifications()<cr>', desc = 'Notifications', mode = { 'n', 'x' } },
+    { '<space>p', '<cmd>lua Snacks.picker.lazy()<cr>', desc = 'Lazy Picker', mode = { 'n', 'x' } },
     { '<space>r', '<cmd>lua Snacks.picker.recent()<cr>', desc = 'Recent Files', mode = { 'n', 'x' } },
     { '<space>t', '<cmd>lua Snacks.picker.smart()<cr>', desc = 'Smart Open Files', mode = { 'n', 'x' } },
     { '<space>u', '<cmd>lua Snacks.picker.resume()<cr>', desc = 'Resume Picker', mode = { 'n', 'x' } },
+
     { ',u', '<cmd>lua Snacks.picker.undo()<cr>', desc = 'Undo List', mode = { 'n', 'x' } },
     { ',.', '<cmd>lua Snacks.scratch()<cr>', desc = 'Toggle Scratch Buffer', mode = { 'n', 'x' } },
     { ',>', '<cmd>lua Snacks.scratch.select()<cr>', desc = 'Select Scratch Buffer', mode = { 'n', 'x' } },
+
     { 'sL', '<cmd>lua Snacks.gitbrowse()<cr>', desc = 'Git Browse (open)', mode = { 'n', 'x' } },
     {
       'sl',
