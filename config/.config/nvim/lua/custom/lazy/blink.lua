@@ -4,21 +4,7 @@ return {
   version = '*',
   dependencies = { 'rafamadriz/friendly-snippets' },
 
-  init = function()
-    vim.keymap.set('i', '<C-b>', "<cmd>lua require('blink.cmp').show()<CR>")
-  end,
-
   opts = {
-    completion = {
-      menu = {
-        auto_show = false,
-      },
-    },
-    keymap = {
-      ['<C-e>'] = {},
-      ['<C-p>'] = { 'select_prev', 'fallback' },
-      ['<C-n>'] = { 'select_next', 'fallback' },
-    },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
       per_filetype = {
