@@ -3,14 +3,7 @@ return {
   cmd = 'DBUIToggle',
   dependencies = {
     { 'tpope/vim-dadbod', lazy = true },
-    {
-      'kristijanhusak/vim-dadbod-completion',
-      ft = { 'sql' },
-
-      -- config = function()
-      --   vim.api.nvim_exec([[ autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni ]], false)
-      -- end,
-    },
+    { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql' } },
   },
 
   init = function()

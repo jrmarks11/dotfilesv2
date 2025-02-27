@@ -53,6 +53,4 @@ map('n', '<C-o>', '<C-o>zz', { silent = true })
 map('n', '<C-i>', '<C-i>zz', { silent = true })
 map({ 'n', 'x' }, 'G', 'Gzz', { silent = true })
 
-map('i', '<C-b>', '<C-x><C-o>')
-
 map('n', 'gy', "'[V']'")
