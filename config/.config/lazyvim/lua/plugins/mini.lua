@@ -53,10 +53,4 @@ return {
     keys = { "ss" },
     opts = { mappings = { toggle = "ss" } },
   },
-  {
-    "echasnovski/mini.statusline",
-    version = false,
-    event = "VeryLazy",
-    opts = {},
-  },
 }

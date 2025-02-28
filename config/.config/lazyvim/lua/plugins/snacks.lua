@@ -2,11 +2,6 @@ return {
   "folke/snacks.nvim",
 
   opts = {
-    bigfile = { enabled = true },
-    input = { enabled = true },
-    notifier = { enabled = true },
-    statuscolumn = { enabled = true },
-
     picker = {
       hidden = true,
       layout = {
