@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+local d = vim.diagnostic
 
 map("c", "<C-n>", "<down>")
 map("c", "<C-p>", "<up>")
@@ -24,3 +25,19 @@ map("n", "]<space>", ":<C-u>put =repeat(nr2char(10),v:count1)<CR>", { silent = t
 map("n", "<space><Tab>", "<C-^>", { desc = "Switch to Last buffer" })
 
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+map("n", "<space>l", ":Lazy<CR>", { desc = "Open lazy" })
+
+map({ "n", "x" }, "j", [[v:count == 0 ? 'gj' : 'jzz']], { expr = true, silent = true })
+map({ "n", "x" }, "k", [[v:count == 0 ? 'gk' : 'kzz']], { expr = true, silent = true })
+
+map({ "n", "x" }, ",", "<nop>")
+map({ "n", "x" }, "s", "<nop>")
+
+map("n", "[d", d.goto_prev, { desc = "Go To Previous Diagnostic" })
+map("n", "]d", d.goto_next, { desc = "Go To Next Diagnostic" })
+
+map("n", "sp", [[:'{,'}s/\<<c-r><c-w>\>//g<left><left>]], { desc = "Substitute in Paragraph" })
+map("x", "sp", [[y:'{,'}s/<c-r><c-0>//g<left><left>]], { desc = "Substitute in Paragraph" })
+map("n", "se", [[:%s/\<<c-r><c-w>\>//g<left><left>]], { desc = "Substitute In Entire Buffer" })
+map("x", "se", "y:%s/<c-r><c-0>//g<left><left>", { desc = "Substitute In Entire Buffer" })
