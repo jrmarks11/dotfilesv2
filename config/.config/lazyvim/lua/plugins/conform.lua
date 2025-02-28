@@ -10,6 +10,7 @@ return {
       desc = "Format buffer",
       silent = true,
     },
+    { "<space>cF", false },
   },
 
   opts = function()

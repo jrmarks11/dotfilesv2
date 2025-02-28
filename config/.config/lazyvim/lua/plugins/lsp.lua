@@ -5,8 +5,8 @@ return {
     local keys = require("lazyvim.plugins.lsp.keymaps").get()
 
     keys[#keys + 1] = { "<space>cl", false }
-    keys[#keys + 1] = { "<space>ca", false }
-    keys[#keys + 1] = { "<space>cc", false }
+    keys[#keys + 1] = { "<space>ca", false, mode = { "n", "v" } }
+    keys[#keys + 1] = { "<space>cc", false, mode = { "n", "v" } }
     keys[#keys + 1] = { "<space>cC", false }
     keys[#keys + 1] = { "<space>cR", false }
     keys[#keys + 1] = { "<space>cr", false }
