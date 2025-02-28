@@ -23,6 +23,8 @@ return {
         map(',c', vim.lsp.buf.code_action, 'Code Action')
         map(',r', vim.lsp.buf.rename, 'Rename')
         map('<C-k>', vim.lsp.buf.hover, 'Hover Documentation')
+        map('[[', function() Snacks.words.jump(-vim.v.count1) end, 'Previous Diagnostic')
+        map(']]', function() Snacks.words.jump(vim.v.count1) end, 'Next Diagnostic')
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client.name == 'elixirls' then
@@ -66,7 +68,6 @@ return {
         end,
 
         ['lua_ls'] = function()
-          local lspconfig = require 'lspconfig'
           lspconfig.lua_ls.setup {
             settings = {
               Lua = {
@@ -83,7 +84,6 @@ return {
         end,
 
         ['elixirls'] = function()
-          local lspconfig = require 'lspconfig'
           lspconfig.elixirls.setup {
             settings = {
               elixirLS = {
@@ -95,7 +95,6 @@ return {
         end,
 
         ['volar'] = function()
-          local lspconfig = require 'lspconfig'
           lspconfig.volar.setup {
             settings = {
               init_options = {

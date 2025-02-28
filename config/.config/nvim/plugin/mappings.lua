@@ -39,7 +39,7 @@ map({ 'n', 'x' }, ';', ':')
 map('n', '[<space>', ':<C-u>put! =repeat(nr2char(10),v:count1)<CR>', { silent = true, desc = 'Empty lines above' })
 map('n', ']<space>', ':<C-u>put =repeat(nr2char(10),v:count1)<CR>', { silent = true, desc = 'Empty lines below' })
 
-map({ 'n', 'x' }, '<space><Tab>', '<C-^>', { desc = 'Switch to Last buffer' })
+map({ 'n', 'x' }, '<space><Tab>', '<C-^>', { desc = 'Go to Last buffer' })
 
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
