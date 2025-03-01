@@ -1,8 +1,8 @@
 return {
   "lewis6991/gitsigns.nvim",
 
-  opts = {
-    on_attach = function()
+  opts = function(_, opts)
+    opts.on_attach = function()
       local gs = package.loaded.gitsigns
       local map = vim.keymap.set
       local cmd = vim.cmd
@@ -29,6 +29,8 @@ return {
       map("n", "sv", gs.preview_hunk, { desc = "Git Preview Hunk" })
       map("n", "su", gs.reset_hunk, { desc = "Git Undo Hunk" })
       map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "GitSigns Select Hunk" })
-    end,
-  },
+    end
+
+    vim.keymap.del("n", "<leader>uG")
+  end,
 }

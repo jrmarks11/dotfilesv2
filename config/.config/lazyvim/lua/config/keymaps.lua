@@ -41,3 +41,5 @@ map("n", "sp", [[:'{,'}s/\<<c-r><c-w>\>//g<left><left>]], { desc = "Substitute i
 map("x", "sp", [[y:'{,'}s/<c-r><c-0>//g<left><left>]], { desc = "Substitute in Paragraph" })
 map("n", "se", [[:%s/\<<c-r><c-w>\>//g<left><left>]], { desc = "Substitute In Entire Buffer" })
 map("x", "se", "y:%s/<c-r><c-0>//g<left><left>", { desc = "Substitute In Entire Buffer" })
+
+map('n', 'sq', '<cmd>DBUIToggle<CR>', { desc = 'Toggle SQL DBUI' })

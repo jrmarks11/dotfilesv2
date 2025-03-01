@@ -10,7 +10,7 @@ return {
       desc = "Format buffer",
       silent = true,
     },
-    { "<space>cF", false },
+    { "<space>cF", false, mode = { "n", "v" } },
   },
 
   opts = function()
