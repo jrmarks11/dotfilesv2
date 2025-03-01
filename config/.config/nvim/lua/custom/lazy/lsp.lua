@@ -1,6 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
-  ft = { 'elixir', 'lua', 'ruby', 'typescript', 'vue' },
+  ft = { 'elixir', 'lua', 'ruby', 'typescript', 'typescriptreact', 'vue' },
   dependencies = { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim' },
 
   config = function()
@@ -8,7 +8,7 @@ return {
     local lspconfig = require 'lspconfig'
 
     lspconfig['lua_ls'].setup { capabilities = capabilities }
-    lspconfig['ts_ls'].setup { capabilities = capabilities }
+    lspconfig['vtsls'].setup { capabilities = capabilities }
     lspconfig['elixirls'].setup { capabilities = capabilities }
 
     vim.api.nvim_create_autocmd('LspAttach', {
@@ -23,8 +23,12 @@ return {
         map(',c', vim.lsp.buf.code_action, 'Code Action')
         map(',r', vim.lsp.buf.rename, 'Rename')
         map('<C-k>', vim.lsp.buf.hover, 'Hover Documentation')
-        map('[[', function() Snacks.words.jump(-vim.v.count1) end, 'Previous Diagnostic')
-        map(']]', function() Snacks.words.jump(vim.v.count1) end, 'Next Diagnostic')
+        map('[[', function()
+          Snacks.words.jump(-vim.v.count1)
+        end, 'Previous Diagnostic')
+        map(']]', function()
+          Snacks.words.jump(vim.v.count1)
+        end, 'Next Diagnostic')
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client.name == 'elixirls' then
@@ -57,8 +61,7 @@ return {
       ensure_installed = {
         'elixirls',
         'lua_ls',
-        'ruby_lsp',
-        'ts_ls',
+        'vtsls',
         'volar',
       },
 
