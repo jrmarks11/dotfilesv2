@@ -1,8 +1,8 @@
 return {
   'saghen/blink.cmp',
-  event = 'InsertEnter',
   version = '*',
   dependencies = { 'rafamadriz/friendly-snippets' },
+  ft = { 'sql' },
 
   opts = {
     sources = {

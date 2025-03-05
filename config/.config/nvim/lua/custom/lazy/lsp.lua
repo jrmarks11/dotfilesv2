@@ -4,12 +4,12 @@ return {
   dependencies = { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim' },
 
   config = function()
-    local capabilities = require('blink.cmp').get_lsp_capabilities()
+    -- local capabilities = require('blink.cmp').get_lsp_capabilities()
     local lspconfig = require 'lspconfig'
 
-    lspconfig['lua_ls'].setup { capabilities = capabilities }
-    lspconfig['vtsls'].setup { capabilities = capabilities }
-    lspconfig['elixirls'].setup { capabilities = capabilities }
+    -- lspconfig['lua_ls'].setup { capabilities = capabilities }
+    -- lspconfig['vtsls'].setup { capabilities = capabilities }
+    -- lspconfig['elixirls'].setup { capabilities = capabilities }
 
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('jmarks-lsp-attach', { clear = true }),
