@@ -13,12 +13,10 @@ return {
 
         map('n', ']c', function()
           gs.next_hunk()
-          cmd 'normal! zz'
         end, { desc = 'Next Git Change' })
 
         map('n', '[c', function()
           gs.prev_hunk()
-          cmd 'normal! zz'
         end, { desc = 'Previous Git Change' })
 
         map('n', 'sb', function()

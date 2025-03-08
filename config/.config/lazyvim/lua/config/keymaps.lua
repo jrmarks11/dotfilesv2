@@ -28,8 +28,8 @@ map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 map("n", "<space>l", ":Lazy<CR>", { desc = "Open lazy" })
 
-map({ "n", "x" }, "j", [[v:count == 0 ? 'gj' : 'jzz']], { expr = true, silent = true })
-map({ "n", "x" }, "k", [[v:count == 0 ? 'gk' : 'kzz']], { expr = true, silent = true })
+map({ "n", "x" }, "j", [[v:count == 0 ? 'gj' : 'j']], { expr = true, silent = true })
+map({ "n", "x" }, "k", [[v:count == 0 ? 'gk' : 'k']], { expr = true, silent = true })
 
 map({ "n", "x" }, ",", "<nop>")
 map({ "n", "x" }, "s", "<nop>")

@@ -5,6 +5,15 @@ end
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
+local auto_center_group = augroup('AutoCenter', { clear = true })
+autocmd('CursorMoved', {
+  group = auto_center_group,
+  pattern = '*',
+  callback = function()
+    vim.cmd 'normal! zz'
+  end,
+})
+
 local auto_resize_group = augroup('AutoResize', { clear = true })
 autocmd('VimResized', {
   group = auto_resize_group,

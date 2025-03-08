@@ -24,8 +24,8 @@ map('n', 'gP', 'mz<cmd>put!<CR>`zk<cmd>delmarks z<cr>', { desc = 'Paste on previ
 map('n', '<space>e', ':e <cfile><CR>', { desc = 'Edit File Under Cursor' })
 map('n', '<space>l', ':Lazy<CR>', { desc = 'Open lazy' })
 
-map({ 'n', 'x' }, 'j', [[v:count == 0 ? 'gj' : 'jzz']], { expr = true, silent = true })
-map({ 'n', 'x' }, 'k', [[v:count == 0 ? 'gk' : 'kzz']], { expr = true, silent = true })
+map({ 'n', 'x' }, 'j', [[v:count == 0 ? 'gj' : 'j']], { expr = true, silent = true })
+map({ 'n', 'x' }, 'k', [[v:count == 0 ? 'gk' : 'k']], { expr = true, silent = true })
 
 map({ 'n', 'x' }, ',', '<nop>')
 map({ 'n', 'x' }, 's', '<nop>')
@@ -42,15 +42,5 @@ map('n', ']<space>', ':<C-u>put =repeat(nr2char(10),v:count1)<CR>', { silent = t
 map({ 'n', 'x' }, '<space><Tab>', '<C-^>', { desc = 'Go to Last buffer' })
 
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
-map('n', 'n', 'nzz', { silent = true })
-map('n', 'N', 'Nzz', { silent = true })
-map({ 'n', 'x' }, '<C-u>', '<C-u>zz', { silent = true })
-map({ 'n', 'x' }, '<C-d>', '<C-d>zz', { silent = true })
-map({ 'n', 'x' }, '{', '{zz', { silent = true })
-map({ 'n', 'x' }, '}', '}zz', { silent = true })
-map('n', '<C-o>', '<C-o>zz', { silent = true })
-map('n', '<C-i>', '<C-i>zz', { silent = true })
-map({ 'n', 'x' }, 'G', 'Gzz', { silent = true })
 
 map('n', 'gy', "'[V']'")
