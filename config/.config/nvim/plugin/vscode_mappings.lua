@@ -23,6 +23,9 @@ end)
 map('n', 'sg', function()
   vscode.call 'git.stageSelectedRanges'
 end)
+map('n', 'sv', function()
+  vscode.call 'git.openChange'
+end)
 map('n', ',,', function()
   vscode.call 'editor.action.formatDocument'
 end)
@@ -38,18 +41,33 @@ end)
 map('n', '-', function()
   vscode.call 'workbench.files.action.showActiveFileInExplorer'
 end)
-map('n', ']q', function()
-  vscode.call 'search.action.focusNextSearchResult'
-end)
-map('n', '[q', function()
-  vscode.call 'search.action.focusPreviousSearchResult'
-end)
 
 map('x', '<space>f', function()
-  vscode.call 'editor.action.addSelectionToNextFindMatch'
-  vscode.call 'workbench.action.findInFiles'
+  local lines = vim.fn.getline("'<", "'>")
+  if type(lines) == 'string' then
+    lines = { lines }
+  end
+  local s = table.concat(lines, '\n')
+  vscode.call 'workbench.action.terminal.focus'
+  vscode.call('workbench.action.terminal.sendSequence', { args = { text = 'rg --hidden ' .. s .. '\n' } })
 end)
 
 map('n', '<space>f', function()
-  vscode.call('workbench.action.findInFiles', { args = { query = vim.fn.expand '<cword>' } })
+  local word = vim.fn.expand '<cword>'
+  vscode.call 'workbench.action.terminal.focus'
+  vscode.call('workbench.action.terminal.sendSequence', { args = { text = 'rg --hidden ' .. word .. '\n' } })
+end)
+
+map('n', '<space>a', function()
+  local file = vim.fn.expand('%')
+  local abs_path = vim.fn.fnamemodify(file, ':p')
+  local alt
+
+  if abs_path:match('test/.*_test.exs$') then
+    alt = abs_path:gsub('test/(.*)_test.exs$', 'lib/%1.ex')
+  else
+    alt = abs_path:gsub('lib/(.*).ex$', 'test/%1_test.exs')
+  end
+
+  vim.cmd("call VSCodeExtensionNotify('open-file', '" .. alt .. "', 0)")
 end)

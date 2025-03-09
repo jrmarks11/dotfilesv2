@@ -1,9 +1,16 @@
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+
+autocmd('TextYankPost', {
+  group = augroup('highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
 if vim.g.vscode then
   return
 end
-
-local augroup = vim.api.nvim_create_augroup
-local autocmd = vim.api.nvim_create_autocmd
 
 local auto_center_group = augroup('AutoCenter', { clear = true })
 autocmd('CursorMoved', {
@@ -101,12 +108,5 @@ autocmd('VimEnter', {
         end
       end, 10)
     end
-  end,
-})
-
-vim.api.nvim_create_autocmd('TextYankPost', {
-  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
   end,
 })
