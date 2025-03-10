@@ -9,6 +9,7 @@ return {
     notifier = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },
+    quickfile = { enabled = true },
 
     picker = {
       hidden = true,

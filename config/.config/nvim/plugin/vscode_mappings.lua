@@ -4,26 +4,38 @@ end
 
 local map = vim.keymap.set
 local vscode = require 'vscode-neovim'
+local unmap = vim.keymap.del
 
-map('n', ']c', function()
+unmap({ 'n', 'x' }, '<space>n')
+unmap({ 'n', 'x' }, '<space>u')
+unmap({ 'n', 'x' }, '<space>p')
+unmap({ 'n', 'x' }, '<space>j')
+unmap({ 'n', 'x' }, '<space>i')
+unmap({ 'n', 'x' }, '<space>g')
+unmap({ 'n', 'x' }, '<space>c')
+unmap({ 'n', 'x' }, '<space>d')
+unmap({ 'n', 'x' }, '<space>b')
+unmap({ 'n' }, '<space>e')
+
+map({ 'n', 'x' }, ']c', function()
   vscode.call 'workbench.action.editor.nextChange'
 end)
-map('n', '[c', function()
+map({ 'n', 'x' }, '[c', function()
   vscode.call 'workbench.action.editor.previousChange'
 end)
-map('n', ']d', function()
+map({ 'n', 'x' }, ']d', function()
   vscode.call 'editor.action.marker.next'
 end)
-map('n', '[d', function()
+map({ 'n', 'x' }, '[d', function()
   vscode.call 'editor.action.marker.prev'
 end)
-map('n', 'su', function()
+map({ 'n', 'x' }, 'su', function()
   vscode.call 'git.revertSelectedRanges'
 end)
 map('n', 'sg', function()
   vscode.call 'git.stageSelectedRanges'
 end)
-map('n', 'sv', function()
+map({ 'n', 'x' }, 'sv', function()
   vscode.call 'git.openChange'
 end)
 map('n', ',,', function()
@@ -32,13 +44,13 @@ end)
 map('x', ',,', function()
   vscode.call 'editor.action.formatSelection'
 end)
-map('n', '<space>t', function()
+map({ 'n', 'x' }, '<space>t', function()
   vscode.call 'workbench.action.quickOpen'
 end)
-map('n', '<space>r', function()
+map({ 'n', 'x' }, '<space>r', function()
   vscode.call 'workbench.action.showAllEditorsByMostRecentlyUsed'
 end)
-map('n', '-', function()
+map({ 'n', 'x' }, '-', function()
   vscode.call 'workbench.files.action.showActiveFileInExplorer'
 end)
 
@@ -58,7 +70,7 @@ map('n', '<space>f', function()
   vscode.call('workbench.action.terminal.sendSequence', { args = { text = 'rg --hidden ' .. word .. '\n' } })
 end)
 
-map('n', '<space>a', function()
+map({ 'n', 'x' }, '<space>a', function()
   local file = vim.fn.expand('%')
   local abs_path = vim.fn.fnamemodify(file, ':p')
   local alt
@@ -71,3 +83,16 @@ map('n', '<space>a', function()
 
   vim.cmd("call VSCodeExtensionNotify('open-file', '" .. alt .. "', 0)")
 end)
+
+map({ 'n', 'x' }, '<space><tab>', function()
+  vscode.call 'workbench.action.openPreviousEditorFromHistory'
+end)
+
+map({ 'n', 'x' }, '[[', function()
+  vscode.call 'editor.action.wordHighlight.prev'
+end)
+map({ 'n', 'x' }, ']]', function()
+  vscode.call 'editor.action.wordHighlight.next'
+end)
+
+map({ "n", "x" }, "<space><space>", "<cmd>Find<cr>")
