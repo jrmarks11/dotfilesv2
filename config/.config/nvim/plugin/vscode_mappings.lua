@@ -70,12 +70,28 @@ map('n', '<space>f', function()
   vscode.call('workbench.action.terminal.sendSequence', { args = { text = 'rg --hidden ' .. word .. '\n' } })
 end)
 
+map({ 'n', 'x' }, '<space>g', function()
+  vscode.call 'workbench.action.terminal.focus'
+  vscode.call(
+    'workbench.action.terminal.sendSequence',
+    { args = { text = "git status --short | awk '{print $2}' | fzf | xargs code\n" } }
+  )
+end)
+
+map({ 'n', 'x' }, '<space>b', function()
+  vscode.call 'workbench.action.terminal.focus'
+  vscode.call(
+    'workbench.action.terminal.sendSequence',
+    { args = { text = 'git diff --name-only master...HEAD | fzf | xargs code\n' } }
+  )
+end)
+
 map({ 'n', 'x' }, '<space>a', function()
-  local file = vim.fn.expand('%')
+  local file = vim.fn.expand '%'
   local abs_path = vim.fn.fnamemodify(file, ':p')
   local alt
 
-  if abs_path:match('test/.*_test.exs$') then
+  if abs_path:match 'test/.*_test.exs$' then
     alt = abs_path:gsub('test/(.*)_test.exs$', 'lib/%1.ex')
   else
     alt = abs_path:gsub('lib/(.*).ex$', 'test/%1_test.exs')
@@ -95,4 +111,4 @@ map({ 'n', 'x' }, ']]', function()
   vscode.call 'editor.action.wordHighlight.next'
 end)
 
-map({ "n", "x" }, "<space><space>", "<cmd>Find<cr>")
+map({ 'n', 'x' }, '<space><space>', '<cmd>Find<cr>')
