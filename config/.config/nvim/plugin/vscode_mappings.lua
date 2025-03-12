@@ -9,7 +9,6 @@ local unmap = vim.keymap.del
 unmap({ 'n', 'x' }, '<space>n')
 unmap({ 'n', 'x' }, '<space>u')
 unmap({ 'n', 'x' }, '<space>p')
-unmap({ 'n', 'x' }, '<space>j')
 unmap({ 'n', 'x' }, '<space>i')
 unmap({ 'n', 'x' }, '<space>g')
 unmap({ 'n', 'x' }, '<space>c')
@@ -67,23 +66,22 @@ end)
 map('n', '<space>f', function()
   local word = vim.fn.expand '<cword>'
   vscode.call 'workbench.action.terminal.focus'
-  vscode.call('workbench.action.terminal.sendSequence', { args = { text = 'rg --hidden ' .. word .. '\n' } })
+  vscode.call('workbench.action.terminal.sendSequence', { args = { text = 'rg_code ' .. word .. '\n' } })
+end)
+
+map({ 'n', 'x' }, '<space>j', function()
+  vscode.call 'workbench.action.terminal.focus'
+  vscode.call('workbench.action.terminal.sendSequence', { args = { text = 'rg_code\n' } })
 end)
 
 map({ 'n', 'x' }, '<space>g', function()
   vscode.call 'workbench.action.terminal.focus'
-  vscode.call(
-    'workbench.action.terminal.sendSequence',
-    { args = { text = "git status --short | awk '{print $2}' | fzf | xargs code\n" } }
-  )
+  vscode.call('workbench.action.terminal.sendSequence', { args = { text = 'gs_code\n' } })
 end)
 
 map({ 'n', 'x' }, '<space>b', function()
   vscode.call 'workbench.action.terminal.focus'
-  vscode.call(
-    'workbench.action.terminal.sendSequence',
-    { args = { text = 'git diff --name-only master...HEAD | fzf | xargs code\n' } }
-  )
+  vscode.call('workbench.action.terminal.sendSequence', { args = { text = 'gd_code\n' } })
 end)
 
 map({ 'n', 'x' }, '<space>a', function()

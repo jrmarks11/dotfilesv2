@@ -108,3 +108,40 @@ deploy_as2lib() {
 deploy_timezones() {
     gh workflow run deploy_to_ecs.yml -f app=timezones
 }
+
+gs_code() {
+    is_in_git_repo || return
+
+    FILE=$(git status --porcelain | sed 's/^.. //' | fzf --ansi --layout=reverse \
+            --preview 'git diff --color=always HEAD -- {}' \
+        --bind 'ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up')
+    [ -n "$FILE" ] && code "$FILE"
+}
+
+gd_code() {
+    is_in_git_repo || return
+
+    FILE=$(git diff --name-only master | fzf --ansi --layout=reverse \
+            --preview 'git -C $(git rev-parse --show-toplevel) diff master --color=always -- {}' \
+        --bind 'ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up')
+
+    [ -n "$FILE" ] && code "$(git rev-parse --show-toplevel)/$FILE"
+}
+
+rg_code() (
+    RELOAD='reload:rg --column --color=always --smart-case --hidden {q} || :'
+    local selected=$(
+        fzf --disabled --ansi --multi \
+            --bind "start:$RELOAD" --bind "change:$RELOAD" \
+            --delimiter : \
+            --preview 'bat --style=numbers --color=always --highlight-line {2} {1}' \
+            --query "$*"
+    )
+
+    if [[ -n "$selected" ]]; then
+        # Split out file and line number
+        local file="$(echo "$selected" | cut -d: -f1)"
+        local line="$(echo "$selected" | cut -d: -f2)"
+        code -g "$file:$line"
+    fi
+)
