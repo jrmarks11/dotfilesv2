@@ -115,7 +115,7 @@ gs_code() {
     FILE=$(git status --porcelain | sed 's/^.. //' | fzf --ansi --layout=reverse \
             --preview 'git diff --color=always HEAD -- {}' \
         --bind 'ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up')
-    [ -n "$FILE" ] && code "$FILE"
+    [ -n "$FILE" ] && cursor "$FILE"
 }
 
 gd_code() {
@@ -125,7 +125,7 @@ gd_code() {
             --preview 'git -C $(git rev-parse --show-toplevel) diff master --color=always -- {}' \
         --bind 'ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up')
 
-    [ -n "$FILE" ] && code "$(git rev-parse --show-toplevel)/$FILE"
+    [ -n "$FILE" ] && cursor "$FILE"
 }
 
 rg_code() (
@@ -142,6 +142,6 @@ rg_code() (
         # Split out file and line number
         local file="$(echo "$selected" | cut -d: -f1)"
         local line="$(echo "$selected" | cut -d: -f2)"
-        code -g "$file:$line"
+        cursor -g "$file:$line"
     fi
 )
