@@ -4,6 +4,10 @@
   username = jrmarks11
 [core]
   excludesfile = ~/.gitignore_global
+[merge]
+  conflictStyle = diff3
+[diff]
+  colorMoved = default
 [push]
   default = current
 [pull]
