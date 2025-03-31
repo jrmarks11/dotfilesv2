@@ -4,12 +4,7 @@ return {
   dependencies = { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim' },
 
   config = function()
-    -- local capabilities = require('blink.cmp').get_lsp_capabilities()
     local lspconfig = require 'lspconfig'
-
-    -- lspconfig['lua_ls'].setup { capabilities = capabilities }
-    -- lspconfig['vtsls'].setup { capabilities = capabilities }
-    -- lspconfig['elixirls'].setup { capabilities = capabilities }
 
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('jmarks-lsp-attach', { clear = true }),
@@ -20,8 +15,6 @@ return {
 
         map('gd', '<cmd>lua Snacks.picker.lsp_definitions()<cr>', 'Goto Definition')
         map('gr', '<cmd>lua Snacks.picker.lsp_references()<cr>', 'Goto References')
-        map(',c', vim.lsp.buf.code_action, 'Code Action')
-        map(',r', vim.lsp.buf.rename, 'Rename')
         map('<C-k>', vim.lsp.buf.hover, 'Hover Documentation')
         map('[[', function()
           Snacks.words.jump(-vim.v.count1)
