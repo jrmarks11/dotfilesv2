@@ -17,6 +17,7 @@ return {
         dismiss = '<C-]>',
       },
     },
+    copilot_node_command = '/opt/homebrew/bin/node',
   },
 
   cond = vim.fn.exists 'g:vscode' == 0,
