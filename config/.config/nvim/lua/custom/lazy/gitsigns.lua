@@ -30,6 +30,7 @@ return {
         map('n', 'sg', gs.stage_hunk, { desc = 'Git Stage Hunk' })
         map('n', 'sv', gs.preview_hunk, { desc = 'Git Preview Hunk' })
         map('n', 'su', gs.reset_hunk, { desc = 'Git Undo Hunk' })
+        map('n', 'sm', '<cmd>Gitsigns change_base master<CR>', { desc = 'Git Change Base to Master' })
         map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'GitSigns Select Hunk' })
       end,
       max_file_length = 100000,
