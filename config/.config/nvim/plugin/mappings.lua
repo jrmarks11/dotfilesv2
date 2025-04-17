@@ -20,6 +20,9 @@ map('x', 'se', 'y:%s/<c-r><c-0>//g<left><left>', { desc = 'Substitute In Entire 
 
 map('n', 'gp', 'mz<cmd>put<CR>`zj<cmd>delmarks z<cr>', { desc = 'Paste on next line' })
 map('n', 'gP', 'mz<cmd>put!<CR>`zk<cmd>delmarks z<cr>', { desc = 'Paste on previous line' })
+map('n', 'gh', '_', { desc = 'Go to beginning of line' })
+map('n', 'gl', '$', { desc = 'Go to beginning of line' })
+map('n', 'gm', 'gM', { desc = 'Go to middle of line' })
 
 map('n', '<space>e', ':e <cfile><CR>', { desc = 'Edit File Under Cursor' })
 map('n', '<space>l', ':Lazy<CR>', { desc = 'Open lazy' })

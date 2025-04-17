@@ -24,6 +24,7 @@ return {
     spec = {
       mode = { 'n', 'v' },
       { 'gx', desc = 'Open with system app' },
+      { 'gq', desc = 'Format' },
       { 'sa', desc = 'Surround Add' },
       { 'sd', desc = 'Surround Delete' },
       { 'sr', desc = 'Surround Replace' },
