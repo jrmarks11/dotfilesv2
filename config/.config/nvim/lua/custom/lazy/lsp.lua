@@ -14,7 +14,7 @@ return {
         end
 
         map('gd', '<cmd>lua Snacks.picker.lsp_definitions()<cr>', 'Goto Definition')
-        map('gr', '<cmd>lua Snacks.picker.lsp_references()<cr>', 'Goto References')
+        map('grr', '<cmd>lua Snacks.picker.lsp_references()<cr>', 'Goto References')
         map('<C-k>', vim.lsp.buf.hover, 'Hover Documentation')
         map('[[', function()
           Snacks.words.jump(-vim.v.count1)
