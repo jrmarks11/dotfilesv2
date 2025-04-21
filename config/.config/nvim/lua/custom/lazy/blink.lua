@@ -2,7 +2,7 @@ return {
   'saghen/blink.cmp',
   version = '*',
   dependencies = { 'rafamadriz/friendly-snippets' },
-  ft = { 'sql', 'lua' },
+  ft = { 'sql', 'lua', 'typescriptreact', 'vue' },
 
   opts = {
     sources = {
