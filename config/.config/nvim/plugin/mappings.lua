@@ -23,8 +23,8 @@ map('n', 'gP', 'mz<cmd>put!<CR>`zk<cmd>delmarks z<cr>', { desc = 'Paste on previ
 map('n', 'gh', '_', { desc = 'Go to beginning of line' })
 map('n', 'gl', '$', { desc = 'Go to beginning of line' })
 map('n', 'gm', 'gM', { desc = 'Go to middle of line' })
+map('n', 'gF', ':e <cfile><CR>', { desc = 'Edit File Under Cursor' })
 
-map('n', '<space>e', ':e <cfile><CR>', { desc = 'Edit File Under Cursor' })
 map('n', '<space>l', ':Lazy<CR>', { desc = 'Open lazy' })
 
 map({ 'n', 'x' }, 'j', [[v:count == 0 ? 'gj' : 'j']], { expr = true, silent = true })

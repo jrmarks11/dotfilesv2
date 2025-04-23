@@ -42,6 +42,42 @@ return {
     end,
   },
   {
+    'echasnovski/mini.files',
+    version = false,
+    dependencies = { 'echasnovski/mini.icons' },
+    keys = {
+      {
+        '-',
+        function()
+          require('mini.files').open(vim.fn.expand '%:p:h', false)
+        end,
+        desc = 'Explore cwd',
+      },
+      {
+        '<space>e',
+        function()
+          local mf = require 'mini.files'
+          if mf.close() then
+            return
+          end
+          mf.open()
+        end,
+        desc = 'File Explorer',
+      },
+    },
+    opts = {
+      options = { permanent_delete = false },
+      mappings = {
+        close = '<esc>',
+        go_in_plus = '<cr>',
+        go_out_plus = '-',
+        show_help = '?',
+      },
+    },
+
+    cond = vim.fn.exists 'g:vscode' == 0,
+  },
+  {
     'echasnovski/mini.icons',
     version = false,
     lazy = true,
