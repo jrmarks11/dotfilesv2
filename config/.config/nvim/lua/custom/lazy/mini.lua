@@ -49,7 +49,7 @@ return {
       {
         '-',
         function()
-          require('mini.files').open(vim.fn.expand '%:p:h', false)
+          require('mini.files').open(vim.fn.expand '%:p:h')
         end,
         desc = 'Explore cwd',
       },
