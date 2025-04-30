@@ -27,7 +27,7 @@ function M.last_buffer()
     end
   end
 
-  vim.cmd 'Oil'
+  require('mini.files').open()
 end
 
 return M
