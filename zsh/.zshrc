@@ -7,8 +7,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-HISTSIZE=10000000
-SAVEHIST=10000000
+HISTSIZE=200000
+SAVEHIST=200000
 HISTFILE=~/.zsh_history
 setopt append_history
 setopt correct
@@ -30,11 +30,6 @@ eval "$(fzf --zsh)"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
 export BAT_THEME="ansi"
-
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-    eval "$(ssh-agent -s)"
-    ssh-add
-fi
 
 autoload -Uz compinit
 compinit -i -C
