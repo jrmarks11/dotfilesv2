@@ -11,8 +11,10 @@ return {
       ignore_install = {},
       ensure_installed = {
         'css',
+        'dockerfile',
         'elixir',
         'embedded_template',
+        'hcl',
         'html',
         'javascript',
         'json',
