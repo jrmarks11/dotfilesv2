@@ -1,11 +1,9 @@
 return {
   'neovim/nvim-lspconfig',
   ft = { 'elixir', 'lua', 'ruby', 'typescript', 'typescriptreact', 'vue', 'markdown' },
-  dependencies = { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim' },
+  dependencies = { 'mason-org/mason.nvim', 'mason-org/mason-lspconfig.nvim' },
 
   config = function()
-    local lspconfig = require 'lspconfig'
-
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('jmarks-lsp-attach', { clear = true }),
       callback = function(event)
@@ -27,60 +25,38 @@ return {
       end,
     })
 
+    vim.lsp.config('lua_ls', {
+      settings = {
+        Lua = {
+          diagnostics = { globals = { 'vim', 'Snacks', 'dbg' } },
+        },
+      },
+    })
+
+    vim.lsp.config('elixirls', {
+      settings = {
+        elixirLS = {
+          dialyzerEnabled = true,
+          fetchDeps = true,
+        },
+      },
+    })
+
+    vim.lsp.config('volar', {
+      init_options = {
+        vue = { hybridMode = true },
+      },
+    })
+
     require('mason').setup()
     require('mason-lspconfig').setup {
-      automatic_installation = true,
       ensure_installed = {
         'elixirls',
         'lua_ls',
         'vtsls',
         'volar',
       },
-
-      handlers = {
-        function(server_name)
-          require('lspconfig')[server_name].setup {}
-        end,
-
-        ['lua_ls'] = function()
-          lspconfig.lua_ls.setup {
-            settings = {
-              Lua = {
-                diagnostics = {
-                  globals = {
-                    'vim',
-                    'Snacks',
-                    'dbg',
-                  },
-                },
-              },
-            },
-          }
-        end,
-
-        ['elixirls'] = function()
-          lspconfig.elixirls.setup {
-            settings = {
-              elixirLS = {
-                dialyzerEnabled = true,
-                fetchDeps = true,
-              },
-            },
-          }
-        end,
-
-        ['volar'] = function()
-          lspconfig.volar.setup {
-            settings = {
-              init_options = {
-                vue = {
-                  hybridMode = true,
-                },
-              },
-            },
-          }
-        end,
-      },
+      automatic_enable = true,
     }
 
     vim.diagnostic.config {
