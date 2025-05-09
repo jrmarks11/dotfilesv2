@@ -1,7 +1,3 @@
-if vim.g.vscode then
-  return
-end
-
 vim.cmd.colorscheme 'catppuccin'
 vim.g.catppuccin_flavour = 'latte'
 

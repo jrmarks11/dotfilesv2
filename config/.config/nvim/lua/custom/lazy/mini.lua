@@ -74,8 +74,6 @@ return {
         show_help = '?',
       },
     },
-
-    cond = vim.fn.exists 'g:vscode' == 0,
   },
   {
     'echasnovski/mini.icons',
@@ -113,7 +111,5 @@ return {
         content = { active = sl.active, inactive = sl.inactive },
       }
     end,
-
-    cond = vim.fn.exists 'g:vscode' == 0,
   },
 }

@@ -14,6 +14,4 @@ return {
   init = function()
     vim.g.catppuccin_flavour = 'latte'
   end,
-
-  cond = vim.fn.exists 'g:vscode' == 0,
 }

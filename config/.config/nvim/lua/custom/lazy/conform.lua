@@ -31,7 +31,6 @@ return {
       formatters_by_ft = {
         css = { 'prettier' },
         elixir = { 'mix' },
-        eruby = { 'erb_format' },
         graphql = { 'prettier' },
         html = { 'prettier' },
         javascript = { 'prettier' },
@@ -41,7 +40,6 @@ return {
         lua = { 'stylua' },
         markdown = { 'prettier' },
         python = { 'black' },
-        ruby = { 'rubocop' },
         scss = { 'prettier' },
         sh = { 'beautysh' },
         sql = { 'sqlfluff' },
@@ -54,6 +52,4 @@ return {
       },
     }
   end,
-
-  cond = vim.fn.exists 'g:vscode' == 0,
 }

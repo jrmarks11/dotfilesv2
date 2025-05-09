@@ -1,9 +1,18 @@
 return {
   'neovim/nvim-lspconfig',
-  ft = { 'elixir', 'lua', 'ruby', 'typescript', 'typescriptreact', 'vue', 'markdown' },
+  ft = { 'elixir', 'lua', 'typescript', 'typescriptreact', 'vue' },
   dependencies = { 'mason-org/mason.nvim', 'mason-org/mason-lspconfig.nvim' },
 
   config = function()
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+    local ok, blink = pcall(require, 'blink.cmp')
+    if ok then
+      capabilities = vim.tbl_deep_extend('force', capabilities, blink.get_lsp_capabilities())
+    end
+
+    vim.lsp.config('*', { capabilities = capabilities })
+
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('jmarks-lsp-attach', { clear = true }),
       callback = function(event)
@@ -23,29 +32,6 @@ return {
           Snacks.words.jump(vim.v.count1)
         end, 'Next Diagnostic')
       end,
-    })
-
-    vim.lsp.config('lua_ls', {
-      settings = {
-        Lua = {
-          diagnostics = { globals = { 'vim', 'Snacks', 'dbg' } },
-        },
-      },
-    })
-
-    vim.lsp.config('elixirls', {
-      settings = {
-        elixirLS = {
-          dialyzerEnabled = true,
-          fetchDeps = true,
-        },
-      },
-    })
-
-    vim.lsp.config('volar', {
-      init_options = {
-        vue = { hybridMode = true },
-      },
     })
 
     require('mason').setup()
@@ -70,6 +56,4 @@ return {
       },
     }
   end,
-
-  cond = vim.fn.exists 'g:vscode' == 0,
 }

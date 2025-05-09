@@ -10,6 +10,4 @@ return {
     { ']l', [[<Plug>(qf_loc_next)]], desc = 'Go To Next Location List' },
     { ',l', [[<Plug>(qf_loc_toggle)]], desc = 'Toggle Location List' },
   },
-
-  cond = vim.fn.exists 'g:vscode' == 0,
 }

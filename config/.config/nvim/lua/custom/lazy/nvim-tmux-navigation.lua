@@ -11,6 +11,4 @@ return {
     { '<C-j>k', '<cmd>NvimTmuxNavigateUp<cr>', mode = { 'n', 'i', 'c', 'x', 't' }, desc = 'Navigate Up' },
     { '<C-j>l', '<cmd>NvimTmuxNavigateRight<cr>', mode = { 'n', 'i', 'c', 'x', 't' }, desc = 'Navigate Right' },
   },
-
-  cond = vim.fn.exists 'g:vscode' == 0,
 }
