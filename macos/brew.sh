@@ -11,11 +11,9 @@ brew install \
     joshmedeski/sesh/sesh \
     jq \
     nvim \
-    reattach-to-user-namespace \
     ripgrep \
     stow \
     tmux \
     yarn \
-    zoxide \
     zinit \
     zsh
