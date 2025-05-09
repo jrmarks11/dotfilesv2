@@ -31,6 +31,4 @@ return {
       { 'ss', desc = 'Split Toggle' },
     },
   },
-
-  cond = vim.fn.exists 'g:vscode' == 0,
 }

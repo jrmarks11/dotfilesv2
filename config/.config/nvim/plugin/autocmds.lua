@@ -8,10 +8,6 @@ autocmd('TextYankPost', {
   end,
 })
 
-if vim.g.vscode then
-  return
-end
-
 local auto_center_group = augroup('AutoCenter', { clear = true })
 autocmd('CursorMoved', {
   group = auto_center_group,

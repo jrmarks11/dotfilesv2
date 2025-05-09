@@ -2,6 +2,7 @@ return {
   'saghen/blink.cmp',
   version = '*',
   dependencies = { 'rafamadriz/friendly-snippets' },
+  event = 'VeryLazy',
   -- ft = { 'sql', 'lua', 'typescriptreact', 'vue' },
 
   opts = {
@@ -17,6 +18,4 @@ return {
       },
     },
   },
-
-  cond = vim.fn.exists 'g:vscode' == 0,
 }
