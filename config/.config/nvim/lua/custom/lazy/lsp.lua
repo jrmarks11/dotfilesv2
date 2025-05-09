@@ -34,29 +34,6 @@ return {
       end,
     })
 
-    vim.lsp.config('lua_ls', {
-      settings = {
-        Lua = {
-          diagnostics = { globals = { 'vim', 'Snacks', 'dbg' } },
-        },
-      },
-    })
-
-    vim.lsp.config('elixirls', {
-      settings = {
-        elixirLS = {
-          dialyzerEnabled = true,
-          fetchDeps = true,
-        },
-      },
-    })
-
-    vim.lsp.config('volar', {
-      init_options = {
-        vue = { hybridMode = true },
-      },
-    })
-
     require('mason').setup()
     require('mason-lspconfig').setup {
       ensure_installed = {
