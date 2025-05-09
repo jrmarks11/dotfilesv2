@@ -1,6 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
-  ft = { 'elixir', 'lua', 'ruby', 'typescript', 'typescriptreact', 'vue', 'markdown' },
+  ft = { 'elixir', 'lua', 'typescript', 'typescriptreact', 'vue' },
   dependencies = { 'mason-org/mason.nvim', 'mason-org/mason-lspconfig.nvim' },
 
   config = function()
