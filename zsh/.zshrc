@@ -31,11 +31,12 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND='fd --type f --type d --hidden --follow --exclude .git'
 export BAT_THEME="ansi"
 
+zinit ice depth=1; zinit light zsh-users/zsh-completions
+
 autoload -Uz compinit
 compinit -i -C
 
 zinit ice wait"0" lucid; zinit ice depth=1; zinit light romkatv/powerlevel10k
-zinit ice wait"1" lucid; zinit light zsh-users/zsh-completions
 zinit ice wait"1" lucid; zinit light zsh-users/zsh-history-substring-search
 zinit ice wait"1" lucid; zinit light zsh-users/zsh-autosuggestions
 zinit ice wait"2" lucid; zinit light zdharma-continuum/fast-syntax-highlighting

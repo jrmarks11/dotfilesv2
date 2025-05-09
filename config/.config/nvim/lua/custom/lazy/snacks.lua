@@ -44,7 +44,6 @@ return {
   },
 
   keys = {
-    { '<space><space>', '<cmd>lua Snacks.picker.smart()<cr>', desc = 'Smart Open Files', mode = { 'n', 'x' } },
     {
       '<space>b',
       function()
@@ -62,6 +61,7 @@ return {
     },
     { '<space>f', '<cmd>lua Snacks.picker.grep_word()<cr>', desc = 'Grep Word', mode = { 'n', 'x' } },
     { '<space>g', '<cmd>lua Snacks.picker.git_status()<cr>', desc = 'Git Status', mode = { 'n', 'x' } },
+    { '<space>h', '<cmd>lua Snacks.picker.help()<cr>', desc = 'Help', mode = { 'n', 'x' } },
     { '<space>i', '<cmd>lua Snacks.picker.lines()<cr>', desc = 'Grep Buffer', mode = { 'n', 'x' } },
     { '<space>j', '<cmd>lua Snacks.picker.grep()<cr>', desc = 'Live Grep', mode = { 'n', 'x' } },
     { '<space>n', '<cmd>lua Snacks.picker.notifications()<cr>', desc = 'Notifications', mode = { 'n', 'x' } },
