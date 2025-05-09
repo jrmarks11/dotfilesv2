@@ -20,7 +20,6 @@ return {
         'json',
         'lua',
         'regex',
-        'ruby',
         'sql',
         'tsx',
         'typescript',
