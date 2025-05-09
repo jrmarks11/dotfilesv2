@@ -4,6 +4,15 @@ return {
   dependencies = { 'mason-org/mason.nvim', 'mason-org/mason-lspconfig.nvim' },
 
   config = function()
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+    local ok, blink = pcall(require, 'blink.cmp')
+    if ok then
+      capabilities = vim.tbl_deep_extend('force', capabilities, blink.get_lsp_capabilities())
+    end
+
+    vim.lsp.config('*', { capabilities = capabilities })
+
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('jmarks-lsp-attach', { clear = true }),
       callback = function(event)
