@@ -10,6 +10,7 @@ brew install \
     git \
     joshmedeski/sesh/sesh \
     jq \
+    node \
     nvim \
     ripgrep \
     stow \
