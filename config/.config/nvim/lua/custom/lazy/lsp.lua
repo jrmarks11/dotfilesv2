@@ -40,7 +40,7 @@ return {
         'elixirls',
         'lua_ls',
         'vtsls',
-        'volar',
+        'vue_ls',
       },
       automatic_enable = true,
     }
