@@ -9,8 +9,8 @@ echo "Removing all Docker images..."
 docker rmi -f $(docker images -a -q)
 
 # Remove all volumes
-echo "Removing all Docker volumes..."
-docker volume rm $(docker volume ls -q)
+# echo "Removing all Docker volumes..."
+# docker volume rm $(docker volume ls -q)
 
 # Remove all non-default networks
 echo "Removing all Docker networks except default ones..."
