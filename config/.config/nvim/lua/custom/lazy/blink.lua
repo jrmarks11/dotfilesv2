@@ -3,7 +3,6 @@ return {
   version = '*',
   dependencies = { 'rafamadriz/friendly-snippets' },
   event = 'VeryLazy',
-  -- ft = { 'sql', 'lua', 'typescriptreact', 'vue' },
 
   opts = {
     sources = {

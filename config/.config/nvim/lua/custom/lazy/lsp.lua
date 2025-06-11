@@ -23,7 +23,7 @@ return {
         map('gd', '<cmd>lua Snacks.picker.lsp_definitions()<cr>', 'Goto Definition')
         map('grr', '<cmd>lua Snacks.picker.lsp_references()<cr>', 'Goto References')
         map('go', '<cmd>lua Snacks.picker.lsp_symbols()<cr>', 'Goto Symbols')
-        map('gO', '<cmd>lua Snacks.picker.lsp_workspace_symbols()<cr>', 'Goto Symbols')
+        map('gO', '<cmd>lua Snacks.picker.lsp_workspace_symbols()<cr>', 'Goto Workspace Symbols')
         map('<C-k>', vim.lsp.buf.hover, 'Hover Documentation')
         map('[[', function()
           Snacks.words.jump(-vim.v.count1)
