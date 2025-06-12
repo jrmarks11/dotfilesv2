@@ -37,6 +37,8 @@ return {
             ['<c-d>'] = { 'preview_scroll_down', mode = { 'i', 'n' } },
             ['<c-u>'] = { 'preview_scroll_up', mode = { 'i', 'n' } },
             ['<c-h>'] = { 'toggle_help', mode = { 'i', 'n' } },
+            ['<A-n>'] = { 'history_forward', mode = { 'i', 'n' } },
+            ['<A-p>'] = { 'history_back', mode = { 'i', 'n' } },
           },
         },
       },

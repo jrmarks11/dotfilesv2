@@ -5,6 +5,7 @@ return {
   event = 'VeryLazy',
 
   opts = {
+    cmdline = { enabled = false },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
       per_filetype = {
