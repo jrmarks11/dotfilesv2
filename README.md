@@ -55,4 +55,12 @@ stow zsh
 - `CLAUDE.md`: Detailed architecture and usage guide
 - `docs/`: Additional documentation (plugins, workflows)
 
+## Troubleshooting
+
+### Common Issues
+
+- **Stow conflicts**: Remove existing dotfiles before stowing: `rm ~/.zshrc ~/.tmux.conf`
+- **Missing dependencies**: Run `./macos/brew.sh` before stowing configurations
+- **Node version conflicts**: Copilot uses Homebrew node (`/opt/homebrew/bin/node`), asdf manages command-line node
+
 For detailed configuration information, see [CLAUDE.md](CLAUDE.md).

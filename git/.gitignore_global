@@ -11,6 +11,12 @@ Thumbs.db
 *.swo
 *.swp
 *.netrwhist
+*.tmp
+
+# macOS
+.Trashes
+.Spotlight-V100
+.fseventsd
 .claude/settings.local.json
 
 .byebug_history
