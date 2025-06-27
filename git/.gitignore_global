@@ -11,6 +11,7 @@ Thumbs.db
 *.swo
 *.swp
 *.netrwhist
+.claude/settings.local.json
 
 .byebug_history
 .tool-versions

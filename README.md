@@ -1,22 +1,58 @@
-# Dot files
+# Personal Dotfiles
 
-I use nvim tmux and zsh.
+A comprehensive macOS development environment setup focused on terminal-based
+development with Neovim, tmux, and zsh. Optimized for Elixir development with
+modern tooling.
 
-My nvim configuration relies heavily on fzf.
+## Core Tools
 
-There are comments some places but this isn't very well documented.
+- **Neovim**: Heavily configured editor with snacks.nvim for navigation
+- **Ghostty**: Primary terminal emulator
+- **Tmux**: Terminal multiplexer with custom session management
+- **Zsh**: Shell with zinit plugin manager
+- **Git**: Version control with custom utilities
 
-## setup(with HomeBrew)
+## Key Features
 
-- git clone this repo into your home directory.
-- cd into it and run
+- **Smart Navigation**: Snacks picker for fuzzy finding (replaces fzf in neovim)
+- **Session Management**: Tmux + sesh for project switching
+- **Elixir Development**: Full LSP, testing, and formatting setup
+- **Keyboard Optimization**: Karabiner remaps Option+hjkl to arrows
+- **Symlink Management**: GNU Stow for organized configuration
+
+## Quick Setup
 
 ```sh
+# Install dependencies
 ./macos/brew.sh
+
+# Symlink configurations
 stow config
 stow tmux
-stow zsh ...
+stow zsh
 ```
 
-Someday when if not lazy maybe ill make one script that does the whole
-install.
+## Applications Configured
+
+### **Terminal & Shell**
+
+- Ghostty, iTerm2, Tmux, Zsh
+
+### **Development**
+
+- Neovim (extensive plugin setup), Git, GitHub CLI, GitHub Copilot
+
+### **System Tools**
+
+- Karabiner (keyboard remapping), FileZilla, yamllint
+
+### **Custom Scripts**
+
+- Git branch cleanup, Docker utilities, Development helpers
+
+## Documentation
+
+- `CLAUDE.md`: Detailed architecture and usage guide
+- `docs/`: Additional documentation (plugins, workflows)
+
+For detailed configuration information, see [CLAUDE.md](CLAUDE.md).
