@@ -44,3 +44,11 @@ map({ 'n', 'x' }, '<space><Tab>', '<C-^>', { desc = 'Go to Last buffer' })
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 map('n', 'gy', "'[V']'")
+
+map('n', '<space>yf', function()
+  vim.fn.setreg('+', vim.fn.expand '%')
+end, { desc = 'Yank file name to clipboard' })
+
+map('n', '<space>yp', function()
+  vim.fn.setreg('+', vim.fn.expand '%:p')
+end, { desc = 'Yank full file path to clipboard' })

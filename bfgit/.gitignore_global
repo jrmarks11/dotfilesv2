@@ -9,6 +9,7 @@ Thumbs.db
 *.sqlite3-journal
 
 .claude/settings.local.json
+CLAUDE.md
 
 *.swo
 *.swp
