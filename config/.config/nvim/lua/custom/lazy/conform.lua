@@ -31,6 +31,7 @@ return {
       formatters_by_ft = {
         css = { 'prettier' },
         elixir = { 'mix' },
+        eruby = { 'erb_format' },
         graphql = { 'prettier' },
         html = { 'prettier' },
         javascript = { 'prettier' },

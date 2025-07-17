@@ -1,6 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
-  ft = { 'elixir', 'lua', 'typescript', 'typescriptreact', 'vue' },
+  ft = { 'elixir', 'lua', 'typescript', 'typescriptreact', 'vue', 'ruby'},
   dependencies = { 'mason-org/mason.nvim', 'mason-org/mason-lspconfig.nvim' },
 
   config = function()
@@ -41,6 +41,7 @@ return {
         'lua_ls',
         'vtsls',
         'vue_ls',
+        'ruby_lsp',
       },
       automatic_enable = true,
     }
