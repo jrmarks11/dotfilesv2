@@ -11,6 +11,8 @@ Thumbs.db
 .claude/
 CLAUDE.md
 
+.iex.exs
+
 *.swo
 *.swp
 *.netrwhist
