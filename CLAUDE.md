@@ -77,7 +77,7 @@ The repository is organized by application configuration:
 **Key Plugins:**
 
 - `fzf-lua`: Primary fuzzy finder with frecency support
-- `snacks.nvim`: Notifications, utilities, buffer management
+- `snacks.nvim`: Utilities, notifications, and secondary picker
 - `blink.cmp`: Modern completion engine
 - `catppuccin`: Colorscheme
 - `conform.nvim`: Code formatting
@@ -101,7 +101,7 @@ Located in `scripts/bin/`:
 
 The setup assumes heavy use of:
 
-- **snacks picker** for all file/symbol navigation within neovim
+- **fzf-lua** for all file/symbol navigation within neovim
 - **fzf** for tmux session management (via sesh)
 - **tmux** for session management
 - **stow** for symlink management of dotfiles
@@ -109,7 +109,7 @@ The setup assumes heavy use of:
 
 ## Important Notes
 
-- Neovim uses fzf-lua for navigation, with snacks.nvim for utilities
+- Neovim uses fzf-lua for primary navigation, with snacks.nvim for utilities
 - Configuration is optimized for Elixir development
 - Uses stow for symlink management - avoid manual symlinking
 - Custom scripts in `scripts/bin/` are designed for specific workflows

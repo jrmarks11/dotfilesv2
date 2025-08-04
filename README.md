@@ -14,7 +14,7 @@ modern tooling.
 
 ## Key Features
 
-- **Smart Navigation**: Snacks picker for fuzzy finding (replaces fzf in neovim)
+- **Smart Navigation**: fzf-lua with frecency support for file/symbol navigation
 - **Session Management**: Tmux + sesh for project switching
 - **Elixir Development**: Full LSP, testing, and formatting setup
 - **Keyboard Optimization**: Karabiner remaps Option+hjkl to arrows
@@ -52,8 +52,8 @@ stow zsh
 
 ## Documentation
 
-- `CLAUDE.md`: Detailed architecture and usage guide
-- `docs/`: Additional documentation (plugins, workflows)
+- [CLAUDE.md](CLAUDE.md): Detailed architecture and usage guide
+- [docs/neovim-plugins.md](docs/neovim-plugins.md): Complete neovim plugin reference
 
 ## Troubleshooting
 
@@ -62,5 +62,3 @@ stow zsh
 - **Stow conflicts**: Remove existing dotfiles before stowing: `rm ~/.zshrc ~/.tmux.conf`
 - **Missing dependencies**: Run `./macos/brew.sh` before stowing configurations
 - **Node version conflicts**: Copilot uses Homebrew node (`/opt/homebrew/bin/node`), asdf manages command-line node
-
-For detailed configuration information, see [CLAUDE.md](CLAUDE.md).

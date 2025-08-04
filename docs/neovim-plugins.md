@@ -5,23 +5,36 @@ organized by category.
 
 ## 🔍 Navigation & Search
 
-### folke/snacks.nvim
+### ibhagwan/fzf-lua
 
-**Primary navigation plugin** - Replaces fzf with modern picker interface
+**Primary navigation plugin** - Fast fuzzy finder with frecency support
 
-- **Features**: File picker, live grep, git integration, notifications
+- **Features**: File picker, live grep, git integration, frecency-based file ranking
 - **Key Bindings**:
-  - `Space+t`: Smart file picker
+  - `Space+t`: Frecency file picker
   - `Space+j`: Live grep
   - `Space+b`: Branch files
   - `Space+g`: Git status
   - `Space+r`: Recent files
   - `Space+c`: Git commits for file
   - `Space+i`: Buffer lines search
-  - `Space+h`: Help picker
-  - `Space+n`: Notifications picker
+  - `Space+f`: Grep word under cursor
+  - `Space+d`: Files in current directory
+  - `Space+u`: Resume last search
+- **Configuration**: Vertical preview layout with smart-case grep
+
+### folke/snacks.nvim
+
+**Utilities and notifications** - System utilities, notifications, and miscellaneous tools
+
+- **Features**: Notifications, debug utilities, git browse, undo tree, scratch buffers
+- **Key Bindings**:
   - `,u`: Undo tree
-- **Configuration**: Custom layout with vertical split and preview pane
+  - `,.`: Toggle scratch buffer
+  - `,>`: Select scratch buffer
+  - `sL`: Git browse (open)
+  - `sl`: Git browse (copy URL)
+- **Configuration**: Notification system and utility functions
 
 ## 📝 Code Completion & LSP
 
