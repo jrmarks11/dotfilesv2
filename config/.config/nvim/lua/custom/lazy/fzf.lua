@@ -28,7 +28,7 @@ return {
     {
       '<space>t',
       function()
-        require('fzf-lua-frecency').frecency { cwd_only = true }
+        require('fzf-lua-frecency').frecency { cwd_only = true, fzf_opts = { ['--no-sort'] = false } }
       end,
       desc = 'Frecency Files',
       mode = { 'n', 'x' },

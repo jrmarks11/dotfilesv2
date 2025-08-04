@@ -40,7 +40,6 @@ The repository is organized by application configuration:
 **Terminal Applications:**
 
 - `ghostty/`: Terminal emulator (primary)
-- `iterm2/`: Terminal emulator (secondary)
 
 **Development Tools:**
 
@@ -48,6 +47,7 @@ The repository is organized by application configuration:
 - `git/`: Global git ignore patterns
 - `gh/`: GitHub CLI configuration
 - `github-copilot/`: GitHub Copilot authentication
+- `claude/`: Claude Code configuration
 
 **System Tools:**
 
@@ -66,9 +66,9 @@ The repository is organized by application configuration:
 
 ## Neovim Configuration
 
-**Primary Navigation:** Uses snacks.nvim picker (NOT fzf) for all fuzzy finding:
+**Primary Navigation:** Uses fzf-lua for all fuzzy finding:
 
-- `Space+t`: Smart file picker
+- `Space+t`: Frecency file picker
 - `Space+j`: Live grep
 - `Space+b`: Branch files
 - `Space+g`: Git status
@@ -76,7 +76,8 @@ The repository is organized by application configuration:
 
 **Key Plugins:**
 
-- `snacks.nvim`: Navigation, notifications, utilities
+- `fzf-lua`: Primary fuzzy finder with frecency support
+- `snacks.nvim`: Notifications, utilities, buffer management
 - `blink.cmp`: Modern completion engine
 - `catppuccin`: Colorscheme
 - `conform.nvim`: Code formatting
@@ -108,7 +109,7 @@ The setup assumes heavy use of:
 
 ## Important Notes
 
-- Neovim uses snacks.nvim for navigation, NOT fzf
+- Neovim uses fzf-lua for navigation, with snacks.nvim for utilities
 - Configuration is optimized for Elixir development
 - Uses stow for symlink management - avoid manual symlinking
 - Custom scripts in `scripts/bin/` are designed for specific workflows
