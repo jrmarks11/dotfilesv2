@@ -21,6 +21,7 @@ return {
     { '<space>f', '<cmd>FzfLua grep_cword<CR>', desc = 'Search Find Word' },
     { '<space>f', '<cmd>FzfLua grep_visual<CR>', desc = 'Search Find Visual', mode = 'x' },
     { '<space>g', '<cmd>FzfLua git_status<CR>', desc = 'Git Status', mode = { 'n', 'x' } },
+    { '<space>h', '<cmd>FzfLua helptags<CR>', desc = 'Help', mode = { 'n', 'x' } },
     { '<space>i', '<cmd>FzfLua grep_curbuf<CR>', desc = 'Search Current Buffer', mode = { 'n', 'x' } },
     { '<space>j', '<cmd>FzfLua live_grep<CR>', desc = 'Search Grep Project', mode = { 'n', 'x' } },
     { '<space>n', '<cmd>FzfLua files<CR>', desc = 'Fzf Files', mode = { 'n', 'x' } },
