@@ -1,6 +1,8 @@
 local o = vim.opt
 local undo_dir = vim.fn.expand '$HOME' .. '/.nvim-undo'
 
+vim.diagnostic.config({ jump = { float = true } })
+
 o.clipboard:append 'unnamedplus'
 o.colorcolumn = { 81, 82 }
 o.cursorline = true

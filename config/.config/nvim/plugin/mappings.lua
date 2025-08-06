@@ -1,4 +1,3 @@
-local d = vim.diagnostic
 local map = vim.keymap.set
 
 map('c', '<C-n>', '<down>')
@@ -10,9 +9,6 @@ map('c', '<M-Right>', '<s-right>')
 map('c', '<M-BS>', '<c-w>')
 map('c', '<C-k>', '<c-\\>e strpart(getcmdline(),0,getcmdpos()-1)<cr>')
 
-map('n', '[d', d.goto_prev, { desc = 'Go To Previous Diagnostic' })
-map('n', ']d', d.goto_next, { desc = 'Go To Next Diagnostic' })
-
 map('n', 'sp', [[:'{,'}s/\<<c-r><c-w>\>//g<left><left>]], { desc = 'Substitute in Paragraph' })
 map('x', 'sp', [[y:'{,'}s/<c-r><c-0>//g<left><left>]], { desc = 'Substitute in Paragraph' })
 map('n', 'se', [[:%s/\<<c-r><c-w>\>//g<left><left>]], { desc = 'Substitute In Entire Buffer' })
@@ -20,9 +16,6 @@ map('x', 'se', 'y:%s/<c-r><c-0>//g<left><left>', { desc = 'Substitute In Entire 
 
 map('n', 'gp', 'mz<cmd>put<CR>`zj<cmd>delmarks z<cr>', { desc = 'Paste on next line' })
 map('n', 'gP', 'mz<cmd>put!<CR>`zk<cmd>delmarks z<cr>', { desc = 'Paste on previous line' })
-map('n', 'gh', '_', { desc = 'Go to beginning of line' })
-map('n', 'gl', '$', { desc = 'Go to end of the line' })
-map('n', 'gm', 'gM', { desc = 'Go to middle of line' })
 map('n', 'gF', ':e <cfile><CR>', { desc = 'Edit File Under Cursor' })
 
 map('n', '<space>l', ':Lazy<CR>', { desc = 'Open lazy' })
@@ -42,8 +35,6 @@ map({ 'n', 'x' }, ';', ':')
 map({ 'n', 'x' }, '<space><Tab>', '<C-^>', { desc = 'Go to Last buffer' })
 
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
-map('n', 'gy', "'[V']'")
 
 map('n', '<space>yf', function()
   vim.fn.setreg('+', vim.fn.expand '%')

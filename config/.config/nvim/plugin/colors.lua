@@ -1,7 +1,8 @@
 vim.cmd.colorscheme 'catppuccin'
 vim.g.catppuccin_flavour = 'latte'
 
-local timer = vim.loop.new_timer()
+local timer = assert(vim.uv.new_timer())
+
 timer:start(
   0,
   3000,
