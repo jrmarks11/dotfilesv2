@@ -3,5 +3,8 @@
 set -e
 
 cd /Users/johnmarks/Projects/bitfreighter/
-docker compose -f docker-compose.yml -f docker-compose.timezones.yml down
+
+docker compose -f docker-compose.yml -f docker-compose.timezones.yml down --remove-orphans
+docker container prune -f
+
 ./scripts/dev
