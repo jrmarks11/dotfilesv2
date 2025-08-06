@@ -16,6 +16,8 @@ organized by category.
   - `Space+b`: Branch files
   - `Space+g`: Git status
   - `Space+r`: Recent files
+  - `Space+n`: All files
+  - `Space+h`: Help tags
   - `Space+c`: Git commits for file
   - `Space+i`: Buffer lines search
   - `Space+f`: Grep word under cursor
@@ -25,16 +27,17 @@ organized by category.
 
 ### folke/snacks.nvim
 
-**Utilities and notifications** - System utilities, notifications, and miscellaneous tools
+**Utilities and notifications** - Minimal picker usage for unique features
 
 - **Features**: Notifications, debug utilities, git browse, undo tree, scratch buffers
 - **Key Bindings**:
-  - `,u`: Undo tree
+  - `,n`: Notifications picker
+  - `,u`: Undo tree picker
   - `,.`: Toggle scratch buffer
   - `,>`: Select scratch buffer
   - `sL`: Git browse (open)
   - `sl`: Git browse (copy URL)
-- **Configuration**: Notification system and utility functions
+- **Configuration**: Simplified picker config with sidebar preset
 
 ## 📝 Code Completion & LSP
 

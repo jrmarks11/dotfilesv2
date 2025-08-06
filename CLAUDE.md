@@ -73,11 +73,13 @@ The repository is organized by application configuration:
 - `Space+b`: Branch files
 - `Space+g`: Git status
 - `Space+r`: Recent files
+- `Space+h`: Help tags
+- `Space+n`: All files
 
 **Key Plugins:**
 
-- `fzf-lua`: Primary fuzzy finder with frecency support
-- `snacks.nvim`: Utilities, notifications, and secondary picker
+- `fzf-lua`: Primary fuzzy finder with frecency support for all navigation
+- `snacks.nvim`: Utilities and notifications (minimal picker usage for unique features)
 - `blink.cmp`: Modern completion engine
 - `catppuccin`: Colorscheme
 - `conform.nvim`: Code formatting
@@ -101,7 +103,8 @@ Located in `scripts/bin/`:
 
 The setup assumes heavy use of:
 
-- **fzf-lua** for all file/symbol navigation within neovim
+- **fzf-lua** for all file/symbol navigation within neovim (primary picker)
+- **snacks.nvim** for notifications, undo history, and utility functions
 - **fzf** for tmux session management (via sesh)
 - **tmux** for session management
 - **stow** for symlink management of dotfiles

@@ -6,7 +6,7 @@ modern tooling.
 
 ## Core Tools
 
-- **Neovim**: Heavily configured editor with snacks.nvim for navigation
+- **Neovim**: Heavily configured editor with fzf-lua for navigation
 - **Ghostty**: Primary terminal emulator
 - **Tmux**: Terminal multiplexer with custom session management
 - **Zsh**: Shell with zinit plugin manager
@@ -14,9 +14,10 @@ modern tooling.
 
 ## Key Features
 
-- **Smart Navigation**: fzf-lua with frecency support for file/symbol navigation
+- **Smart Navigation**: fzf-lua as primary picker for all file/symbol navigation with frecency support
 - **Session Management**: Tmux + sesh for project switching
 - **Elixir Development**: Full LSP, testing, and formatting setup
+- **Utilities**: snacks.nvim for notifications, undo history, and scratch buffers
 - **Keyboard Optimization**: Karabiner remaps Option+hjkl to arrows
 - **Symlink Management**: GNU Stow for organized configuration
 

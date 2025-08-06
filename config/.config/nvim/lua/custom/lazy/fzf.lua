@@ -18,7 +18,7 @@ return {
       desc = 'Fzf Files CWD',
       mode = { 'n', 'x' },
     },
-    { '<space>f', '<cmd>FzfLua grep_cword<CR>', desc = 'Search Find Word' },
+    { '<space>f', '<cmd>FzfLua grep_cword<CR>', desc = 'Search Find Word', mode = 'n' },
     { '<space>f', '<cmd>FzfLua grep_visual<CR>', desc = 'Search Find Visual', mode = 'x' },
     { '<space>g', '<cmd>FzfLua git_status<CR>', desc = 'Git Status', mode = { 'n', 'x' } },
     { '<space>h', '<cmd>FzfLua helptags<CR>', desc = 'Help', mode = { 'n', 'x' } },
@@ -80,6 +80,4 @@ return {
       },
     }
   end,
-
-  cond = vim.fn.exists 'g:vscode' == 0,
 }
