@@ -23,12 +23,13 @@ return {
     { '<space>g', '<cmd>FzfLua git_status<CR>', desc = 'Git Status', mode = { 'n', 'x' } },
     { '<space>i', '<cmd>FzfLua grep_curbuf<CR>', desc = 'Search Current Buffer', mode = { 'n', 'x' } },
     { '<space>j', '<cmd>FzfLua live_grep<CR>', desc = 'Search Grep Project', mode = { 'n', 'x' } },
+    { '<space>n', '<cmd>FzfLua files<CR>', desc = 'Fzf Files', mode = { 'n', 'x' } },
     { '<space>r', '<cmd>FzfLua oldfiles<CR>', desc = 'Recent Files', mode = { 'n', 'x' } },
     { '<space>u', '<cmd>FzfLua resume<CR>', desc = 'Resume Fzf Search', mode = { 'n', 'x' } },
     {
       '<space>t',
       function()
-        require('fzf-lua-frecency').frecency { cwd_only = true, fzf_opts = { ['--no-sort'] = false } }
+        require('fzf-lua-frecency').frecency { cwd_only = true }
       end,
       desc = 'Frecency Files',
       mode = { 'n', 'x' },

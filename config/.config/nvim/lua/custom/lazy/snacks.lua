@@ -66,7 +66,7 @@ return {
     { '<space>H', '<cmd>lua Snacks.picker.help()<cr>', desc = 'Help', mode = { 'n', 'x' } },
     { '<space>I', '<cmd>lua Snacks.picker.lines()<cr>', desc = 'Grep Buffer', mode = { 'n', 'x' } },
     { '<space>J', '<cmd>lua Snacks.picker.grep()<cr>', desc = 'Live Grep', mode = { 'n', 'x' } },
-    { '<space>n', '<cmd>lua Snacks.picker.notifications()<cr>', desc = 'Notifications', mode = { 'n', 'x' } },
+    { '<space>N', '<cmd>lua Snacks.picker.notifications()<cr>', desc = 'Notifications', mode = { 'n', 'x' } },
     { '<space>p', '<cmd>lua Snacks.picker.lazy()<cr>', desc = 'Lazy Picker', mode = { 'n', 'x' } },
     { '<space>R', '<cmd>lua Snacks.picker.recent()<cr>', desc = 'Recent Files', mode = { 'n', 'x' } },
     { '<space>T', '<cmd>lua Snacks.picker.smart()<cr>', desc = 'Smart Open Files', mode = { 'n', 'x' } },
