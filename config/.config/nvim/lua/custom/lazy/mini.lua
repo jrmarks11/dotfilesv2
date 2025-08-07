@@ -84,6 +84,11 @@ return {
     opts = {},
   },
   {
+    'echasnovski/mini.jump',
+    version = false,
+    opts = { mappings = { repeat_jump = '' } },
+  },
+  {
     'echasnovski/mini.surround',
     version = false,
     keys = {
