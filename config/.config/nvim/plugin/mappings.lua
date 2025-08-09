@@ -43,3 +43,35 @@ end, { desc = 'Yank file name to clipboard' })
 map('n', '<space>yp', function()
   vim.fn.setreg('+', vim.fn.expand '%:p')
 end, { desc = 'Yank full file path to clipboard' })
+
+map('n', '<space>yl', function()
+  local path = vim.fn.expand '%'
+  local line = vim.fn.line '.'
+  vim.fn.setreg('+', path .. ':' .. line)
+end, { desc = 'Yank file:line for Claude Code' })
+
+map('x', '<space>yl', function()
+  local path = vim.fn.expand '%'
+  local start_line = vim.fn.line "'<"
+  local end_line = vim.fn.line "'>"
+  vim.fn.setreg('+', path .. ':' .. start_line .. '-' .. end_line)
+end, { desc = 'Yank file:line_range for Claude Code' })
+
+map('n', ',ce', function()
+  local current_dir = vim.fn.expand '%:p:h'
+  local claude_file = vim.fn.findfile('CLAUDE.md', current_dir .. ';')
+  if claude_file ~= '' then
+    vim.cmd('edit ' .. claude_file)
+  else
+    local project_root = vim.fn.systemlist('git rev-parse --show-toplevel')[1]
+    if vim.v.shell_error == 0 then
+      vim.cmd('edit ' .. project_root .. '/CLAUDE.md')
+    else
+      vim.notify('No CLAUDE.md found in project', vim.log.levels.WARN)
+    end
+  end
+end, { desc = 'Edit project CLAUDE.md' })
+
+map('n', ',cg', function()
+  vim.cmd('edit ~/CLAUDE.md')
+end, { desc = 'Edit global CLAUDE.md' })
