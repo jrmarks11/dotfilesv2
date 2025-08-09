@@ -9,7 +9,6 @@ return {
       on_attach = function()
         local gs = package.loaded.gitsigns
         local map = vim.keymap.set
-        local cmd = vim.cmd
 
         map('n', ']c', function()
           gs.next_hunk()

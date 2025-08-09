@@ -1,6 +1,5 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Initialize asdf
 source $(brew --prefix asdf)/libexec/asdf.sh
 
 SSH_ENV="$HOME/.ssh/agent-env"
