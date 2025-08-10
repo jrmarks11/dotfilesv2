@@ -46,7 +46,14 @@ return {
   },
 
   keys = {
-    { '<space>b', '<cmd>lua Snacks.picker.git_diff()<cr>', desc = 'Git Diff', mode = { 'n', 'x' } },
+    {
+      '<space>b',
+      function()
+        require('util.branch_files').snacks_branch_files()
+      end,
+      desc = 'Git Branch Files',
+      mode = { 'n', 'x' },
+    },
     { '<space>c', '<cmd>lua Snacks.picker.git_log_file()<cr>', desc = 'Git Commits File', mode = { 'n', 'x' } },
     {
       '<space>d',
