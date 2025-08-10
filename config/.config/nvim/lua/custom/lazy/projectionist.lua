@@ -1,6 +1,7 @@
 return {
   'tpope/vim-projectionist',
   ft = { 'elixir', 'ruby' },
+  enabled = false,
 
   config = function()
     vim.keymap.set({ 'n', 'x' }, '<space>a', ':A<CR>', { silent = true, desc = 'Go To Alternate File' })

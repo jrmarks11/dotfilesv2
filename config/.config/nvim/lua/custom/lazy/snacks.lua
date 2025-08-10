@@ -71,11 +71,9 @@ return {
     { '<space>r', '<cmd>lua Snacks.picker.recent()<cr>', desc = 'Recent Files', mode = { 'n', 'x' } },
     { '<space>t', '<cmd>lua Snacks.picker.smart()<cr>', desc = 'Smart Open Files', mode = { 'n', 'x' } },
     { '<space>u', '<cmd>lua Snacks.picker.resume()<cr>', desc = 'Resume Picker', mode = { 'n', 'x' } },
-
     { ',u', '<cmd>lua Snacks.picker.undo()<cr>', desc = 'Undo List', mode = { 'n', 'x' } },
     { ',.', '<cmd>lua Snacks.scratch()<cr>', desc = 'Toggle Scratch Buffer', mode = { 'n', 'x' } },
     { ',>', '<cmd>lua Snacks.scratch.select()<cr>', desc = 'Select Scratch Buffer', mode = { 'n', 'x' } },
-
     { 'sL', '<cmd>lua Snacks.gitbrowse()<cr>', desc = 'Git Browse (open)', mode = { 'n', 'x' } },
     {
       'sl',
