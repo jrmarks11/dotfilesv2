@@ -1,6 +1,7 @@
 return {
   'ibhagwan/fzf-lua',
   dependencies = { { 'echasnovski/mini.icons', 'elanmed/fzf-lua-frecency.nvim' } },
+  enabled = false,
 
   keys = {
     {
