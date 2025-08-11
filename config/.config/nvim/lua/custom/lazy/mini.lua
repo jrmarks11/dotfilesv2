@@ -86,6 +86,7 @@ return {
   {
     'echasnovski/mini.jump',
     version = false,
+    enabled = false,
     opts = { mappings = { repeat_jump = '' } },
   },
   {
