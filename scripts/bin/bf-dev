@@ -2,7 +2,15 @@
 
 set -e
 
-cd /Users/johnmarks/Projects/bitfreighter/
+GIT_ROOT=$(git rev-parse --show-toplevel 2>/dev/null || echo "")
+
+if [ -n "$GIT_ROOT" ] && [ -f "$GIT_ROOT/scripts/dev" ]; then
+    PROJECT_DIR="$GIT_ROOT"
+else
+    PROJECT_DIR="/Users/johnmarks/Projects/bitfreighter"
+fi
+
+cd "$PROJECT_DIR"
 
 docker compose -f docker-compose.yml -f docker-compose.timezones.yml down --remove-orphans
 docker container prune -f
