@@ -5,39 +5,30 @@ organized by category.
 
 ## 🔍 Navigation & Search
 
-### ibhagwan/fzf-lua
+### folke/snacks.nvim
 
-**Primary navigation plugin** - Fast fuzzy finder with frecency support
+**Primary navigation plugin** - Fast picker with utilities and notifications
 
-- **Features**: File picker, live grep, git integration, frecency-based file ranking
+- **Features**: File picker, live grep, git integration, notifications, debug utilities, git browse, undo tree, scratch buffers
 - **Key Bindings**:
-  - `Space+t`: Frecency file picker
+  - `Space+t`: Smart file picker
   - `Space+j`: Live grep
   - `Space+b`: Branch files
   - `Space+g`: Git status
   - `Space+r`: Recent files
-  - `Space+n`: All files
+  - `Space+n`: Notifications
   - `Space+h`: Help tags
   - `Space+c`: Git commits for file
   - `Space+i`: Buffer lines search
   - `Space+f`: Grep word under cursor
   - `Space+d`: Files in current directory
   - `Space+u`: Resume last search
-- **Configuration**: Vertical preview layout with smart-case grep
-
-### folke/snacks.nvim
-
-**Utilities and notifications** - Minimal picker usage for unique features
-
-- **Features**: Notifications, debug utilities, git browse, undo tree, scratch buffers
-- **Key Bindings**:
-  - `,n`: Notifications picker
   - `,u`: Undo tree picker
   - `,.`: Toggle scratch buffer
   - `,>`: Select scratch buffer
   - `sL`: Git browse (open)
   - `sl`: Git browse (copy URL)
-- **Configuration**: Simplified picker config with sidebar preset
+- **Configuration**: Vertical preview layout
 
 ## 📝 Code Completion & LSP
 
@@ -53,7 +44,7 @@ organized by category.
 **LSP configuration** with Mason integration
 
 - **Servers**: elixirls, lua_ls, vtsls, vue_ls
-- **Features**: Auto-installation, custom keybindings via Snacks picker
+- **Features**: Auto-installation, custom keybindings
 
 ### folke/lazydev.nvim
 
@@ -133,19 +124,19 @@ organized by category.
 - **Key Bindings**: `sa` (add), `sd` (delete), `sr` (replace)
 - **Purpose**: Manipulate surrounding characters (quotes, brackets, etc.)
 
-### folke/flash.nvim
+### rhysd/clever-f.vim
 
-#### Jump navigation
+#### Enhanced f/F/t/T motions
 
-- **Key Bindings**: `gs` (flash jump), `S` (treesitter search), `r` (remote flash)
-- **Purpose**: Quick cursor movement
+- **Purpose**: Improved forward/backward character search
+- **Integration**: Works with quick-scope for visual highlighting
 
-### chaoren/vim-wordmotion
+### unblevable/quick-scope
 
-#### Better word motions
+#### Visual f/F/t/T targets
 
-- **Key Bindings**: `,w`, `,b`, `,e`
-- **Purpose**: Improved word boundary detection
+- **Purpose**: Highlights unique characters for f/F/t/T jumps
+- **Integration**: Works with clever-f for enhanced navigation
 
 ### chentoast/marks.nvim
 
@@ -155,12 +146,12 @@ organized by category.
 
 ## 🗂️ File & Project Management
 
-### tpope/vim-projectionist
+### rgroli/other.nvim
 
-**Project navigation** - Elixir-specific configuration
+**Project navigation** - Elixir and Rails configuration
 
 - **Key Binding**: `Space+a` (alternate file)
-- **Features**: Switch between lib/test files, custom templates
+- **Features**: Switch between lib/test files, supports Rails and Elixir patterns
 
 ### echasnovski/mini.splitjoin
 
@@ -292,7 +283,7 @@ organized by category.
 - **Testing**: vim-test with ExUnit integration
 - **Formatting**: mix format via conform.nvim
 - **Linting**: credo via nvim-lint
-- **Project**: vim-projectionist for lib/test navigation
+- **Project**: other.nvim for lib/test navigation
 
 ### Lua
 

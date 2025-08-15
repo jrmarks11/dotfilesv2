@@ -6,7 +6,7 @@ code in this repository.
 ## Overview
 
 This is a personal dotfiles repository for macOS development using nvim, tmux,
-and zsh. The neovim configuration uses snacks.nvim (especially snacks picker)
+and zsh. The neovim configuration uses snacks.nvim picker
 as the primary fuzzy finder and navigation tool, with a focus on Elixir
 development.
 
@@ -66,7 +66,7 @@ The repository is organized by application configuration:
 
 ## Neovim Configuration
 
-**Primary Navigation:** Uses fzf-lua for all fuzzy finding:
+**Primary Navigation:** Uses snacks.nvim picker for all fuzzy finding:
 
 - `Space+t`: Frecency file picker
 - `Space+j`: Live grep
@@ -78,8 +78,7 @@ The repository is organized by application configuration:
 
 **Key Plugins:**
 
-- `fzf-lua`: Primary fuzzy finder with frecency support for all navigation
-- `snacks.nvim`: Utilities and notifications (minimal picker usage for unique features)
+- `snacks.nvim`: Primary fuzzy finder with picker for all navigation, plus utilities and notifications
 - `blink.cmp`: Modern completion engine
 - `catppuccin`: Colorscheme
 - `conform.nvim`: Code formatting
@@ -103,8 +102,7 @@ Located in `scripts/bin/`:
 
 The setup assumes heavy use of:
 
-- **fzf-lua** for all file/symbol navigation within neovim (primary picker)
-- **snacks.nvim** for notifications, undo history, and utility functions
+- **snacks.nvim** for all file/symbol navigation (primary picker), notifications, undo history, and utility functions
 - **fzf** for tmux session management (via sesh)
 - **tmux** for session management
 - **stow** for symlink management of dotfiles
@@ -112,7 +110,7 @@ The setup assumes heavy use of:
 
 ## Important Notes
 
-- Neovim uses fzf-lua for primary navigation, with snacks.nvim for utilities
+- Neovim uses snacks.nvim for primary navigation and utilities
 - Configuration is optimized for Elixir development
 - Uses stow for symlink management - avoid manual symlinking
 - Custom scripts in `scripts/bin/` are designed for specific workflows
