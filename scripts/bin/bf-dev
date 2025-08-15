@@ -10,9 +10,36 @@ else
     PROJECT_DIR="/Users/johnmarks/Projects/bitfreighter"
 fi
 
-cd "$PROJECT_DIR"
+RUNNING_CONTAINERS=$(docker ps --format "table {{.Names}}" --no-trunc | \
+    grep -v "NAMES" || true)
 
-docker compose -f docker-compose.yml -f docker-compose.timezones.yml down --remove-orphans
-docker container prune -f
+if [ -n "$RUNNING_CONTAINERS" ]; then
+    echo "Found running containers, checking for compose stacks to stop..."
+
+    COMPOSE_PROJECTS=$(docker ps --format "{{.Label \"com.docker.compose.project\"}}" | \
+        sort -u | grep -v "^$" || true)
+
+    for project in $COMPOSE_PROJECTS; do
+        if [ -n "$project" ]; then
+            CONTAINER_ID=$(docker ps -q --filter "label=com.docker.compose.project=$project" | head -1)
+            COMPOSE_DIR=$(docker inspect "$CONTAINER_ID" \
+                    --format '{{index .Config.Labels "com.docker.compose.project.working_dir"}}' \
+                2>/dev/null || echo "")
+
+            if [ -n "$COMPOSE_DIR" ]; then
+                echo "Stopping compose stack from: $COMPOSE_DIR"
+                (cd "$COMPOSE_DIR" && \
+                        docker compose -f docker-compose.yml -f docker-compose.timezones.yml \
+                        down --remove-orphans || \
+                    docker compose down --remove-orphans || true)
+            fi
+        fi
+    done
+
+    docker container prune -f
+fi
+
+echo "cd $PROJECT_DIR"
+cd "$PROJECT_DIR"
 
 ./scripts/dev
