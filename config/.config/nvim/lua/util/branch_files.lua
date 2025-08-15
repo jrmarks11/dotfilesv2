@@ -25,7 +25,7 @@ end
 function M.snacks_branch_files()
   Snacks.picker.pick {
     finder = function()
-      local output = vim.fn.systemlist 'git diff --name-only master --relative'
+      local output = vim.fn.systemlist 'git diff --name-only origin/master --relative'
       local items = {}
       for _, file in ipairs(output) do
         table.insert(items, { text = file, file = file })
