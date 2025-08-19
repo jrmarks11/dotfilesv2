@@ -1,6 +1,9 @@
 #!/usr/bin/env zsh
 
 alias ..='cd ..'
+alias c='claude'
+alias cc='claude --continue'
+alias cr='claude --resume'
 alias cat='bat'
 alias d='docker'
 alias dc='docker compose'
