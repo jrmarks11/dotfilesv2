@@ -108,3 +108,5 @@ deploy_as2lib() {
 deploy_timezones() {
     gh workflow run deploy_to_ecs.yml -f app=timezones
 }
+
+jj() { __zoxide_zi "$@"; }

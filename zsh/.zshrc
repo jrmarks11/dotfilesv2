@@ -23,7 +23,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
 [ -f  $(brew --prefix zinit)/zinit.zsh ] && source $(brew --prefix zinit)/zinit.zsh
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd j zsh)"
 eval "$(fzf --zsh)"
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
