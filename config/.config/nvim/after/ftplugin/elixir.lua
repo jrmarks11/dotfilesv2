@@ -15,3 +15,4 @@ map({ 'n', 'x' }, ',y', ':g/^\\W*require IEx.*IEx.pry()$/d<CR>', { desc = 'Remov
 
 opt.colorcolumn = { 121, 122 }
 opt.textwidth = 120
+opt.foldmethod = 'indent'
