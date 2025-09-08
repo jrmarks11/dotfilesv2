@@ -7,10 +7,6 @@ o.clipboard:append 'unnamedplus'
 o.colorcolumn = { 81, 82 }
 o.cursorline = true
 o.expandtab = true
-o.foldenable = false
-o.foldexpr = 'nvim_treesitter#foldexpr()'
-o.foldlevel = 1
-o.foldmethod = 'expr'
 o.ignorecase = true
 o.list = true
 o.listchars = { tab = '▸ ', trail = '·', nbsp = '␣' }
@@ -31,9 +27,9 @@ o.splitright = true
 o.swapfile = false
 o.tabstop = 2
 o.textwidth = 78
+o.updatetime = 250
 o.undodir = undo_dir
 o.undofile = true
-o.updatetime = 250
 o.visualbell = true
 o.wildmenu = true
 o.wildmode = 'longest:full,full'
