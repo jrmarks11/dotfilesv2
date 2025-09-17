@@ -43,16 +43,6 @@ return {
           goto_previous_end = { ['[F'] = '@function.outer' },
         },
       },
-
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = '<tab>',
-          node_decremental = '<S-tab>',
-          node_incremental = '<tab>',
-          scope_incremental = '<cr>',
-        },
-      },
     }
   end,
 }
