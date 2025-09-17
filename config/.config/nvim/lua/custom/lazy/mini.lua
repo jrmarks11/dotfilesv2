@@ -1,11 +1,11 @@
 return {
   {
-    'echasnovski/mini.ai',
+    'nvim-mini/mini.ai',
     version = false,
     event = 'VeryLazy',
 
     dependencies = {
-      'echasnovski/mini.extra',
+      'nvim-mini/mini.extra',
       lazy = true,
       config = function()
         require('mini.extra').setup {}
@@ -42,9 +42,9 @@ return {
     end,
   },
   {
-    'echasnovski/mini.files',
+    'nvim-mini/mini.files',
     version = false,
-    dependencies = { 'echasnovski/mini.icons' },
+    dependencies = { 'nvim-mini/mini.icons' },
     keys = {
       {
         '-',
@@ -78,13 +78,13 @@ return {
     },
   },
   {
-    'echasnovski/mini.icons',
+    'nvim-mini/mini.icons',
     version = false,
     lazy = true,
     opts = {},
   },
   {
-    'echasnovski/mini.surround',
+    'nvim-mini/mini.surround',
     version = false,
     keys = {
       { 'sa', mode = { 'n', 'x' } },
@@ -97,13 +97,13 @@ return {
     },
   },
   {
-    'echasnovski/mini.splitjoin',
+    'nvim-mini/mini.splitjoin',
     version = false,
     keys = { 'ss' },
     opts = { mappings = { toggle = 'ss' } },
   },
   {
-    'echasnovski/mini.statusline',
+    'nvim-mini/mini.statusline',
     version = false,
     event = 'VeryLazy',
 

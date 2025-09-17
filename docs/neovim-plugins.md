@@ -72,19 +72,19 @@ organized by category.
 
 - **Purpose**: Shows available keybindings when typing
 
-### echasnovski/mini.statusline
+### nvim-mini/mini.statusline
 
 #### Custom statusline
 
 - **Features**: Minimal, informative status bar
 
-### echasnovski/mini.icons
+### nvim-mini/mini.icons
 
 #### Icon support
 
 - **Purpose**: File type icons throughout the interface
 
-### echasnovski/mini.files
+### nvim-mini/mini.files
 
 #### File explorer
 
@@ -110,14 +110,14 @@ organized by category.
 
 ## 🎯 Text Objects & Navigation
 
-### echasnovski/mini.ai
+### nvim-mini/mini.ai
 
 #### Advanced text objects
 
 - **Objects**: comments, functions, numbers, buffer, indent
 - **Purpose**: Enhanced text selection and manipulation
 
-### echasnovski/mini.surround
+### nvim-mini/mini.surround
 
 #### Surround operations
 
@@ -153,7 +153,7 @@ organized by category.
 - **Key Binding**: `Space+a` (alternate file)
 - **Features**: Switch between lib/test files, supports Rails and Elixir patterns
 
-### echasnovski/mini.splitjoin
+### nvim-mini/mini.splitjoin
 
 #### Split/join lines
 
