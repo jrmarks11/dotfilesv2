@@ -11,3 +11,5 @@ Personal coding preferences and style guidelines for Claude Code.
 - **Implementation Focus**:
   Prioritize current functionality over backwards compatibility unless explicitly
   requested
+- **Elixir nits**
+  use List.wrap() instead of something || []
