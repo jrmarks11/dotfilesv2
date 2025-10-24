@@ -40,7 +40,6 @@ return {
         'elixirls',
         'lua_ls',
         'vtsls',
-        'vue_ls',
         'ruby_lsp',
       },
       automatic_enable = true,
