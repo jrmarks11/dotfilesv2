@@ -13,7 +13,11 @@ return {
 
     picker = {
       hidden = true,
-      sources = { scratch = { win = { input = { keys = { ['<c-n>'] = { 'list_down', mode = { 'n', 'i' } } } } } } },
+      sources = {
+        scratch = { win = { input = { keys = {
+          ['<c-n>'] = { 'list_down', mode = { 'n', 'i' } },
+        } } } },
+      },
       layout = {
         layout = {
           backdrop = false,
