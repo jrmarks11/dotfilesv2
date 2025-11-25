@@ -3,7 +3,6 @@ local M = {}
 function M.ensure_directory_exists()
   local required_dir = vim.fn.expand '%:h'
 
-  print(vim.fn.isdirectory(required_dir))
   if vim.fn.isdirectory(required_dir) ~= 1 then
     local max_length = 25
     local display_dir = required_dir
