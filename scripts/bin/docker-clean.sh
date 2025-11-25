@@ -1,5 +1,13 @@
 #!/bin/bash
 
+echo "⚠️  This will remove ALL Docker containers, images, volumes, and networks."
+read -p "Are you sure? (y/N) " -n 1 -r
+echo
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    echo "Aborted."
+    exit 0
+fi
+
 # Stop and remove all containers
 echo "Stopping and removing all containers..."
 docker rm -f $(docker ps -a -q) 2>/dev/null || true
