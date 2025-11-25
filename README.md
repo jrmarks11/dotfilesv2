@@ -37,7 +37,7 @@ stow zsh
 
 ### **Terminal & Shell**
 
-- Ghostty, iTerm2, Tmux, Zsh
+- Ghostty, Tmux, Zsh
 
 ### **Development**
 
@@ -45,7 +45,7 @@ stow zsh
 
 ### **System Tools**
 
-- Karabiner (keyboard remapping), FileZilla, yamllint
+- Karabiner (keyboard remapping), yamllint
 
 ### **Custom Scripts**
 

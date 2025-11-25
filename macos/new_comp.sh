@@ -193,13 +193,6 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock showhidden -bool true
 
 ###############################################################################
-# iTerm 2                                                                     #
-###############################################################################
-
-# Don’t display the annoying prompt when quitting iTerm
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
-
-###############################################################################
 # Mac App Store                                                               #
 ###############################################################################
 
