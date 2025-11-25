@@ -17,4 +17,5 @@ brew install \
     tmux \
     yarn \
     zinit \
+    zoxide \
     zsh
