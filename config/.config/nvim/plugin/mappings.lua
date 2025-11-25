@@ -36,26 +36,19 @@ map({ 'n', 'x' }, '<space><Tab>', '<C-^>', { desc = 'Go to Last buffer' })
 
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
-map('n', '<space>yf', function()
-  vim.fn.setreg('+', vim.fn.expand '%')
-end, { desc = 'Yank file name to clipboard' })
+map('n', '<space>y', function()
+  vim.fn.setreg('+', '@' .. vim.fn.expand '%:p')
+end, { desc = 'Yank @file for Claude' })
 
-map('n', '<space>yp', function()
-  vim.fn.setreg('+', vim.fn.expand '%:p')
-end, { desc = 'Yank full file path to clipboard' })
-
-map('n', '<space>yl', function()
-  local path = vim.fn.expand '%'
-  local line = vim.fn.line '.'
-  vim.fn.setreg('+', path .. ':' .. line)
-end, { desc = 'Yank file:line for Claude Code' })
-
-map('x', '<space>yl', function()
-  local path = vim.fn.expand '%'
-  local start_line = vim.fn.line "'<"
-  local end_line = vim.fn.line "'>"
-  vim.fn.setreg('+', path .. ':' .. start_line .. '-' .. end_line)
-end, { desc = 'Yank file:line_range for Claude Code' })
+map('x', '<space>y', function()
+  local path = vim.fn.expand '%:p'
+  local start_line = vim.fn.line 'v'
+  local end_line = vim.fn.line '.'
+  if start_line > end_line then
+    start_line, end_line = end_line, start_line
+  end
+  vim.fn.setreg('+', '@' .. path .. ':' .. start_line .. '-' .. end_line)
+end, { desc = 'Yank @file:lines for Claude' })
 
 map('n', ',ce', function()
   local current_dir = vim.fn.expand '%:p:h'
