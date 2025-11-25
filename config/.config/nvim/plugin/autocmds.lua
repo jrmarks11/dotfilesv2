@@ -60,18 +60,6 @@ autocmd('BufNewFile', {
   end,
 })
 
-local fast_escape_group = augroup('FastEscape', { clear = true })
-autocmd({ 'InsertEnter', 'CmdlineEnter' }, {
-  group = fast_escape_group,
-  pattern = '*',
-  command = 'set timeoutlen=200',
-})
-autocmd({ 'InsertLeave', 'CmdlineLeave' }, {
-  group = fast_escape_group,
-  pattern = '*',
-  command = 'set timeoutlen=1000',
-})
-
 local last_cursor_group = augroup('LastCursor', { clear = true })
 autocmd('BufReadPost', {
   group = last_cursor_group,

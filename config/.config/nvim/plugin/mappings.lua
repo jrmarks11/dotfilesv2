@@ -49,22 +49,3 @@ map('x', '<space>y', function()
   end
   vim.fn.setreg('+', '@' .. path .. ':' .. start_line .. '-' .. end_line)
 end, { desc = 'Yank @file:lines for Claude' })
-
-map('n', ',ce', function()
-  local current_dir = vim.fn.expand '%:p:h'
-  local claude_file = vim.fn.findfile('CLAUDE.md', current_dir .. ';')
-  if claude_file ~= '' then
-    vim.cmd('edit ' .. claude_file)
-  else
-    local project_root = vim.fn.systemlist('git rev-parse --show-toplevel')[1]
-    if vim.v.shell_error == 0 then
-      vim.cmd('edit ' .. project_root .. '/CLAUDE.md')
-    else
-      vim.notify('No CLAUDE.md found in project', vim.log.levels.WARN)
-    end
-  end
-end, { desc = 'Edit project CLAUDE.md' })
-
-map('n', ',cg', function()
-  vim.cmd('edit ~/CLAUDE.md')
-end, { desc = 'Edit global CLAUDE.md' })
