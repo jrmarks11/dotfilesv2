@@ -5,7 +5,7 @@ set -e
 cd /Users/johnmarks/Projects/bitfreighter/
 
 if [ $# -gt 0 ]; then
-    ./scripts/prod/api/shell "$1"
+    ./scripts/prod/shell "$1"
 else
-    ./scripts/prod/api/shell 1
+    ./scripts/prod/shell 1
 fi

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 brew install \
+    awscli \
     asdf \
     bat \
     eza \
