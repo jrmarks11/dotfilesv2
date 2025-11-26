@@ -11,6 +11,7 @@ brew install \
     git \
     joshmedeski/sesh/sesh \
     jq \
+    markdownlint \
     node \
     nvim \
     ripgrep \
