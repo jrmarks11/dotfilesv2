@@ -17,5 +17,6 @@ return {
         dismiss = '<C-]>',
       },
     },
+    copilot_node_command = '/opt/homebrew/bin/node',
   },
 }
