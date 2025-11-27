@@ -36,6 +36,9 @@ map({ 'n', 'x' }, '<space><Tab>', '<C-^>', { desc = 'Go to Last buffer' })
 
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+map('n', '<C-g>', '<cmd>q<CR>', { desc = 'Quick quit' })
+map('n', '<C-q>', '<cmd>q<CR>', { desc = 'Quick quit' })
+
 map('n', '<space>y', function()
   vim.fn.setreg('+', '@' .. vim.fn.expand '%:p')
 end, { desc = 'Yank @file for Claude' })
