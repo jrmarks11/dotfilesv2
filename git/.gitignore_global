@@ -17,6 +17,7 @@ Thumbs.db
 .Trashes
 .Spotlight-V100
 .fseventsd
+.claude/*
 .claude/settings.local.json
 
 .byebug_history
