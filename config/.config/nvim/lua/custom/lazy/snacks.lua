@@ -72,7 +72,6 @@ return {
     { '<space>i', '<cmd>lua Snacks.picker.lines()<cr>', desc = 'Grep Buffer', mode = { 'n', 'x' } },
     { '<space>j', '<cmd>lua Snacks.picker.grep()<cr>', desc = 'Live Grep', mode = { 'n', 'x' } },
     { '<space>n', '<cmd>lua Snacks.picker.notifications()<cr>', desc = 'Notifications', mode = { 'n', 'x' } },
-    { '<space>p', '<cmd>lua Snacks.picker.lazy()<cr>', desc = 'Lazy Picker', mode = { 'n', 'x' } },
     { '<space>r', '<cmd>lua Snacks.picker.recent()<cr>', desc = 'Recent Files', mode = { 'n', 'x' } },
     { '<space>t', '<cmd>lua Snacks.picker.smart()<cr>', desc = 'Smart Open Files', mode = { 'n', 'x' } },
     { '<space>u', '<cmd>lua Snacks.picker.resume()<cr>', desc = 'Resume Picker', mode = { 'n', 'x' } },
@@ -94,22 +93,4 @@ return {
       mode = { 'n', 'x' },
     },
   },
-
-  init = function()
-    vim.api.nvim_create_autocmd('User', {
-      pattern = 'VeryLazy',
-      callback = function()
-        _G.dbg = function(...)
-          Snacks.debug.inspect(...)
-        end
-        _G.bt = function()
-          Snacks.debug.backtrace()
-        end
-        vim.print = _G.dbg
-
-        Snacks.toggle.option('spell', { name = 'Spelling' }):map ',p'
-        Snacks.toggle.inlay_hints():map ',i'
-      end,
-    })
-  end,
 }
