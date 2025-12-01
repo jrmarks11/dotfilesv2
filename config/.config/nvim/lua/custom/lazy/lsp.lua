@@ -13,6 +13,13 @@ return {
 
     vim.lsp.config('*', { capabilities = capabilities })
 
+    -- Disable built-in gr* mappings globally
+    pcall(vim.keymap.del, 'n', 'grr')
+    pcall(vim.keymap.del, 'n', 'gra')
+    pcall(vim.keymap.del, 'n', 'grn')
+    pcall(vim.keymap.del, 'n', 'gri')
+    pcall(vim.keymap.del, 'n', 'grt')
+
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('jmarks-lsp-attach', { clear = true }),
       callback = function(event)
@@ -21,10 +28,12 @@ return {
         end
 
         map('gd', '<cmd>lua Snacks.picker.lsp_definitions()<cr>', 'Goto Definition')
-        map('grr', '<cmd>lua Snacks.picker.lsp_references()<cr>', 'Goto References')
+        map('gr', '<cmd>lua Snacks.picker.lsp_references()<cr>', 'Goto References')
         map('go', '<cmd>lua Snacks.picker.lsp_symbols()<cr>', 'Goto Symbols')
         map('gO', '<cmd>lua Snacks.picker.lsp_workspace_symbols()<cr>', 'Goto Workspace Symbols')
         map('<C-k>', vim.lsp.buf.hover, 'Hover Documentation')
+        map(',a', vim.lsp.buf.code_action, 'Code Action')
+        map(',r', vim.lsp.buf.rename, 'Rename')
         map('[[', function()
           Snacks.words.jump(-vim.v.count1)
         end, 'Previous Diagnostic')
