@@ -14,5 +14,6 @@ return {
     local g = vim.g
     g['test#preserve_screen'] = 1
     g['test#strategy'] = 'vimux'
+    g.VimuxUseNearest = 0
   end,
 }
