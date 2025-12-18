@@ -95,4 +95,10 @@ deploy_timezones() {
     gh workflow run deploy_to_ecs.yml -f app=timezones
 }
 
+deploy_stage_api() {
+    local branch=$(git rev-parse --abbrev-ref HEAD)
+    echo "Deploying branch '$branch' to api-staging..."
+    gh workflow run deploy_to_ecs.yml -f app=api-staging --ref "$branch"
+}
+
 jj() { __zoxide_zi "$@"; }
