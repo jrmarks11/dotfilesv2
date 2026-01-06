@@ -8,21 +8,17 @@ is_in_git_repo() {
     git rev-parse HEAD > /dev/null 2>&1
 }
 
-not_bf_master() {
-    if [[ $(basename `git rev-parse --show-toplevel`) != "bitfreighter" ]]; then
-        return
-    fi
+not_protected_branch() {
+    local branch=$(git rev-parse --abbrev-ref HEAD)
 
-    CURRENTBRANCH=$(git status|awk 'NR==1{print $3}')
-
-    if [[ $CURRENTBRANCH == "master" ]]; then
-        echo "You are on master you donkey!"
+    if [[ $branch == "main" || $branch == "master" ]]; then
+        echo "You are on $branch you donkey!"
         return 1
     fi
 }
 
 ga() {
-    is_in_git_repo && not_bf_master || return
+    is_in_git_repo && not_protected_branch || return
 
     if [[ $# -eq 0 ]] ; then
         echo "git add ."
@@ -50,7 +46,7 @@ _JM_git_branch_names () {
 compdef _JM_git_branch_names gb
 
 gc() {
-    is_in_git_repo && not_bf_master || return
+    is_in_git_repo && not_protected_branch || return
 
     if [[ $# -eq 0 ]] ; then
         git commit --verbose
@@ -60,7 +56,7 @@ gc() {
 }
 
 gush() {
-    is_in_git_repo && not_bf_master || return
+    is_in_git_repo && not_protected_branch || return
     git push
 }
 
