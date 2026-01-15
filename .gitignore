@@ -1,2 +1,6 @@
 config/.config/github-copilot
 config/.config/filezilla
+
+# Override global gitignore for claude dotfiles
+!claude/.claude/
+!claude/CLAUDE.md
