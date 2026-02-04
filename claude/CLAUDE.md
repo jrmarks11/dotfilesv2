@@ -14,6 +14,7 @@ When implementing a feature or fix:
 - ❌ Do NOT improve or clean up related code
 - ❌ Do NOT add tests, documentation, or comments unless asked
 - ❌ Do NOT add "while we're here" improvements
+- ❌ Do NOT run git commit or git push commands
 
 **Why:** Unnecessary additions create review overhead and often need to be removed.
 The user knows their priorities better than the AI.
