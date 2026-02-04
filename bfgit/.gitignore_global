@@ -8,9 +8,6 @@ Thumbs.db
 *.sqlite3
 *.sqlite3-journal
 
-.claude/
-CLAUDE.md
-
 .iex.exs
 
 *.swo
