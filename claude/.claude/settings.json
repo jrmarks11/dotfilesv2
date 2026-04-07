@@ -1,27 +1,4 @@
 {
-  "alwaysThinkingEnabled": true,
-  "hooks": {
-    "PermissionRequest": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/permission-alert.sh 'Permission Required'"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/permission-alert.sh 'Claude needs input'"
-          }
-        ]
-      }
-    ]
-  },
   "permissions": {
     "allow": [
       "Bash(grep:*)",
@@ -46,7 +23,45 @@
       "Bash(gh pr list:*)",
       "Bash(mix test:*)",
       "Bash(mix compile:*)",
-      "Bash(mix credo:*)"
+      "Bash(mix credo:*)",
+      "mcp__atlassian__getJiraIssue",
+      "mcp__atlassian__getJiraProjectIssueTypesMetadata",
+      "mcp__atlassian__editJiraIssue",
+      "mcp__atlassian__createJiraIssue",
+      "mcp__atlassian__getConfluencePage",
+      "Bash(mix run:*)",
+      "Bash(MIX_ENV=test mix compile --no-deps-check)",
+      "Bash(MIX_ENV=test mix ecto.reset)",
+      "Bash(gh pr:*)",
+      "Bash(docker compose exec:*)"
+    ],
+    "deny": [
+      "Bash(terraform apply*)",
+      "Bash(./scripts/control/terraform apply*)"
+    ],
+    "defaultMode": "default"
+  },
+  "hooks": {
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/permission-alert.sh 'Permission Required'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/permission-alert.sh 'Claude needs input'"
+          }
+        ]
+      }
     ]
-  }
+  },
+  "alwaysThinkingEnabled": true
 }
