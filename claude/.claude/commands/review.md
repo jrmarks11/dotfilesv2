@@ -1,6 +1,6 @@
-Perform a detailed code review of the current branch.
+Perform a detailed code review of the current branch or github pull request.
 
-First, determine the base branch by checking if "master" exists, otherwise use "main":
+if its a branch First, determine the base branch by checking if "master" exists, otherwise use "main":
 
 ```bash
 git rev-parse --verify master >/dev/null 2>&1 && echo master || echo main
@@ -17,6 +17,8 @@ Also get the list of commits on this branch:
 ```bash
 git log <base_branch>..HEAD --oneline
 ```
+
+if its a pull request look at the diff using gh cli
 
 Before reviewing, read the surrounding code and related modules to understand existing patterns, conventions, and standards used in the codebase. The review should check that new code follows established patterns rather than introducing divergent approaches.
 
