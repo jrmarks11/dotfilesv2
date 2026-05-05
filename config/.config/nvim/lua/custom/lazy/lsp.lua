@@ -46,13 +46,14 @@ return {
     require('mason').setup()
     require('mason-lspconfig').setup {
       ensure_installed = {
-        'elixirls',
         'lua_ls',
         'vtsls',
         'ruby_lsp',
       },
       automatic_enable = true,
     }
+
+    vim.lsp.enable 'dexter'
 
     vim.diagnostic.config {
       float = {
