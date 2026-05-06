@@ -2,7 +2,7 @@
   "blink.cmp": { "branch": "main", "commit": "78336bc89ee5365633bcf754d93df01678b5c08f" },
   "catppuccin": { "branch": "main", "commit": "426dbebe06b5c69fd846ceb17b42e12f890aedf1" },
   "conform.nvim": { "branch": "master", "commit": "dca1a190aa85f9065979ef35802fb77131911106" },
-  "copilot.lua": { "branch": "master", "commit": "78c638293f0ea6a2245eca46e9933ee271792d7e" },
+  "copilot.lua": { "branch": "master", "commit": "61784cb7a1a109d72b9cb107ee70d11bc7d095ff" },
   "flash.nvim": { "branch": "main", "commit": "fcea7ff883235d9024dc41e638f164a450c14ca2" },
   "friendly-snippets": { "branch": "main", "commit": "6cd7280adead7f586db6fccbd15d2cac7e2188b9" },
   "gitsigns.nvim": { "branch": "main", "commit": "dd3f588bacbeb041be6facf1742e42097f62165d" },
@@ -30,7 +30,7 @@
   "vim-dadbod-completion": { "branch": "master", "commit": "a8dac0b3cf6132c80dc9b18bef36d4cf7a9e1fe6" },
   "vim-dadbod-ui": { "branch": "master", "commit": "07e92e22114cc5b1ba4938d99897d85b58e20475" },
   "vim-qf": { "branch": "master", "commit": "7cafff6a9e0a1b54364b26a87f1efe749f8fb96b" },
-  "vim-test": { "branch": "master", "commit": "bc0e94059de40641d163516a83c63bc45c716acf" },
+  "vim-test": { "branch": "master", "commit": "e312c0ef80c514cb0d516e2646d609bb920d8c02" },
   "vimux": { "branch": "master", "commit": "d6cb7f63a8bb428ffc27060b7f83c77fb115589c" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" }
 }
