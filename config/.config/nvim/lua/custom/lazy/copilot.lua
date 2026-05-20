@@ -17,6 +17,6 @@ return {
         dismiss = '<C-]>',
       },
     },
-    copilot_node_command = '/opt/homebrew/bin/node',
+    copilot_node_command = vim.fn.expand('~/.asdf/shims/node'),
   },
 }
