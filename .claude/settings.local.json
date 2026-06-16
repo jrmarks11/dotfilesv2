@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Bash(zsh --version)",
+      "Bash(brew list *)",
+      "Bash(env -i HOME=/Users/johnmarks TERM=xterm-256color PATH=/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin /opt/homebrew/bin/zsh -lic ' *)"
     ]
   }
 }

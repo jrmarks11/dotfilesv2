@@ -64,5 +64,6 @@
     ]
   },
   "alwaysThinkingEnabled": true,
+  "skipWorkflowUsageWarning": true,
   "theme": "light"
 }
