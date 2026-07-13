@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+cd /Users/johnmarks/Projects/bitfreighter/
+
+docker compose -f docker-compose.yml -f docker-compose.as2lib.yml \
+    up -d --build --no-deps as2lib
+
+docker compose -f docker-compose.yml -f docker-compose.as2lib.yml ps as2lib

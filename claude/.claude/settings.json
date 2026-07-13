@@ -64,7 +64,8 @@
     ]
   },
   "alwaysThinkingEnabled": true,
+  "tui": "default",
   "skipWorkflowUsageWarning": true,
   "theme": "light",
-  "tui": "fullscreen"
+  "model": "claude-fable-5[1m]"
 }
