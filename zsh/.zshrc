@@ -44,5 +44,8 @@ source ~/.zsh-files/aliases.zsh
 source ~/.zsh-files/functions.zsh
 source ~/.zsh-files/keybindings.zsh
 
+eval "$(direnv hook zsh)"
+source $HOME/.nix-profile/share/nix-direnv/direnvrc
+
 [ -f ~/.zsh-local ] && source ~/.zsh-local
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
