@@ -3,6 +3,8 @@
 stty start undef
 stty stop undef
 
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
+
 if [[ -z "$CLAUDECODE" && -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -44,8 +46,7 @@ source ~/.zsh-files/aliases.zsh
 source ~/.zsh-files/functions.zsh
 source ~/.zsh-files/keybindings.zsh
 
-eval "$(direnv hook zsh)"
-source $HOME/.nix-profile/share/nix-direnv/direnvrc
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv hook zsh)"
 
 [ -f ~/.zsh-local ] && source ~/.zsh-local
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
