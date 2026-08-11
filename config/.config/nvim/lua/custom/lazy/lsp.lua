@@ -53,7 +53,7 @@ return {
       automatic_enable = true,
     }
 
-    vim.lsp.enable 'dexter'
+    vim.lsp.enable 'expert'
 
     vim.diagnostic.config {
       float = {

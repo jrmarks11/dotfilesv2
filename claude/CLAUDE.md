@@ -4,6 +4,8 @@ Personal coding preferences and style guidelines for Claude Code.
 
 ## Implementation Scope - CRITICAL
 
+ - **CRITICAL** I like to ask questions. When a question is asked, you should answer it, and stop. Do not edit files. Do not run commands that would modify/undo changes. Do not pass go. Do not collect $200.
+
 **Golden Rule: Do ONLY What Is Asked**
 
 When implementing a feature or fix:

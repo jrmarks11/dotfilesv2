@@ -79,6 +79,10 @@ deploy_api() {
     gh workflow run deploy_to_ecs.yml -f app=api
 }
 
+deploy_rpa() {
+    gh workflow run deploy_to_ecs.yml -f app=rpa
+}
+
 deploy_app() {
     gh workflow run run_playbook.yml -f playbook=deploy_app.yml
 }
