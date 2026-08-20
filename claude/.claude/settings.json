@@ -39,7 +39,7 @@
       "Bash(terraform apply*)",
       "Bash(./scripts/control/terraform apply*)"
     ],
-    "defaultMode": "default"
+    "defaultMode": "auto"
   },
   "hooks": {
     "PermissionRequest": [
@@ -66,6 +66,5 @@
   "alwaysThinkingEnabled": true,
   "tui": "default",
   "skipWorkflowUsageWarning": true,
-  "theme": "light",
-  "model": "claude-fable-5[1m]"
+  "theme": "light"
 }
