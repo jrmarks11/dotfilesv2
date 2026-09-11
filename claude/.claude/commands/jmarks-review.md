@@ -99,8 +99,8 @@ Prior questions
 PR targets only (author mode and branch targets skip this). Print the exact payload, then stop and wait for "go".
 
 Event and body:
-- Any blockers: `COMMENT`, body `A few questions.`
-- Questions only: `APPROVE`, body `lgtm, couple questions`
+- Any blockers: `COMMENT`, body `questions inline`
+- Questions only: `APPROVE`, body `lgtm`
 - Nothing: `APPROVE`, body `lgtm`
 - `--full`: `COMMENT`, body `Ran a review pass on this and added the findings inline.`
 - Re-review with everything addressed and no blockers: `APPROVE`, body `lgtm`

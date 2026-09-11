@@ -4,32 +4,45 @@ Personal coding preferences and style guidelines for Claude Code.
 
 ## Implementation Scope - CRITICAL
 
- - **CRITICAL** I like to ask questions. When a question is asked, you should answer it, and stop. Do not edit files. Do not run commands that would modify/undo changes. Do not pass go. Do not collect $200.
+- **CRITICAL** I like to ask questions. When a question is asked, you should
+  answer it, and stop. Do not edit files. Do not run commands that would
+  modify/undo changes. Do not pass go. Do not collect $200.
 
-**Golden Rule: Do ONLY What Is Asked**
+- Mannered prose substitutes metaphor and flourish for direct statement.
+  Instead of "a parameter worth varying," the mannered writer produces "a dial
+  worth turning." Instead of "this point still matters," they write "this point
+  earns its keep." The phrases exist to display the writer, not to convey the
+  idea, and readers can tell. That is why mannered prose irritates: it makes the
+  reader work harder so the writer can perform. It is also imprecise. Metaphors
+  drag in connotations the writer did not choose and cannot control. The fix is
+  to say what you mean. When a literal phrase is available, use it.
+
+## Golden Rule: Do ONLY What Is Asked
 
 When implementing a feature or fix:
+
 - ❌ Do NOT refactor adjacent code
 - ❌ Do NOT add extra error handling unless requested
 - ❌ Do NOT create helper functions for single uses
 - ❌ Do NOT add debug logging or console output
 - ❌ Do NOT improve or clean up related code
-- ❌ Do NOT add tests, documentation, or comments unless asked
+- ❌ Do NOT documentation, or comments unless asked
 - ❌ Do NOT add "while we're here" improvements
-- ❌ Do NOT run git commit or git push commands
 
 **Why:** Unnecessary additions create review overhead and often need to be removed.
 The user knows their priorities better than the AI.
 
 **Exception:** Critical bug fixes directly related to the change are acceptable.
 
-**When in doubt, do less.** It's easier to add something later than remove unwanted code.
+**When in doubt, do less.** It's easier to add something later than remove
+unwanted code.
 
 ## Use Existing Code First - HIGH PRIORITY
 
 Before implementing new code:
 
 1. **Search for existing solutions**:
+
    ```bash
    # Find similar implementations
    rg "pattern_im_about_to_implement" apps/api/lib
@@ -49,7 +62,7 @@ Before implementing new code:
    - Extend existing middleware rather than creating new ones
    - Fix at component level rather than per-instance
 
-**If you find yourself writing something that feels like it might already exist, it probably does.**
+**If you find yourself writing something that might already exist, it probably does.**
 
 ## When to Ask Before Implementing - HIGH PRIORITY
 
@@ -59,20 +72,23 @@ Ask for clarification when:
    - "Investigate X" might mean research only, not fix
    - "Add feature X" might not include related features Y and Z
 
-2. **Multiple valid approaches**:
+1. **Multiple valid approaches**:
    - Briefly explain your planned approach and why
    - Ask if a simpler alternative would work
-   - Example: "I could do X with approach A (simpler) or B (more robust). Which do you prefer?"
+   - Example: "I could do X with approach A (simpler) or B (more robust).
+     Which do you prefer?"
 
-3. **Introducing new patterns**:
-   - "I don't see an existing pattern for X. Should I create one or is there something I missed?"
+1. **Introducing new patterns**:
 
-4. **Critical missing details**:
+- "I don't see an existing pattern for X. Should I create one or is there
+  something I missed?"
+
+1. **Critical missing details**:
    - Package manager (npm vs yarn vs pnpm)
    - Module names (verify exact names in codebase)
    - Whether to modify V1 or V2 version
 
-5. **Solution feels wrong**:
+1. **Solution feels wrong**:
    - "This feels hacky. Is there a better way?"
    - "This requires changing every resolver. Is there a middleware approach?"
 
