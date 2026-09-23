@@ -50,7 +50,15 @@ Launch ONE Agent (`subagent_type: general-purpose`, `model: opus`, background) b
 
 ## Step 3: inline pass while the subagent runs
 
-Read the diff and the surrounding code. Same priority order as always: correctness, security, consistency with existing patterns, use of existing helpers, performance, error handling. Same reachability rule and exclusion list as the brief. Produce the same schema privately. Do not show it yet.
+Invoke the `bf-review` skill against the target and diff already resolved in step 1. That command owns what counts as a finding: the trigger rule, the exclusion list, where to look, the priority order, and the reference doc check. Do not restate any of it here, and edit it there when the standard changes.
+
+It returns its own report with severities and stated triggers. Convert each finding into this schema privately, which is what makes step 4 a merge:
+
+```
+{file, line, tier: blocker|question, introduced_by_pr: true|false, trigger, one_line_question}
+```
+
+`critical` becomes `blocker`, `warning` becomes `question`, nits are dropped. `one_line_question` is yours to write, a single friendly sentence ending in "?" phrased as a question about behavior rather than a claim. Do not show the list yet.
 
 ## Step 4: merge and refute
 
@@ -59,7 +67,7 @@ Wait for the subagent (`TaskOutput`, block). Then:
 - Corroborated (both lists, same root cause): keep, tier is the higher of the two.
 - Yours only: try to refute each with a concrete callsite, fixture, or test. Refuted: drop. Otherwise keep.
 - Subagent's only: `SendMessage` the list back to the same agent: "Attack each of these. Return REFUTED with evidence or CONFIRMED with the trigger." Refuted: drop.
-- Anything without a stated trigger after this step: drop. Unsure findings are dropped here, never shown.
+- Anything without a stated trigger after this step: drop. Unsure findings are dropped here, never shown. Reference doc findings are exempt, as bf-review says, but drop them unless they name the sentence that no longer matches.
 - Pre-existing (not introduced by this PR): drop unless blocker.
 - Already raised in an existing review thread on the PR: drop.
 - Optional, for a blocker only: temp checkout `git checkout -q -B review-<n> origin/<branch>`, run one targeted `mix test <file>`, then `git checkout -` and delete the temp branch.
@@ -68,13 +76,13 @@ If the subagent failed or was cut off, continue with your list alone and say so 
 
 ## Step 5: cap
 
-All blockers, always. Questions capped at `2 * ceil(changed_lines / 300)`, ranked correctness > security > consistency. Dropped questions are not mentioned.
+All blockers, always. Questions capped at `2 * ceil(changed_lines / 300)`, ranked correctness > security > consistency > reference docs. Dropped questions are not mentioned.
 
 ## Step 6: report (terminal only)
 
 ```
 PR #<n>: <title>   <changed_lines> lines   CI: <pass|fail|pending>   <already reviewed by you on <date> | first review>
-Coverage: inline pass + blind Opus verifier (<finished | failed: reason>)
+Coverage: bf-review inline pass + blind Opus verifier (<finished | failed: reason>)
 
 Blockers
   <file:line>  <one-line question exactly as it would be posted>

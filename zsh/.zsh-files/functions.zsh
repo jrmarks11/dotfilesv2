@@ -84,7 +84,7 @@ deploy_rpa() {
 }
 
 deploy_app() {
-    gh workflow run run_playbook.yml -f playbook=deploy_app.yml
+    gh workflow run deploy_app.yml --repo bitfreighter/bitfreighter
 }
 
 deploy_as2lib() {

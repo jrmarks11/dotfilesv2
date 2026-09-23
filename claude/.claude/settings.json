@@ -66,5 +66,45 @@
   "alwaysThinkingEnabled": true,
   "tui": "default",
   "skipWorkflowUsageWarning": true,
-  "theme": "light"
+  "theme": "light",
+  "autoMode": {
+    "allow": [
+      "$defaults",
+      "Bash(mix test:*) in this repo",
+      "Bash(mix ecto.migrate) in this repo (local dev DB only)",
+      "Bash(docker compose run app yarn graphql-codegen) in this repo"
+    ],
+    "soft_deny": [
+      "$defaults",
+      "terraform apply in containers/terraform or infra/environments/bitfreighter (CLAUDE.md: human review required)",
+      "CloudWatch Logs Insights queries against the `production` log group spanning more than 1 hour, or any query against /aws/vpc/flow-logs, /aws/transfer/*, or RDSOSMetrics"
+    ],
+    "environment": [
+      "### Org-wide",
+      "**Organization**: Bitfreighter (github.com/bitfreighter — single-repo scope per user request)",
+      "**Cloud provider(s)**: AWS (SSO via bitfamily.awsapps.com; Terraform in containers/terraform and infra/environments/bitfreighter)",
+      "**Repository visibility**: PRIVATE — bitfreighter/bitfreighter (confirmed via gh)",
+      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
+      "**Secrets management**: AWS Secrets Manager (aws secretsmanager marker found); local secrets in .env, .env_secrets, .envrc (gitignored, never commit/read into responses)",
+      "**Default / protected branches**: `master` (default branch; ruleset active on `master`, protected via gh)",
+      "**CI/CD deploy targets**: None configured (CI secret SLACK_BF_DEP_AUDIT_WEBHOOK_URL referenced for deploy audit notifications only — not a deploy target itself)",
+      "**Network posture**: None configured",
+      "**Host containment**: None configured — assume Claude Code runs on an ordinary developer machine with open internet",
+      "**Source control**: bitfreighter/bitfreighter (github.com:bitfreighter/bitfreighter.git) and its remote(s) only",
+      "**Trusted internal domains**: *.bitfreighter.dev (local /etc/hosts dev domains: app, api, soap, hooks, ftp, as2, as, timezones, s3-console, s3, rpa, grafana — dev-only, not production)",
+      "**Trusted cloud buckets**: None configured",
+      "**Key internal services**: Linear (mcp.linear.app) — used routinely in this project's transcripts",
+      "**Internal package registry**: None configured",
+      "**Sensitive data locations & audiences**: .env, .env_secrets, .envrc, apps/api/config/prod.exs, apps/app/.env, apps/app/.env.production, apps/rpa/config/prod.exs, apps/timezones/config/prod.exs, infra/environments/bitfreighter/*.tf (IAM/cognito/database/encryption/oidc files); CloudWatch `production` log group (2.6TB, 365-day retention) — share only with audiences cleared at the [named+specifics] bar",
+      "**Data retention / declassification**: None configured",
+      "**Sensitive remote targets**: any namespace/host/container with `prod` or `production` as a whole segment (e.g. apps/api/config/prod.exs, scripts/prod/api/iex, scripts/prod/api/shell, CloudWatch `production` log group); CloudWatch Logs Insights queries against `production` are cost-sensitive (~$13/full-retention run) — default to 15-minute windows, never exceed 1 hour without asking, never exceed 7 days without explicit approval, and never query /aws/vpc/flow-logs, /aws/transfer/*, or RDSOSMetrics without asking",
+      "**Protected deployment namespaces / environments**: k8s namespace `apps` (seen in project usage); terraform apply is explicitly forbidden by CLAUDE.md — infrastructure changes require human review",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota, node-pool resources; anything tagged `prod`/`production`; containers/terraform and infra/environments/bitfreighter/*.tf (especially github_oidc.tf, cognito.tf, identity_center_*.tf, database_encryption.tf, guard_duty.tf) — `terraform apply` never runs unattended per CLAUDE.md",
+      "### User-specific",
+      "**Primary use of Claude Code**: software development (Elixir/Phoenix backend, React frontend, Terraform infra) on the Bitfreighter platform",
+      "**Trusted repo**: bitfreighter/bitfreighter (private) — the working directory's repo and its configured remote(s)",
+      "**Org-specific CLIs**: mix, bf-console, bf-shell, dexter, process-compose, terraform (used routinely in this project and in shell history)",
+      "**Routine under bitfreighter/ prefix**: mix ecto.migrate, mix test, docker compose exec/run commands, terraform plan (never terraform apply) — all scoped to this repo"
+    ]
+  }
 }

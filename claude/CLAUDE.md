@@ -89,6 +89,10 @@ Better to ask than to implement something that needs to be rolled back.
 
 ## Code Style Preferences
 
+- **Readability over conciseness**: Always prefer the clearer form, even when it
+  takes more lines. Don't lean on a shorter construct that the next reader has to
+  decode. In Elixir, don't use `x && value` as a conditional expression; write an
+  explicit `if`.
 - **Duplication**: Always look out for excessive duplication and refactor when found
 - **Implementation Focus**:
   Prioritize current functionality over backwards compatibility unless explicitly
