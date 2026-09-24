@@ -22,7 +22,7 @@ gh api repos/bitfreighter/bitfreighter/pulls/<n>/comments --paginate
 gh pr diff <n> > <scratchpad>/pr-<n>.diff
 ```
 
-Before anything else, record the local branches and the current branch: `git branch --format='%(refname:short)' > <scratchpad>/branches-before.txt` and `git branch --show-current`.
+Before anything else, record the current branch and the local branches: `git branch --show-current` and `git branch --format='%(refname:short)'`. Keep the list in context; do not write it to a file.
 
 Branch targets: `git fetch origin <branch>` then `git diff origin/master...origin/<branch>`. Record changed-line count (additions + deletions) for the cap.
 
@@ -46,8 +46,7 @@ Launch ONE Agent (`subagent_type: general-purpose`, `model: opus`, background) b
 >
 > Report a finding only if you can state the concrete trigger: this input or state leads to this wrong output or crash, with file:line for both the cause and the consumer. If you cannot state the trigger, do not report it.
 >
-> Do not report: pre-existing issues on unchanged lines; style, naming, or duplication unless a CLAUDE.md names it; missing tests or docs; anything the compiler, credo, dialyzer, or CI would catch; "consider" suggestions; behavior changes that are the intended purpose of the PR.
->
+> Do not report: pre-existing issues on unchanged lines; style, naming, or duplication unless a CLAUDE.md names it; missing tests or docs; anything the compiler, credo, dialyzer, or CI would catch; "consider" suggestions; behavior changes that are the intended purpose of the PR.>
 > Output only a list, no prose. Each item: `{file, line, tier: blocker|question, introduced_by_pr: true|false, trigger, one_line_question}`. `blocker` means it will break in practice or ship a security or data problem. `question` means a real gap worth asking about. `one_line_question` is a single friendly sentence ending in "?" phrased as a question about behavior, not a claim.
 
 ## Step 3: inline pass while the subagent runs
@@ -134,4 +133,4 @@ Never submit without the explicit go.
 
 ## Step 8: clean up local branches
 
-After the review is submitted, or after the report when there is no submit, make sure you are on the branch recorded in step 1. Then delete every local branch that is not in `branches-before.txt`, whether you or the subagent created it: `git branch -D <branch>`. Report which branches were deleted.
+After the review is submitted, or after the report when there is no submit, make sure you are on the branch recorded in step 1. Then delete every local branch that was not in the list recorded in step 1 with `git branch -D <branch>`. Report which branches were deleted.
