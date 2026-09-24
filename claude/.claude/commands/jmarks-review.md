@@ -22,6 +22,8 @@ gh api repos/bitfreighter/bitfreighter/pulls/<n>/comments --paginate
 gh pr diff <n> > <scratchpad>/pr-<n>.diff
 ```
 
+Before anything else, record the local branches and the current branch: `git branch --format='%(refname:short)' > <scratchpad>/branches-before.txt` and `git branch --show-current`.
+
 Branch targets: `git fetch origin <branch>` then `git diff origin/master...origin/<branch>`. Record changed-line count (additions + deletions) for the cap.
 
 Decide the mode:
@@ -129,3 +131,7 @@ Payload, printed verbatim (the `why` lines are never included):
 One word from John switches the event ("approve" / "comment"); edits to any line are applied and the payload reprinted. On "go": write the JSON to the scratchpad, submit with `gh api repos/bitfreighter/bitfreighter/pulls/<n>/reviews --input <file>`, re-read `/pulls/<n>/comments` to confirm the inline comments landed, and report the review URL. No comments and an approval: `gh pr review <n> --approve --body lgtm`. Re-review replies to an existing thread: `gh api repos/bitfreighter/bitfreighter/pulls/<n>/comments/<id>/replies -f body=...`.
 
 Never submit without the explicit go.
+
+## Step 8: clean up local branches
+
+After the review is submitted, or after the report when there is no submit, make sure you are on the branch recorded in step 1. Then delete every local branch that is not in `branches-before.txt`, whether you or the subagent created it: `git branch -D <branch>`. Report which branches were deleted.
