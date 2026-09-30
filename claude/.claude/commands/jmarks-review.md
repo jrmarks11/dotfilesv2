@@ -70,7 +70,7 @@ Wait for the subagent (`TaskOutput`, block). Then:
 - Subagent's only: `SendMessage` the list back to the same agent: "Attack each of these. Return REFUTED with evidence or CONFIRMED with the trigger." Refuted: drop.
 - Anything without a stated trigger after this step: drop. Unsure findings are dropped here, never shown. Reference doc findings are exempt, as bf-review says, but drop them unless they name the sentence that no longer matches.
 - Pre-existing (not introduced by this PR): drop unless blocker.
-- Already raised in an existing review thread on the PR: drop.
+- Already raised in an existing review thread on the PR: if you agree and it is not yet addressed or answered, keep it as a 👍 on that comment (no text reply) and count its tier when choosing the event; otherwise drop.
 - Optional, for a blocker only: temp checkout `git checkout -q -B review-<n> origin/<branch>`, run one targeted `mix test <file>`, then `git checkout -` and delete the temp branch.
 
 If the subagent failed or was cut off, continue with your list alone and say so in the Coverage line.
@@ -127,7 +127,7 @@ Payload, printed verbatim (the `why` lines are never included):
 }
 ```
 
-One word from John switches the event ("approve" / "comment"); edits to any line are applied and the payload reprinted. On "go": write the JSON to the scratchpad, submit with `gh api repos/bitfreighter/bitfreighter/pulls/<n>/reviews --input <file>`, re-read `/pulls/<n>/comments` to confirm the inline comments landed, and report the review URL. No comments and an approval: `gh pr review <n> --approve --body lgtm`. Re-review replies to an existing thread: `gh api repos/bitfreighter/bitfreighter/pulls/<n>/comments/<id>/replies -f body=...`.
+One word from John switches the event ("approve" / "comment"); edits to any line are applied and the payload reprinted. On "go": write the JSON to the scratchpad, submit with `gh api repos/bitfreighter/bitfreighter/pulls/<n>/reviews --input <file>`, re-read `/pulls/<n>/comments` to confirm the inline comments landed, and report the review URL. No comments and an approval: `gh pr review <n> --approve --body lgtm`. Re-review replies to an existing thread: `gh api repos/bitfreighter/bitfreighter/pulls/<n>/comments/<id>/replies -f body=...`. Agreed existing findings are listed under the payload as `👍 <comment id>` and posted on "go" with `gh api repos/bitfreighter/bitfreighter/pulls/comments/<id>/reactions -f content=+1`.
 
 Never submit without the explicit go.
 
