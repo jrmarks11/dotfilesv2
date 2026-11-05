@@ -47,7 +47,7 @@ Launch ONE Agent (`subagent_type: general-purpose`, `model: opus`, background) b
 > Report a finding only if you can state the concrete trigger: this input or state leads to this wrong output or crash, with file:line for both the cause and the consumer. If you cannot state the trigger, do not report it.
 >
 > Do not report: pre-existing issues on unchanged lines; style, naming, or duplication unless a CLAUDE.md names it; missing tests or docs; anything the compiler, credo, dialyzer, or CI would catch; "consider" suggestions; behavior changes that are the intended purpose of the PR.>
-> Output only a list, no prose. Each item: `{file, line, tier: blocker|question, introduced_by_pr: true|false, trigger, one_line_question}`. `blocker` means it will break in practice or ship a security or data problem. `question` means a real gap worth asking about. `one_line_question` is a single friendly sentence ending in "?" phrased as a question about behavior, not a claim.
+> Output only a list, no prose. Each item: `{file, line, tier: blocker|question, likelihood: routine|occasional|rare, introduced_by_pr: true|false, trigger, one_line_question}`. `blocker` means it will break in practice or ship a security or data problem. `question` means a real gap worth asking about. `likelihood` is how often the trigger happens: `routine` means normal traffic or data hits it, `occasional` means deploys, retries, or config changes hit it, `rare` means it needs a manual operator action or an outside failure. `one_line_question` is a single friendly sentence ending in "?" phrased as a question about behavior, not a claim.
 
 ## Step 3: inline pass while the subagent runs
 
@@ -56,20 +56,21 @@ Invoke the `bf-review` skill against the target and diff already resolved in ste
 It returns its own report with severities and stated triggers. Convert each finding into this schema privately, which is what makes step 4 a merge:
 
 ```
-{file, line, tier: blocker|question, introduced_by_pr: true|false, trigger, one_line_question}
+{file, line, tier: blocker|question, likelihood: routine|occasional|rare, introduced_by_pr: true|false, trigger, one_line_question}
 ```
 
-`critical` becomes `blocker`, `warning` becomes `question`, nits are dropped. `one_line_question` is yours to write, a single friendly sentence ending in "?" phrased as a question about behavior rather than a claim. Do not show the list yet.
+`critical` becomes `blocker`, `warning` becomes `question`, nits are dropped. `likelihood` is yours to assign, using the definitions in the step 2 brief. `one_line_question` is yours to write, a single friendly sentence ending in "?" phrased as a question about behavior rather than a claim. Do not show the list yet.
 
 ## Step 4: merge and refute
 
 Wait for the subagent (`TaskOutput`, block). Then:
 
-- Corroborated (both lists, same root cause): keep, tier is the higher of the two.
+- Corroborated (both lists, same root cause): keep, tier is the higher of the two, likelihood is the more frequent of the two.
 - Yours only: try to refute each with a concrete callsite, fixture, or test. Refuted: drop. Otherwise keep.
 - Subagent's only: `SendMessage` the list back to the same agent: "Attack each of these. Return REFUTED with evidence or CONFIRMED with the trigger." Refuted: drop.
 - Anything without a stated trigger after this step: drop. Unsure findings are dropped here, never shown. Reference doc findings are exempt, as bf-review says, but drop them unless they name the sentence that no longer matches.
 - Pre-existing (not introduced by this PR): drop unless blocker.
+- Rare questions: drop. Rare blockers stay.
 - Already raised in an existing review thread on the PR: if you agree and it is not yet addressed or answered, keep it as a 👍 on that comment (no text reply) and count its tier when choosing the event; otherwise drop.
 - Optional, for a blocker only: temp checkout `git checkout -q -B review-<n> origin/<branch>`, run one targeted `mix test <file>`, then `git checkout -` and delete the temp branch.
 
@@ -87,12 +88,17 @@ Coverage: bf-review inline pass + blind Opus verifier (<finished | failed: reaso
 
 Blockers
   <file:line>  <one-line question exactly as it would be posted>
-               why: <one sentence, for you only>
+               why (<likelihood>): <one sentence, for you only>
 
 Questions
   <file:line>  <one-line question>
-               why: <one sentence>
+               why (<likelihood>): <one sentence>
+
+Dropped as rare
+  <file:line>  <trigger in a few words>
 ```
+
+Omit the `Dropped as rare` section when nothing was dropped for rarity.
 
 Rules for the question lines: one short friendly sentence ending in "?", about behavior, never a declarative claim. No suggested fix unless it is a blocker. No code recap. No em dashes anywhere. No Claude attribution unless `--full`. A finding with no diff line to anchor to becomes one sentence in the review body instead. Nothing survives: print `<target>: nothing to post.` and still draft the approval.
 
