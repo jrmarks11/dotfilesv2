@@ -84,6 +84,7 @@ All blockers, always. Questions capped at `2 * ceil(changed_lines / 300)`, ranke
 
 ```
 PR #<n>: <title>   <changed_lines> lines   CI: <pass|fail|pending>   <already reviewed by you on <date> | first review>
+https://github.com/bitfreighter/bitfreighter/pull/<n>
 Coverage: bf-review inline pass + blind Opus verifier (<finished | failed: reason>)
 
 Blockers
