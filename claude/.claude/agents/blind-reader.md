@@ -21,7 +21,7 @@ Report a finding only if you can state the concrete trigger: this input or state
 
 Do not report: pre-existing issues on unchanged lines; style, naming, or duplication unless a CLAUDE.md names it; teammates' code comments; missing tests or docs; anything the compiler, credo, dialyzer, or CI would catch; "consider" suggestions; behavior changes that are the intended purpose of the change; anything that only occurs while the frontend lags the API deploy by about 10 minutes.
 
-Output only a list, no prose. Each item:
+Output only a list, no prose, followed by one last line `model: <display name of the model you are running as, from your system prompt>` (for example `model: Claude Opus 5.5`). Print the `model:` line even when the list is empty. Each item:
 
 `{file, line, tier: blocker|question, likelihood: routine|occasional|rare, introduced_by_pr: true|false, trigger, one_line_question}`
 

@@ -36,28 +36,15 @@ The user knows their priorities better than the AI.
 
 Exception: Critical bug fixes directly related to the change are acceptable.
 
+Exception: When the change would copy existing logic, refactor so both places
+share it.
+
 When in doubt, do less. It's easier to add something later than remove
 unwanted code.
 
 ## Use Existing Code First
 
-Before implementing new code:
-
-1. **Search for existing solutions**: grep for similar implementations and for
-   helpers in related modules.
-
-2. **Use established patterns**:
-   - Error handling: Check `edi_pipeline` helpers like `catch_errors/2`
-   - API patterns: Look at `Doctor.with` usage for with-style pipelines
-   - GraphQL: Check existing resolvers for authorization patterns
-   - Middleware: Can existing middleware be extended vs. creating new?
-
-3. **Avoid duplication**:
-   - Call existing functions rather than duplicating logic
-   - Extend existing middleware rather than creating new ones
-   - Fix at component level rather than per-instance
-
-If you find yourself writing something that might already exist, it probably does.
+Fix at component level rather than per-instance.
 
 ## When to Ask Before Implementing
 
@@ -93,7 +80,7 @@ Better to ask than to implement something that needs to be rolled back.
   takes more lines. Don't lean on a shorter construct that the next reader has to
   decode. In Elixir, don't use `x && value` as a conditional expression; write an
   explicit `if`.
-- **Duplication**: Always look out for excessive duplication and refactor when found
+- **Duplication**: Don't copy existing logic; refactor so both places share it
 - **Implementation Focus**:
   Prioritize current functionality over backwards compatibility unless explicitly
   requested

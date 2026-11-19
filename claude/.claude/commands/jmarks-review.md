@@ -1,13 +1,13 @@
 ---
 description: Two-reader review (inline + blind Opus verifier) that reports only postable findings and drafts the GitHub review
-argument-hint: "[PR number | branch | Jira key | title fragment]... [--full] [--fresh], defaults to current branch vs master"
+argument-hint: "[PR number | branch | Jira key | title fragment]... [--full] [--fresh] [--draft], defaults to current branch vs master"
 ---
 
 Review the target(s) in $ARGUMENTS. Two independent readers, one merged list, one draft GitHub review. Report only what would be posted.
 
 ## Step 1: resolve target(s) and gather state
 
-Arguments may contain one or more targets and the flag `--full`.
+Arguments may contain one or more targets and the flags `--full`, `--fresh`, and `--draft`.
 
 For each target:
 - PR number or URL: use as is.
@@ -32,22 +32,15 @@ Decide the mode:
 - **Batch** if several targets: run steps 2 to 6 per target, then present drafts one at a time in order.
 - **Full** if `--full`: report every confirmed finding (still no nits); the draft is a COMMENT with body `Ran a review pass on this and added the findings inline.`
 - **Fresh** if `--fresh`: ignore existing reviews and threads and review the whole diff as a first review (for calibrating against a past review). Print the report and draft but do not offer to submit.
+- **Draft** if `--draft`, or if you are running as a subagent with no user to say "go": run steps 1 to 6, print the step 7 payload, then go straight to step 8. Do not wait, do not submit, and post nothing to GitHub (no review, comment, reply, reaction, or approval). End your final message with the step 6 report and the payload so the caller can post it.
 
 ## Step 2: launch the blind reader before you read the diff
 
-Launch ONE Agent (`subagent_type: general-purpose`, `model: opus`, background) before reading any of the diff yourself. Give it only the target and how to fetch the diff. Never give it your findings or anything from this conversation. Brief, verbatim:
+Launch ONE Agent (`subagent_type: blind-reader`, background) before reading any of the diff yourself. Do not pass `model`; the agent profile sets it. The profile holds the review instructions, the exclusion list, and the output schema, so the brief is only the target and how to fetch the diff. Never give it your findings or anything from this conversation. Brief, verbatim:
 
-> Review the diff for <target> (fetch it with `<command>`; base is master). Assume a careful first reviewer has already read this diff top to bottom. Your job is what they structurally miss. Spend your effort on:
-> 1. Removed or changed clauses: what depended on the old behavior. Grep every caller of every changed function and every pattern match on every changed return shape.
-> 2. State written on one path and read on another: fields, flags, queue states, preloads, Oban job args.
-> 3. nil, empty, and NotLoaded paths introduced by the change.
-> 4. Schema vs migration vs DB constraint mismatches.
-> 5. Error tuples whose shape changed and who matches on them.
->
-> Report a finding only if you can state the concrete trigger: this input or state leads to this wrong output or crash, with file:line for both the cause and the consumer. If you cannot state the trigger, do not report it.
->
-> Do not report: pre-existing issues on unchanged lines; style, naming, or duplication unless a CLAUDE.md names it; missing tests or docs; anything the compiler, credo, dialyzer, or CI would catch; "consider" suggestions; behavior changes that are the intended purpose of the PR.>
-> Output only a list, no prose. Each item: `{file, line, tier: blocker|question, likelihood: routine|occasional|rare, introduced_by_pr: true|false, trigger, one_line_question}`. `blocker` means it will break in practice or ship a security or data problem. `question` means a real gap worth asking about. `likelihood` is how often the trigger happens: `routine` means normal traffic or data hits it, `occasional` means deploys, retries, or config changes hit it, `rare` means it needs a manual operator action or an outside failure. `one_line_question` is a single friendly sentence ending in "?" phrased as a question about behavior, not a claim.
+> Review the diff for <target>. Fetch it with `<command>` from `<worktree path>`; base is master.
+
+If the `blind-reader` agent type is not available, stop and say so. Do not fall back to another agent type.
 
 ## Step 3: inline pass while the subagent runs
 
@@ -59,11 +52,11 @@ It returns its own report with severities and stated triggers. Convert each find
 {file, line, tier: blocker|question, likelihood: routine|occasional|rare, introduced_by_pr: true|false, trigger, one_line_question}
 ```
 
-`critical` becomes `blocker`, `warning` becomes `question`, nits are dropped. `likelihood` is yours to assign, using the definitions in the step 2 brief. `one_line_question` is yours to write, a single friendly sentence ending in "?" phrased as a question about behavior rather than a claim. Do not show the list yet.
+`critical` becomes `blocker`, `warning` becomes `question`, nits are dropped. `likelihood` is yours to assign: `routine` means normal traffic or data hits it, `occasional` means deploys, retries, or config changes hit it, `rare` means it needs a manual operator action or an outside failure. `one_line_question` is yours to write, a single friendly sentence ending in "?" phrased as a question about behavior rather than a claim. Do not show the list yet.
 
 ## Step 4: merge and refute
 
-Wait for the subagent (`TaskOutput`, block). Then:
+Wait for the blind reader. Its result arrives on its own when it finishes; do not poll for it and do not start step 4 without it. Then:
 
 - Corroborated (both lists, same root cause): keep, tier is the higher of the two, likelihood is the more frequent of the two.
 - Yours only: try to refute each with a concrete callsite, fixture, or test. Refuted: drop. Otherwise keep.
@@ -85,7 +78,7 @@ All blockers, always. Questions capped at `2 * ceil(changed_lines / 300)`, ranke
 ```
 PR #<n>: <title>   <changed_lines> lines   CI: <pass|fail|pending>   <already reviewed by you on <date> | first review>
 https://github.com/bitfreighter/bitfreighter/pull/<n>
-Coverage: bf-review inline pass + blind Opus verifier (<finished | failed: reason>)
+Coverage: bf-review inline pass (<session model>) + blind reader (<reader model>, <finished | failed: reason>)
 
 Blockers
   <file:line>  <one-line question exactly as it would be posted>
@@ -112,7 +105,7 @@ Prior questions
 
 ## Step 7: draft the GitHub review and wait
 
-PR targets only (author mode and branch targets skip this). Print the exact payload, then stop and wait for "go".
+PR targets only (author mode and branch targets skip this). Print the exact payload, then stop and wait for "go". In draft mode, print the payload and skip to step 8.
 
 Event and body:
 - Any blockers: `COMMENT`, body counts the inline questions: `one question`, `a couple of questions`, or `a few questions`
@@ -121,7 +114,7 @@ Event and body:
 - `--full`: `COMMENT`, body `Ran a review pass on this and added the findings inline.`
 - Re-review with everything addressed and no blockers: `APPROVE`, body `lgtm`
 
-Attribution trailer: every review body ends with a blank line and then `Assisted-by: <model>`, where `<model>` is the display name of the model running this session, taken from your system prompt (for example `Assisted-by: Claude Fable 5.2`). Never write just `Claude`, and never guess a model name. The trailer goes on the review body once, not on each inline comment. A text reply to an existing thread ends with the same trailer. A 👍 reaction carries none.
+Attribution trailer: every review body ends with a blank line and then `Assisted-by: <models>`. `<models>` is the display name of the model running this session, taken from your system prompt, followed by a comma and the blind reader's model, taken from the `model:` line at the end of its output (for example `Assisted-by: Claude Fable 5.2, Claude Opus 5.5`). If both are the same model, name it once. If the blind reader failed or gave no `model:` line, name only the session model. Never write just `Claude`, and never guess a model name. The trailer goes on the review body once, not on each inline comment. A text reply to an existing thread ends with the same trailer. A 👍 reaction carries none.
 
 Payload, printed verbatim (the `why` lines are never included):
 
@@ -129,14 +122,14 @@ Payload, printed verbatim (the `why` lines are never included):
 {
   "commit_id": "<headRefOid>",
   "event": "<APPROVE|COMMENT>",
-  "body": "<body>\n\nAssisted-by: <model>",
+  "body": "<body>\n\nAssisted-by: <models>",
   "comments": [
     {"path": "<file>", "line": <line>, "side": "RIGHT", "body": "<one-line question>"}
   ]
 }
 ```
 
-One word from John switches the event ("approve" / "comment"); edits to any line are applied and the payload reprinted. On "go": write the JSON to the scratchpad, submit with `gh api repos/bitfreighter/bitfreighter/pulls/<n>/reviews --input <file>`, re-read `/pulls/<n>/comments` to confirm the inline comments landed, and report the review URL. No comments and an approval: `gh pr review <n> --approve --body $'lgtm\n\nAssisted-by: <model>'`. Re-review replies to an existing thread: `gh api repos/bitfreighter/bitfreighter/pulls/<n>/comments/<id>/replies -f body=...`. Agreed existing findings are listed under the payload as `👍 <comment id>` and posted on "go" with `gh api repos/bitfreighter/bitfreighter/pulls/comments/<id>/reactions -f content=+1`.
+One word from John switches the event ("approve" / "comment"); edits to any line are applied and the payload reprinted. On "go": write the JSON to the scratchpad, submit with `gh api repos/bitfreighter/bitfreighter/pulls/<n>/reviews --input <file>`, re-read `/pulls/<n>/comments` to confirm the inline comments landed, and report the review URL. No comments and an approval: `gh pr review <n> --approve --body $'lgtm\n\nAssisted-by: <models>'`. Re-review replies to an existing thread: `gh api repos/bitfreighter/bitfreighter/pulls/<n>/comments/<id>/replies -f body=...`. Agreed existing findings are listed under the payload as `👍 <comment id>` and posted on "go" with `gh api repos/bitfreighter/bitfreighter/pulls/comments/<id>/reactions -f content=+1`.
 
 Never submit without the explicit go.
 
