@@ -101,7 +101,7 @@ Dropped as rare
 
 Omit the `Dropped as rare` section when nothing was dropped for rarity.
 
-Rules for the question lines: one short friendly sentence ending in "?", about behavior, never a declarative claim. No suggested fix unless it is a blocker. No code recap. No em dashes anywhere. No Claude attribution unless `--full`. A finding with no diff line to anchor to becomes one sentence in the review body instead. Nothing survives: print `<target>: nothing to post.` and still draft the approval.
+Rules for the question lines: one short friendly sentence ending in "?", about behavior, never a declarative claim. No suggested fix unless it is a blocker. No code recap. No em dashes anywhere. No Claude attribution on the question lines themselves; the attribution trailer goes on the review body (step 7). A finding with no diff line to anchor to becomes one sentence in the review body instead. Nothing survives: print `<target>: nothing to post.` and still draft the approval.
 
 Re-review mode adds a section above Blockers:
 
@@ -121,20 +121,22 @@ Event and body:
 - `--full`: `COMMENT`, body `Ran a review pass on this and added the findings inline.`
 - Re-review with everything addressed and no blockers: `APPROVE`, body `lgtm`
 
+Attribution trailer: every review body ends with a blank line and then `Assisted-by: <model>`, where `<model>` is the display name of the model running this session, taken from your system prompt (for example `Assisted-by: Claude Fable 5.2`). Never write just `Claude`, and never guess a model name. The trailer goes on the review body once, not on each inline comment. A text reply to an existing thread ends with the same trailer. A 👍 reaction carries none.
+
 Payload, printed verbatim (the `why` lines are never included):
 
 ```json
 {
   "commit_id": "<headRefOid>",
   "event": "<APPROVE|COMMENT>",
-  "body": "<body>",
+  "body": "<body>\n\nAssisted-by: <model>",
   "comments": [
     {"path": "<file>", "line": <line>, "side": "RIGHT", "body": "<one-line question>"}
   ]
 }
 ```
 
-One word from John switches the event ("approve" / "comment"); edits to any line are applied and the payload reprinted. On "go": write the JSON to the scratchpad, submit with `gh api repos/bitfreighter/bitfreighter/pulls/<n>/reviews --input <file>`, re-read `/pulls/<n>/comments` to confirm the inline comments landed, and report the review URL. No comments and an approval: `gh pr review <n> --approve --body lgtm`. Re-review replies to an existing thread: `gh api repos/bitfreighter/bitfreighter/pulls/<n>/comments/<id>/replies -f body=...`. Agreed existing findings are listed under the payload as `👍 <comment id>` and posted on "go" with `gh api repos/bitfreighter/bitfreighter/pulls/comments/<id>/reactions -f content=+1`.
+One word from John switches the event ("approve" / "comment"); edits to any line are applied and the payload reprinted. On "go": write the JSON to the scratchpad, submit with `gh api repos/bitfreighter/bitfreighter/pulls/<n>/reviews --input <file>`, re-read `/pulls/<n>/comments` to confirm the inline comments landed, and report the review URL. No comments and an approval: `gh pr review <n> --approve --body $'lgtm\n\nAssisted-by: <model>'`. Re-review replies to an existing thread: `gh api repos/bitfreighter/bitfreighter/pulls/<n>/comments/<id>/replies -f body=...`. Agreed existing findings are listed under the payload as `👍 <comment id>` and posted on "go" with `gh api repos/bitfreighter/bitfreighter/pulls/comments/<id>/reactions -f content=+1`.
 
 Never submit without the explicit go.
 

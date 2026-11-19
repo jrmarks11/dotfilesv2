@@ -41,6 +41,7 @@
     ],
     "defaultMode": "auto"
   },
+  "model": "fable",
   "hooks": {
     "PermissionRequest": [
       {
